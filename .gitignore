@@ -4,12 +4,14 @@
 
 apps/admin
 apps/builder
-apps/editor
+# apps/catalog
 # apps/docs
+apps/editor
+
 
 sites/base
 # sites/www
-sites/articles
+sites/knowledge
 sites/globals
 sites/theme
 # sites/styles
