@@ -1,5 +1,19 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+.base
+
+apps/admin
+apps/builder
+apps/editor
+# apps/docs
+
+sites/base
+# sites/www
+sites/articles
+sites/globals
+sites/theme
+# sites/styles
+
 # Dependencies
 node_modules
 .pnp
