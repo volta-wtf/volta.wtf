@@ -24,8 +24,8 @@ export default function Home() {
       <main className={styles.main}>
         <ThemeImage
           className={styles.logo}
-          srcLight="turborepo-dark.svg"
-          srcDark="turborepo-light.svg"
+          srcLight='/shared/logos/turborepo-dark.svg'
+          srcDark='/shared/logos/turborepo-light.svg'
           alt="Turborepo logo"
           width={180}
           height={38}
@@ -33,7 +33,7 @@ export default function Home() {
         />
         <ol>
           <li>
-            Get started by editing <code>apps/admin/app/page.tsx</code>
+            Get started by editing <code>apps/catalog/app/page.tsx</code>
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
@@ -47,7 +47,7 @@ export default function Home() {
           >
             <Image
               className={styles.logo}
-              src="/vercel.svg"
+              src='/shared/logos/vercel.svg'
               alt="Vercel logomark"
               width={20}
               height={20}
@@ -75,7 +75,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/window.svg"
+            src='/shared/icons/window.svg'
             alt="Window icon"
             width={16}
             height={16}
@@ -89,7 +89,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/globe.svg"
+            src='/shared/icons/globe.svg'
             alt="Globe icon"
             width={16}
             height={16}

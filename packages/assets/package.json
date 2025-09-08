@@ -1,0 +1,16 @@
+{
+  "name": "@repo/assets",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.ts",
+  "files": [
+    "index.ts",
+    "logos/**/*",
+    "icons/**/*",
+    "fonts/**/*",
+    "images/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

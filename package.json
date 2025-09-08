@@ -2,6 +2,8 @@
   "name": "my-turborepo",
   "private": true,
   "scripts": {
+    "setup": "node scripts/setup-symlinks.js",
+    "prebuild": "node scripts/copy-assets.js",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
@@ -9,6 +11,7 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "glob": "^11.0.0",
     "prettier": "^3.6.2",
     "turbo": "^2.5.4",
     "typescript": "5.9.2"
