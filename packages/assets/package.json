@@ -3,8 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "main": "index.ts",
+  "bin": {
+    "copy-assets": "./scripts/copy-assets.js",
+    "setup-assets": "./scripts/setup-assets.js"
+  },
+  "scripts": {
+    "copy-assets": "node scripts/copy-assets.js",
+    "setup-assets": "node scripts/setup-assets.js"
+  },
   "files": [
     "index.ts",
+    "scripts/**/*",
     "logos/**/*",
     "icons/**/*",
     "fonts/**/*",

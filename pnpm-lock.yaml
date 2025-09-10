@@ -247,8 +247,6 @@ importers:
         specifier: ^8.40.0
         version: 8.42.0(eslint@9.35.0)(typescript@5.9.2)
 
-  packages/config-next: {}
-
   packages/config-typescript: {}
 
   packages/ui:
