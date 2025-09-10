@@ -46,18 +46,36 @@ if (!existsSync(assetsDir)) {
 
 // Crear directorio public si no existe
 if (!existsSync(publicDir)) {
-  mkdirSync(publicDir, { recursive: true });
-  console.log(`📁 Creado directorio public`);
+  try {
+    mkdirSync(publicDir, { recursive: true });
+    console.log(`📁 Creado directorio public`);
+  } catch (error) {
+    console.error(`❌ Error creando directorio public:`, error.message);
+    process.exit(1);
+  }
 }
 
 // Eliminar directorio shared si existe
 if (existsSync(sharedDir)) {
-  rmSync(sharedDir, { recursive: true, force: true });
-  console.log(`🗑️  Eliminado directorio shared existente`);
+  try {
+    rmSync(sharedDir, { recursive: true, force: true });
+    console.log(`🗑️  Eliminado directorio shared existente`);
+  } catch (error) {
+    console.error(`❌ Error eliminando directorio shared:`, error.message);
+    process.exit(1);
+  }
 }
 
 // Crear directorio shared
-mkdirSync(sharedDir, { recursive: true });
+try {
+  mkdirSync(sharedDir, { recursive: true });
+  console.log(`📁 Creado directorio shared`);
+} catch (error) {
+  console.error(`❌ Error creando directorio shared:`, error.message);
+  console.error(`   Directorio público: ${publicDir}`);
+  console.error(`   Directorio compartido: ${sharedDir}`);
+  process.exit(1);
+}
 
 // Copiar solo los directorios de assets
 copyAssetDirectories(assetsDir, sharedDir);

@@ -23,14 +23,24 @@ if (!existsSync(assetsDir)) {
 
 // Crear directorio public si no existe
 if (!existsSync(publicDir)) {
-  mkdirSync(publicDir, { recursive: true });
-  console.log(`📁 Creado directorio public`);
+  try {
+    mkdirSync(publicDir, { recursive: true });
+    console.log(`📁 Creado directorio public`);
+  } catch (error) {
+    console.error(`❌ Error creando directorio public:`, error.message);
+    process.exit(1);
+  }
 }
 
 // Eliminar directorio/symlink shared existente si existe
 if (existsSync(sharedDir)) {
-  console.log(`🗑️  Eliminando directorio/symlink shared existente`);
-  rmSync(sharedDir, { recursive: true, force: true });
+  try {
+    console.log(`🗑️  Eliminando directorio/symlink shared existente`);
+    rmSync(sharedDir, { recursive: true, force: true });
+  } catch (error) {
+    console.error(`❌ Error eliminando directorio shared:`, error.message);
+    process.exit(1);
+  }
 }
 
 // Crear symlink al directorio assets
