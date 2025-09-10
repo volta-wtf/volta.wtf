@@ -37,6 +37,9 @@ function copyAssetDirectories(sourceDir, targetDir) {
 console.log('🔍 Copiando assets desde @repo/assets/shared...');
 console.log(`📁 App dir: ${appDir}`);
 console.log(`📦 Shared assets dir: ${assetsDir}`);
+console.log(`🔍 Node version: ${process.version}`);
+console.log(`🔍 Platform: ${process.platform}`);
+console.log(`🔍 Working directory: ${process.cwd()}`);
 
 if (!existsSync(assetsDir)) {
   console.error('❌ No se encontró el directorio shared en node_modules/@repo/assets/shared');
@@ -44,15 +47,38 @@ if (!existsSync(assetsDir)) {
   process.exit(1);
 }
 
+// Verificar que el directorio padre existe
+const parentDir = join(appDir, '..');
+console.log(`🔍 Directorio padre: ${parentDir}`);
+console.log(`🔍 ¿Existe el directorio padre? ${existsSync(parentDir)}`);
+
 // Crear directorio public si no existe
+console.log(`🔍 Verificando directorio public: ${publicDir}`);
+console.log(`🔍 ¿Existe el directorio public? ${existsSync(publicDir)}`);
+
 if (!existsSync(publicDir)) {
   try {
+    console.log(`📁 Creando directorio public: ${publicDir}`);
     mkdirSync(publicDir, { recursive: true });
-    console.log(`📁 Creado directorio public`);
+    console.log(`✅ Directorio public creado exitosamente`);
+
+    // Verificar que se creó correctamente
+    if (existsSync(publicDir)) {
+      console.log(`✅ Verificación: directorio public existe`);
+    } else {
+      console.error(`❌ Error: directorio public no se creó correctamente`);
+      process.exit(1);
+    }
   } catch (error) {
     console.error(`❌ Error creando directorio public:`, error.message);
+    console.error(`   Directorio: ${publicDir}`);
+    console.error(`   Directorio padre: ${parentDir}`);
+    console.error(`   ¿Existe padre? ${existsSync(parentDir)}`);
+    console.error(`   Error completo:`, error);
     process.exit(1);
   }
+} else {
+  console.log(`✅ Directorio public ya existe`);
 }
 
 // Eliminar directorio shared si existe
@@ -67,13 +93,26 @@ if (existsSync(sharedDir)) {
 }
 
 // Crear directorio shared
+console.log(`🔍 Creando directorio shared: ${sharedDir}`);
+console.log(`🔍 ¿Existe el directorio public ahora? ${existsSync(publicDir)}`);
+
 try {
   mkdirSync(sharedDir, { recursive: true });
-  console.log(`📁 Creado directorio shared`);
+  console.log(`✅ Directorio shared creado exitosamente`);
+
+  // Verificar que se creó correctamente
+  if (existsSync(sharedDir)) {
+    console.log(`✅ Verificación: directorio shared existe`);
+  } else {
+    console.error(`❌ Error: directorio shared no se creó correctamente`);
+    process.exit(1);
+  }
 } catch (error) {
   console.error(`❌ Error creando directorio shared:`, error.message);
   console.error(`   Directorio público: ${publicDir}`);
   console.error(`   Directorio compartido: ${sharedDir}`);
+  console.error(`   ¿Existe public? ${existsSync(publicDir)}`);
+  console.error(`   Error completo:`, error);
   process.exit(1);
 }
 
