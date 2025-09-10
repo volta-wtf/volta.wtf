@@ -2,10 +2,8 @@
   "name": "monorepo",
   "private": true,
   "scripts": {
-    "setup": "node scripts/setup-symlinks.js",
-    "prebuild": "node scripts/copy-assets.js",
-    "build": "turbo run build",
     "dev": "turbo run dev",
+    "build": "turbo run build",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"

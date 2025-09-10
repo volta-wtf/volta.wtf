@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { cpSync, existsSync, mkdirSync, readdirSync, statSync, rmSync } = require('fs');
+const { cpSync, existsSync, mkdirSync, readdirSync, statSync, rmSync, unlinkSync, lstatSync } = require('fs');
 const { join } = require('path');
 
 // Este script se ejecuta desde el directorio de la aplicación que usa @repo/assets
@@ -81,13 +81,27 @@ if (!existsSync(publicDir)) {
   console.log(`✅ Directorio public ya existe`);
 }
 
-// Eliminar directorio shared si existe
+// Eliminar directorio/symlink shared si existe
 if (existsSync(sharedDir)) {
   try {
-    rmSync(sharedDir, { recursive: true, force: true });
-    console.log(`🗑️  Eliminado directorio shared existente`);
+    console.log(`🔍 Verificando tipo de archivo en: ${sharedDir}`);
+    const stats = lstatSync(sharedDir); // lstatSync no sigue symlinks
+    console.log(`🔍 Es directorio: ${stats.isDirectory()}`);
+    console.log(`🔍 Es symlink: ${stats.isSymbolicLink()}`);
+    console.log(`🔍 Es archivo: ${stats.isFile()}`);
+
+    // Usar unlinkSync para symlinks, rmSync para directorios
+    if (stats.isSymbolicLink()) {
+      console.log(`🔗 Eliminando symlink: ${sharedDir}`);
+      unlinkSync(sharedDir);
+    } else {
+      console.log(`📁 Eliminando directorio: ${sharedDir}`);
+      rmSync(sharedDir, { recursive: true, force: true });
+    }
+    console.log(`🗑️  Eliminado directorio/symlink shared existente`);
   } catch (error) {
     console.error(`❌ Error eliminando directorio shared:`, error.message);
+    console.error(`   Error completo:`, error);
     process.exit(1);
   }
 }
