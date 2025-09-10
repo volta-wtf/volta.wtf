@@ -92,32 +92,34 @@ if (existsSync(sharedDir)) {
   }
 }
 
-// Crear directorio shared
-console.log(`🔍 Creando directorio shared: ${sharedDir}`);
+// Copiar directamente los assets al directorio shared
+console.log(`🔍 Copiando assets directamente a: ${sharedDir}`);
 console.log(`🔍 ¿Existe el directorio public ahora? ${existsSync(publicDir)}`);
 
 try {
-  mkdirSync(sharedDir, { recursive: true });
-  console.log(`✅ Directorio shared creado exitosamente`);
+  // Usar cpSync con recursive: true para crear el directorio automáticamente
+  cpSync(assetsDir, sharedDir, { recursive: true, force: true });
+  console.log(`✅ Assets copiados exitosamente usando cpSync`);
 
   // Verificar que se creó correctamente
   if (existsSync(sharedDir)) {
     console.log(`✅ Verificación: directorio shared existe`);
+
+    // Verificar que tiene contenido
+    const items = readdirSync(sharedDir);
+    console.log(`✅ Contenido del directorio shared: ${items.join(', ')}`);
   } else {
     console.error(`❌ Error: directorio shared no se creó correctamente`);
     process.exit(1);
   }
 } catch (error) {
-  console.error(`❌ Error creando directorio shared:`, error.message);
+  console.error(`❌ Error copiando assets:`, error.message);
   console.error(`   Directorio público: ${publicDir}`);
   console.error(`   Directorio compartido: ${sharedDir}`);
   console.error(`   ¿Existe public? ${existsSync(publicDir)}`);
   console.error(`   Error completo:`, error);
   process.exit(1);
 }
-
-// Copiar solo los directorios de assets
-copyAssetDirectories(assetsDir, sharedDir);
 
 console.log('🎉 Assets copiados exitosamente desde @repo/assets');
 console.log('💡 Los assets ahora están disponibles en /shared/');
