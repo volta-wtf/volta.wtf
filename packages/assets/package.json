@@ -4,12 +4,12 @@
   "private": true,
   "main": "index.ts",
   "bin": {
-    "copy-assets": "./scripts/copy-assets.js",
-    "setup-assets": "./scripts/setup-assets.js"
+    "setup-assets": "./scripts/setup-assets.js",
+    "copy-assets": "./scripts/copy-assets.js"
   },
   "scripts": {
-    "copy-assets": "node scripts/copy-assets.js",
-    "setup-assets": "node scripts/setup-assets.js"
+    "setup-assets": "node scripts/setup-assets.js",
+    "copy-assets": "node scripts/copy-assets.js"
   },
   "files": [
     "index.ts",

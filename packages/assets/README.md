@@ -62,13 +62,12 @@ Para usar estos scripts en una aplicación, agrega estos scripts a tu `package.j
 
 ## Ventajas de esta Solución
 
-- ✅ **Desarrollo rápido**: Symlinks permiten cambios instantáneos
-- ✅ **Git-friendly**: Los symlinks se incluyen en Git
-- ✅ **Vercel-compatible**: Los assets se copian físicamente para deploy
-- ✅ **Centralizado**: Los scripts están en el paquete `@repo/assets`
-- ✅ **Reutilizable**: Cualquier app puede usar los scripts
-- ✅ **No invasivo**: Mantiene el directorio `public` de cada app intacto
-- ✅ **Solo contenido shared**: Copia únicamente el contenido del directorio `shared`
+- ☑️ **Desarrollo rápido**: Symlinks permiten cambios instantáneos
+- ☑️ **Vercel-compatible**: Los assets se copian físicamente para deploy
+- ☑️ **Centralizado**: Los scripts están en el paquete `@repo/assets`
+- ☑️ **Reutilizable**: Cualquier app puede usar los scripts
+- ☑️ **No invasivo**: Mantiene el directorio `public` de cada app intacto
+- ☑️ **Solo contenido shared**: Copia únicamente el contenido del directorio `shared`
 
 ## Notas Importantes
 

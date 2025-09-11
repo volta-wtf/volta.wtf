@@ -1,4 +1,1 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+../../packages/config-files/apps/next.config.js

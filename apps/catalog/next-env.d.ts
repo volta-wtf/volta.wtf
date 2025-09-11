@@ -1,0 +1,1 @@
+../../packages/config-files/apps/next-env.d.ts
