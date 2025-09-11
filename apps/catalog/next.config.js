@@ -1,1 +1,0 @@
-../../packages/config-files/apps/next.config.js

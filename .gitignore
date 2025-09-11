@@ -17,6 +17,7 @@ sites/globals
 sites/theme
 # sites/styles
 
+
 # Dependencies
 node_modules
 .pnp
