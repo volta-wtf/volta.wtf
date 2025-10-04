@@ -1,4 +1,6 @@
 packages:
   - "sites/*"
   - "apps/*"
+  - "resources/*"
   - "packages/*"
+  - "registry/*"

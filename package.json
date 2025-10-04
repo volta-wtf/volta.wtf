@@ -1,5 +1,6 @@
 {
-  "name": "monorepo",
+  "name": "VOLTA",
+  "description": "A workspace to build Design Systems",
   "private": true,
   "scripts": {
     "config": "node config.files.js",
