@@ -1,8 +1,8 @@
-import { Calendar } from "@registry/ui/calendar"
+import { Calendar } from "@/components/ui/calendar"
 import {
   SidebarGroup,
   SidebarGroupContent,
-} from "@registry/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 export function DatePicker() {
   return (

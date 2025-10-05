@@ -1,4 +1,4 @@
-import { AppSidebar } from "@registry/blocks/sidebar-01/components/app-sidebar"
+import { AppSidebar } from  "./components/app-sidebar"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,13 +6,13 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@registry/ui/breadcrumb"
-import { Separator } from "@registry/ui/separator"
+} from "@/components/ui/breadcrumb"
+import { Separator } from "@/components/ui/separator"
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@registry/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 export default function Page() {
   return (

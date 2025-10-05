@@ -1,8 +1,8 @@
-import { cn } from "@registry/lib/utils"
-import { Button } from "@registry/ui/button"
-import { Card, CardContent } from "@registry/ui/card"
-import { Input } from "@registry/ui/input"
-import { Label } from "@registry/ui/label"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 export function LoginForm({
   className,

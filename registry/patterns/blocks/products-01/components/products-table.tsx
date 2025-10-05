@@ -5,15 +5,15 @@ import {
   PlusIcon,
 } from "lucide-react"
 
-import { Badge } from "@registry/ui/badge"
-import { Button } from "@registry/ui/button"
-import { Checkbox } from "@registry/ui/checkbox"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@registry/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import {
   Pagination,
   PaginationContent,
@@ -22,14 +22,14 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@registry/ui/pagination"
+} from "@/components/ui/pagination"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@registry/ui/select"
+} from "@/components/ui/select"
 import {
   Table,
   TableBody,
@@ -37,8 +37,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@registry/ui/table"
-import { Tabs, TabsList, TabsTrigger } from "@registry/ui/tabs"
+} from "@/components/ui/table"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export function ProductsTable({
   products,

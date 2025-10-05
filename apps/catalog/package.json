@@ -13,6 +13,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@repo/primitives": "workspace:*",
     "@repo/components": "workspace:*",
     "@repo/assets": "workspace:*",
     "@repo/interface": "workspace:*",

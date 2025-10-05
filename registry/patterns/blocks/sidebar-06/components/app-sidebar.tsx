@@ -1,8 +1,8 @@
 import * as React from "react"
 import { GalleryVerticalEnd } from "lucide-react"
 
-import { NavMain } from "@registry/blocks/sidebar-06/components/nav-main"
-import { SidebarOptInForm } from "@registry/blocks/sidebar-06/components/sidebar-opt-in-form"
+import { NavMain } from  "./nav-main"
+import { SidebarOptInForm } from  "./sidebar-opt-in-form"
 import {
   Sidebar,
   SidebarContent,
@@ -12,7 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@registry/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 // This is sample data.
 const data = {

@@ -16,8 +16,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@registry/ui/card"
-import { ChartConfig, ChartContainer } from "@registry/ui/chart"
+} from "@/components/ui/card"
+import { ChartConfig, ChartContainer } from "@/components/ui/chart"
 
 export const description = "A radial chart with text"
 

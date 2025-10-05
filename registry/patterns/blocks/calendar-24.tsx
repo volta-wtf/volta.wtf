@@ -3,15 +3,15 @@
 import * as React from "react"
 import { ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@registry/ui/button"
-import { Calendar } from "@registry/ui/calendar"
-import { Input } from "@registry/ui/input"
-import { Label } from "@registry/ui/label"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@registry/ui/popover"
+} from "@/components/ui/popover"
 
 export default function Calendar24() {
   const [open, setOpen] = React.useState(false)

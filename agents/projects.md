@@ -7,8 +7,7 @@ packages  (Tools)
 registry (Library)
 - primitives
 - components
-
-resources ()
+- patterns
 - assets
 - interface
 

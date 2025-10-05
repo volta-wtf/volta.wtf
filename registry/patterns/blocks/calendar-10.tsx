@@ -2,8 +2,8 @@
 
 import * as React from "react"
 
-import { Button } from "@registry/ui/button"
-import { Calendar } from "@registry/ui/calendar"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
 import {
   Card,
   CardAction,
@@ -11,7 +11,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@registry/ui/card"
+} from "@/components/ui/card"
 
 export default function Calendar10() {
   const [date, setDate] = React.useState<Date | undefined>(

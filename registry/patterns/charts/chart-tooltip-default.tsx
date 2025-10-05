@@ -8,13 +8,13 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@registry/ui/card"
+} from "@/components/ui/card"
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@registry/ui/chart"
+} from "@/components/ui/chart"
 
 export const description = "A stacked bar chart with a legend"
 export const iframeHeight = "600px"

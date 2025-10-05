@@ -3,8 +3,8 @@
 import * as React from "react"
 import { ArchiveX, Command, File, Inbox, Send, Trash2 } from "lucide-react"
 
-import { NavUser } from "@registry/blocks/sidebar-09/components/nav-user"
-import { Label } from "@registry/ui/label"
+import { NavUser } from  "./nav-user"
+import { Label } from "@/components/ui/label"
 import {
   Sidebar,
   SidebarContent,
@@ -17,8 +17,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@registry/ui/sidebar"
-import { Switch } from "@registry/ui/switch"
+} from "@/components/ui/sidebar"
+import { Switch } from "@/components/ui/switch"
 
 // This is sample data
 const data = {

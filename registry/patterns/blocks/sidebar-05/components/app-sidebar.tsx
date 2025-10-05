@@ -1,12 +1,12 @@
 import * as React from "react"
 import { GalleryVerticalEnd, Minus, Plus } from "lucide-react"
 
-import { SearchForm } from "@registry/blocks/sidebar-05/components/search-form"
+import { SearchForm } from  "./search-form"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@registry/ui/collapsible"
+} from "@/components/ui/collapsible"
 import {
   Sidebar,
   SidebarContent,
@@ -19,7 +19,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarRail,
-} from "@registry/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 // This is sample data.
 const data = {

@@ -3,8 +3,8 @@
 import * as React from "react"
 import { CalendarPlusIcon } from "lucide-react"
 
-import { Button } from "@registry/ui/button"
-import { Calendar } from "@registry/ui/calendar"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
 import {
   Drawer,
   DrawerContent,
@@ -12,8 +12,8 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@registry/ui/drawer"
-import { Label } from "@registry/ui/label"
+} from "@/components/ui/drawer"
+import { Label } from "@/components/ui/label"
 
 export default function Calendar32() {
   const [open, setOpen] = React.useState(false)

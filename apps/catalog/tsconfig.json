@@ -4,12 +4,20 @@
     "plugins": [{ "name": "next" }],
     "noEmit": true,
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/lib/*": ["../../resources/interface/lib/*","../../registry/primitives/lib/*"],
+      "@/utils/*": ["../../registry/primitives/utils/*"],
+      "@/primitives/*": ["../../registry/primitives/src/*"],
+      "@/components/*": ["./components/*", "../../registry/components/*"],
+      "@/registry/*": ["../../registry/patterns/*"],
+      "@/interface/*": ["../../resources/interface/*"]
+    },
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
-    "next.config.js",
     ".next/types/**/*.ts"
   ],
   "exclude": [

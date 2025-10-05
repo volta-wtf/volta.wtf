@@ -1,13 +1,13 @@
 import * as React from "react"
 import { ChevronRight } from "lucide-react"
 
-import { SearchForm } from "@registry/blocks/sidebar-02/components/search-form"
-import { VersionSwitcher } from "@registry/blocks/sidebar-02/components/version-switcher"
+import { SearchForm } from  "./search-form"
+import { VersionSwitcher } from  "./version-switcher"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@registry/ui/collapsible"
+} from "@/components/ui/collapsible"
 import {
   Sidebar,
   SidebarContent,
@@ -19,7 +19,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@registry/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 // This is sample data.
 const data = {
