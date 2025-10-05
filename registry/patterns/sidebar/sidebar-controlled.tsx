@@ -1,32 +1,29 @@
 "use client"
 
+import * as React from "react"
 import {
   FrameIcon,
   LifeBuoyIcon,
   MapIcon,
-  MoreHorizontalIcon,
+  PanelLeftCloseIcon,
+  PanelLeftOpenIcon,
   PieChartIcon,
   SendIcon,
 } from "lucide-react"
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@registry/ui/dropdown-menu"
+import { Button } from "@/components/ui/button"
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarInset,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@registry/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 const projects = [
   {
@@ -57,8 +54,10 @@ const projects = [
 ]
 
 export default function AppSidebar() {
+  const [open, setOpen] = React.useState(true)
+
   return (
-    <SidebarProvider>
+    <SidebarProvider open={open} onOpenChange={setOpen}>
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
@@ -67,31 +66,12 @@ export default function AppSidebar() {
               <SidebarMenu>
                 {projects.map((project) => (
                   <SidebarMenuItem key={project.name}>
-                    <SidebarMenuButton
-                      asChild
-                      className="group-has-[[data-state=open]]/menu-item:bg-sidebar-accent"
-                    >
+                    <SidebarMenuButton asChild>
                       <a href={project.url}>
                         <project.icon />
                         <span>{project.name}</span>
                       </a>
                     </SidebarMenuButton>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <SidebarMenuAction>
-                          <MoreHorizontalIcon />
-                          <span className="sr-only">More</span>
-                        </SidebarMenuAction>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent side="right" align="start">
-                        <DropdownMenuItem>
-                          <span>Edit Project</span>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <span>Delete Project</span>
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
                   </SidebarMenuItem>
                 ))}
               </SidebarMenu>
@@ -99,6 +79,18 @@ export default function AppSidebar() {
           </SidebarGroup>
         </SidebarContent>
       </Sidebar>
+      <SidebarInset>
+        <header className="flex h-12 items-center justify-between px-4">
+          <Button
+            onClick={() => setOpen((open) => !open)}
+            size="sm"
+            variant="ghost"
+          >
+            {open ? <PanelLeftCloseIcon /> : <PanelLeftOpenIcon />}
+            <span>{open ? "Close" : "Open"} Sidebar</span>
+          </Button>
+        </header>
+      </SidebarInset>
     </SidebarProvider>
   )
 }

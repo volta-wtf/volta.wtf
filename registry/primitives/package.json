@@ -2,6 +2,12 @@
   "name": "@repo/primitives",
   "version": "0.0.0",
   "private": true,
+  "exports": {
+    "./*": "./src/*.tsx",
+    "./primitives/*": "./src/*.ts",
+    "./utils/*": "./utils/*.ts",
+    "./lib/*": "./lib/*.ts"
+  },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
@@ -10,11 +16,14 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "next-themes": "^0.4.4",
     "date-fns": "^4.1.0",
     "tailwind-merge": "^3.0.1",
     "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "next": "^15.5.0",
+    "next-themes": "^0.4.4",
     "lucide-react": "^0.475.0"
   },
   "devDependencies": {
@@ -25,10 +34,5 @@
     "@types/react-dom": "19.1.1",
     "eslint": "^9.34.0",
     "typescript": "5.9.2"
-  },
-  "exports": {
-    "./*": "./src/*.tsx",
-    "./primitives/*": "./src/*.ts",
-    "./lib/*": "./lib/*.ts"
   }
 }

@@ -15,36 +15,42 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@registry/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 const projects = [
   {
     name: "Design Engineering",
     url: "#",
     icon: FrameIcon,
+    badge: "24",
   },
   {
     name: "Sales & Marketing",
     url: "#",
     icon: PieChartIcon,
+    badge: "12",
   },
   {
     name: "Travel",
     url: "#",
     icon: MapIcon,
+    badge: "3",
   },
   {
     name: "Support",
     url: "#",
     icon: LifeBuoyIcon,
+    badge: "21",
   },
   {
     name: "Feedback",
     url: "#",
     icon: SendIcon,
+    badge: "8",
   },
 ]
 
@@ -59,12 +65,16 @@ export default function AppSidebar() {
               <SidebarMenu>
                 {projects.map((project) => (
                   <SidebarMenuItem key={project.name}>
-                    <SidebarMenuButton asChild>
+                    <SidebarMenuButton
+                      asChild
+                      className="group-has-[[data-state=open]]/menu-item:bg-sidebar-accent"
+                    >
                       <a href={project.url}>
                         <project.icon />
                         <span>{project.name}</span>
                       </a>
                     </SidebarMenuButton>
+                    <SidebarMenuBadge>{project.badge}</SidebarMenuBadge>
                   </SidebarMenuItem>
                 ))}
               </SidebarMenu>

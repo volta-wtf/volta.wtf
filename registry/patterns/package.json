@@ -1,12 +1,13 @@
 {
-  "name": "@repo/interface",
+  "name": "@repo/patterns",
   "version": "0.0.0",
   "private": true,
   "exports": {
     "./*": "./*.tsx",
-    "./base/*": "./base/*.tsx",
-    "./regions/*": "./regions/*.tsx",
-    "./features/*": "./features/*.tsx"
+    "./blocks/*": "./blocks/*.tsx",
+    "./examples/*": "./examples/*.tsx",
+    "./charts/*": "./charts/*.tsx",
+    "./sidebar/*": "./sidebar/*.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -16,8 +17,7 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "@repo/components": "workspace:*",
-    "@repo/assets": "workspace:*"
+    "@repo/components": "workspace:*"
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:*",

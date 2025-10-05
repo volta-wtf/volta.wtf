@@ -1,8 +1,8 @@
 "use client"
 
 import React from "react"
-import { defaultIcons, type IconName } from "../lib/icons"
-import { cn } from "../lib/class"
+import { defaultIcons, type IconName } from "@/lib/icons"
+import { cn } from "@/lib/class"
 
 // Definir tamaños estándar
 export const iconSizes = {

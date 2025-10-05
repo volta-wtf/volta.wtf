@@ -14,10 +14,10 @@
   "files": [
     "index.ts",
     "scripts/**/*",
-    "logos/**/*",
-    "icons/**/*",
-    "fonts/**/*",
-    "images/**/*"
+    "shared/logos/**/*",
+    "shared/icons/**/*",
+    "shared/fonts/**/*",
+    "shared/images/**/*"
   ],
   "publishConfig": {
     "access": "public"

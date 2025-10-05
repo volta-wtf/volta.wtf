@@ -1,8 +1,8 @@
-import { Label } from "@registry/ui/label"
+import { Label } from "@/components/ui/label"
 import {
   RadioGroup,
   RadioGroupItem,
-} from "@registry/ui/radio-group"
+} from "@/components/ui/radio-group"
 
 export default function RadioGroupDemo() {
   return (

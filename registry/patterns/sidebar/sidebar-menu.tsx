@@ -1,11 +1,11 @@
 "use client"
 
 import {
-  CalendarIcon,
-  HomeIcon,
-  InboxIcon,
-  SearchIcon,
-  SettingsIcon,
+  FrameIcon,
+  LifeBuoyIcon,
+  MapIcon,
+  PieChartIcon,
+  SendIcon,
 } from "lucide-react"
 
 import {
@@ -14,40 +14,37 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
-  SidebarInset,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-  SidebarTrigger,
-} from "@registry/ui/sidebar"
+} from "@/components/ui/sidebar"
 
-// Menu items.
-const items = [
+const projects = [
   {
-    title: "Home",
+    name: "Design Engineering",
     url: "#",
-    icon: HomeIcon,
+    icon: FrameIcon,
   },
   {
-    title: "Inbox",
+    name: "Sales & Marketing",
     url: "#",
-    icon: InboxIcon,
+    icon: PieChartIcon,
   },
   {
-    title: "Calendar",
+    name: "Travel",
     url: "#",
-    icon: CalendarIcon,
+    icon: MapIcon,
   },
   {
-    title: "Search",
+    name: "Support",
     url: "#",
-    icon: SearchIcon,
+    icon: LifeBuoyIcon,
   },
   {
-    title: "Settings",
+    name: "Feedback",
     url: "#",
-    icon: SettingsIcon,
+    icon: SendIcon,
   },
 ]
 
@@ -57,15 +54,15 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Application</SidebarGroupLabel>
+            <SidebarGroupLabel>Projects</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
+                {projects.map((project) => (
+                  <SidebarMenuItem key={project.name}>
                     <SidebarMenuButton asChild>
-                      <a href={item.url}>
-                        <item.icon />
-                        <span>{item.title}</span>
+                      <a href={project.url}>
+                        <project.icon />
+                        <span>{project.name}</span>
                       </a>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -75,11 +72,6 @@ export default function AppSidebar() {
           </SidebarGroup>
         </SidebarContent>
       </Sidebar>
-      <SidebarInset>
-        <header className="flex h-12 items-center justify-between px-4">
-          <SidebarTrigger />
-        </header>
-      </SidebarInset>
     </SidebarProvider>
   )
 }

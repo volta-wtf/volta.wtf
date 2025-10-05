@@ -7,7 +7,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@registry/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import {
   Sidebar,
   SidebarHeader,
@@ -17,7 +17,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-} from "@registry/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 export default function AppSidebar() {
   return (
