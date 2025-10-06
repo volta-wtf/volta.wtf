@@ -6,6 +6,10 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <div className={styles.page}>
+      {/* Test de Stylewind CSS */}
+      <div className="flex items-center justify-center gap-4 p-4 bg-blue-500 text-white">
+        <span>✅ Stylewind CSS funciona!</span>
+      </div>
       <main className={styles.main}>
         <ImageTheme
           className={styles.logo}

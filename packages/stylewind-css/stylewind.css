@@ -1,0 +1,9 @@
+@layer system, theme, base, components, utilities;
+
+@import "./theme" layer(theme);
+@import "./base" layer(base);
+@import "./utilities" layer(utilities);
+
+body {
+    background-color: red !important;
+}
