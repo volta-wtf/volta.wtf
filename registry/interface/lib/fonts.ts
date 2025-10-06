@@ -2,12 +2,12 @@ import localFont from "next/font/local";
 
 // Font configuration using fonts from the parent repository
 export const fontSans = localFont({
-  src: "../../../resources/assets/shared/fonts/GeistVF.woff",
+  src: "../../../registry/assets/shared/fonts/GeistVF.woff",
   variable: "--font-sans",
 });
 
 export const fontMono = localFont({
-  src: "../../../resources/assets/shared/fonts/GeistMonoVF.woff",
+  src: "../../../registry/assets/shared/fonts/GeistMonoVF.woff",
   variable: "--font-mono",
 });
 

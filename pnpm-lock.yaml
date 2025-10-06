@@ -25,7 +25,7 @@ importers:
     dependencies:
       '@repo/interface':
         specifier: workspace:*
-        version: link:../../resources/interface
+        version: link:../../registry/interface
       next:
         specifier: ^15.5.0
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -62,7 +62,7 @@ importers:
     dependencies:
       '@repo/interface':
         specifier: workspace:*
-        version: link:../../resources/interface
+        version: link:../../registry/interface
       next:
         specifier: ^15.5.0
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -99,13 +99,13 @@ importers:
     dependencies:
       '@repo/assets':
         specifier: workspace:*
-        version: link:../../resources/assets
+        version: link:../../registry/assets
       '@repo/components':
         specifier: workspace:*
         version: link:../../registry/components
       '@repo/interface':
         specifier: workspace:*
-        version: link:../../resources/interface
+        version: link:../../registry/interface
       '@repo/primitives':
         specifier: workspace:*
         version: link:../../registry/primitives
@@ -145,7 +145,7 @@ importers:
     dependencies:
       '@repo/interface':
         specifier: workspace:*
-        version: link:../../resources/interface
+        version: link:../../registry/interface
       next:
         specifier: ^15.5.0
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -182,7 +182,7 @@ importers:
     dependencies:
       '@repo/interface':
         specifier: workspace:*
-        version: link:../../resources/interface
+        version: link:../../registry/interface
       next:
         specifier: ^15.5.0
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -252,6 +252,8 @@ importers:
         version: 8.42.0(eslint@9.35.0)(typescript@5.9.2)
 
   packages/config-typescript: {}
+
+  registry/assets: {}
 
   registry/components:
     dependencies:
@@ -404,6 +406,43 @@ importers:
         specifier: 5.9.2
         version: 5.9.2
 
+  registry/interface:
+    dependencies:
+      '@repo/assets':
+        specifier: workspace:*
+        version: link:../assets
+      '@repo/components':
+        specifier: workspace:*
+        version: link:../components
+      react:
+        specifier: ^19.1.0
+        version: 19.1.1
+      react-dom:
+        specifier: ^19.1.0
+        version: 19.1.1(react@19.1.1)
+    devDependencies:
+      '@repo/config-eslint':
+        specifier: workspace:*
+        version: link:../../packages/config-eslint
+      '@repo/config-typescript':
+        specifier: workspace:*
+        version: link:../../packages/config-typescript
+      '@types/node':
+        specifier: ^22.15.3
+        version: 22.18.1
+      '@types/react':
+        specifier: 19.1.0
+        version: 19.1.0
+      '@types/react-dom':
+        specifier: 19.1.1
+        version: 19.1.1(@types/react@19.1.0)
+      eslint:
+        specifier: ^9.34.0
+        version: 9.35.0
+      typescript:
+        specifier: 5.9.2
+        version: 5.9.2
+
   registry/patterns:
     dependencies:
       '@repo/components':
@@ -490,50 +529,11 @@ importers:
         specifier: 5.9.2
         version: 5.9.2
 
-  resources/assets: {}
-
-  resources/interface:
-    dependencies:
-      '@repo/assets':
-        specifier: workspace:*
-        version: link:../assets
-      '@repo/components':
-        specifier: workspace:*
-        version: link:../../registry/components
-      react:
-        specifier: ^19.1.0
-        version: 19.1.1
-      react-dom:
-        specifier: ^19.1.0
-        version: 19.1.1(react@19.1.1)
-    devDependencies:
-      '@repo/config-eslint':
-        specifier: workspace:*
-        version: link:../../packages/config-eslint
-      '@repo/config-typescript':
-        specifier: workspace:*
-        version: link:../../packages/config-typescript
-      '@types/node':
-        specifier: ^22.15.3
-        version: 22.18.1
-      '@types/react':
-        specifier: 19.1.0
-        version: 19.1.0
-      '@types/react-dom':
-        specifier: 19.1.1
-        version: 19.1.1(@types/react@19.1.0)
-      eslint:
-        specifier: ^9.34.0
-        version: 9.35.0
-      typescript:
-        specifier: 5.9.2
-        version: 5.9.2
-
   sites/globals:
     dependencies:
       '@repo/interface':
         specifier: workspace:*
-        version: link:../../resources/interface
+        version: link:../../registry/interface
       next:
         specifier: ^15.5.0
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -570,7 +570,7 @@ importers:
     dependencies:
       '@repo/interface':
         specifier: workspace:*
-        version: link:../../resources/interface
+        version: link:../../registry/interface
       next:
         specifier: ^15.5.0
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -607,7 +607,7 @@ importers:
     dependencies:
       '@repo/interface':
         specifier: workspace:*
-        version: link:../../resources/interface
+        version: link:../../registry/interface
       next:
         specifier: ^15.5.0
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -644,7 +644,7 @@ importers:
     dependencies:
       '@repo/interface':
         specifier: workspace:*
-        version: link:../../resources/interface
+        version: link:../../registry/interface
       next:
         specifier: ^15.5.0
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -681,7 +681,7 @@ importers:
     dependencies:
       '@repo/interface':
         specifier: workspace:*
-        version: link:../../resources/interface
+        version: link:../../registry/interface
       next:
         specifier: ^15.5.0
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)

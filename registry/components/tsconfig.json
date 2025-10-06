@@ -3,6 +3,6 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["ui", "layout"],
+  "include": ["ui", "media", "text", "layout"],
   "exclude": ["node_modules", "dist"]
 }

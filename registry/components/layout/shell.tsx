@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { TooltipProvider as Tooltips } from "../ui/tooltip"
-import { Toaster } from "../ui/toaster"
+import { TooltipProvider as Tooltips } from "@/components/ui/tooltip"
+import { Toaster } from "@/components/ui/toaster"
 
 // App component props extending ConfigProvider
 export interface ShellProps {

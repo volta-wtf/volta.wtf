@@ -5,6 +5,8 @@
   "exports": {
     "./*": "./*.tsx",
     "./ui/*": "./ui/*.tsx",
+    "./media/*": "./media/*.tsx",
+    "./text/*": "./text/*.tsx",
     "./layout/*": "./layout/*.tsx"
   },
   "scripts": {

@@ -109,3 +109,11 @@ export const defaultIcons = {
 
 // Type para autocompletado
 export type IconName = keyof typeof defaultIcons
+
+// Función de utilidad para capitalizar nombres de iconos
+export function capitalizeIconName<T extends IconName>(name: T): Capitalize<T> {
+  return (name.charAt(0).toUpperCase() + name.slice(1)) as Capitalize<T>
+}
+
+// Obtener todas las claves de iconos como array
+export const iconNames = Object.keys(defaultIcons) as IconName[]
