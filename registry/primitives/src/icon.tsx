@@ -1,7 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { defaultIcons, type IconName } from "@/lib/icons"
+import { defaultIcons, type IconName } from "@/lib/pictos"
+import { productIcons } from "@/lib/icons"
 
 // Crear namespace para Icon similar a Radix UI
 const IconRoot = React.forwardRef<

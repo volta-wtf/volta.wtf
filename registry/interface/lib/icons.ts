@@ -39,7 +39,7 @@ import {
 } from "lucide-react"
 
 // Mapeo semántico de iconos - Nombres que describen el CONTEXTO, no la forma
-export const icons = {
+export const productIcons = {
   // Acciones generales
   increase: _PlusIcon,
   decrease: _MinusIcon,
@@ -89,4 +89,4 @@ export const icons = {
 } as const
 
 // Type para autocompletado
-export type IconName = keyof typeof icons
+export type IconName = keyof typeof productIcons

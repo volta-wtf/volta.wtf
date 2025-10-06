@@ -1,17 +1,17 @@
 // Componentes adicionales disponibles (descomenta según necesites):
 import {
-    Bar as _Bar,
-    BarChart as _BarChart,
-    LineChart as _LineChart,
-    Line as _Line,
-    Area as _Area,
-    AreaChart as _AreaChart,
+//  Bar as _Bar,
+//  BarChart as _BarChart,
+//  LineChart as _LineChart,
+//  Line as _Line,
+//  Area as _Area,
+//  AreaChart as _AreaChart,
 //  PieChart as _PieChart,
 //  Pie as _Pie,
 //  Cell as _Cell,
-    XAxis as _XAxis,
+//   XAxis as _XAxis,
 //  YAxis as _YAxis,
-    CartesianGrid as _CartesianGrid,
+//  CartesianGrid as _CartesianGrid,
 //  Tooltip as _Tooltip,
 //  Legend as _Legend,
 //  ResponsiveContainer as _ResponsiveContainer,
@@ -30,16 +30,16 @@ import {
 
 
 // Re-exportar componentes de recharts que están en uso
-export const Bar = _Bar
-export const BarChart = _BarChart
+// export const Bar = _Bar
+// export const BarChart = _BarChart
 
 // // Gráficos de línea
-export const LineChart = _LineChart
-export const Line = _Line
+// export const LineChart = _LineChart
+// export const Line = _Line
 
 // // Gráficos de área
-export const Area = _Area
-export const AreaChart = _AreaChart
+// export const Area = _Area
+// export const AreaChart = _AreaChart
 
 // // Gráficos de pastel
 // export const PieChart = _PieChart
@@ -47,9 +47,9 @@ export const AreaChart = _AreaChart
 // export const Cell = _Cell
 //
 // // Ejes y grillas
-export const XAxis = _XAxis
+// export const XAxis = _XAxis
 // export const YAxis = _YAxis
-export const CartesianGrid = _CartesianGrid
+// export const CartesianGrid = _CartesianGrid
 //
 // // Interactividad
 // export const Tooltip = _Tooltip
