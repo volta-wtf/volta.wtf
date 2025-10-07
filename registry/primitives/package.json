@@ -32,5 +32,9 @@
     "@types/react-dom": "19.1.1",
     "eslint": "^9.34.0",
     "typescript": "5.9.2"
-  }
+  },
+  "bundledDependencies": [
+    "next",
+    "lucide-react"
+  ]
 }

@@ -1,4 +1,4 @@
-import { localFont } from "@/lib/utils";
+import localFont from "next/font/local";
 
 // Font configuration using fonts from the parent repository
 export const fontSans = localFont({

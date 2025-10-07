@@ -463,6 +463,9 @@ importers:
       '@repo/components':
         specifier: workspace:*
         version: link:../components
+      '@repo/primitives':
+        specifier: workspace:*
+        version: link:../primitives
       react:
         specifier: ^19.1.0
         version: 19.1.1

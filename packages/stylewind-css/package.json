@@ -2,7 +2,11 @@
   "name": "stylewindcss",
   "version": "1.0.0",
   "description": "Stylewindcss is a plugin for Tailwind CSS that allows you to use semantic variables and multiple custom themes.",
+  "main": "index.css",
   "style": "index.css",
+  "exports": {
+    ".": "./index.css"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,8 +25,5 @@
   },
   "devDependencies": {
     "@stylewindcss/postcss": "workspace:*"
-  },
-  "bundledDependencies": [
-    "tailwindcss"
-  ]
+  }
 }
