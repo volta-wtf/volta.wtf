@@ -267,27 +267,28 @@ importers:
 
   packages/stylewind-css:
     dependencies:
+      tailwindcss:
+        specifier: ^4.1.11
+        version: 4.1.14
+    devDependencies:
       '@stylewindcss/postcss':
         specifier: workspace:*
         version: link:../stylewind-postcss
-      tailwindcss:
-        specifier: 4.1.14
-        version: 4.1.14
 
   packages/stylewind-postcss:
     dependencies:
       '@tailwindcss/postcss':
-        specifier: 4.1.14
+        specifier: ^4
         version: 4.1.14
-      lightningcss:
-        specifier: ^1.30.1
-        version: 1.30.1
       postcss:
         specifier: ^8.4.41
         version: 8.5.6
       postcss-import:
         specifier: ^16.1.0
         version: 16.1.1(postcss@8.5.6)
+      tailwindcss:
+        specifier: ^4.1.11
+        version: 4.1.14
 
   registry/assets: {}
 

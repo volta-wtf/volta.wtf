@@ -1,17 +1,18 @@
-// packages/postcss/index.js (ESM version)
-import postcss from 'postcss';
-import postcssImport from 'postcss-import';
-import tailwindPostcss from '@tailwindcss/postcss';
+// packages/postcss/index.js
+const tailwindPostcss = require('@tailwindcss/postcss');
 
-// Este es un plugin de PostCSS que combina postcss-import y tailwindcss
-export default function stylewindcss(opts = {}) {
-  return {
-    postcssPlugin: 'stylewindcss',
+module.exports = (opts = {}) => {
+  // Configurar opciones de TailwindCSS con nuestro plugin pre-incluido
+  const tailwindOptions = {
+    ...opts,
     plugins: [
-      postcssImport(),
-      tailwindPostcss(opts)
+      //require('@stylewindcss/plugins'), // Nuestro plugin siempre incluido
+      ...(opts.plugins || []) // Plugins adicionales del usuario
     ]
   };
-}
 
-stylewindcss.postcss = true;
+  // Retornar directamente el plugin de TailwindCSS con nuestras opciones
+  return tailwindPostcss(tailwindOptions);
+};
+
+module.exports.postcss = true;
