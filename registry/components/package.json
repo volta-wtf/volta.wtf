@@ -70,5 +70,8 @@
     "postcss": "^8.4.41",
     "eslint": "^9.34.0",
     "typescript": "5.9.2"
-  }
+  },
+  "bundledDependencies": [
+    "@repo/primitives"
+  ]
 }
