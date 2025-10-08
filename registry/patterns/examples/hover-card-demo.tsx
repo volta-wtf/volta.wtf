@@ -4,13 +4,13 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+} from "@/registry/new-york-v4/ui/avatar"
+import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/registry/new-york-v4/ui/hover-card"
 
 export default function HoverCardDemo() {
   return (

@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/registry/new-york-v4/ui/button"
+import { Textarea } from "@/registry/new-york-v4/ui/textarea"
 
 export default function TextareaWithButton() {
   return (

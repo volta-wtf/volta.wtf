@@ -12,7 +12,7 @@ const IconRoot = React.forwardRef<
         "aria-label"?: string
     }
 >(({ name, className, "aria-label": ariaLabel, ...props }, ref) => {
-    const IconComponent = defaultIcons[name] as React.ComponentType<
+    const IconComponent = defaultIcons[name] || productIcons[name] as React.ComponentType<
         React.SVGProps<SVGSVGElement>
     >
 

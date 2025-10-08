@@ -9,7 +9,7 @@ import {
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/registry/new-york-v4/ui/chart"
 
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },

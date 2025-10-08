@@ -5,20 +5,20 @@ import { addDays, format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import { Button } from "@/registry/new-york-v4/ui/button"
+import { Calendar } from "@/registry/new-york-v4/ui/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/registry/new-york-v4/ui/popover"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/registry/new-york-v4/ui/select"
 
 export default function DatePickerWithPresets() {
   const [date, setDate] = React.useState<Date>()

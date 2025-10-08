@@ -8,6 +8,7 @@
       "@/utils/*": ["@repo/primitives/utils/*"],
       "@/primitives/*": ["@repo/primitives/src/*"],
       "@/components/*": ["./components/*", "@repo/components/*"],
+      "@/components/ui/*": ["@repo/components/shad/*"],
       "@/registry/*": ["@repo/patterns/*"],
       "@/interface/*": ["@repo/interface/*"]
     },

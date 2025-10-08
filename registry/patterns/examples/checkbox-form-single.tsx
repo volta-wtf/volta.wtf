@@ -6,8 +6,8 @@ import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { z } from "zod"
 
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Button } from "@/registry/new-york-v4/ui/button"
+import { Checkbox } from "@/registry/new-york-v4/ui/checkbox"
 import {
   Form,
   FormControl,
@@ -15,7 +15,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-} from "@/components/ui/form"
+} from "@/registry/new-york-v4/ui/form"
 
 const FormSchema = z.object({
   mobile: z.boolean().default(false).optional(),

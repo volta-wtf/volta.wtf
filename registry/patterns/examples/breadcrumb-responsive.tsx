@@ -12,8 +12,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Button } from "@/components/ui/button"
+} from "@/registry/new-york-v4/ui/breadcrumb"
+import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Drawer,
   DrawerClose,
@@ -23,13 +23,13 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
+} from "@/registry/new-york-v4/ui/drawer"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/registry/new-york-v4/ui/dropdown-menu"
 
 const items = [
   { href: "#", label: "Home" },

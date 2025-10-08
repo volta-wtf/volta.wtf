@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardContent,
@@ -8,16 +8,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/registry/new-york-v4/ui/card"
+import { Input } from "@/registry/new-york-v4/ui/input"
+import { Label } from "@/registry/new-york-v4/ui/label"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/registry/new-york-v4/ui/select"
 
 export default function CardWithForm() {
   return (

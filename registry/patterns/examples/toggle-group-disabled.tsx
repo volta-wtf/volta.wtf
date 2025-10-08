@@ -3,7 +3,7 @@ import { Bold, Italic, Underline } from "lucide-react"
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/components/ui/toggle-group"
+} from "@/registry/new-york-v4/ui/toggle-group"
 
 export default function ToggleGroupDemo() {
   return (

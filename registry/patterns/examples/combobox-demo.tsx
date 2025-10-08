@@ -4,7 +4,7 @@ import * as React from "react"
 import { Check, ChevronsUpDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -12,12 +12,12 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command"
+} from "@/registry/new-york-v4/ui/command"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/registry/new-york-v4/ui/popover"
 
 const frameworks = [
   {

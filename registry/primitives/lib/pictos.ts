@@ -2,9 +2,7 @@
 import {
   MinusIcon as _MinusIcon,
   PlusIcon as _PlusIcon,
-  PanelRightIcon as _PanelRightIcon,
-  PanelRightOpenIcon as _PanelRightOpenIcon,
-  PanelRightCloseIcon as _PanelRightCloseIcon,
+
   MoonIcon as _MoonIcon,
   SunIcon as _SunIcon,
   CircleArrowLeftIcon as _CircleArrowLeftIcon,
@@ -42,23 +40,19 @@ import {
 export const defaultIcons = {
   // System icons
   back: _CircleArrowLeftIcon,
-  select: _ChevronDownIcon,
   close: _XIcon,
   clear: _CircleXIcon,
 
-  menu: _MenuIcon,
+  select: _ChevronDownIcon,
 
-  // Acciones generales
-  increase: _PlusIcon,
-  decrease: _MinusIcon,
+  menu: _MenuIcon,
 
   themeDark: _MoonIcon,
   themeLight: _SunIcon,
 
-  rightPanel: _PanelRightIcon,
-  closePanel: _PanelRightCloseIcon,
-  closeRightPanel: _PanelRightCloseIcon,
-  openRightPanel: _PanelRightOpenIcon,
+  // Acciones generales
+  increase: _PlusIcon,
+  decrease: _MinusIcon,
 
   // Búsqueda
   search: _SearchIcon,

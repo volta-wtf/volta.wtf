@@ -12,15 +12,16 @@ registry (Library)
 - interface
 
 sites (Websites)
-- www
-- knowledge
-- globals
-- theme
-- styles
+- 3000 www
+- 3020 knowledge
+- 3010 globals
+- 3040 theme
+- 3030 styles
 
 apps (Products)
-- docs
-- catalog
-- editor
-- builder
-- admin
+- 3004 docs
+- 3003 catalog
+- 3006 demos
+- 3005 editor
+- 3002 builder
+- 3001 admin

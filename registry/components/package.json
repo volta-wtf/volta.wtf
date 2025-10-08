@@ -19,6 +19,7 @@
     "react-dom": "^19.1.0",
     "@repo/primitives": "workspace:*",
     "@hookform/resolvers": "^5.1.1",
+    "@tanstack/react-table": "^8.21.3",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-aspect-ratio": "^1.1.7",

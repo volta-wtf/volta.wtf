@@ -15,7 +15,7 @@ const iconVariants = cva("shrink-0 transition-colors", {
       xl: "size-8", // 32px
       "2xl": "size-10", // 40px
     },
-    variant: {
+    color: {
       default: "text-foreground",
       muted: "text-muted-foreground",
       primary: "text-primary",
@@ -28,7 +28,7 @@ const iconVariants = cva("shrink-0 transition-colors", {
   },
   defaultVariants: {
     size: "md",
-    variant: "default",
+    color: "default",
   },
 })
 
@@ -36,7 +36,7 @@ function Icon({
   name,
   className,
   size,
-  variant,
+  color,
   clickable,
   ...props
 }: React.ComponentProps<typeof IconPrimitive.Root> &
@@ -48,7 +48,7 @@ function Icon({
       name={name}
       data-slot="icon"
       className={cn(
-        iconVariants({ size, variant }),
+        iconVariants({ size, color }),
         clickable && "cursor-pointer hover:opacity-80",
         className
       )}

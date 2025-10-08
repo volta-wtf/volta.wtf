@@ -1,11 +1,15 @@
 @import "tailwindcss/theme";
 
-/*@import "./theme/config.css";*/
-/* @import "./theme/default.css"; */
-
-/*@import "./theme/colors.css";*/
+@import "./theme/shadcn.css";
 
 /*
+@import "./theme/shadcn.css";
+@import "./theme/tailwind.css";
+
+import "./theme/config.css";
+@import "./theme/default.css";
+@import "./theme/colors.css";
+
 @import "./theme/screens.css";
 @import "./theme/layers.css";
 @import "./theme/spacing.css";

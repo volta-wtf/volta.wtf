@@ -4,6 +4,10 @@
 @import "./base.css" layer(base);
 @import "./utilities.css" layer(utilities);
 
+@source "../app/**/*.{js,jsx,ts,tsx}";
+@source "../components/**/*.{js,jsx,ts,tsx}";
+@source "../../../registry/**/*.{js,jsx,ts,tsx}";
+
 /*
 @import "tailwindcss/theme" layer(theme);
 @import "tailwindcss/preflight" layer(base);

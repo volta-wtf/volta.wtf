@@ -15,8 +15,8 @@ import {
 } from "@tanstack/react-table"
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Button } from "@/registry/new-york-v4/ui/button"
+import { Checkbox } from "@/registry/new-york-v4/ui/checkbox"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -25,8 +25,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
+} from "@/registry/new-york-v4/ui/dropdown-menu"
+import { Input } from "@/registry/new-york-v4/ui/input"
 import {
   Table,
   TableBody,
@@ -34,7 +34,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/registry/new-york-v4/ui/table"
 
 const data: Payment[] = [
   {
@@ -233,7 +233,7 @@ export default function DataTableDemo() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border">
+      <div className="overflow-hidden rounded-md border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

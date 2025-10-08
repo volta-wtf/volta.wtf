@@ -1,3 +1,8 @@
 {
-    "files.exclude": {}
+  "explorer.sortOrder": "type",
+  "explorer.sortOrderLexicographicOptions": "upper",
+  "files.associations": {
+    "*.md": "markdown"
+  },
+  "files.exclude": {}
 }

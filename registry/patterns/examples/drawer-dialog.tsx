@@ -4,7 +4,7 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 import { useMediaQuery } from "@/hooks/use-media-query"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -12,7 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/registry/new-york-v4/ui/dialog"
 import {
   Drawer,
   DrawerClose,
@@ -22,9 +22,9 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/registry/new-york-v4/ui/drawer"
+import { Input } from "@/registry/new-york-v4/ui/input"
+import { Label } from "@/registry/new-york-v4/ui/label"
 
 export default function DrawerDialogDemo() {
   const [open, setOpen] = React.useState(false)

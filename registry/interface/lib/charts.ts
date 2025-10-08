@@ -1,5 +1,8 @@
 // Componentes adicionales disponibles (descomenta según necesites):
-import {
+
+export * from "recharts"
+
+// import {
 //  Bar as _Bar,
 //  BarChart as _BarChart,
 //  LineChart as _LineChart,
@@ -9,7 +12,7 @@ import {
 //  PieChart as _PieChart,
 //  Pie as _Pie,
 //  Cell as _Cell,
-//   XAxis as _XAxis,
+//  XAxis as _XAxis,
 //  YAxis as _YAxis,
 //  CartesianGrid as _CartesianGrid,
 //  Tooltip as _Tooltip,
@@ -26,7 +29,7 @@ import {
 //  TreemapChart as _TreemapChart,
 //  FunnelChart as _FunnelChart,
 //  Funnel as _Funnel
-} from "recharts"
+//} from "recharts"
 
 
 // Re-exportar componentes de recharts que están en uso

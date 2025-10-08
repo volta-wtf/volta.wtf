@@ -12,7 +12,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/registry/new-york-v4/ui/navigation-menu"
 
 const components: { title: string; href: string; description: string }[] = [
   {

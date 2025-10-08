@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/registry/new-york-v4/ui/tooltip"
 
 export default function TooltipDemo() {
   return (

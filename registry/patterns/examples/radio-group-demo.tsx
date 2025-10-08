@@ -1,8 +1,8 @@
-import { Label } from "@/components/ui/label"
+import { Label } from "@/registry/new-york-v4/ui/label"
 import {
   RadioGroup,
   RadioGroupItem,
-} from "@/components/ui/radio-group"
+} from "@/registry/new-york-v4/ui/radio-group"
 
 export default function RadioGroupDemo() {
   return (

@@ -7,7 +7,7 @@ import { toast } from "sonner"
 import { z } from "zod"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -15,7 +15,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command"
+} from "@/registry/new-york-v4/ui/command"
 import {
   Form,
   FormControl,
@@ -24,12 +24,12 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
+} from "@/registry/new-york-v4/ui/form"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/registry/new-york-v4/ui/popover"
 
 const languages = [
   { label: "English", value: "en" },
