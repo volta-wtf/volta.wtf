@@ -4,7 +4,7 @@ import {
   InputGroupInput,
   InputGroupText,
   InputGroupTextarea,
-} from "@/registry/new-york-v4/ui/input-group"
+} from "@/registry/components/ui/input-group"
 
 export default function InputGroupTextExample() {
   return (

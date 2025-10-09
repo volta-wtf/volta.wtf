@@ -1,4 +1,4 @@
-import { Checkbox } from "@/registry/new-york-v4/ui/checkbox"
+import { Checkbox } from "@/registry/components/ui/checkbox"
 import {
   Field,
   FieldContent,
@@ -8,7 +8,7 @@ import {
   FieldLegend,
   FieldSeparator,
   FieldSet,
-} from "@/registry/new-york-v4/ui/field"
+} from "@/registry/components/ui/field"
 
 export default function FieldCheckbox() {
   return (

@@ -1,7 +1,20 @@
 {
   "extends": "@repo/config-typescript/react-library.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/lib/*": ["./lib/*","../../registry/interface/lib/*","../../registry/primitives/lib/*"],
+      "@/utils/*": ["../../registry/primitives/utils/*"],
+      "@/primitives/*": ["../../registry/primitives/src/*"],
+      "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
+      "@/components/ui/*": ["../../registry/components/shad/*"],
+      "@/registry/*": ["../../registry/*"],
+      "@/registry/components/ui/*": ["../../registry/components/shad/*"],
+      "@/registry/patterns/*": ["../../registry/patterns/*"],
+      "@/interface/*": ["../../registry/interface/*"],
+      "react": ["./node_modules/@types/react"]
   },
   "include": ["blocks", "examples", "charts", "cards", "sidebar"],
   "exclude": ["node_modules", "dist"]

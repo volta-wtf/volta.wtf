@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { addDays } from "date-fns"
+import { addDays } from "@/registry/primitives/lib/date"
 
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"

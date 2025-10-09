@@ -1,7 +1,7 @@
 import { MinusIcon, PlusIcon } from "lucide-react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
-import { ButtonGroup } from "@/registry/new-york-v4/ui/button-group"
+import { Button } from "@/registry/components/ui/button"
+import { ButtonGroup } from "@/registry/components/ui/button-group"
 
 export default function ButtonGroupOrientation() {
   return (

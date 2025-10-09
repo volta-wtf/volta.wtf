@@ -4,8 +4,8 @@ import {
   FieldGroup,
   FieldLabel,
   FieldSet,
-} from "@/registry/new-york-v4/ui/field"
-import { Textarea } from "@/registry/new-york-v4/ui/textarea"
+} from "@/registry/components/ui/field"
+import { Textarea } from "@/registry/components/ui/textarea"
 
 export default function FieldTextarea() {
   return (

@@ -11,7 +11,8 @@
       "@/primitives/*": ["../../registry/primitives/src/*"],
       "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
       "@/components/ui/*": ["../../registry/components/shad/*"],
-      "@/registry/*": ["../../registry/patterns/*"],
+      "@/registry/ui/*": ["../../registry/components/shad/*"],
+      "@/registry/patterns/*": ["../../registry/patterns/*"],
       "@/interface/*": ["../../registry/interface/*"]
     },
   },

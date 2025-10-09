@@ -11,8 +11,8 @@ import {
   VolumeOffIcon,
 } from "lucide-react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
-import { ButtonGroup } from "@/registry/new-york-v4/ui/button-group"
+import { Button } from "@/registry/components/ui/button"
+import { ButtonGroup } from "@/registry/components/ui/button-group"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,7 +20,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/new-york-v4/ui/dropdown-menu"
+} from "@/registry/components/ui/dropdown-menu"
 
 export default function ButtonGroupDropdown() {
   return (

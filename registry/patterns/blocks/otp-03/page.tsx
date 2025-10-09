@@ -1,6 +1,6 @@
 import { GalleryVerticalEnd } from "lucide-react"
 
-import { OTPForm } from "@/registry/new-york-v4/blocks/otp-03/components/otp-form"
+import { OTPForm } from "@/registry/patterns/blocks/otp-03/components/otp-form"
 
 export default function OTPPage() {
   return (

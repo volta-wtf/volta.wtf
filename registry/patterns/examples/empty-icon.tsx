@@ -11,7 +11,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/registry/new-york-v4/ui/empty"
+} from "@/registry/components/ui/empty"
 
 export default function EmptyIcon() {
   return (

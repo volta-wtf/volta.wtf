@@ -6,13 +6,13 @@ import {
   EmptyDescription,
   EmptyHeader,
   EmptyTitle,
-} from "@/registry/new-york-v4/ui/empty"
+} from "@/registry/components/ui/empty"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/registry/new-york-v4/ui/input-group"
-import { Kbd } from "@/registry/new-york-v4/ui/kbd"
+} from "@/registry/components/ui/input-group"
+import { Kbd } from "@/registry/components/ui/kbd"
 
 export default function EmptyInputGroup() {
   return (

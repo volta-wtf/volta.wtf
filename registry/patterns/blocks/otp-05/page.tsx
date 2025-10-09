@@ -1,4 +1,4 @@
-import { OTPForm } from "@/registry/new-york-v4/blocks/otp-05/components/otp-form"
+import { OTPForm } from "@/registry/patterns/blocks/otp-05/components/otp-form"
 
 export default function OTPPage() {
   return (

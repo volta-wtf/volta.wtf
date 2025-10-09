@@ -1,14 +1,14 @@
 import { BotIcon, ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
-import { ButtonGroup } from "@/registry/new-york-v4/ui/button-group"
+import { Button } from "@/registry/components/ui/button"
+import { ButtonGroup } from "@/registry/components/ui/button-group"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york-v4/ui/popover"
-import { Separator } from "@/registry/new-york-v4/ui/separator"
-import { Textarea } from "@/registry/new-york-v4/ui/textarea"
+} from "@/registry/components/ui/popover"
+import { Separator } from "@/registry/components/ui/separator"
+import { Textarea } from "@/registry/components/ui/textarea"
 
 export function ButtonGroupPopover() {
   return (

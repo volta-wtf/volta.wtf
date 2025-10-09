@@ -1,5 +1,5 @@
-import { Badge } from "@/registry/new-york-v4/ui/badge"
-import { Spinner } from "@/registry/new-york-v4/ui/spinner"
+import { Badge } from "@/registry/components/ui/badge"
+import { Spinner } from "@/registry/components/ui/spinner"
 
 export default function SpinnerBadge() {
   return (

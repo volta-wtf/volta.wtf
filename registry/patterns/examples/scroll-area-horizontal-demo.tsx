@@ -1,7 +1,7 @@
 import * as React from "react"
 import Image from "next/image"
 
-import { ScrollArea, ScrollBar } from "@/registry/new-york-v4/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "@/registry/components/ui/scroll-area"
 
 export interface Artwork {
   artist: string

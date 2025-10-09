@@ -2,14 +2,14 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/registry/new-york-v4/ui/field"
+} from "@/registry/components/ui/field"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york-v4/ui/select"
+} from "@/registry/components/ui/select"
 
 export default function FieldSelect() {
   return (

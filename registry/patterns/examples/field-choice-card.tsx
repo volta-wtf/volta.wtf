@@ -6,11 +6,11 @@ import {
   FieldLabel,
   FieldSet,
   FieldTitle,
-} from "@/registry/new-york-v4/ui/field"
+} from "@/registry/components/ui/field"
 import {
   RadioGroup,
   RadioGroupItem,
-} from "@/registry/new-york-v4/ui/radio-group"
+} from "@/registry/components/ui/radio-group"
 
 export default function FieldChoiceCard() {
   return (

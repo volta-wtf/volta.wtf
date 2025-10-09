@@ -1,24 +1,24 @@
 "use client"
 
 import * as React from "react"
-import { addDays, format } from "date-fns"
+import { addDays, format } from "@/registry/primitives/lib/date"
 import { CalendarIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york-v4/ui/button"
-import { Calendar } from "@/registry/new-york-v4/ui/calendar"
+import { Button } from "@/registry/components/ui/button"
+import { Calendar } from "@/registry/components/ui/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york-v4/ui/popover"
+} from "@/registry/components/ui/popover"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york-v4/ui/select"
+} from "@/registry/components/ui/select"
 
 export default function DatePickerWithPresets() {
   const [date, setDate] = React.useState<Date>()

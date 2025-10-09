@@ -1,19 +1,19 @@
 import { GalleryVerticalEnd } from "lucide-react"
 
-import { cn } from "@/registry/new-york-v4/lib/utils"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { cn } from "@/registry/primitives/lib/utils"
+import { Button } from "@/registry/components/ui/button"
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/registry/new-york-v4/ui/field"
+} from "@/registry/components/ui/field"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/registry/new-york-v4/ui/input-otp"
+} from "@/registry/components/ui/input-otp"
 
 export function OTPForm({ className, ...props }: React.ComponentProps<"div">) {
   return (

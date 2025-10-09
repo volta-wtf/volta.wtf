@@ -4,8 +4,8 @@ import {
   FieldGroup,
   FieldLabel,
   FieldSet,
-} from "@/registry/new-york-v4/ui/field"
-import { Input } from "@/registry/new-york-v4/ui/input"
+} from "@/registry/components/ui/field"
+import { Input } from "@/registry/components/ui/input"
 
 export default function FieldInput() {
   return (

@@ -1,4 +1,4 @@
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/registry/components/ui/button"
 
 export default function ButtonLink() {
   return <Button variant="link">Link</Button>

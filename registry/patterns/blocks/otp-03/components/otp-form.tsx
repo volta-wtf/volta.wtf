@@ -1,22 +1,22 @@
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/registry/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york-v4/ui/card"
+} from "@/registry/components/ui/card"
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/registry/new-york-v4/ui/field"
+} from "@/registry/components/ui/field"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/registry/new-york-v4/ui/input-otp"
+} from "@/registry/components/ui/input-otp"
 
 export function OTPForm({ ...props }: React.ComponentProps<typeof Card>) {
   return (

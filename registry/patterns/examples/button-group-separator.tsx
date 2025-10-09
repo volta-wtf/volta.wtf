@@ -1,8 +1,8 @@
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/registry/components/ui/button"
 import {
   ButtonGroup,
   ButtonGroupSeparator,
-} from "@/registry/new-york-v4/ui/button-group"
+} from "@/registry/components/ui/button-group"
 
 export default function ButtonGroupSeparatorDemo() {
   return (

@@ -1,23 +1,23 @@
-import { AppearanceSettings } from "@/registry/new-york-v4/blocks/new-components-01/components/appearance-settings"
-import { ButtonGroupDemo } from "@/registry/new-york-v4/blocks/new-components-01/components/button-group-demo"
-import { ButtonGroupInputGroup } from "@/registry/new-york-v4/blocks/new-components-01/components/button-group-input-group"
-import { ButtonGroupNested } from "@/registry/new-york-v4/blocks/new-components-01/components/button-group-nested"
-import { ButtonGroupPopover } from "@/registry/new-york-v4/blocks/new-components-01/components/button-group-popover"
-import { EmptyAvatarGroup } from "@/registry/new-york-v4/blocks/new-components-01/components/empty-avatar-group"
-import { FieldDemo } from "@/registry/new-york-v4/blocks/new-components-01/components/field-demo"
-import { FieldSlider } from "@/registry/new-york-v4/blocks/new-components-01/components/field-slider"
-import { InputGroupButtonExample } from "@/registry/new-york-v4/blocks/new-components-01/components/input-group-button"
-import { InputGroupDemo } from "@/registry/new-york-v4/blocks/new-components-01/components/input-group-demo"
-import { ItemDemo } from "@/registry/new-york-v4/blocks/new-components-01/components/item-demo"
-import { NotionPromptForm } from "@/registry/new-york-v4/blocks/new-components-01/components/notion-prompt-form"
-import { SpinnerBadge } from "@/registry/new-york-v4/blocks/new-components-01/components/spinner-badge"
-import { SpinnerEmpty } from "@/registry/new-york-v4/blocks/new-components-01/components/spinner-empty"
-import { Checkbox } from "@/registry/new-york-v4/ui/checkbox"
+import { AppearanceSettings } from "@/registry/patterns/blocks/new-components-01/components/appearance-settings"
+import { ButtonGroupDemo } from "@/registry/patterns/blocks/new-components-01/components/button-group-demo"
+import { ButtonGroupInputGroup } from "@/registry/patterns/blocks/new-components-01/components/button-group-input-group"
+import { ButtonGroupNested } from "@/registry/patterns/blocks/new-components-01/components/button-group-nested"
+import { ButtonGroupPopover } from "@/registry/patterns/blocks/new-components-01/components/button-group-popover"
+import { EmptyAvatarGroup } from "@/registry/patterns/blocks/new-components-01/components/empty-avatar-group"
+import { FieldDemo } from "@/registry/patterns/blocks/new-components-01/components/field-demo"
+import { FieldSlider } from "@/registry/patterns/blocks/new-components-01/components/field-slider"
+import { InputGroupButtonExample } from "@/registry/patterns/blocks/new-components-01/components/input-group-button"
+import { InputGroupDemo } from "@/registry/patterns/blocks/new-components-01/components/input-group-demo"
+import { ItemDemo } from "@/registry/patterns/blocks/new-components-01/components/item-demo"
+import { NotionPromptForm } from "@/registry/patterns/blocks/new-components-01/components/notion-prompt-form"
+import { SpinnerBadge } from "@/registry/patterns/blocks/new-components-01/components/spinner-badge"
+import { SpinnerEmpty } from "@/registry/patterns/blocks/new-components-01/components/spinner-empty"
+import { Checkbox } from "@/registry/components/ui/checkbox"
 import {
   Field,
   FieldLabel,
   FieldSeparator,
-} from "@/registry/new-york-v4/ui/field"
+} from "@/registry/components/ui/field"
 
 export default function Page() {
   return (

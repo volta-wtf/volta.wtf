@@ -1,17 +1,17 @@
 "use client"
 
 import * as React from "react"
-import { format } from "date-fns"
+import { format } from "@/registry/primitives/lib/date"
 import { CalendarIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york-v4/ui/button"
-import { Calendar } from "@/registry/new-york-v4/ui/calendar"
+import { Button } from "@/registry/components/ui/button"
+import { Calendar } from "@/registry/components/ui/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york-v4/ui/popover"
+} from "@/registry/components/ui/popover"
 
 export default function DatePickerDemo() {
   const [date, setDate] = React.useState<Date>()
