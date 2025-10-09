@@ -3,21 +3,21 @@
 const { symlinkSync, existsSync, mkdirSync, rmSync, unlinkSync, lstatSync } = require('fs');
 const { join } = require('path');
 
-// Este script se ejecuta desde el directorio de la aplicación que usa @repo/assets
+// Este script se ejecuta desde el directorio de la aplicación que usa @registry/assets
 const appDir = process.cwd();
 const publicDir = join(appDir, 'public');
 const sharedDir = join(publicDir, 'shared');
 
 // Buscar el directorio shared dentro del paquete assets
-const assetsDir = join(appDir, 'node_modules/@repo/assets/shared');
+const assetsDir = join(appDir, 'node_modules/@registry/assets/shared');
 
 console.log('🔗 Configurando symlink para desarrollo...');
 console.log(`📁 App dir: ${appDir}`);
 console.log(`📦 Shared assets dir: ${assetsDir}`);
 
 if (!existsSync(assetsDir)) {
-  console.error('❌ No se encontró el directorio shared en node_modules/@repo/assets/shared');
-  console.error('   Asegúrate de que @repo/assets esté instalado como dependencia');
+  console.error('❌ No se encontró el directorio shared en node_modules/@registry/assets/shared');
+  console.error('   Asegúrate de que @registry/assets esté instalado como dependencia');
   process.exit(1);
 }
 
@@ -60,7 +60,7 @@ if (existsSync(sharedDir)) {
 // Crear symlink al directorio assets
 try {
   symlinkSync(assetsDir, sharedDir, 'dir');
-  console.log(`✅ Symlink creado: public/shared -> node_modules/@repo/assets/shared`);
+  console.log(`✅ Symlink creado: public/shared -> node_modules/@registry/assets/shared`);
 } catch (error) {
   console.error(`❌ Error creando symlink:`, error.message);
   process.exit(1);

@@ -1,6 +1,6 @@
 # Scripts de Assets
 
-Este directorio contiene scripts para manejar los assets compartidos desde el paquete `@repo/assets`.
+Este directorio contiene scripts para manejar los assets compartidos desde el paquete `@registry/assets`.
 
 ## Scripts Disponibles
 
@@ -9,31 +9,31 @@ Crea symlinks para desarrollo local. Los symlinks se incluyen en Git y funcionan
 
 **Uso:**
 ```bash
-# Desde cualquier aplicación que use @repo/assets
-node node_modules/@repo/assets/scripts/setup-symlinks.js
+# Desde cualquier aplicación que use @registry/assets
+node node_modules/@registry/assets/scripts/setup-symlinks.js
 # O usando el script configurado en package.json
 pnpm run setup-assets
 ```
 
 **Qué hace:**
-- Se ejecuta desde el directorio de la aplicación que usa `@repo/assets`
+- Se ejecuta desde el directorio de la aplicación que usa `@registry/assets`
 - Crea el directorio `public` si no existe
 - Elimina el directorio/symlink `public/shared` existente
-- Crea un symlink `public/shared -> node_modules/@repo/assets/shared`
+- Crea un symlink `public/shared -> node_modules/@registry/assets/shared`
 
 ### `copy-assets.js`
 Copia los assets físicamente para producción (Vercel, builds, etc.).
 
 **Uso:**
 ```bash
-# Desde cualquier aplicación que use @repo/assets
-node node_modules/@repo/assets/scripts/copy-assets.js
+# Desde cualquier aplicación que use @registry/assets
+node node_modules/@registry/assets/scripts/copy-assets.js
 # O usando el script configurado en package.json (prebuild)
 pnpm run build
 ```
 
 **Qué hace:**
-- Se ejecuta desde el directorio de la aplicación que usa `@repo/assets`
+- Se ejecuta desde el directorio de la aplicación que usa `@registry/assets`
 - Crea el directorio `public` si no existe
 - Elimina el symlink/directorio `public/shared` si existe
 - Copia solo el contenido del directorio `shared` del paquete (`icons`, `logos`, etc.)
@@ -45,8 +45,8 @@ Para usar estos scripts en una aplicación, agrega estos scripts a tu `package.j
 ```json
 {
   "scripts": {
-    "setup-assets": "node node_modules/@repo/assets/scripts/setup-assets.js",
-    "prebuild": "node node_modules/@repo/assets/scripts/copy-assets.js"
+    "setup-assets": "node node_modules/@registry/assets/scripts/setup-assets.js",
+    "prebuild": "node node_modules/@registry/assets/scripts/copy-assets.js"
   }
 }
 ```
@@ -64,7 +64,7 @@ Para usar estos scripts en una aplicación, agrega estos scripts a tu `package.j
 
 - ☑️ **Desarrollo rápido**: Symlinks permiten cambios instantáneos
 - ☑️ **Vercel-compatible**: Los assets se copian físicamente para deploy
-- ☑️ **Centralizado**: Los scripts están en el paquete `@repo/assets`
+- ☑️ **Centralizado**: Los scripts están en el paquete `@registry/assets`
 - ☑️ **Reutilizable**: Cualquier app puede usar los scripts
 - ☑️ **No invasivo**: Mantiene el directorio `public` de cada app intacto
 - ☑️ **Solo contenido shared**: Copia únicamente el contenido del directorio `shared`

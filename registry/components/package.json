@@ -1,5 +1,5 @@
 {
-  "name": "@repo/components",
+  "name": "@registry/components",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -17,7 +17,7 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "@repo/primitives": "workspace:*",
+    "@registry/primitives": "workspace:*",
     "@hookform/resolvers": "^5.1.1",
     "@tanstack/react-table": "^8.21.3",
     "@radix-ui/react-accordion": "^1.2.11",
@@ -73,6 +73,6 @@
     "typescript": "5.9.2"
   },
   "bundledDependencies": [
-    "@repo/primitives"
+    "@registry/primitives"
   ]
 }

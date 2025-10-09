@@ -1,5 +1,5 @@
 {
-  "name": "@repo/interface",
+  "name": "@registry/interface",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -19,9 +19,9 @@
     "next": "^15.5.0",
     "lucide-react": "^0.475.0",
     "recharts": "^3.0.0",
-    "@repo/primitives": "workspace:*",
-    "@repo/components": "workspace:*",
-    "@repo/assets": "workspace:*"
+    "@registry/primitives": "workspace:*",
+    "@registry/components": "workspace:*",
+    "@registry/assets": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.15.3",

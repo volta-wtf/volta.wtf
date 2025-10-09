@@ -3,13 +3,13 @@
 const { cpSync, existsSync, mkdirSync, readdirSync, statSync, rmSync, unlinkSync, lstatSync } = require('fs');
 const { join } = require('path');
 
-// Este script se ejecuta desde el directorio de la aplicación que usa @repo/assets
+// Este script se ejecuta desde el directorio de la aplicación que usa @registry/assets
 const appDir = process.cwd();
 const publicDir = join(appDir, 'public');
 const sharedDir = join(publicDir, 'shared');
 
 // Buscar el directorio shared dentro del paquete assets
-const assetsDir = join(appDir, 'node_modules/@repo/assets/shared');
+const assetsDir = join(appDir, 'node_modules/@registry/assets/shared');
 
 // Función para copiar solo directorios de assets (excluyendo archivos del paquete)
 function copyAssetDirectories(sourceDir, targetDir) {
@@ -34,7 +34,7 @@ function copyAssetDirectories(sourceDir, targetDir) {
   }
 }
 
-console.log('🔍 Copiando assets desde @repo/assets/shared...');
+console.log('🔍 Copiando assets desde @registry/assets/shared...');
 console.log(`📁 App dir: ${appDir}`);
 console.log(`📦 Shared assets dir: ${assetsDir}`);
 console.log(`🔍 Node version: ${process.version}`);
@@ -42,8 +42,8 @@ console.log(`🔍 Platform: ${process.platform}`);
 console.log(`🔍 Working directory: ${process.cwd()}`);
 
 if (!existsSync(assetsDir)) {
-  console.error('❌ No se encontró el directorio shared en node_modules/@repo/assets/shared');
-  console.error('   Asegúrate de que @repo/assets esté instalado como dependencia');
+  console.error('❌ No se encontró el directorio shared en node_modules/@registry/assets/shared');
+  console.error('   Asegúrate de que @registry/assets esté instalado como dependencia');
   process.exit(1);
 }
 
@@ -135,5 +135,5 @@ try {
   process.exit(1);
 }
 
-console.log('🎉 Assets copiados exitosamente desde @repo/assets');
+console.log('🎉 Assets copiados exitosamente desde @registry/assets');
 console.log('💡 Los assets ahora están disponibles en /shared/');

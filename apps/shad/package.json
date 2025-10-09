@@ -18,8 +18,8 @@
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
-    "@repo/components": "workspace:*",
-    "@repo/patterns": "workspace:*",
+    "@registry/components": "workspace:*",
+    "@registry/patterns": "workspace:*",
     "@tabler/icons-react": "^3.31.0",
     "@faker-js/faker": "^8.2.0",
     "@tailwindcss/postcss": "^4.1.11",

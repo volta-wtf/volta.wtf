@@ -3,11 +3,12 @@
 .base
 .temp
 
+# apps/demos
 apps/admin
 apps/builder
 # apps/catalog
 # apps/docs
-# apps/docss
+# apps/shad
 apps/editor
 
 
