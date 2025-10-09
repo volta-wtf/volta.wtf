@@ -4,7 +4,7 @@ import { fontVariables } from "@/lib/fonts";
 import { Providers } from "@/components/providers"
 import { Application } from "@/components/application"
 
-import "./globals.css";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Catalog | VOLTA",

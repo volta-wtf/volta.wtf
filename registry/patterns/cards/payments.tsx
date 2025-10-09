@@ -12,7 +12,7 @@ import {
   SortingState,
   useReactTable,
   VisibilityState,
-} from "@/lib/tables"
+} from "@tanstack/react-table"
 import { MoreHorizontalIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"

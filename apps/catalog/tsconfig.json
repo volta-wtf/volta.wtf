@@ -6,13 +6,15 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@/lib/*": ["../../registry/interface/lib/*","../../registry/primitives/lib/*"],
+      "@/lib/*": ["./lib/*","../../registry/interface/lib/*","../../registry/primitives/lib/*"],
       "@/utils/*": ["../../registry/primitives/utils/*"],
       "@/primitives/*": ["../../registry/primitives/src/*"],
-      "@/components/*": ["./components/*","../../registry/components/*"],
+      "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
       "@/components/ui/*": ["../../registry/components/shad/*"],
-      "@/registry/*": ["../../registry/patterns/*"],
-      "@/interface/*": ["../../registry/interface/*"]
+      "@/registry/*": ["../../registry/*"],
+      "@/registry/components/ui/*": ["../../registry/components/shad/*"],
+      "@/registry/patterns/*": ["../../registry/patterns/*"],
+      "@/interface/*": ["../../registry/interface/*"],
     },
   },
   "include": [
