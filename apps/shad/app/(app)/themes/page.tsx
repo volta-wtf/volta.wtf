@@ -1,4 +1,4 @@
-import { CardsDemo } from "@/components/cards"
+import { CardsDemo } from "@/registry/patterns/cards"
 import { ThemeCustomizer } from "@/components/theme-customizer"
 
 export const dynamic = "force-static"

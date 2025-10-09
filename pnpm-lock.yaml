@@ -213,6 +213,52 @@ importers:
 
   apps/docs:
     dependencies:
+      '@repo/assets':
+        specifier: workspace:*
+        version: link:../../registry/assets
+      '@repo/components':
+        specifier: workspace:*
+        version: link:../../registry/components
+      '@repo/interface':
+        specifier: workspace:*
+        version: link:../../registry/interface
+      '@repo/primitives':
+        specifier: workspace:*
+        version: link:../../registry/primitives
+      next:
+        specifier: ^15.5.0
+        version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      react:
+        specifier: ^19.1.0
+        version: 19.1.1
+      react-dom:
+        specifier: ^19.1.0
+        version: 19.1.1(react@19.1.1)
+    devDependencies:
+      '@repo/config-eslint':
+        specifier: workspace:*
+        version: link:../../packages/config-eslint
+      '@repo/config-typescript':
+        specifier: workspace:*
+        version: link:../../packages/config-typescript
+      '@types/node':
+        specifier: ^22.15.3
+        version: 22.18.1
+      '@types/react':
+        specifier: 19.1.0
+        version: 19.1.0
+      '@types/react-dom':
+        specifier: 19.1.1
+        version: 19.1.1(@types/react@19.1.0)
+      eslint:
+        specifier: ^9.34.0
+        version: 9.35.0(jiti@2.6.1)
+      typescript:
+        specifier: 5.9.2
+        version: 5.9.2
+
+  apps/editor:
+    dependencies:
       '@repo/interface':
         specifier: workspace:*
         version: link:../../registry/interface
@@ -248,7 +294,7 @@ importers:
         specifier: 5.9.2
         version: 5.9.2
 
-  apps/docss:
+  apps/shad:
     dependencies:
       '@faker-js/faker':
         specifier: ^8.2.0
@@ -334,6 +380,9 @@ importers:
       shiki:
         specifier: ^1.10.1
         version: 1.29.2
+      sonner:
+        specifier: ^2.0.0
+        version: 2.0.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       tailwind-merge:
         specifier: ^3.0.1
         version: 3.3.1
@@ -395,43 +444,6 @@ importers:
       unist-util-visit:
         specifier: ^4.1.2
         version: 4.1.2
-
-  apps/editor:
-    dependencies:
-      '@repo/interface':
-        specifier: workspace:*
-        version: link:../../registry/interface
-      next:
-        specifier: ^15.5.0
-        version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      react:
-        specifier: ^19.1.0
-        version: 19.1.1
-      react-dom:
-        specifier: ^19.1.0
-        version: 19.1.1(react@19.1.1)
-    devDependencies:
-      '@repo/config-eslint':
-        specifier: workspace:*
-        version: link:../../packages/config-eslint
-      '@repo/config-typescript':
-        specifier: workspace:*
-        version: link:../../packages/config-typescript
-      '@types/node':
-        specifier: ^22.15.3
-        version: 22.18.1
-      '@types/react':
-        specifier: 19.1.0
-        version: 19.1.0
-      '@types/react-dom':
-        specifier: 19.1.1
-        version: 19.1.1(@types/react@19.1.0)
-      eslint:
-        specifier: ^9.34.0
-        version: 9.35.0(jiti@2.6.1)
-      typescript:
-        specifier: 5.9.2
-        version: 5.9.2
 
   packages/config-eslint:
     devDependencies:
@@ -10831,7 +10843,7 @@ snapshots:
       '@swc/counter': 0.1.3
       '@swc/helpers': 0.5.15
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001741
+      caniuse-lite: 1.0.30001749
       postcss: 8.4.31
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
@@ -11783,6 +11795,11 @@ snapshots:
     optional: true
 
   sisteransi@1.0.5: {}
+
+  sonner@2.0.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   sonner@2.0.7(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
