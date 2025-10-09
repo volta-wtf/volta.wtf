@@ -1,30 +1,28 @@
-import type { Metadata } from "@/utils/meta";
-import { fontVariables } from "@/lib/fonts";
+import type { Metadata } from "next"
 
-import { Providers } from "@/components/providers"
-import { Application } from "@/components/application"
+import { TooltipProvider } from "@/registry/components/ui/tooltip"
 
-import "@/styles/globals.css";
+import "@/styles/globals.css"
+
 
 export const metadata: Metadata = {
-  title: "Catalog | VOLTA",
-  description: "Catalog for styles, components and more.",
-};
+  title: {
+    default: "Documentation | VOLTA",
+    template: "%s | VOLTA Docs",
+  },
+  description: "Component documentation for VOLTA design system",
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={fontVariables}>
-        <Providers>
-          <Application>
-            {children}
-          </Application>
-        </Providers>
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased">
+        <TooltipProvider>{children}</TooltipProvider>
       </body>
     </html>
-  );
+  )
 }

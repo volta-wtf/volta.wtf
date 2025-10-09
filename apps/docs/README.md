@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
+# Documentation App
 
-## Getting Started
+Aplicación de documentación para VOLTA usando fumadocs.
 
-First, run the development server:
+## Configuración
+
+1. Instala las dependencias:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Crea un archivo `.env.local` en la raíz del proyecto:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+NEXT_PUBLIC_APP_URL=http://localhost:3004
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Inter, a custom Google Font.
+3. Ejecuta el servidor de desarrollo:
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Estructura
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/(app)/docs/` - Páginas de documentación
+- `components/regions/` - Componentes principales del layout (sidebar, toc, breadcrumb, etc.)
+- `components/interface/` - Componentes de interfaz (callout, copy button, code blocks, etc.)
+- `components/partials/` - Componentes de preview y visualización de código
+- `content/` - Contenido MDX de la documentación
+- `lib/` - Utilidades y configuración (registry, highlight-code, utils, etc.)
+- `hooks/` - Custom hooks (use-config, use-copy-to-clipboard)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contenido
 
-## Deploy on Vercel
+El contenido se encuentra en la carpeta `content/` organizado por secciones:
+- `(root)/` - Páginas principales
+- `components/` - Documentación de componentes
+- `installation/` - Guías de instalación
+- `dark-mode/` - Configuración de dark mode
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Fumadocs
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Esta aplicación usa [fumadocs](https://fumadocs.vercel.app) para generar la documentación a partir de archivos MDX.
+
+La configuración se encuentra en:
+- `source.config.ts` - Configuración de fumadocs y rehype plugins
+- `lib/source.ts` - Fuente de datos de la documentación
+- `lib/registry.ts` - Sistema de registry para componentes (usa schemas locales de `/registry/schema.ts`)
+- `mdx-components.tsx` - Componentes personalizados para MDX
+
+## Componentes de Documentación
+
+### Partials (Preview de Componentes)
+- `ComponentPreview` - Muestra preview interactivo de componentes con tabs
+- `ComponentSource` - Muestra código fuente de componentes del registry
+- `ComponentsList` - Lista de componentes disponibles
+
+### Interface (Controles y UI)
+- `Callout` - Alertas y notas informativas
+- `CodeBlockCommand` - Bloques de comandos con selector npm/yarn/pnpm/bun
+- `CodeCollapsibleWrapper` - Wrapper para código colapsable
+- `CodeTabs` - Tabs para diferentes tipos de instalación
+- `CopyButton` - Botón para copiar código
+- `Icons` - Iconos para lenguajes de programación
+
+### Regions (Layout)
+- `DocsSidebar` - Navegación lateral de documentación
+- `DocsTableOfContents` - Tabla de contenidos
+- `DocsCopyPage` - Botón para copiar página completa
+- `DocsBreadcrumb` - Breadcrumbs de navegación
+
+## Schemas del Registry
+
+Los schemas de validación (`registryItemSchema`, `registryItemFileSchema`) se importan desde el monorepo:
+```typescript
+import { registryItemSchema, registryItemFileSchema } from "@/registry/config/schema"
+```
+
+No se usa la dependencia npm `shadcn` - los schemas están definidos localmente en `/registry/config/schema.ts`.
