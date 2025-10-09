@@ -1,6 +1,6 @@
 import { getAllBlockIds } from "@/lib/blocks"
 import { BlockDisplay } from "@/components/block-display"
-import { registryCategories } from "@/registry/registry-categories"
+import { registryCategories } from "@/registry/config/registry-categories"
 
 export const revalidate = false
 export const dynamic = "force-static"

@@ -1,4 +1,4 @@
-import { CardsDemo } from "@/registry/cards"
+import { CardsDemo } from "@/registry/patterns/cards"
 
 export default function ThemePage() {
     return (

@@ -45,7 +45,7 @@ import {
   BaseColor,
   baseColors,
   baseColorsOKLCH,
-} from "@/registry/registry-base-colors"
+} from "@/registry/config/registry-base-colors"
 
 interface BaseColorOKLCH {
   light: Record<string, string>

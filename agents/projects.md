@@ -1,19 +1,21 @@
 
 packages  (Tools)
-- globals.css
-- theme.css
-- styles.css
+- eslint            @repo/config-eslint
+- typescript        @repo/config-typescript
+- globals.css       @prebots/globals
+- theme.css         @prebots/globals
+- styles.css        @prebots/globals
 
 registry (Library)
-- primitives
-- components
-- patterns
-- assets
-- interface
+- primitives        @registry/priitives
+- components        @registry/components
+- patterns          @registry/patterns
+- assets            @registry/assets
+- interface         @registry/interface
 
 sites (Websites)
-- 3000 www
-- 3020 knowledge
+- 3000 www          @volta/website
+- 3020 knowledge    @volta/knowledge
 - 3010 globals
 - 3040 theme
 - 3030 styles

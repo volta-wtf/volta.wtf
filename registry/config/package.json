@@ -1,0 +1,32 @@
+{
+  "name": "@repo/config-registry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./schema": "./schema.ts",
+    "./__index__": "./__index__.tsx",
+    "./index": "./index.ts",
+    "./registry-base-colors": "./registry-base-colors.ts",
+    "./registry-blocks": "./registry-blocks.ts",
+    "./registry-categories": "./registry-categories.ts",
+    "./registry-charts": "./registry-charts.ts",
+    "./registry-colors": "./registry-colors.ts",
+    "./registry-examples": "./registry-examples.ts",
+    "./registry-hooks": "./registry-hooks.ts",
+    "./registry-icons": "./registry-icons.ts",
+    "./registry-internal": "./registry-internal.ts",
+    "./registry-lib": "./registry-lib.ts",
+    "./registry-themes": "./registry-themes.ts",
+    "./registry-ui": "./registry-ui.ts",
+    "./__blocks__.json": "./__blocks__.json"
+  },
+  "dependencies": {
+    "shadcn": "3.4.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@repo/config-typescript": "workspace:*",
+    "typescript": "5.9.2"
+  }
+}

@@ -3,7 +3,7 @@ import path from "path"
 import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
 
-import { Index } from "@/registry/__index__"
+import { Index } from "@/registry/config/__index__"
 
 interface UnistNode {
   type: string

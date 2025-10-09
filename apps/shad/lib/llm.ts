@@ -1,6 +1,6 @@
 import fs from "fs"
 
-import { Index } from "@/registry/__index__"
+import { Index } from "@/registry/config/__index__"
 
 export function processMdxForLLMs(content: string) {
   const componentPreviewRegex =

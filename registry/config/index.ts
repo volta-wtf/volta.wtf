@@ -1,14 +1,14 @@
-import { registryItemSchema, type Registry } from "shadcn/schema"
+import { registryItemSchema, type Registry } from "./schema"
 import { z } from "zod"
 
-import { blocks } from "@/registry/registry-blocks"
-import { charts } from "@/registry/registry-charts"
-import { examples } from "@/registry/registry-examples"
-import { hooks } from "@/registry/registry-hooks"
-import { internal } from "@/registry/registry-internal"
-import { lib } from "@/registry/registry-lib"
-import { themes } from "@/registry/registry-themes"
-import { ui } from "@/registry/registry-ui"
+import { blocks } from "@/registry/config/registry-blocks"
+import { charts } from "@/registry/config/registry-charts"
+import { examples } from "@/registry/config/registry-examples"
+import { hooks } from "@/registry/config/registry-hooks"
+import { internal } from "@/registry/config/registry-internal"
+import { lib } from "@/registry/config/registry-lib"
+import { themes } from "@/registry/config/registry-themes"
+import { ui } from "@/registry/config/registry-ui"
 
 const DEPRECATED_ITEMS = [
   "toast",

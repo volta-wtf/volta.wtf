@@ -5,7 +5,7 @@ import { registryItemFileSchema, registryItemSchema } from "shadcn/schema"
 import { Project, ScriptKind } from "ts-morph"
 import { z } from "zod"
 
-import { Index } from "@/registry/__index__"
+import { Index } from "@/registry/config/__index__"
 
 // Helper function to resolve file paths from monorepo root
 function resolveRegistryPath(filePath: string): string {

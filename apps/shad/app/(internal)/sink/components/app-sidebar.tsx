@@ -15,7 +15,7 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
-import { Index } from "@/registry/__index__"
+import { Index } from "@/registry/config/__index__"
 import { NavUser } from "@/registry/patterns/blocks/sidebar-07/components/nav-user"
 import { TeamSwitcher } from "@/registry/patterns/blocks/sidebar-07/components/team-switcher"
 import {
