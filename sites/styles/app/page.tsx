@@ -1,22 +1,7 @@
 import Image, { type ImageProps } from "next/image";
-import { Button } from "@repo/ui/button";
+import { Button as Button2 } from "@/interface/base/button";
+
 import styles from "./page.module.css";
-
-type Props = Omit<ImageProps, "src"> & {
-  srcLight: string;
-  srcDark: string;
-};
-
-const ThemeImage = (props: Props) => {
-  const { srcLight, srcDark, ...rest } = props;
-
-  return (
-    <>
-      <Image {...rest} src={srcLight} className="imgLight" />
-      <Image {...rest} src={srcDark} className="imgDark" />
-    </>
-  );
-};
 
 export default function Home() {
   return (
@@ -24,8 +9,8 @@ export default function Home() {
       <main className={styles.main}>
         <ThemeImage
           className={styles.logo}
-          srcLight="turborepo-dark.svg"
-          srcDark="turborepo-light.svg"
+          srcLight="shared/logos/turborepo-dark.svg"
+          srcDark="shared/logos/turborepo-light.svg"
           alt="Turborepo logo"
           width={180}
           height={38}
@@ -47,7 +32,7 @@ export default function Home() {
           >
             <Image
               className={styles.logo}
-              src="/vercel.svg"
+              src="shared/logos/vercel.svg"
               alt="Vercel logomark"
               width={20}
               height={20}
@@ -63,9 +48,9 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-        <Button appName="docs" className={styles.secondary}>
+        <Button2 appName="docs" className={styles.secondary}>
           Open alert
-        </Button>
+        </Button2>
       </main>
       <footer className={styles.footer}>
         <a
@@ -75,7 +60,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/window.svg"
+            src="shared/icons/window.svg"
             alt="Window icon"
             width={16}
             height={16}
@@ -89,7 +74,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/globe.svg"
+            src="shared/icons/globe.svg"
             alt="Globe icon"
             width={16}
             height={16}
