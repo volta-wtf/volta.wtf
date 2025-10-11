@@ -1,4 +1,6 @@
 @import "stylewindcss";
 
-@import "./config.css";
+@source "../app/**/*.{js,jsx,ts,tsx}";
+@source "../../../registry/**/*.{js,jsx,ts,tsx}";
+
 @import "./theme.css";

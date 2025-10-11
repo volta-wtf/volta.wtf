@@ -4,13 +4,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@/lib/*": ["../../registry/interface/lib/*","../../registry/primitives/lib/*"],
+      "@/lib/*": ["../../resources/interface/lib/*","../../registry/primitives/lib/*"],
       "@/utils/*": ["../../registry/primitives/utils/*"],
       "@/primitives/*": ["../../registry/primitives/src/*"],
       "@/components/*": ["./components/*","../../registry/components/*"],
       "@/components/ui/*": ["../../registry/components/shad/*"],
       "@/registry/*": ["../../registry/patterns/*"],
-      "@/interface/*": ["../../registry/interface/*"]
+      "@/interface/*": ["../../resources/interface/*"]
     },
     "declaration": true,
     "declarationMap": true,

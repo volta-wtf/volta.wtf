@@ -1,8 +1,27 @@
 {
-  "explorer.sortOrder": "type",
+  "explorer.sortOrder": "default",
   "explorer.sortOrderLexicographicOptions": "upper",
-  "files.associations": {
-    "*.md": "markdown"
-  },
-  "files.exclude": {}
+  "files.exclude": {
+    // Internal
+    ".temp": true,
+
+    // Base
+    ".turbo": true,
+    ".vercel": true,
+    ".next": true,
+    "node_modules": true,
+
+    // Config
+    "pnpm-*.yaml": true,
+    "**/.gitignore": true,
+    "**/.env*": true,
+    "**/.npmrc": true,
+    //
+    // Apps
+    "**/next-env.d.ts": true,
+    "**/eslint.config.*": true,
+    "**/next.config.*": true,
+    "**/tsconfig.*": true,
+    "**/postcss.*": true,
+  }
 }
