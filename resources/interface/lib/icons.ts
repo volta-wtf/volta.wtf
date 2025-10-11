@@ -14,4 +14,7 @@ export const productIcons = {
 } as const
 
 // Type para autocompletado
-export type IconName = keyof typeof productIcons
+export type ProductIconName = keyof typeof productIcons
+
+// Obtener todas las claves de iconos como array
+export const productIconNames = Object.keys(productIcons) as ProductIconName[]

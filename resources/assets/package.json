@@ -1,0 +1,25 @@
+{
+  "name": "@registry/assets",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.ts",
+  "bin": {
+    "setup-assets": "./scripts/setup-assets.js",
+    "copy-assets": "./scripts/copy-assets.js"
+  },
+  "scripts": {
+    "setup-assets": "node scripts/setup-assets.js",
+    "copy-assets": "node scripts/copy-assets.js"
+  },
+  "files": [
+    "index.ts",
+    "scripts/**/*",
+    "shared/logos/**/*",
+    "shared/icons/**/*",
+    "shared/fonts/**/*",
+    "shared/images/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

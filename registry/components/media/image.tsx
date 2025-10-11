@@ -1,21 +1,27 @@
-import Image, { type ImageProps } from "@/primitives/image";
+import { cn } from "@/lib/utils";
 
-// Theme-aware image component that shows different images for light and dark themes
-type ImageThemeProps = Omit<ImageProps, "src"> & {
-  srcLight: string;
-  srcDark: string;
+import {
+  Image as ImagePrimitive,
+  type ImageProps,
+  type ImageThemedProps
+} from "@/primitives/image";
+
+// Image component with default classes
+const ImageBase = ({ className, ...props }: ImageProps) => {
+  return <ImagePrimitive className={cn("", className)} {...props} />;
 };
 
-export const ImageTheme = (props: ImageThemeProps) => {
-  const { srcLight, srcDark, ...rest } = props;
-
+// Theme-aware image component
+const ImageThemed = ({ srcLight, srcDark, className, ...props }: ImageThemedProps) => {
   return (
     <>
-      <Image {...rest} src={srcLight} className="show-on-light" />
-      <Image {...rest} src={srcDark} className="show-on-dark" />
+      <ImageBase {...props} src={srcLight} className={cn("show-on-light", className)} />
+      <ImageBase {...props} src={srcDark} className={cn("show-on-dark", className)} />
     </>
   );
 };
 
-// Default export for convenience
-export default Image;
+// Combine Image with themed property
+const Image = Object.assign(ImageBase, { themed: ImageThemed });
+
+export { Image, type ImageProps, type ImageThemedProps };
