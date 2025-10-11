@@ -1,4 +1,4 @@
-import Image, { type ImageProps } from "next/image";
+import { Image } from "@/components/media/image";
 import { Button as Button2 } from "@/interface/base/button";
 
 import styles from "./page.module.css";
@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <ThemeImage
+        <Image.themed
           className={styles.logo}
           srcLight="shared/logos/turborepo-dark.svg"
           srcDark="shared/logos/turborepo-light.svg"

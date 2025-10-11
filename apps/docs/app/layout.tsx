@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import { fontVariables } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
 
 import { TooltipProvider } from "@/registry/components/ui/tooltip"
 
@@ -20,7 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
+      <body
+        className={cn(
+          "text-foreground group/body theme-blue overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]",
+          fontVariables
+        )}
+      >
         <TooltipProvider>{children}</TooltipProvider>
       </body>
     </html>

@@ -1,4 +1,4 @@
-import Image, { ImageTheme } from "@/components/media/image";
+import { Image } from "@/components/media/image";
 import { Button } from "@/components/ui/button";
 import { Button as Button2 } from "@/interface/base/button";
 import styles from "./page.module.css";
@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <ImageTheme
+        <Image.themed
           className={styles.logo}
           srcLight='/shared/logos/turborepo-dark.svg'
           srcDark='/shared/logos/turborepo-light.svg'

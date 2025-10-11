@@ -28,6 +28,7 @@ Todas las dependencias necesarias están en `package.json`:
 - ✅ `lib/registry.ts` - Sistema de registry (usa `/registry/config/schema.ts`)
 - ✅ `lib/highlight-code.ts` - Syntax highlighting
 - ✅ `lib/utils.ts` - Utilidades (cn, absoluteUrl)
+- ✅ `lib/fonts.ts` - Configuración de fuentes (Geist, Inter)
 - ✅ `lib/docs.ts` - Páginas nuevas
 - ✅ `lib/flags.ts` - Feature flags
 - ✅ `lib/events.ts` - Analytics tracking
@@ -37,10 +38,12 @@ Todas las dependencias necesarias están en `package.json`:
 - ✅ `hooks/use-config.ts` - Config global (package manager)
 
 #### Components/Regions (Layout Principal)
-- ✅ `components/regions/docs-sidebar.tsx`
-- ✅ `components/regions/docs-toc.tsx`
-- ✅ `components/regions/docs-copy-page.tsx`
-- ✅ `components/regions/docs-breadcrumb.tsx`
+- ✅ `components/regions/site-header.tsx` - Header sticky con navegación
+- ✅ `components/regions/site-footer.tsx` - Footer con altura dinámica
+- ✅ `components/regions/docs-sidebar.tsx` - Sidebar de docs
+- ✅ `components/regions/docs-toc.tsx` - Tabla de contenidos
+- ✅ `components/regions/docs-copy-page.tsx` - Copiar página
+- ✅ `components/regions/docs-breadcrumb.tsx` - Breadcrumbs
 
 #### Components/Interface (Controles de UI)
 - ✅ `components/interface/callout.tsx`
@@ -119,6 +122,37 @@ npm install package
 Se convierte en tabs con npm/yarn/pnpm/bun.
 
 ## 🔧 Detalles Técnicos
+
+### Layout & CSS Variables
+
+El layout usa CSS variables para alturas consistentes:
+
+```css
+/* styles/theme.css */
+:root {
+  --spacing: 0.25rem;
+  --header-height: calc(var(--spacing) * 14); /* 56px */
+  --footer-height: calc(var(--spacing) * 14); /* 56px base, 96px en XL */
+}
+```
+
+```tsx
+/* app/layout.tsx */
+<body className="[--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]">
+```
+
+Los componentes usan estas variables:
+- `SiteHeader`: `h-(--header-height)` con `sticky top-0`
+- `SiteFooter`: `h-(--footer-height)`
+
+### Fuentes
+
+```typescript
+// lib/fonts.ts
+--font-sans: Geist
+--font-mono: Geist Mono
+--font-inter: Inter
+```
 
 ### Schemas del Registry
 ```typescript

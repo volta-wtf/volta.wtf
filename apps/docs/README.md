@@ -66,10 +66,32 @@ La configuración se encuentra en:
 - `Icons` - Iconos para lenguajes de programación
 
 ### Regions (Layout)
+- `SiteHeader` - Header sticky con navegación (usa `h-(--header-height)`)
+- `SiteFooter` - Footer con altura dinámica (usa `h-(--footer-height)`)
 - `DocsSidebar` - Navegación lateral de documentación
 - `DocsTableOfContents` - Tabla de contenidos
 - `DocsCopyPage` - Botón para copiar página completa
 - `DocsBreadcrumb` - Breadcrumbs de navegación
+
+### CSS Variables
+
+Configuradas en `app/layout.tsx` y `styles/theme.css`:
+```css
+:root {
+  --spacing: 0.25rem;                        /* Base spacing unit */
+  --header-height: calc(var(--spacing) * 14); /* 56px (3.5rem) */
+  --footer-height: calc(var(--spacing) * 14); /* Dynamic on XL: calc(var(--spacing) * 24) */
+}
+```
+
+### Font Variables
+
+```typescript
+// lib/fonts.ts
+--font-sans: Geist
+--font-mono: Geist Mono
+--font-inter: Inter
+```
 
 ## Schemas del Registry
 

@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@/lib/*": ["./lib/*","../../registry/interface/lib/*","../../registry/primitives/lib/*"],
+      "@/lib/*": ["./lib/*","../../resources/interface/lib/*","../../registry/primitives/lib/*"],
       "@/utils/*": ["../../registry/primitives/utils/*"],
       "@/primitives/*": ["../../registry/primitives/src/*"],
       "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
@@ -13,7 +13,7 @@
       "@/registry/*": ["../../registry/*"],
       "@/registry/components/ui/*": ["../../registry/components/shad/*"],
       "@/registry/patterns/*": ["../../registry/patterns/*"],
-      "@/interface/*": ["../../registry/interface/*"],
+      "@/interface/*": ["../../resources/interface/*"],
       "react": ["./node_modules/@types/react"]
   },
   "include": ["blocks", "examples", "charts", "cards", "sidebar"],

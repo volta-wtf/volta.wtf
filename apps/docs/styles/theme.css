@@ -1,6 +1,7 @@
 :root {
     --scheme: light dark;
     --radius: 0.625rem;
+    --spacing: 0.25rem;
 
     --background: oklch(1 0 0);
     --foreground: rgb(0, 0, 0);
