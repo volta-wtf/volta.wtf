@@ -1,5 +1,5 @@
 {
-  "extends": "@repo/config-typescript/react-library.json",
+  "extends": "@studio/config-typescript/react-library.json",
   "compilerOptions": {
     "outDir": "dist",
     "baseUrl": ".",
@@ -9,9 +9,9 @@
       "@/utils/*": ["../../registry/primitives/utils/*"],
       "@/primitives/*": ["../../registry/primitives/src/*"],
       "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
-      "@/components/ui/*": ["../../registry/components/shad/*"],
+      "@/components/ui/*": ["../../registry/components/ui/*"],
       "@/registry/*": ["../../registry/*"],
-      "@/registry/components/ui/*": ["../../registry/components/shad/*"],
+      "@/registry/components/ui/*": ["../../registry/components/ui/*"],
       "@/registry/patterns/*": ["../../registry/patterns/*"],
       "@/interface/*": ["../../resources/interface/*"],
       "react": ["./node_modules/@types/react"]

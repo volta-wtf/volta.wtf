@@ -1,0 +1,108 @@
+---
+title: Components
+description: Explore the components available in your documentation
+---
+
+# Components
+
+Discover the components you can use to enhance your documentation.
+
+## Built-in Components
+
+### Callout
+
+Use callouts to highlight important information:
+
+```mdx
+<Callout type="info">
+  This is an info callout
+</Callout>
+
+<Callout type="warning">
+  This is a warning callout
+</Callout>
+```
+
+**Types available:**
+- `info` - For informational messages
+- `warning` - For warnings
+- `error` - For errors
+- `success` - For success messages
+
+### Code Blocks
+
+Syntax-highlighted code blocks with copy functionality:
+
+````mdx
+```typescript
+function greet(name: string): string {
+  return `Hello, ${name}!`
+}
+```
+````
+
+**Supported languages:**
+- TypeScript/JavaScript
+- Python
+- Rust
+- Go
+- And many more...
+
+### Tables
+
+Create structured data tables:
+
+```mdx
+| Feature | Supported |
+|---------|-----------|
+| MDX     | ✅        |
+| Search  | ✅        |
+| Themes  | ✅        |
+```
+
+Result:
+
+| Feature | Supported |
+|---------|-----------|
+| MDX     | ✅        |
+| Search  | ✅        |
+| Themes  | ✅        |
+
+## Custom Components
+
+You can create your own components in the `components/` directory and use them in your MDX files.
+
+### Creating a Custom Component
+
+1. Create a component in `components/partials/`:
+
+```tsx
+export function CustomComponent({ children }: { children: React.ReactNode }) {
+  return <div className="custom-style">{children}</div>
+}
+```
+
+2. Export it from `mdx-components.tsx`:
+
+```tsx
+import { CustomComponent } from './components/partials/custom-component'
+
+export function useMDXComponents() {
+  return {
+    CustomComponent,
+  }
+}
+```
+
+3. Use it in your MDX:
+
+```mdx
+<CustomComponent>
+  Your content here
+</CustomComponent>
+```
+
+## Next Steps
+
+- [Deployment Guide](/docs/guides/deployment)
+- [Writing Content](/docs/guides/writing-content)

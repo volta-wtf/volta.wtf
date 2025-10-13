@@ -1,5 +1,5 @@
 {
-  "name": "catalog",
+  "name": "@volta/catalog",
   "version": "0.1.0",
   "type": "module",
   "private": true,
@@ -26,8 +26,8 @@
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
-    "@repo/config-eslint": "workspace:*",
-    "@repo/config-typescript": "workspace:*",
+    "@studio/config-eslint": "workspace:*",
+    "@studio/config-typescript": "workspace:*",
     "@stylewindcss/postcss": "workspace:*",
     "stylewindcss": "workspace:*",
     "postcss": "^8.4.41",

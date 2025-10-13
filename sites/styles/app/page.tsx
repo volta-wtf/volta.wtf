@@ -1,16 +1,20 @@
 import { Image } from "@/components/media/image";
+import { Button } from "@/components/ui/button";
 import { Button as Button2 } from "@/interface/base/button";
-
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
+      {/* Test de Stylewind CSS */}
+      <div className="flex items-center justify-center gap-4 p-4 bg-blue-500 text-white">
+        <span>✅ Stylewind CSS funciona!</span>
+      </div>
       <main className={styles.main}>
         <Image.themed
           className={styles.logo}
-          srcLight="shared/logos/turborepo-dark.svg"
-          srcDark="shared/logos/turborepo-light.svg"
+          srcLight='/shared/logos/turborepo-dark.svg'
+          srcDark='/shared/logos/turborepo-light.svg'
           alt="Turborepo logo"
           width={180}
           height={38}
@@ -18,7 +22,7 @@ export default function Home() {
         />
         <ol>
           <li>
-            Get started by editing <code>sites/styles/app/page.tsx</code>
+            Get started by editing <code>apps/styles/app/page.tsx</code>
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
@@ -32,7 +36,7 @@ export default function Home() {
           >
             <Image
               className={styles.logo}
-              src="shared/logos/vercel.svg"
+              src='/shared/logos/vercel.svg'
               alt="Vercel logomark"
               width={20}
               height={20}
@@ -48,8 +52,11 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-        <Button2 appName="docs" className={styles.secondary}>
+        <Button className={styles.secondary}>
           Open alert
+        </Button>
+        <Button2 appName="web" className={styles.secondary}>
+          Open alert 2
         </Button2>
       </main>
       <footer className={styles.footer}>
@@ -60,7 +67,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="shared/icons/window.svg"
+            src='/shared/icons/window.svg'
             alt="Window icon"
             width={16}
             height={16}
@@ -74,7 +81,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="shared/icons/globe.svg"
+            src='/shared/icons/globe.svg'
             alt="Globe icon"
             width={16}
             height={16}

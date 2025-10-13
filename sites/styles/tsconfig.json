@@ -1,5 +1,5 @@
 {
-  "extends": "@repo/config-typescript/nextjs.json",
+  "extends": "@studio/config-typescript/nextjs.json",
   "compilerOptions": {
     "plugins": [{ "name": "next" }],
     "noEmit": true,
@@ -10,18 +10,17 @@
       "@/utils/*": ["../../registry/primitives/utils/*"],
       "@/primitives/*": ["../../registry/primitives/src/*"],
       "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
-      "@/components/ui/*": ["../../registry/components/shad/*"],
+      "@/components/ui/*": ["../../registry/components/ui/*"],
       "@/registry/*": ["../../registry/*"],
-      "@/registry/components/ui/*": ["../../registry/components/shad/*"],
+      "@/registry/components/ui/*": ["../../registry/components/ui/*"],
       "@/registry/patterns/*": ["../../registry/patterns/*"],
-      "@/interface/*": ["../../resources/interface/*"]
+      "@/interface/*": ["../../resources/interface/*"],
     },
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
-    "next.config.js",
     ".next/types/**/*.ts"
   ],
   "exclude": [

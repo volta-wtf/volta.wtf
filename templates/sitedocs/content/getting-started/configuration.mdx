@@ -1,0 +1,68 @@
+---
+title: Configuration
+description: Configure your documentation site
+---
+
+# Configuration
+
+Learn how to configure your documentation site to match your needs.
+
+## Site Configuration
+
+The main configuration file is `source.config.ts`:
+
+```typescript
+import { defineConfig } from 'fumadocs-mdx/config'
+
+export default defineConfig({
+  // Your configuration here
+})
+```
+
+## Metadata
+
+Update your site metadata in `app/layout.tsx`:
+
+```tsx
+export const metadata = {
+  title: 'Your Docs',
+  description: 'Your documentation site description',
+}
+```
+
+## Navigation
+
+Configure navigation in your `meta.json` files located in the content directories.
+
+### Example meta.json
+
+```json
+{
+  "title": "Section Title",
+  "pages": [
+    "page-1",
+    "page-2",
+    {
+      "title": "External Link",
+      "url": "https://example.com"
+    }
+  ]
+}
+```
+
+## Styling
+
+Customize your site's appearance by modifying:
+
+- `styles/theme.css` - Theme colors and variables
+- `styles/globals.css` - Global styles
+- `tailwind.config.ts` - Tailwind configuration
+
+## Search
+
+Search is automatically enabled. You can configure search behavior in the source configuration.
+
+## Next Steps
+
+- [Writing Content](/docs/guides/writing-content)
+- [Components](/docs/guides/components)

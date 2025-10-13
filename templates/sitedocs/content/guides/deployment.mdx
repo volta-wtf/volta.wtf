@@ -1,0 +1,114 @@
+---
+title: Deployment
+description: Deploy your documentation site to production
+---
+
+# Deployment
+
+Learn how to deploy your documentation site to various platforms.
+
+## Build for Production
+
+First, create a production build:
+
+```bash
+pnpm build
+```
+
+This will generate an optimized production build in the `.next` directory.
+
+## Deployment Platforms
+
+### Vercel (Recommended)
+
+The easiest way to deploy your Next.js documentation site:
+
+1. Push your code to GitHub, GitLab, or Bitbucket
+2. Import your repository on [Vercel](https://vercel.com)
+3. Vercel will automatically detect Next.js and configure the build settings
+4. Deploy!
+
+```bash
+# Or use Vercel CLI
+npx vercel
+```
+
+### Netlify
+
+Deploy to Netlify:
+
+1. Connect your repository to Netlify
+2. Configure build settings:
+   - Build command: `pnpm build`
+   - Publish directory: `.next`
+3. Deploy
+
+### Docker
+
+Create a `Dockerfile`:
+
+```dockerfile
+FROM node:18-alpine AS base
+
+# Install dependencies only when needed
+FROM base AS deps
+WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
+RUN npm install -g pnpm && pnpm install --frozen-lockfile
+
+# Build the app
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN npm install -g pnpm && pnpm build
+
+# Production image
+FROM base AS runner
+WORKDIR /app
+ENV NODE_ENV production
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
+EXPOSE 3000
+CMD ["node", "server.js"]
+```
+
+Build and run:
+
+```bash
+docker build -t docs .
+docker run -p 3000:3000 docs
+```
+
+## Environment Variables
+
+Don't forget to configure environment variables in your deployment platform:
+
+```bash
+NEXT_PUBLIC_APP_URL=https://yourdomain.com
+```
+
+## Custom Domain
+
+Configure your custom domain in your hosting platform's settings:
+
+1. Add your domain in the platform's dashboard
+2. Update your DNS records to point to the platform
+3. Wait for DNS propagation (usually a few minutes)
+
+## Performance Tips
+
+- Enable static generation for pages that don't change often
+- Use image optimization
+- Configure caching headers
+- Enable compression
+
+## Next Steps
+
+Congratulations on deploying your documentation site! 🎉
+
+Continue improving your docs:
+- [Writing Content](/docs/guides/writing-content)
+- [Components](/docs/guides/components)

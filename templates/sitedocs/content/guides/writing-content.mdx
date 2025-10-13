@@ -1,0 +1,98 @@
+---
+title: Writing Content
+description: Learn how to write and organize your documentation content
+---
+
+# Writing Content
+
+Learn how to create effective documentation using MDX.
+
+## MDX Basics
+
+MDX allows you to use JSX components in your Markdown files. This gives you the power to create interactive and engaging documentation.
+
+### Frontmatter
+
+Every MDX file should start with frontmatter:
+
+```mdx
+---
+title: Page Title
+description: Page description for SEO
+---
+```
+
+### Headings
+
+Use headings to structure your content:
+
+```mdx
+# H1 - Page Title
+## H2 - Main Section
+### H3 - Subsection
+```
+
+## Components
+
+You can use special components in your content:
+
+### Callout
+
+Highlight important information:
+
+```mdx
+<Callout type="info">
+  This is an informational callout.
+</Callout>
+```
+
+<Callout type="info">
+  This is an informational callout.
+</Callout>
+
+<Callout type="warning">
+  This is a warning callout.
+</Callout>
+
+### Code Blocks
+
+Include code with syntax highlighting:
+
+````mdx
+```tsx
+export default function Component() {
+  return <div>Hello World!</div>
+}
+```
+````
+
+## Organization
+
+Organize your content using folders:
+
+```
+content/
+├── (root)/
+│   ├── index.mdx
+│   └── meta.json
+├── getting-started/
+│   ├── index.mdx
+│   ├── installation.mdx
+│   └── meta.json
+└── guides/
+    ├── index.mdx
+    └── meta.json
+```
+
+## Best Practices
+
+1. **Clear Structure** - Use headings to create a clear hierarchy
+2. **Concise Writing** - Keep explanations clear and to the point
+3. **Code Examples** - Include practical examples
+4. **Visual Aids** - Use callouts and formatting to highlight important info
+5. **Navigation** - Link to related pages
+
+## Next Steps
+
+- [Components Guide](/docs/guides/components)
+- [Deployment Guide](/docs/guides/deployment)

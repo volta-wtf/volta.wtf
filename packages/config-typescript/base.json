@@ -8,7 +8,7 @@
       "@/utils/*": ["../../registry/primitives/utils/*"],
       "@/primitives/*": ["../../registry/primitives/src/*"],
       "@/components/*": ["./components/*","../../registry/components/*"],
-      "@/components/ui/*": ["../../registry/components/shad/*"],
+      "@/components/ui/*": ["../../registry/components/ui/*"],
       "@/registry/*": ["../../registry/patterns/*"],
       "@/interface/*": ["../../resources/interface/*"]
     },

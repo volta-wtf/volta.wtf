@@ -7,9 +7,9 @@
       "@/utils/*": ["../../registry/primitives/utils/*"],
       "@/primitives/*": ["../../registry/primitives/src/*"],
       "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
-      "@/components/ui/*": ["../../registry/components/shad/*"],
+      "@/components/ui/*": ["../../registry/components/ui/*"],
       "@/registry/*": ["../../registry/*"],
-      "@/registry/components/ui/*": ["../../registry/components/shad/*"],
+      "@/registry/components/ui/*": ["../../registry/components/ui/*"],
       "@/registry/patterns/*": ["../../registry/patterns/*"],
       "@/interface/*": ["../../resources/interface/*"],
       "react": ["./node_modules/@types/react"]
