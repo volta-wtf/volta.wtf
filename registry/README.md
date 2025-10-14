@@ -57,14 +57,15 @@ import { examples } from "@/registry/config/registry-examples"
 ## Dependencias
 
 Cada carpeta dentro de `/registry` es un workspace package con su propio `package.json`:
-- `@repo/registry-config` - Configuración del registry (schemas, índices)
+- `@studio/config-registry` - Configuración del registry (schemas, índices)
   - `shadcn` - Schemas del CLI oficial
   - `zod` - Validación
-- `@registry/assets` - Assets
+- `@registry/styles` - Assets
+- `@registry/primitives` - Primitives
 - `@registry/components` - Componentes
 - `@registry/interface` - Interface
 - `@registry/patterns` - Patterns
-- `@registry/primitives` - Primitives
+- `@registry/features` - Features
 
 ## Migración
 

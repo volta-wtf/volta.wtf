@@ -3,17 +3,9 @@
   "pages": [
     "index",
     "[Installation](/docs/installation)",
-    "components-json",
     "theming",
     "[Dark Mode](/docs/dark-mode)",
-    "[CLI](/docs/cli)",
-    "monorepo",
     "typography",
-    "v0",
-    "javascript",
-    "blocks",
-    "figma",
-    "changelog",
-    "legacy"
+    "changelog"
   ]
 }

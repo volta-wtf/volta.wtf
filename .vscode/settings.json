@@ -1,47 +1,5 @@
 {
   "explorer.sortOrder": "default",
   "explorer.sortOrderLexicographicOptions": "upper",
-  "files.exclude": {
-    // Base
-    "**/.gitkeep": false,
-    "**/.next": true,
-    "**/.turbo": true,
-    "**/.vercel": true,
-    "**/node_modules": true,
-
-    // Config
-    //"pnpm-*.yaml": true,
-    //"**/.gitignore": true,
-    //"**/.env*": true,
-    //"**/.npmrc": true,
-
-    // Apps
-    //"**/next-env.d.ts": true,
-    //"**/eslint.config.*": true,
-    //"**/next.config.*": true,
-    //"**/tsconfig.*": true,
-    //"**/postcss.*": true,
-
-    // Internal
-    ".temp": true,
-    "apps/admin": true,
-    "apps/builder": true,
-    "apps/editor": true,
-
-    //"apps/shad": false,
-    //"apps/docs": false,
-    //"apps/demos": false,
-    //"apps/catalog": false,
-
-    "sites/www": true,
-    "sites/knowledge": true,
-    "sites/globals": true,
-    "sites/theme": true,
-    //"sites/styles": false,
-
-    //"templates/": false,
-    //"templates/website": false,
-    //"templates/sitedocs": false,
-    //"templates/miltidocs": false,
-  }
+  "files.exclude": {}
 }
