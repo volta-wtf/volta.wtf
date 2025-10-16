@@ -37,7 +37,7 @@ const TOP_LEVEL_SECTIONS = [
   },
 ]
 const EXCLUDED_SECTIONS: string[] = []
-const EXCLUDED_PAGES = ["/docs"]
+const EXCLUDED_PAGES: string[] = []
 
 export function DocsSidebar({
   tree,
@@ -53,7 +53,7 @@ export function DocsSidebar({
     >
       <SidebarContent className="no-scrollbar overflow-x-hidden px-2 pb-12">
         <div className="h-(--top-spacing) shrink-0" />
-        <SidebarGroup>
+        <SidebarGroup className="hidden">
           <SidebarGroupLabel className="text-muted-foreground font-medium">
             Sections
           </SidebarGroupLabel>

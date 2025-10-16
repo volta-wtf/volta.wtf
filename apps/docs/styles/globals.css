@@ -1,6 +1,10 @@
-@import "stylewindcss";
+@import "tailwindcss";
+@import "tw-animate-css";
 
-@import "./config.css";
-@import "./theme.css";
-@import "./utilities.css";
-@import "./components.css";
+@import "./themes.css";
+
+@source "../app/**/*.{js,jsx,ts,tsx}";
+@source "../components/**/*.{js,jsx,ts,tsx}";
+@source "../../../registry/**/*.{js,jsx,ts,tsx}";
+
+@import "@registry/styles/stylewind.css";

@@ -1,0 +1,11 @@
+{
+  "name": "@registry/styles",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./stylewind.css",
+    "./stylewind.css": "./stylewind.css",
+    "./themes/stylewind.css": "./themes/stylewind.css",
+    "./themes/shadcn.css": "./themes/shadcn.css"
+  }
+}

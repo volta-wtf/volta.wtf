@@ -1,11 +1,10 @@
 import type { Metadata } from "next"
+
 import { fontVariables } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
-
-import { TooltipProvider } from "@/registry/components/ui/tooltip"
+import { Providers } from "@/components/providers"
 
 import "@/styles/globals.css"
-
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +27,7 @@ export default function RootLayout({
           fontVariables
         )}
       >
-        <TooltipProvider>{children}</TooltipProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

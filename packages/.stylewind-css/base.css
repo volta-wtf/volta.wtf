@@ -1,0 +1,62 @@
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    accent-color: var(--accent);
+    caret-color: var(--caret);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body::selection {
+    background: var(--selection);
+}
+
+::backdrop {
+    background-color: var(--backdrop);
+}
+
+mark {
+    background: var(--mark);
+}
+
+hr {
+    border-color: var(--divider);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading);
+}
+
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+    border-color: var(--border, currentColor);
+}
+
+.show-on-dark {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .show-on-light {
+        display: none;
+    }
+
+    .show-on-dark {
+        display: unset;
+    }
+}

@@ -7,9 +7,6 @@ import {
 } from "next-themes"
 
 export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
-  const [mounted, setMounted] = React.useState(false)
-  React.useEffect(() => { setMounted(true) }, [])
-  if (!mounted) { return children }
   return React.createElement(NextThemesProvider, props, children)
 }
 

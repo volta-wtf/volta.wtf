@@ -35,12 +35,24 @@ importers:
       '@registry/primitives':
         specifier: workspace:*
         version: link:../../registry/primitives
+      '@registry/styles':
+        specifier: workspace:*
+        version: link:../../registry/styles
+      '@tailwindcss/postcss':
+        specifier: ^4.1.13
+        version: 4.1.14
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.1.0)
       next:
         specifier: ^15.5.0
         version: 15.5.4(@babel/core@7.28.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      postcss:
+        specifier: ^8.5.3
+        version: 8.5.6
+      postcss-import:
+        specifier: ^16.1.0
+        version: 16.1.1(postcss@8.5.6)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -54,9 +66,6 @@ importers:
       '@studio/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
-      '@stylewindcss/postcss':
-        specifier: workspace:*
-        version: link:../../packages/stylewind-postcss
       '@types/node':
         specifier: ^22.15.3
         version: 22.18.8
@@ -69,12 +78,9 @@ importers:
       eslint:
         specifier: ^9.34.0
         version: 9.37.0(jiti@2.6.1)
-      postcss:
-        specifier: ^8.4.41
-        version: 8.5.6
-      stylewindcss:
-        specifier: workspace:*
-        version: link:../../packages/stylewind-css
+      tailwindcss:
+        specifier: ^4.1.13
+        version: 4.1.14
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -93,12 +99,21 @@ importers:
       '@registry/primitives':
         specifier: workspace:*
         version: link:../../registry/primitives
+      '@tailwindcss/postcss':
+        specifier: ^4.1.13
+        version: 4.1.14
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.1.0)
       next:
         specifier: ^15.5.0
         version: 15.5.4(@babel/core@7.28.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      postcss:
+        specifier: ^8.5.3
+        version: 8.5.6
+      postcss-import:
+        specifier: ^16.1.0
+        version: 16.1.1(postcss@8.5.6)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -112,9 +127,6 @@ importers:
       '@studio/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
-      '@stylewindcss/postcss':
-        specifier: workspace:*
-        version: link:../../packages/stylewind-postcss
       '@types/node':
         specifier: ^22.15.3
         version: 22.18.8
@@ -127,12 +139,9 @@ importers:
       eslint:
         specifier: ^9.34.0
         version: 9.37.0(jiti@2.6.1)
-      postcss:
-        specifier: ^8.4.41
-        version: 8.5.6
-      stylewindcss:
-        specifier: workspace:*
-        version: link:../../packages/stylewind-css
+      tailwindcss:
+        specifier: ^4.1.13
+        version: 4.1.14
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -151,9 +160,15 @@ importers:
       '@registry/primitives':
         specifier: workspace:*
         version: link:../../registry/primitives
+      '@registry/styles':
+        specifier: workspace:*
+        version: link:../../registry/styles
       '@tabler/icons-react':
         specifier: ^3.31.0
         version: 3.35.0(react@19.1.0)
+      '@tailwindcss/postcss':
+        specifier: ^4.1.13
+        version: 4.1.14
       '@vercel/analytics':
         specifier: ^1.4.1
         version: 1.5.0(next@15.5.4(@babel/core@7.28.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
@@ -184,6 +199,12 @@ importers:
       next-themes:
         specifier: 0.4.6
         version: 0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      postcss:
+        specifier: ^8.5.3
+        version: 8.5.6
+      postcss-import:
+        specifier: ^16.1.0
+        version: 16.1.1(postcss@8.5.6)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -202,6 +223,9 @@ importers:
       ts-morph:
         specifier: 18.0.0
         version: 18.0.0
+      tw-animate-css:
+        specifier: ^1.2.4
+        version: 1.4.0
       zod:
         specifier: ^3.24.1
         version: 3.25.76
@@ -212,9 +236,6 @@ importers:
       '@studio/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
-      '@stylewindcss/postcss':
-        specifier: workspace:*
-        version: link:../../packages/stylewind-postcss
       '@types/node':
         specifier: ^22.15.3
         version: 22.18.8
@@ -227,12 +248,9 @@ importers:
       eslint:
         specifier: ^9.34.0
         version: 9.37.0(jiti@2.6.1)
-      postcss:
-        specifier: ^8.4.41
-        version: 8.5.6
-      stylewindcss:
-        specifier: workspace:*
-        version: link:../../packages/stylewind-css
+      tailwindcss:
+        specifier: ^4.1.13
+        version: 4.1.14
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -426,31 +444,6 @@ importers:
 
   packages/config-typescript: {}
 
-  packages/stylewind-css:
-    dependencies:
-      tailwindcss:
-        specifier: ^4.1.11
-        version: 4.1.14
-    devDependencies:
-      '@stylewindcss/postcss':
-        specifier: workspace:*
-        version: link:../stylewind-postcss
-
-  packages/stylewind-postcss:
-    dependencies:
-      '@tailwindcss/postcss':
-        specifier: ^4
-        version: 4.1.14
-      postcss:
-        specifier: ^8.4.41
-        version: 8.5.6
-      postcss-import:
-        specifier: ^16.1.0
-        version: 16.1.1(postcss@8.5.6)
-      tailwindcss:
-        specifier: ^4.1.11
-        version: 4.1.14
-
   registry/components:
     dependencies:
       '@hookform/resolvers':
@@ -537,6 +530,9 @@ importers:
       '@registry/primitives':
         specifier: workspace:*
         version: link:../primitives
+      '@tailwindcss/postcss':
+        specifier: ^4.1.13
+        version: 4.1.14
       '@tanstack/react-table':
         specifier: ^8.21.3
         version: 8.21.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -555,6 +551,12 @@ importers:
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.1.0)
+      postcss:
+        specifier: ^8.5.3
+        version: 8.5.6
+      postcss-import:
+        specifier: ^16.1.0
+        version: 16.1.1(postcss@8.5.6)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -592,9 +594,6 @@ importers:
       '@studio/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
-      '@stylewindcss/postcss':
-        specifier: workspace:*
-        version: link:../../packages/stylewind-postcss
       '@types/node':
         specifier: ^22.15.3
         version: 22.18.8
@@ -607,12 +606,9 @@ importers:
       eslint:
         specifier: ^9.34.0
         version: 9.37.0(jiti@2.6.1)
-      postcss:
-        specifier: ^8.4.41
-        version: 8.5.6
-      stylewindcss:
-        specifier: workspace:*
-        version: link:../../packages/stylewind-css
+      tailwindcss:
+        specifier: ^4.1.13
+        version: 4.1.14
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -656,6 +652,9 @@ importers:
       '@tabler/icons-react':
         specifier: ^3.31.0
         version: 3.35.0(react@19.1.0)
+      '@tailwindcss/postcss':
+        specifier: ^4.1.13
+        version: 4.1.14
       '@tanstack/react-form':
         specifier: ^1.20.0
         version: 1.23.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -680,6 +679,12 @@ importers:
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.1.0)
+      postcss:
+        specifier: ^8.5.3
+        version: 8.5.6
+      postcss-import:
+        specifier: ^16.1.0
+        version: 16.1.1(postcss@8.5.6)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -711,9 +716,6 @@ importers:
       '@studio/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
-      '@stylewindcss/postcss':
-        specifier: workspace:*
-        version: link:../../packages/stylewind-postcss
       '@types/node':
         specifier: ^22.15.3
         version: 22.18.8
@@ -726,12 +728,9 @@ importers:
       eslint:
         specifier: ^9.34.0
         version: 9.37.0(jiti@2.6.1)
-      postcss:
-        specifier: ^8.4.41
-        version: 8.5.6
-      stylewindcss:
-        specifier: workspace:*
-        version: link:../../packages/stylewind-css
+      tailwindcss:
+        specifier: ^4.1.13
+        version: 4.1.14
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -794,6 +793,8 @@ importers:
         specifier: 5.9.2
         version: 5.9.2
 
+  registry/styles: {}
+
   resources/assets: {}
 
   resources/interface:
@@ -829,9 +830,6 @@ importers:
       '@studio/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
-      '@stylewindcss/postcss':
-        specifier: workspace:*
-        version: link:../../packages/stylewind-postcss
       '@types/node':
         specifier: ^22.15.3
         version: 22.18.8
@@ -844,12 +842,6 @@ importers:
       eslint:
         specifier: ^9.34.0
         version: 9.37.0(jiti@2.6.1)
-      postcss:
-        specifier: ^8.4.41
-        version: 8.5.6
-      stylewindcss:
-        specifier: workspace:*
-        version: link:../../packages/stylewind-css
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -868,12 +860,21 @@ importers:
       '@registry/primitives':
         specifier: workspace:*
         version: link:../../registry/primitives
+      '@tailwindcss/postcss':
+        specifier: ^4.1.13
+        version: 4.1.14
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.1.0)
       next:
         specifier: ^15.5.0
         version: 15.5.4(@babel/core@7.28.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      postcss:
+        specifier: ^8.5.3
+        version: 8.5.6
+      postcss-import:
+        specifier: ^16.1.0
+        version: 16.1.1(postcss@8.5.6)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -887,9 +888,6 @@ importers:
       '@studio/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
-      '@stylewindcss/postcss':
-        specifier: workspace:*
-        version: link:../../packages/stylewind-postcss
       '@types/node':
         specifier: ^22.15.3
         version: 22.18.8
@@ -902,12 +900,9 @@ importers:
       eslint:
         specifier: ^9.34.0
         version: 9.37.0(jiti@2.6.1)
-      postcss:
-        specifier: ^8.4.41
-        version: 8.5.6
-      stylewindcss:
-        specifier: workspace:*
-        version: link:../../packages/stylewind-css
+      tailwindcss:
+        specifier: ^4.1.13
+        version: 4.1.14
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -929,6 +924,9 @@ importers:
       '@tabler/icons-react':
         specifier: ^3.31.0
         version: 3.35.0(react@19.1.0)
+      '@tailwindcss/postcss':
+        specifier: ^4.1.13
+        version: 4.1.14
       '@vercel/analytics':
         specifier: ^1.4.1
         version: 1.5.0(next@15.5.4(@babel/core@7.28.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
@@ -951,14 +949,20 @@ importers:
         specifier: ^2.1.0
         version: 2.15.0(@babel/core@7.28.4)(@babel/template@7.27.2)(@types/react@19.1.0)(react@19.1.0)
       lucide-react:
-        specifier: 0.474.0
-        version: 0.474.0(react@19.1.0)
+        specifier: 0.475.0
+        version: 0.475.0(react@19.1.0)
       next:
         specifier: ^15.5.0
         version: 15.5.4(@babel/core@7.28.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       next-themes:
         specifier: 0.4.6
         version: 0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      postcss:
+        specifier: ^8.5.3
+        version: 8.5.6
+      postcss-import:
+        specifier: ^16.1.0
+        version: 16.1.1(postcss@8.5.6)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -987,9 +991,6 @@ importers:
       '@studio/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
-      '@stylewindcss/postcss':
-        specifier: workspace:*
-        version: link:../../packages/stylewind-postcss
       '@types/node':
         specifier: ^22.15.3
         version: 22.18.8
@@ -1002,12 +1003,9 @@ importers:
       eslint:
         specifier: ^9.34.0
         version: 9.37.0(jiti@2.6.1)
-      postcss:
-        specifier: ^8.4.41
-        version: 8.5.6
-      stylewindcss:
-        specifier: workspace:*
-        version: link:../../packages/stylewind-css
+      tailwindcss:
+        specifier: ^4.1.13
+        version: 4.1.14
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -1026,12 +1024,21 @@ importers:
       '@registry/primitives':
         specifier: workspace:*
         version: link:../../registry/primitives
+      '@tailwindcss/postcss':
+        specifier: ^4.1.13
+        version: 4.1.14
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.1.0)
       next:
         specifier: ^15.5.0
         version: 15.5.4(@babel/core@7.28.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      postcss:
+        specifier: ^8.5.3
+        version: 8.5.6
+      postcss-import:
+        specifier: ^16.1.0
+        version: 16.1.1(postcss@8.5.6)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -1045,9 +1052,6 @@ importers:
       '@studio/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
-      '@stylewindcss/postcss':
-        specifier: workspace:*
-        version: link:../../packages/stylewind-postcss
       '@types/node':
         specifier: ^22.15.3
         version: 22.18.8
@@ -1060,12 +1064,9 @@ importers:
       eslint:
         specifier: ^9.34.0
         version: 9.37.0(jiti@2.6.1)
-      postcss:
-        specifier: ^8.4.41
-        version: 8.5.6
-      stylewindcss:
-        specifier: workspace:*
-        version: link:../../packages/stylewind-css
+      tailwindcss:
+        specifier: ^4.1.13
+        version: 4.1.14
       typescript:
         specifier: 5.9.2
         version: 5.9.2

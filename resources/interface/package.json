@@ -6,7 +6,8 @@
     "./*": "./*.tsx",
     "./base/*": "./base/*.tsx",
     "./regions/*": "./regions/*.tsx",
-    "./features/*": "./features/*.tsx"
+    "./features/*": "./features/*.tsx",
+    "./lib/*": "./lib/*.ts"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -14,24 +15,21 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@registry/primitives": "workspace:*",
+    "@registry/components": "workspace:*",
+    "@registry/assets": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "next": "^15.5.0",
-    "lucide-react": "^0.475.0",
     "recharts": "^3.0.0",
-    "@registry/primitives": "workspace:*",
-    "@registry/components": "workspace:*",
-    "@registry/assets": "workspace:*"
+    "lucide-react": "^0.475.0"
   },
   "devDependencies": {
+    "@studio/config-eslint": "workspace:*",
+    "@studio/config-typescript": "workspace:*",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
-    "@studio/config-eslint": "workspace:*",
-    "@studio/config-typescript": "workspace:*",
-    "@stylewindcss/postcss": "workspace:*",
-    "stylewindcss": "workspace:*",
-    "postcss": "^8.4.41",
     "eslint": "^9.34.0",
     "typescript": "5.9.2"
   }
