@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from '@/lib/motion';
 import { X, Copy, Frame, Tag, Plus, Trash2, Edit2, RotateCcw } from 'lucide-react';
-import { toast } from "@/components/ui/toast";
+import { toast } from "@/components/ui/toaster";
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

@@ -4,7 +4,7 @@ import * as React from "react"
 import { ConfigProvider } from "@/utils/config"
 import { ThemeProvider } from "@/utils/theme"
 import { ActiveThemeProvider } from "@/components/theme"
-import { Toaster } from "@/components/ui/toast"
+import { Toaster } from "@/components/ui/toaster"
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -18,7 +18,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       >
         <ActiveThemeProvider initialTheme="blue">
           {children}
-          <Toaster position="top-center" />
+        <Toaster position="top-center" />
         </ActiveThemeProvider>
       </ThemeProvider>
     </ConfigProvider>

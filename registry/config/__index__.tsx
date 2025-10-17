@@ -806,7 +806,7 @@ export const Index: Record<string, any> = {
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
-      path: "registry/components/ui/sonner.tsx",
+      path: "registry/components/ui/toaster.tsx",
       type: "registry:ui",
       target: ""
     }],

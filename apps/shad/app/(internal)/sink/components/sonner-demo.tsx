@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { toast } from "@/registry/components/ui/toast"
+import { toast } from "@/registry/components/ui/toaster"
 
 import { Button } from "@/registry/components/ui/button"
 

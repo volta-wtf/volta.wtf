@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { TooltipProvider as Tooltips } from "@/components/ui/tooltip"
-import { Toaster } from "@/components/ui/toast"
+import { Toaster } from "@/components/ui/toaster"
 
 // App component props extending ConfigProvider
 export interface ShellProps {

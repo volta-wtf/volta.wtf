@@ -3,7 +3,7 @@
 
 import * as React from "react"
 import { useForm } from "@tanstack/react-form"
-import { toast } from "@/components/ui/toast"
+import { toast } from "@/components/ui/toaster"
 import * as z from "zod"
 
 import { Button } from "@/registry/components/ui/button"

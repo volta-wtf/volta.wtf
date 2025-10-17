@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
-import { toast } from "@/components/ui/toast"
+import { toast } from "@/components/ui/toaster"
 import * as z from "zod"
 
 import { Button } from "@/registry/components/ui/button"

@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Check, ChevronsUpDown } from "lucide-react"
 import { useForm } from "react-hook-form"
-import { toast } from "@/components/ui/toast"
+import { toast } from "@/components/ui/toaster"
 import { z } from "zod"
 
 import { cn } from "@/lib/utils"

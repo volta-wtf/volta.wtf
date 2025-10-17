@@ -1,6 +1,6 @@
 "use client"
 
-import { toast } from "@/registry/components/ui/toast"
+import { toast } from "@/registry/components/ui/toaster"
 import { Button } from "@/registry/components/ui/button"
 
 export default function SonnerDemo() {
