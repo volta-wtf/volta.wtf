@@ -2,7 +2,7 @@ import { Button } from "@/registry/components/ui/button"
 import { Separator } from "@/registry/components/ui/separator"
 import { SidebarTrigger } from "@/registry/components/ui/sidebar"
 import { ModeToggle } from "@/app/(examples)/dashboard/components/mode-toggle"
-import { ThemeSelector } from "@/app/(examples)/dashboard/components/theme-selector"
+import { ThemeSelector } from "@/app/(examples)/dashboard/components/partials/theme-selector"
 
 export function SiteHeader() {
   return (

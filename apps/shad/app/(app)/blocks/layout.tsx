@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 
-import { Announcement } from "@/components/announcement"
+import { Announcement } from "@/components/partials/announcement"
 import { BlocksNav } from "@/components/blocks-nav"
 import {
   PageActions,

@@ -3,6 +3,7 @@
 import * as React from "react"
 import { ConfigProvider } from "@/utils/config"
 import { ThemeProvider } from "@/utils/theme"
+import { ActiveThemeProvider } from "@/components/theme"
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -14,7 +15,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
         disableTransitionOnChange
         enableColorScheme
       >
-        {children}
+        <ActiveThemeProvider initialTheme="blue">
+          {children}
+        </ActiveThemeProvider>
       </ThemeProvider>
     </ConfigProvider>
   )

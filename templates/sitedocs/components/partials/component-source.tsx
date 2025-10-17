@@ -7,7 +7,7 @@ import { getRegistryItem } from "@/lib/registry"
 import { cn } from "@/lib/utils"
 import { CodeCollapsibleWrapper } from "@/components/interface/code-collapsible-wrapper"
 import { CopyButton } from "@/components/interface/copy-button"
-import { getIconForLanguageExtension } from "@/components/interface/icons"
+import { getIconForLanguageExtension } from "@/components/icons"
 
 export async function ComponentSource({
   name,

@@ -10,7 +10,7 @@ import {
 } from "@/registry/components/ui/sidebar"
 import { AppBreadcrumbs } from "@/app/(internal)/sink/components/app-breadcrumbs"
 import { AppSidebar } from "@/app/(internal)/sink/components/app-sidebar"
-import { ThemeSelector } from "@/app/(internal)/sink/components/theme-selector"
+import { ThemeSelector } from "@/app/(internal)/sink/components/partials/theme-selector"
 
 const inter = Inter({
   subsets: ["latin"],

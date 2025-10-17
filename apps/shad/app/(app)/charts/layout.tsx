@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 
-import { Announcement } from "@/components/announcement"
+import { Announcement } from "@/components/partials/announcement"
 import { ChartsNav } from "@/components/charts-nav"
 import {
   PageActions,
@@ -10,7 +10,7 @@ import {
   PageHeaderHeading,
 } from "@/components/page-header"
 import { PageNav } from "@/components/page-nav"
-import { ThemeSelector } from "@/components/theme-selector"
+import { ThemeSelector } from "@/components/partials/theme-selector"
 import { Button } from "@/registry/components/ui/button"
 
 const title = "Beautiful Charts & Graphs"

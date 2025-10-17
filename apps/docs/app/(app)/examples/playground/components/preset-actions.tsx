@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Dialog } from "@radix-ui/react-dialog"
+//import { Dialog } from "@radix-ui/react-dialog"
 import { MoreHorizontal } from "lucide-react"
 import { toast } from "sonner"
 
@@ -16,12 +16,13 @@ import {
 } from "@/registry/components/ui/alert-dialog"
 import { Button } from "@/registry/components/ui/button"
 import {
-  DialogClose,
+  Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
+  DialogClose,
 } from "@/registry/components/ui/dialog"
 import {
   DropdownMenu,

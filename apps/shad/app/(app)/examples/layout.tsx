@@ -1,8 +1,8 @@
 import { Metadata } from "next"
 import Link from "next/link"
 
-import { Announcement } from "@/components/announcement"
-import { ExamplesNav } from "@/components/examples-nav"
+import { Announcement } from "@/components/partials/announcement"
+import { ExamplesNav } from "@/components/partials/examples-nav"
 import {
   PageActions,
   PageHeader,
@@ -10,7 +10,7 @@ import {
   PageHeaderHeading,
 } from "@/components/page-header"
 import { PageNav } from "@/components/page-nav"
-import { ThemeSelector } from "@/components/theme-selector"
+import { ThemeSelector } from "@/components/partials/theme-selector"
 import { Button } from "@/registry/components/ui/button"
 
 export const dynamic = "force-static"
