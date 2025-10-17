@@ -3,7 +3,7 @@
 import * as React from "react"
 //import { Dialog } from "@radix-ui/react-dialog"
 import { MoreHorizontal } from "lucide-react"
-import { toast } from "sonner"
+import { toast } from "@/registry/components/ui/toast"
 
 import {
   AlertDialog,

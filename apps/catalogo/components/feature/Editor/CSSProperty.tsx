@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Copy, Palette } from 'lucide-react';
-import { toast } from 'sonner';
+import { toast } from "@/components/ui/toast";
 
 interface CSSPropertyEditorProps {
   properties: React.CSSProperties;

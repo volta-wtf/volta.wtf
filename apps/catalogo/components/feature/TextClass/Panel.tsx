@@ -2,7 +2,7 @@ import { useState, useEffect, type CSSProperties } from 'react';
 import { motion } from '@/lib/motion';
 import { Badge } from '@/components/ui/badge';
 import { Copy, FileText } from 'lucide-react';
-import { toast } from 'sonner';
+import { toast } from '@/components/ui/toaster';
 import { Separator } from '@/components/ui/separator';
 import type { TextClass } from '@/types';
 

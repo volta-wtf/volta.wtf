@@ -2,7 +2,7 @@
 "use client"
 
 import { useForm } from "@tanstack/react-form"
-import { toast } from "sonner"
+import { toast } from "@/components/ui/toast"
 import * as z from "zod"
 
 import { Button } from "@/registry/components/ui/button"

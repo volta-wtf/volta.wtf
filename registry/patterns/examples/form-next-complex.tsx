@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Form from "next/form"
-import { toast } from "sonner"
+import { toast } from "@/components/ui/toast"
 
 import { Button } from "@/registry/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/registry/components/ui/card"

@@ -8,7 +8,7 @@ import { ActiveThemeProvider } from "@/components/active-theme"
 import { Analytics } from "@/components/analytics"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/registry/components/ui/toaster"
+import { Toaster } from "@/registry/components/ui/toast"
 
 import "@/styles/globals.css"
 

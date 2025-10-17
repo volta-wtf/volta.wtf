@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from '@/lib/motion';
 import { Copy, Plus, Edit2, RotateCcw } from 'lucide-react';
-import { toast } from 'sonner';
+import { toast } from '@/components/ui/toaster';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';

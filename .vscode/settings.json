@@ -5,7 +5,7 @@
     // Base
     "**/.gitkeep": false,
     "**/.source": true,
-    //"**/.next": true,
+    "**/.next": true,
     "**/.turbo": true,
     "**/.vercel": true,
     "**/node_modules": true,

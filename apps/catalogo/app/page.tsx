@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Toaster } from 'sonner'
+import { Toaster } from "@/registry/components/ui/toast"
 
 import {
   AppLayout,
