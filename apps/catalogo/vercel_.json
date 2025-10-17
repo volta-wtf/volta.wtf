@@ -1,10 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "cd ../.. && pnpm install",
-  "buildCommand": "cd ../.. && pnpm -F apps/styles build",
-  "devCommand": "cd ../.. && pnpm -F apps/styles dev",
+  "buildCommand": "cd ../.. && pnpm -F apps/catalogo build",
+  "devCommand": "cd ../.. && pnpm -F apps/catalogo dev",
   "framework": "nextjs",
-  "outputDirectory": "apps/styles/.next",
+  "outputDirectory": "apps/catalogo/.next",
   "rewrites": [
     {
       "source": "/(.*)",
