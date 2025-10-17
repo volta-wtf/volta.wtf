@@ -1,0 +1,24 @@
+/*
+{
+    id: 'element-fire',
+    name: 'Fire Element',
+    description: 'Fiery text with orange glow effect',
+    category: 'Materials',
+    tags: ['fire'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'element-fire.css',
+    previewText: 'Fire',
+    background: '#2a1a1a'
+},
+*/
+
+.text-element-fire {
+    --style-text-color: #ff4500;
+    --style-shadow-color: #ff4500;
+    color: var(--style-text-color);
+    text-shadow:
+        0 0 0.05em var(--style-shadow-color),
+        0 0 0.10em var(--style-shadow-color),
+        0 0 0.15em var(--style-shadow-color),
+        0 0 0.20em var(--style-shadow-color);
+}

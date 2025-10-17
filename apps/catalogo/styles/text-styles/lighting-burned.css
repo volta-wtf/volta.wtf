@@ -1,0 +1,57 @@
+/*
+{
+    id: 'lighting-burned',
+    cssFile: 'lighting-burned.css',
+    name: 'Lighting Burned',
+    description: 'Dramatic lighting text effect with burned',
+    category: 'Special',
+    tags: ['lighting', 'dramatic', 'burned'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Focus',
+    usesData: true,
+    background: '#000000',
+},
+*/
+
+.text-lighting-burned {
+
+    & {
+        --style-fill-color: #999;
+        --style-tint-color: white;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        background: black;
+        filter: brightness(150%) contrast(1.3);
+        mix-blend-mode: color-dodge;
+        padding-inline: 0.06em;
+    }
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        padding-inline: 0.06em;
+    }
+
+    &:after {
+        z-index: 1;
+        color: var( --style-fill-color);
+        filter: blur(0.06em) brightness(1.2);
+
+    }
+
+    &:before {
+        z-index: 2;
+        color: red;
+        mix-blend-mode: color-dodge;
+    }
+
+}
+
+.dark .text-lighting-focus {
+    mix-blend-mode: lighten;
+}

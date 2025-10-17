@@ -1,0 +1,24 @@
+/*
+{
+    id: 'element-ice',
+    name: 'Ice Element',
+    description: 'Icy text with blue glow effect',
+    category: 'Materials',
+    tags: ['ice'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'element-ice.css',
+    previewText: 'Ice',
+    background: '#1a1a2a'
+},
+*/
+
+.text-element-ice {
+    --style-tint-color: #87ceeb;
+    --style-text-color: #87ceeb;
+    --style-shadow-color: #4682b4;
+    color: var(--style-text-color);
+    text-shadow:
+        0 0 0.05em var(--style-tint-color),
+        0 0 0.10em var(--style-tint-color),
+        0 0 0.15em var(--style-shadow-color);
+}

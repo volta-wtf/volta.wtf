@@ -1,0 +1,59 @@
+/*
+{
+    id: 'texture-healtmap',
+    cssFile: 'texture-healtmap.css',
+    name: 'Texture Healtmap',
+    description: 'Dramatic texture text effect with healtmap',
+    category: 'Special',
+    tags: ['texture', 'dramatic', 'healtmap'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Healtmap',
+    usesData: true,
+    background: '#000000',
+},
+*/
+
+.text-texture-healtmap {
+
+    & {
+        --style-fill-color: #b6a7a7;
+        --style-tint-color: #4d5e8f;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        background: black;
+        filter: brightness(140%) contrast(1.3) blur(0.005em);
+        mix-blend-mode: color-dodge;
+        padding-inline: 0.06em;
+    }
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        padding-inline: 0.06em;
+    }
+
+    &:after {
+        z-index: 1;
+        color: var( --style-fill-color);
+        filter: blur(0.06em) brightness(1.2);
+
+    }
+
+    &:before {
+        z-index: 2;
+        color: var(--style-tint-color);
+        mix-blend-mode: color-burn;
+    }
+
+}
+
+/*
+.dark .text-texture-healtmap {
+    mix-blend-mode: lighten;
+}
+*/

@@ -1,0 +1,38 @@
+/*
+{
+    id: 'bevel-contrast',
+    cssFile: 'bevel-contrast.css',
+    name: 'Bevel Contrast',
+    description: 'Bevel text effect with contrast',
+    category: 'Special',
+    tags: ['fixed color', 'bevel', 'contrast'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Bevel',
+    usesData: true,
+    background: 'radial'
+},
+*/
+
+.text-bevel-contrast {
+    & {
+        --style-text-color: #646464;
+        --style-bevel-color: #ff00005e;
+        --style-bevel-size: 0.03em;
+    }
+
+    & {
+        /* --text-color: transparent; */
+        color: var(--style-text-color);
+        position: relative;
+        z-index: 0;
+        filter: brightness(150%) contrast(10) drop-shadow(0 .06em .02em var(--style-bevel-color));
+    }
+
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        z-index: 1;
+        text-shadow: 0 0 .5em rgb(0 0 0 /.3);
+        filter: blur(var(--style-bevel-size));
+    }
+}

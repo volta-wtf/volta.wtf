@@ -1,0 +1,20 @@
+/*
+{
+    id: '3D',
+    cssFile: '3d.css',
+    name: '3D Basic',
+    description: 'Basic 3D text effect',
+    category: '3D',
+    tags: ['depth'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: '3D Text',
+    background: '#fed90f',
+    reference: ['https://codepen.io/ryandsouza13/pen/yEBJQV']
+},
+*/
+
+.text-3D {
+    --style-text-color: #f5f5f5;
+    color: var(--style-text-color);
+    text-shadow: var(--extrusion-medium), var(--shadow-ambient);
+}

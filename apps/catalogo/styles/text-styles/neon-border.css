@@ -1,0 +1,35 @@
+/*
+{
+    id: 'neon-border',
+    name: 'Neon Border',
+    description: 'Text with neon border and glow effect',
+    category: 'Special',
+    tags: ['neon', 'border', 'cyberpunk'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'neon-border.css',
+    previewText: 'Neon',
+    background: '#0a0a0a'
+},
+*/
+
+.text-neon-border {
+    & {
+        position: relative;
+        color: #00ffff;
+        text-shadow: 0 0 10px #00ffff;
+        z-index: 1;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border: 2px solid #00ffff;
+        border-radius: 8px;
+        box-shadow: 0 0 20px #00ffff;
+        pointer-events: none;
+        z-index: -1;
+    }
+}

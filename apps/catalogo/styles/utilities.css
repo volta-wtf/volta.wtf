@@ -1,0 +1,233 @@
+@utility text-fill-base {
+  display: inherit;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /*
+  //background-position: center center;
+  // color: transparent;
+  */
+}
+
+@utility text-stroke-base {
+  display: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: var(--style-stroke-width);
+}
+
+@utility text-color {
+    color: var(--style-text-color);
+}
+
+@utility text-fill {
+    -webkit-text-fill-color: var(--style-text-color);
+    color: var(--style-text-color);
+}
+
+@utility text-stroke {
+    -webkit-text-stroke-color: var(--style-stroke-color);
+    -webkit-text-stroke-width: var(--style-stroke-width);
+}
+
+@utility text-background {
+    --style-text-color: transparent;
+    background-color: var( --style-fill-color);
+}
+
+@utility text-clip {
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@utility text-gradient {
+    --style-text-color: transparent;
+    background-image: var(--style-fill-image);
+    background-size: var(--style-fill-size);
+}
+
+@utility text-image {
+    --style-text-color: transparent;
+    background-image: var(--style-fill-image);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+}
+
+@utility stroke-gradient {
+    background-image: var(--style-fill-image);
+    background-size: 100% 100%;
+}
+
+@utility stroke-image {
+    background-image: var(--style-fill-image);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+}
+
+@utility text-fill-shadow {
+    -webkit-text-fill-color: var(--style-text-color);
+    color: var(--style-stroke-color);
+}
+
+@utility text-shadow {
+    text-shadow: var(--style-shadow-text);
+}
+
+@utility filter-shadow {
+    filter: drop-shadow(var(--style-shadow-filter));
+}
+
+/*
+// https://github.com/hudochenkov/sass-text-stroke
+// https://codepen.io/hudochenkov/pen/RPKBoO?editors=1100
+// https://codepen.io/hudochenkov/pen/yNgqVg?editors=110
+@function text-stroke($size: 2, $color: #fff, $correction: 0) {
+    $size-rounded: round($size);
+    $size-rest:    $size-rounded - $size;
+
+  $radius: $size - $correction;
+  $stroke: ();
+
+  @for $i from -$size-rounded through $size-rounded {
+      $i: $i + $size-rest;
+
+    @for $k from -$size-rounded through $size-rounded {
+        $k: $k + $size-rest;
+
+      $x: $k;
+      $y: $i;
+
+      @if $k > 0 {
+        $x: $k - 0.5;
+      } @else if $k < 0 {
+        $x: $k + 0.5;
+      }
+
+      @if $i > 0 {
+        $y: $i - 0.5;
+      } @else if $i < 0 {
+        $y: $i + 0.5;
+      }
+
+      @if ($x*$x + $y*$y <= $radius*$radius) {
+        $stroke: append($stroke, $i*0.005em $k*0.005em 0 $color, comma);
+      }
+    }
+  }
+
+  @return $stroke;
+}
+
+@mixin text-stroke-shadow($size: 2, $color: currentColor, $correction: 0) {
+  text-shadow: text-stroke($size, $color, $correction);
+}
+
+// @mixin stroke($color: #000, $size: 1px) {
+//   text-shadow:
+//     -#{$size} -#{$size} 0 $color,
+//      0        -#{$size} 0 $color,
+//      #{$size} -#{$size} 0 $color,
+//      #{$size}  0        0 $color,
+//      #{$size}  #{$size} 0 $color,
+//      0         #{$size} 0 $color,
+//     -#{$size}  #{$size} 0 $color,
+//     -#{$size}  0        0 $color;
+// }
+
+*/
+
+.bg-photo {
+  background:
+    radial-gradient(farthest-corner, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url('https://picsum.photos/1280/800') center/cover;
+}
+
+.bg-sweet   { background: var(--gradient-sweet); }
+.bg-dark1   { background: #151515; }
+.bg-waves1  { background: radial-gradient(farthest-corner, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)); }
+.bg-radial  { background: radial-gradient(#272727, #1b1b1b); }
+.bg-radial2 { background: radial-gradient(#f40e0e, #a61919); }
+.bg-radial3 { background: radial-gradient(#f0db99, rgb(209, 163, 77)); }
+.bg-ambient { background: linear-gradient(to right, #24243e, #141E30, #0f0c29); }
+
+.bg-leafs      { background: var(--image-leafs); }
+.bg-dots       { background: var(--image-dots); }
+.bg-gradient   { background: var(--image-gradient); }
+.bg-dark       { background: var(--image-dark); }
+.bg-colors     { background: var(--image-colors); }
+.bg-lights     { background: var(--image-lights); }
+.bg-reflect    { background: var(--image-reflect); }
+.bg-reflect2   { background: var(--image-reflect2); }
+.bg-reflect3   { background: var(--image-reflect3); }
+.bg-reflect4   { background: var(--image-reflect4); }
+.bg-reflect5   { background: var(--image-reflect5); }
+.bg-waves      { background: var(--image-waves); }
+.bg-waves2     { background: var(--image-waves2); }
+.bg-waves3     { background: var(--image-waves3); }
+.bg-waves4     { background: var(--image-waves4); }
+.bg-waves5     { background: var(--image-waves5); }
+.bg-3d         { background: var(--image-3d); }
+.bg-abstract   { background: var(--image-abstract); }
+.bg-abstract2  { background: var(--image-abstract2); }
+.bg-abstract3  { background: var(--image-abstract3); }
+.bg-escene     { background: var(--image-escene); }
+.bg-escene2    { background: var(--image-escene2); }
+.bg-fabric     { background: var(--image-fabric); }
+.bg-dots       { background: var(--image-dots); }
+
+
+[class*="bg-"] {
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Animations for text effects */
+@keyframes light {
+  0%,
+  100% {
+    background-position: 0 0, 0 0;
+  }
+
+  50% {
+    background-position: 100% 0, 100% 0;
+  }
+}
+
+@keyframes lighting {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+
+  50% {
+    background-position: 50% 0, 50% 0;
+  }
+
+  100% {
+    background-position: 100% 0, 100% 0;
+  }
+}
+
+/*
+// svg { animation: shake 1s linear; }
+
+// @keyframes shake {
+//   0% { transform: translate(3px,5px); }
+//   5% { transform: translate(8px,-5px); }
+//   10% { transform: translate(-3px,2px); }
+//   20% { transform: translate(0px,-5px); }
+//   25% { transform: translate(2px,-5px); }
+//   30% { transform: translate(-3px,-3px); }
+//   30% { transform: translate(0px,0px); }
+//   40% { transform: translate(2px,2px); }
+//   55% { transform: translate(6px,-5px); }
+//   68% { transform: translate(4px,-3px); }
+//   80% { transform: translate(-4px,2px); }
+//   85% { transform: translate(2px,-5px); }
+//   90% { transform: translate(-8px,5px); }
+//   100% { transform: translate(7px,6px); }
+// }
+*/

@@ -1,0 +1,55 @@
+/*
+{
+    id: 'glitch-layers',
+    name: 'Layered Glitch',
+    description: 'Multi-layered glitch effect',
+    category: 'Glitch',
+    tags: ['glitch', 'layers', 'complex'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'glitch-layers.css',
+    previewText: 'Glitch',
+    usesData: true,
+    background: '#151515',
+    reference: ['https://codepen.io/kkhenriquez/pen/PGvmjm']
+},
+*/
+
+.text-glitch-layers {
+
+    & {
+        color: #fff;
+        position: relative;
+        z-index: 0;
+    }
+
+    &:before,
+    &:after {
+        content: attr(data-text);
+        position: absolute;
+        display: block;
+        top: 0.08em;
+        left: 0;
+        opacity: .8;
+    }
+
+    &:after {
+        color: #f0f;
+        z-index: -2;
+        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+    }
+
+    &:before {
+        color: #0ff;
+        z-index: -1;
+        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite;
+    }
+}
+
+@keyframes glitch {
+    0%  { transform: translate(0) }
+    20% { transform: translate(-0.03em, 0.03em) }
+    40% { transform: translate(-0.03em, -0.03em) }
+    60% { transform: translate(0.03em, 0.03em) }
+    80% { transform: translate(0.03em, -0.03em) }
+    to  { transform: translate(0) }
+}

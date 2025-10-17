@@ -8,6 +8,7 @@ sites (Websites)
 apps (Products)
 - 3004 docs             @volta/docs
 - 3003 catalog          @volta/catalog
+- 3007 catalog          @volta/catalogo
 - 3006 demos            @volta/demos
 - 3005 editor           @volta/editor
 - 3002 builder          @studio/builder
@@ -24,7 +25,7 @@ packages  (Configs & Tools) internas y publicas
 - primitives.css        @prebots/primitives         // Primitive tokens
 - globals.css           @prebots/globals            // Semantic tokens
 - theme.css             @prebots/theme              // Role-based tokens
-- styles.css            @prebots/styles             // Custom styles
+- materials.css         @prebots/materials          // Custom surafces and text styles
 - system.css            @prebots/system             // Systematic-layered tokens
 - stylewind-plugins     @stylewind/plugins          //
 - stylewind-postcss     @stylewind/postcss          //

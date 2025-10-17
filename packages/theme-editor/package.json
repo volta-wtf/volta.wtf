@@ -1,0 +1,42 @@
+{
+  "name": "@studio/theme-editor",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "main": "./dist/index.cjs",
+  "exports": {
+    ".": "./dist/index.cjs",
+    "./register": "./src/register.js",
+    "./auto-inject": "./src/auto-inject.js"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test:styles": "node src/test/dynamic-styles-test.js",
+    "test:variables": "node src/test/variables-test.js",
+    "test:cors": "node src/test/cors-test.js",
+    "test:debug-selector": "node src/test/debug-selector.js",
+    "test": "npm run test:styles && npm run test:variables",
+    "test:all": "npm run test:styles && npm run test:variables && npm run test:cors",
+    "prepare": "npm run build"
+  },
+  "bin": {
+    "theme-editor": "./bin/theme-editor.cjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-react": "^7.22.0",
+    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-replace": "^6.0.1",
+    "rollup": "^3.0.0"
+  }
+}

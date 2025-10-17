@@ -1,0 +1,25 @@
+/*
+{
+    id: 'stroke-solid',
+    name: 'Solid Stroke',
+    description: 'Text with solid color stroke',
+    category: 'Basics',
+    tags: ['solid', 'stroke'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'stroke-solid.css',
+    previewText: 'Border',
+    background: '#ddd'
+},
+*/
+
+.text-stroke-solid {
+    --style-stroke-width: .06em;
+    --style-stroke-color: transparent;
+    --style-text-color: var(--foreground);
+    --style-fill-image: var(--gradient-solid);
+    padding: calc(var(--style-stroke-width) / 2);
+    @apply stroke-gradient;
+    @apply text-fill;
+    @apply text-clip;
+    @apply text-stroke;
+}

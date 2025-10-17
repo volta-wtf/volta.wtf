@@ -1,0 +1,8 @@
+@import "./presets.css";
+@import "./utilities.css";
+@import "./styles.css";
+@import "./demo.css";
+
+body {
+    font-family: sans-serif;
+}

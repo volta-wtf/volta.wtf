@@ -1,0 +1,60 @@
+/*
+{
+    id: 'texture-fluor',
+    cssFile: 'texture-fluor.css',
+    name: 'Texture Fluor',
+    description: 'Dramatic texture text effect with fluor',
+    category: 'Special',
+    tags: ['texture', 'dramatic', 'fluor'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Fluor',
+    usesData: true,
+    background: '#000000',
+},
+*/
+
+.text-texture-fluor {
+
+    & {
+        --style-fill-color: #7900ff;
+        --style-tint-color: #000000;
+        --style-text-color: #ff0000;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        filter: brightness(120%) contrast(1.3);
+        /* mix-blend-mode: darken; */
+        padding-inline: 0.096em;
+        color: var(--style-text-color);
+    }
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        padding-inline: 0.06em;
+    }
+
+    &:after {
+        z-index: 1;
+        color: var( --style-fill-color);
+        filter: blur(0.06em) brightness(1.2);
+
+    }
+
+    &:before {
+        z-index: 2;
+        color: var(--style-tint-color);
+        mix-blend-mode: color-burn;
+    }
+
+}
+
+/*
+.dark .text-texture-rusted {
+    mix-blend-mode: lighten;
+}
+*/

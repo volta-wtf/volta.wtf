@@ -1,0 +1,18 @@
+/*
+{
+    id: 'fill-solid',
+    name: 'Solid Fill',
+    description: 'Simple solid color text fill',
+    category: 'Basics',
+    tags: ['fill'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'fill-solid.css',
+    previewText: 'Solid',
+    background: '#f1fbae'
+},
+*/
+
+.text-fill-solid {
+    --style-text-color: blue;
+    @apply text-fill;
+}

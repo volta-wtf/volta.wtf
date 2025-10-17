@@ -1,0 +1,51 @@
+/*
+{
+    id: 'double-stroke',
+    cssFile: 'double-stroke.css',
+    name: 'Double Stroke',
+    description: 'Layered text with offset shadow effect',
+    category: 'Basics',
+    tags: ['double', 'layer', 'offset'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Double Stroke',
+    usesData: true,
+    background: '#f0f0f0'
+},
+*/
+
+.text-double-stroke {
+    & {
+        --style-stroke-width: .02em;
+        --style-stroke-color: black;
+        --style-text-color: currentColor;
+        --style-fill-color: transparent;
+    }
+    &,
+    &:before,
+    &:after {
+        -webkit-text-stroke-width: var(--style-stroke-width);
+        -webkit-text-stroke-color: var(--style-stroke-color);
+        padding: calc(var(--style-stroke-width) / 2);
+    }
+    & {
+        position: relative;
+        z-index: 0;
+        color: var(--style-text-color);
+    }
+    &:before,
+    &:after {
+        content: attr(data-text);
+        position: absolute;
+        color: var(--style-fill-color);
+    }
+    &:before {
+        z-index: -1;
+        top: .03em;
+        left: .03em;
+    }
+    &:after {
+        z-index: -2;
+        top: .06em;
+        left: .06em;
+    }
+}

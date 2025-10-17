@@ -1,0 +1,30 @@
+/*
+{
+    id: 'stripes-rainbow',
+    name: 'Rainbow Stripes',
+    description: 'Rainbow striped text pattern',
+    category: 'Gradients',
+    tags: ['rainbow', 'stripes', 'colorful'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'stripes-rainbow.css',
+    previewText: 'Stripes',
+    background: '#411b58'
+},
+*/
+
+.text-stripes-rainbow {
+    --style-fill-image: var(--gradient-rainbow);
+    --style-fill-size: 100% 70%;
+    @apply text-gradient;
+    @apply text-clip;
+    @apply text-fill;
+    /* animation: rainbow 50s linear infinite; */
+}
+
+/*
+@keyframes rainbow {
+    100% {
+        background-position: 0 30em;
+    }
+}
+*/

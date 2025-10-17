@@ -1,0 +1,21 @@
+/*
+{
+    id: 'gradient-h',
+    name: 'Horizontal Gradient',
+    description: 'Horizontal gradient text fill',
+    category: 'Basics',
+    tags: ['gradient', 'color'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'gradient-h.css',
+    previewText: 'Gradient',
+    background: '#0e213a',
+    reference: ['https://codepen.io/argyleink/pen/OJMEpGp']
+},
+*/
+
+.text-gradient-h {
+    --style-fill-image: var(--gradient-to-right);
+    @apply text-gradient;
+    @apply text-clip;
+    @apply text-fill;
+}

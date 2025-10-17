@@ -1,0 +1,156 @@
+/*
+textClassesCategories=[
+  'All',
+  'Basics',
+  'Materials',
+  '3D',
+  'Decorative',
+  'Effects',
+  'Colorful',
+  'Glitch',
+  'Special',
+  'Underlines'
+];
+*/
+
+/*
+textClassesStates=[
+  'Draft',
+  'Beta',
+  'New',
+  'Active',
+  'Deprecate',
+  'Inactive',
+  'Deprecated',
+];
+*/
+
+
+:root {
+  --stroke-width: .03em;
+  --stroke-color: black;
+  --text-color: black;
+   --style-fill-color: black;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --image-size: 100% 100%;
+}
+
+
+@import './text-styles/fill-solid.css';
+@import './text-styles/fill-alpha.css';
+@import './text-styles/fill-blend.css';
+
+@import './text-styles/double-fill.css';
+@import './text-styles/double-stroke.css';
+
+@import './text-styles/fill-glow.css';
+@import './text-styles/retro-wave.css';
+
+@import './text-styles/stroke-only.css';
+@import './text-styles/stroke-inset.css';
+@import './text-styles/stroke-shadow.css';
+@import './text-styles/stroke-fill.css';
+@import './text-styles/stroke-image.css';
+@import './text-styles/stroke-solid.css';
+@import './text-styles/stroke-gradient.css';
+
+@import './text-styles/image.css';
+@import './text-styles/image-shadow.css';
+@import './text-styles/image-stroke.css';
+@import './text-styles/image-light.css';
+
+@import './text-styles/metallic-chrome.css';
+@import './text-styles/gradient-v.css';
+@import './text-styles/gradient-h.css';
+@import './text-styles/gradient-motion.css';
+@import './text-styles/gradient-rainbow.css';
+
+@import './text-styles/stripes-colors.css';
+@import './text-styles/stripes-rainbow.css';
+
+@import './text-styles/shadow-rainbow.css';
+
+@import './text-styles/3d-light.css';
+@import './text-styles/3d-sweet.css';
+@import './text-styles/gold-3D.css';
+@import './text-styles/3d-current-dark.css';
+@import './text-styles/3d-current.css';
+@import './text-styles/3d.css';
+@import './text-styles/3d-thin.css';
+@import './text-styles/3d-glow-light-fill.css';
+@import './text-styles/3d-glow.css';
+@import './text-styles/3d-glow-dark-fill.css';
+@import './text-styles/3d-glow-clear.css';
+
+@import './text-styles/3d-faded-soft.css';
+@import './text-styles/3d-faded-medium.css';
+@import './text-styles/3d-faded-hard.css';
+
+@import './text-styles/3d-plain.css';
+@import './text-styles/shadow-3d.css';
+
+@import './text-styles/glitch.css';
+@import './text-styles/glitch-giro.css';
+@import './text-styles/glitch-layers.css';
+@import './text-styles/rgb-split.css';
+
+@import './text-styles/inset.css';
+@import './text-styles/inset-blend.css';
+
+@import './text-styles/emboss-blend.css';
+@import './text-styles/emboss-shadow.css';
+@import './text-styles/emboss-plain.css';
+@import './text-styles/emboss.css';
+@import './text-styles/emboss-clear.css';
+@import './text-styles/emboss-bordered.css';
+@import './text-styles/emboss-stroke.css';
+
+@import './text-styles/shadow-animated.css';
+@import './text-styles/shadow-stripes.css';
+@import './text-styles/striped-staked.css';
+@import './text-styles/striped-shaded.css';
+@import './text-styles/striped-layers.css';
+@import './text-styles/stripes.css';
+@import './text-styles/pop-art.css';
+
+@import './text-styles/lighting-stroke.css';
+@import './text-styles/lighting-border.css';
+@import './text-styles/lighting.css';
+
+/* Aqui van los efectos avanzados*/
+
+@import './text-styles/cut-bright.css';
+@import './text-styles/cut-dark.css';
+
+@import './text-styles/distortion.css';
+
+@import './text-styles/fill-crystal.css';
+@import './text-styles/fill-glass.css';
+@import './text-styles/fill-glossy.css';
+
+/* Aqui van los efectos avanzados*/
+
+@import './text-styles/bevel.css';
+@import './text-styles/bevel-contrast.css';
+
+@import './text-styles/glass.css';
+@import './text-styles/glass-new.css';
+@import './text-styles/glass-reflex.css';
+
+@import './text-styles/lighting-focus.css';
+@import './text-styles/lighting-burned.css';
+@import './text-styles/lighting-bordered.css';
+
+
+@import './text-styles/texture-rusted.css';
+@import './text-styles/texture-dusted.css';
+@import './text-styles/texture-rushed.css';
+@import './text-styles/texture-neo.css';
+@import './text-styles/texture-neosticky.css';
+@import './text-styles/texture-neostick.css';
+@import './text-styles/texture-neoglow.css';
+@import './text-styles/texture-neosplit.css';
+@import './text-styles/texture-healtmap.css';
+@import './text-styles/texture-glowing.css';
+@import './text-styles/texture-toxic.css';
+@import './text-styles/texture-fluor.css';

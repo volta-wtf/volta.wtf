@@ -1,0 +1,59 @@
+/*
+{
+    id: 'texture-rushed',
+    cssFile: 'texture-rushed.css',
+    name: 'Texture Rushed',
+    description: 'Dramatic texture text effect with rushed',
+    category: 'Special',
+    tags: ['texture', 'dramatic', 'rushed'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Rushed',
+    usesData: true,
+    background: '#000000',
+},
+*/
+
+.text-texture-rushed {
+
+    & {
+        --style-tint-color: #a7a7a7;
+        --style-fill-color: #00c6d7;
+        --style-text-color: black;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        background: black;
+        filter: brightness(150%) contrast(6.3) blur(0px);
+        mix-blend-mode: color-dodge;
+        padding-inline: 0.06em;
+        color: var(--style-text-color);
+    }
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        padding-inline: 0.06em;
+    }
+
+    &:after {
+        z-index: 1;
+        color: var( --style-tint-color);
+        filter: blur(0.06em) brightness(1.2);
+
+    }
+
+    &:before {
+        z-index: 2;
+        color: var(--style-fill-color);
+        mix-blend-mode: color-burn;
+    }
+
+}
+
+.dark .text-texture-rushed {
+    mix-blend-mode: lighten;
+}

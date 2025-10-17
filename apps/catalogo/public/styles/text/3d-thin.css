@@ -1,0 +1,20 @@
+/*
+{
+    id: '3D-thin',
+    cssFile: '3d-thin.css',
+    name: '3D Thin',
+    description: 'Thin 3D text effect',
+    category: '3D',
+    tags: ['depth', 'thin'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: '3D Text',
+    background: '#fed90f',
+    reference: ['https://codepen.io/ryandsouza13/pen/yEBJQV']
+},
+*/
+
+.text-3D-thin {
+    --style-text-color: #fff;
+    color: var(--style-text-color);
+    text-shadow: var(--extrusion-thin), var(--shadow-medium);
+}

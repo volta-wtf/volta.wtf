@@ -1,0 +1,59 @@
+/*
+{
+    id: 'stripes',
+    name: 'Stripes',
+    description: 'Simple striped text pattern',
+    category: 'Decorative',
+    tags: ['stripes', 'pattern', 'lines'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'stripes.css',
+    previewText: 'Stripes',
+    usesData: true,
+    background: '#278293',
+    reference: ['https://codepen.io/yoksel/pen/LYZYGrv']
+},
+*/
+
+.text-stripes {
+    --stripe-step: 0.06em;
+    --stripe-tiny-step: 0.02em;
+    --stripe-offset: calc(var(--stripe-step) * .75);
+
+    position: relative;
+    width: 100%;
+    height: 1em;
+    line-height: 1;
+    color: transparent;
+
+    &::after,
+    &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /* width: 99%; */
+        mask-image: repeating-linear-gradient(-45deg,
+                black 0, black var(--stripe-step),
+                transparent 0, transparent calc(var(--stripe-step) * 2));
+        mask-position: 0 0;
+        mask-size: 120% 120%;
+    }
+
+    &::before {
+        color: aquamarine;
+    }
+
+    &::after {
+        color: darkturquoise;
+    }
+
+    &::after,
+    &::before {
+        content: attr(data-text);
+    }
+
+    &::before {
+        left: var(--stripe-offset);
+        bottom: var(--stripe-offset);
+        mask-position: var(--stripe-offset) var(--stripe-offset);
+    }
+}

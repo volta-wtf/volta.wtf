@@ -1,0 +1,404 @@
+:root { /* Layered shadows */
+
+  --shadow-double:
+    .05em .05em var( --style-fill-color),
+    .1em .1em var(--shadow-color);
+
+  --shadow-double-large:
+    .1em .1em var( --style-fill-color),
+    .2em .2em var(--shadow-color);
+
+  --shadow-rainbow:
+    0.03em 0.03em #fc0049,
+    0.06em 0.06em #fe8f01,
+    0.09em 0.09em #fdf21f,
+    0.12em 0.12em #3fdf4b,
+    0.15em 0.15em #3462fe;
+
+  --shadow-multicolor:
+    0.03em 0.03em 0em #eb452b,
+    0.06em 0.06em 0em #efa032,
+    0.09em 0.09em 0em #46b59b,
+    0.12em 0.12em 0em #017e7f,
+    0.15em 0.15em 0em #052939,
+    0.18em 0.18em 0em color-mix(in srgb, var(--foreground) 10%, var(--background) 100%),
+    0.21em 0.21em 0em color-mix(in srgb, var(--foreground) 10%, var(--background) 100%),
+    0.24em 0.24em 0em color-mix(in srgb, var(--foreground) 10%, var(--background) 100%),
+    0.27em 0.27em 0em color-mix(in srgb, var(--foreground) 10%, var(--background) 100%);
+
+}
+
+:root { /* Long & Faded shadows */
+
+  --shadow-long-hard:
+    0.01em 0.01em 0 #ef6209,
+    0.02em 0.02em 0 #ef6209,
+    0.03em 0.03em 0 #ef6209,
+    0.04em 0.04em 0 #ef6209,
+    0.05em 0.05em 0 #ef6209,
+    0.06em 0.06em 0 #ef6209,
+    0.07em 0.07em 0 #ef6209,
+    0.08em 0.08em 0 #ef6209,
+    0.09em 0.09em 0 #ef6209,
+    0.10em 0.10em 0 #ef6209,
+    0.11em 0.11em 0 #ef6209,
+    0.12em 0.12em 0 #ef6209,
+    0.13em 0.13em 0 #ef6209,
+    0.14em 0.14em 0 #ef6209,
+    0.15em 0.15em 0 #ef6209,
+    0.16em 0.16em 0 #ef6209,
+    0.17em 0.17em 0 #ef6209,
+    0.18em 0.18em 0 #ef6209,
+    0.19em 0.19em 0 #ef6209,
+    0.20em 0.20em 0 #ef6209,
+    0.21em 0.21em 0 #ef6209,
+    0.22em 0.22em 0 #ef6209;
+
+  --shadow-faded-hard:
+    0.01em 0.01em 0 rgb(0 0 0 / .80),
+    0.02em 0.02em 0 rgb(0 0 0 / .80),
+    0.03em 0.03em 0 rgb(0 0 0 / .80),
+    0.04em 0.04em 0 rgb(0 0 0 / .80),
+    0.05em 0.05em 0 rgb(0 0 0 / .70),
+    0.06em 0.06em 0 rgb(0 0 0 / .70),
+    0.07em 0.07em 0 rgb(0 0 0 / .70),
+    0.08em 0.08em 0 rgb(0 0 0 / .60),
+    0.09em 0.09em 0 rgb(0 0 0 / .60),
+    0.10em 0.10em 0 rgb(0 0 0 / .60),
+    0.11em 0.11em 0 rgb(0 0 0 / .55),
+    0.12em 0.12em 0 rgb(0 0 0 / .55),
+    0.13em 0.13em 0 rgb(0 0 0 / .50),
+    0.14em 0.14em 0 rgb(0 0 0 / .45),
+    0.15em 0.15em 0 rgb(0 0 0 / .40),
+    0.16em 0.16em 0 rgb(0 0 0 / .35),
+    0.17em 0.17em 0 rgb(0 0 0 / .30),
+    0.18em 0.18em 0 rgb(0 0 0 / .25),
+    0.19em 0.19em 0 rgb(0 0 0 / .20),
+    0.20em 0.20em 0 rgb(0 0 0 / .15),
+    0.21em 0.21em 0 rgb(0 0 0 / .10),
+    0.22em 0.22em 0 rgb(0 0 0 / .05);
+
+  --shadow-faded-medium-less-2:
+    0.01em 0.01em 0.01em rgb(0 0 0 / .30),
+    0.02em 0.02em 0.01em rgb(0 0 0 / .30),
+    0.03em 0.03em 0.01em rgb(0 0 0 / .30),
+    0.04em 0.04em 0.01em rgb(0 0 0 / .30),
+    0.05em 0.05em 0.01em rgb(0 0 0 / .20),
+    0.06em 0.06em 0.01em rgb(0 0 0 / .20),
+    0.07em 0.07em 0.01em rgb(0 0 0 / .20),
+    0.08em 0.08em 0.01em rgb(0 0 0 / .20),
+    0.09em 0.09em 0.01em rgb(0 0 0 / .15),
+    0.10em 0.10em 0.01em rgb(0 0 0 / .15),
+    0.11em 0.11em 0.01em rgb(0 0 0 / .15),
+    0.12em 0.12em 0.01em rgb(0 0 0 / .15),
+    0.13em 0.13em 0.01em rgb(0 0 0 / .15),
+    0.14em 0.14em 0.01em rgb(0 0 0 / .10),
+    0.15em 0.15em 0.01em rgb(0 0 0 / .10),
+    0.16em 0.16em 0.01em rgb(0 0 0 / .10),
+    0.17em 0.17em 0.01em rgb(0 0 0 / .10),
+    0.18em 0.18em 0.01em rgb(0 0 0 / .05),
+    0.19em 0.19em 0.01em rgb(0 0 0 / .05),
+    0.20em 0.20em 0.01em rgb(0 0 0 / .05),
+    0.21em 0.21em 0.01em rgb(0 0 0 / .05),
+    0.22em 0.22em 0.01em rgb(0 0 0 / .05);
+
+  --shadow-faded-medium-less-1:
+    0.01em 0.01em 0.01em rgb(0 0 0 / .25),
+    0.02em 0.02em 0.01em rgb(0 0 0 / .25),
+    0.03em 0.03em 0.01em rgb(0 0 0 / .25),
+    0.04em 0.04em 0.01em rgb(0 0 0 / .25),
+    0.05em 0.05em 0.01em rgb(0 0 0 / .15),
+    0.06em 0.06em 0.01em rgb(0 0 0 / .15),
+    0.07em 0.07em 0.01em rgb(0 0 0 / .15),
+    0.08em 0.08em 0.01em rgb(0 0 0 / .15),
+    0.09em 0.09em 0.01em rgb(0 0 0 / .10),
+    0.10em 0.10em 0.01em rgb(0 0 0 / .10),
+    0.11em 0.11em 0.01em rgb(0 0 0 / .10),
+    0.12em 0.12em 0.01em rgb(0 0 0 / .10),
+    0.13em 0.13em 0.01em rgb(0 0 0 / .10),
+    0.14em 0.14em 0.01em rgb(0 0 0 / .05),
+    0.15em 0.15em 0.01em rgb(0 0 0 / .05),
+    0.16em 0.16em 0.01em rgb(0 0 0 / .05),
+    0.17em 0.17em 0.01em rgb(0 0 0 / .05),
+    0.18em 0.18em 0.01em rgb(0 0 0 / .025),
+    0.19em 0.19em 0.01em rgb(0 0 0 / .025),
+    0.20em 0.20em 0.01em rgb(0 0 0 / .025),
+    0.21em 0.21em 0.01em rgb(0 0 0 / .025),
+    0.22em 0.22em 0.01em rgb(0 0 0 / .025);
+
+  --shadow-faded-medium:
+    0.01em 0.01em 0.01em rgb(0 0 0 / .16),
+    0.02em 0.02em 0.01em rgb(0 0 0 / .16),
+    0.03em 0.03em 0.01em rgb(0 0 0 / .16),
+    0.04em 0.04em 0.01em rgb(0 0 0 / .16),
+    0.05em 0.05em 0.01em rgb(0 0 0 / .12),
+    0.06em 0.06em 0.01em rgb(0 0 0 / .12),
+    0.07em 0.07em 0.01em rgb(0 0 0 / .12),
+    0.08em 0.08em 0.01em rgb(0 0 0 / .12),
+    0.09em 0.09em 0.01em rgb(0 0 0 / .06),
+    0.10em 0.10em 0.01em rgb(0 0 0 / .06),
+    0.11em 0.11em 0.01em rgb(0 0 0 / .06),
+    0.12em 0.12em 0.01em rgb(0 0 0 / .06),
+    0.13em 0.13em 0.01em rgb(0 0 0 / .06),
+    0.14em 0.14em 0.01em rgb(0 0 0 / .06),
+    0.15em 0.15em 0.01em rgb(0 0 0 / .06),
+    0.16em 0.16em 0.01em rgb(0 0 0 / .03),
+    0.17em 0.17em 0.01em rgb(0 0 0 / .03),
+    0.18em 0.18em 0.01em rgb(0 0 0 / .015),
+    0.19em 0.19em 0.01em rgb(0 0 0 / .015),
+    0.20em 0.20em 0.01em rgb(0 0 0 / .015),
+    0.21em 0.21em 0.01em rgb(0 0 0 / .015),
+    0.22em 0.22em 0.01em rgb(0 0 0 / .015);
+
+
+  --shadow-faded-soft-less-2:
+    0.01em 0.01em 0.01em rgb(0 0 0 / .18),
+    0.02em 0.02em 0.01em rgb(0 0 0 / .18),
+    0.03em 0.03em 0.01em rgb(0 0 0 / .18),
+    0.04em 0.04em 0.01em rgb(0 0 0 / .18),
+    0.05em 0.05em 0.01em rgb(0 0 0 / .08),
+    0.06em 0.06em 0.01em rgb(0 0 0 / .08),
+    0.07em 0.07em 0.01em rgb(0 0 0 / .08),
+    0.08em 0.08em 0.01em rgb(0 0 0 / .08),
+    0.09em 0.09em 0.01em rgb(0 0 0 / .04),
+    0.10em 0.10em 0.01em rgb(0 0 0 / .04),
+    0.11em 0.11em 0.01em rgb(0 0 0 / .04),
+    0.12em 0.12em 0.01em rgb(0 0 0 / .04),
+    0.13em 0.13em 0.01em rgb(0 0 0 / .04),
+    0.14em 0.14em 0.01em rgb(0 0 0 / .04),
+    0.15em 0.15em 0.01em rgb(0 0 0 / .04),
+    0.16em 0.16em 0.01em rgb(0 0 0 / .02),
+    0.17em 0.17em 0.01em rgb(0 0 0 / .02),
+    0.18em 0.18em 0.01em rgb(0 0 0 / .01),
+    0.19em 0.19em 0.01em rgb(0 0 0 / .01),
+    0.20em 0.20em 0.01em rgb(0 0 0 / .01),
+    0.21em 0.21em 0.01em rgb(0 0 0 / .01),
+    0.22em 0.22em 0.01em rgb(0 0 0 / .01);
+
+  --shadow-faded-soft-less:
+    0.01em 0.01em 0.01em rgb(0 0 0 / .10),
+    0.02em 0.02em 0.01em rgb(0 0 0 / .10),
+    0.03em 0.03em 0.01em rgb(0 0 0 / .10),
+    0.04em 0.04em 0.01em rgb(0 0 0 / .10),
+    0.05em 0.05em 0.01em rgb(0 0 0 / .05),
+    0.06em 0.06em 0.01em rgb(0 0 0 / .05),
+    0.07em 0.07em 0.01em rgb(0 0 0 / .05),
+    0.08em 0.08em 0.01em rgb(0 0 0 / .05),
+    0.09em 0.09em 0.01em rgb(0 0 0 / .03),
+    0.10em 0.10em 0.01em rgb(0 0 0 / .03),
+    0.11em 0.11em 0.01em rgb(0 0 0 / .03),
+    0.12em 0.12em 0.01em rgb(0 0 0 / .03),
+    0.13em 0.13em 0.01em rgb(0 0 0 / .03),
+    0.14em 0.14em 0.01em rgb(0 0 0 / .03),
+    0.15em 0.15em 0.01em rgb(0 0 0 / .03),
+    0.16em 0.16em 0.01em rgb(0 0 0 / .01),
+    0.17em 0.17em 0.01em rgb(0 0 0 / .01),
+    0.18em 0.18em 0.01em rgb(0 0 0 / .005),
+    0.19em 0.19em 0.01em rgb(0 0 0 / .005),
+    0.20em 0.20em 0.01em rgb(0 0 0 / .005),
+    0.21em 0.21em 0.01em rgb(0 0 0 / .005),
+    0.22em 0.22em 0.01em rgb(0 0 0 / .005);
+
+  --shadow-faded-soft:
+    0.01em 0.01em 0.01em rgba(0 0 0 / .08),
+    0.02em 0.02em 0.01em rgba(0 0 0 / .08),
+    0.03em 0.03em 0.01em rgba(0 0 0 / .08),
+    0.04em 0.04em 0.01em rgba(0 0 0 / .08),
+    0.05em 0.05em 0.01em rgba(0 0 0 / .08),
+    0.06em 0.06em 0.01em rgba(0 0 0 / .02),
+    0.07em 0.07em 0.01em rgba(0 0 0 / .02),
+    0.08em 0.08em 0.01em rgba(0 0 0 / .02),
+    0.09em 0.09em 0.01em rgba(0 0 0 / .02),
+    0.10em 0.10em 0.01em rgba(0 0 0 / .02),
+    0.11em 0.11em 0.01em rgba(0 0 0 / .02),
+    0.12em 0.12em 0.02em rgba(0 0 0 / .02),
+    0.13em 0.13em 0.02em rgba(0 0 0 / .02),
+    0.14em 0.14em 0.02em rgba(0 0 0 / .02),
+    0.15em 0.15em 0.02em rgba(0 0 0 / .01),
+    0.16em 0.16em 0.03em rgba(0 0 0 / .01),
+    0.17em 0.17em 0.03em rgba(0 0 0 / .01),
+    0.18em 0.18em 0.03em rgba(0 0 0 / .01),
+    0.19em 0.19em 0.03em rgba(0 0 0 / .01),
+    0.20em 0.20em 0.03em rgba(0 0 0 / .01),
+    0.21em 0.21em 0.03em rgba(0 0 0 / .01),
+    0.22em 0.22em 0.03em rgba(0 0 0 / .01);
+
+}
+
+:root { /* Bevels & Extrusions */
+
+  --bevel-top-left:
+    -0.01em -0.01em 0.02em rgb(255 255 255 / .36),
+    -0.01em -0.01em 0.02em rgb(255 255 255/ .36);
+
+  --bevel-bottom-right:
+    0.01em 0.01em 0.005em rgb(255 255 255 / .1),
+    0.01em 0.01em 0.03em rgb(0 0 0 / .4),
+    0.02em 0.02em 0.05em rgb(255 255 255/ .2);
+
+  --bevel-bottom-bright:   0em 0.01em 0.03em rgb(255 255 255 / 0.6);
+  --bevel-bottom-brighter: 0em 0.01em 0.03em rgb(255 255 255 / 0.9);
+
+  --bevel-sweet:
+    2px 2px 1px #e94aa1,
+    -1px -1px 1px #c736f9,
+    -2px 2px 1px #e94aa1,
+    1px -1px 1px #f736f9;
+
+  --extrusion-sweet:
+    3px 1px 1px #4af7ff,
+    2px 2px 1px #165bfb,
+    4px 2px 1px #4af7ff,
+    3px 3px 1px #165bfb,
+    5px 3px 1px #4af7ff,
+    4px 4px 1px #165bfb,
+    6px 4px 1px #4af7ff,
+    5px 5px 1px #165bfb,
+    7px 5px 1px #4af7ff,
+    6px 6px 1px #165bfb,
+    8px 6px 1px #4af7ff,
+    7px 7px 1px #165bfb,
+    9px 7px 1px #4af7ff;
+
+  --extrusion-thin:
+    0 0.005em 0 #ccc,
+    0 0.010em 0 #c9c9c9,
+    0 0.015em 0 #bbb,
+    0 0.020em 0 #b9b9b9,
+    0 0.025em 0 #aaa;
+
+  --extrusion-medium:
+    0em 0.03em 0.04em rgba(16, 16, 16, 0.15),
+    0em 0.01em 0.01em color-mix(in srgb, #b4b4b4 100%, #000 0%),
+    0em 0.02em 0.01em color-mix(in srgb, #b4b4b4 100%, #000 1%),
+    0em 0.03em 0.01em color-mix(in srgb, #b4b4b4 100%, #000 1%),
+    0em 0.04em 0.01em color-mix(in srgb, #b4b4b4 100%, #000 2%),
+    0em 0.05em 0.01em color-mix(in srgb, #b4b4b4 100%, #000 3%),
+    0em 0.06em 0.01em color-mix(in srgb, #b4b4b4 100%, #000 5%),
+    0em 0.07em 0.01em color-mix(in srgb, #b4b4b4 100%, #000 8%),
+    0em 0.08em 0.01em color-mix(in srgb, #b4b4b4 100%, #000 13%),
+    0em 0.09em 0.01em color-mix(in srgb, #b4b4b4 100%, #000 21%),
+    0em 0.10em 0.01em color-mix(in srgb, #b4b4b4 100%, #000 34%);
+
+  --extrusion-current:
+    0em 0.01em 0.02em rgb(0 0 0 / 0.1),
+    0em 0.01em 0.01em color-mix(in srgb, currentColor 100%, #000 10%),
+    0em 0.02em 0.01em color-mix(in srgb, currentColor 100%, #000 20%),
+    0em 0.03em 0.01em color-mix(in srgb, currentColor 100%, #000 20%),
+    0em 0.04em 0.01em color-mix(in srgb, currentColor 100%, #000 20%),
+    0em 0.05em 0.01em color-mix(in srgb, currentColor 100%, #000 20%),
+    0em 0.06em 0.01em color-mix(in srgb, currentColor 100%, #000 25%),
+    0em 0.07em 0.01em color-mix(in srgb, currentColor 100%, #000 30%),
+    0em 0.08em 0.01em color-mix(in srgb, currentColor 100%, #000 40%),
+    0em 0.09em 0.01em color-mix(in srgb, currentColor 100%, #000 50%),
+    0em 0.10em 0.01em color-mix(in srgb, currentColor 100%, #000 60%);
+
+  --extrusion-current-on-dark:
+    0em 0.01em 0.01em color-mix(in srgb, currentColor 100%, var(--background) 10%),
+    0em 0.02em 0.01em color-mix(in srgb, currentColor 100%, var(--background) 10%),
+    0em 0.03em 0.01em color-mix(in srgb, currentColor 100%, var(--background) 20%),
+    0em 0.04em 0.01em color-mix(in srgb, currentColor 100%, var(--background) 30%),
+    0em 0.05em 0.01em color-mix(in srgb, currentColor 100%, var(--background) 40%),
+    0em 0.06em 0.01em color-mix(in srgb, currentColor 100%, var(--background) 50%),
+    0em 0.07em 0.01em color-mix(in srgb, currentColor 100%, var(--background) 60%),
+    0em 0.08em 0.01em color-mix(in srgb, currentColor 100%, var(--background) 70%),
+    0em 0.09em 0.01em color-mix(in srgb, currentColor 100%, var(--background) 80%),
+    0em 0.10em 0.01em color-mix(in srgb, currentColor 100%, var(--background) 90%);
+
+  --extrusion-light:
+    0 0 .01em,
+    0 0 .01em rgb(0 0 0 / .4),
+    0 .01em .01em rgb(0 0 0 / .4),
+    .01em 0 .01em,
+    .01em .01em .01em rgb(0 0 0 / .4),
+    .02em 0 .01em,
+    .02em .01em .01em rgb(0 0 0 / .4),
+    .03em 0 .01em,
+    .03em .01em .01em rgb(0 0 0 / .4),
+    .04em 0 .01em,
+    .04em .01em .01em rgb(0 0 0 / .4),
+    .05em 0 .01em,
+    .05em .01em .01em rgb(0 0 0 / .4),
+    .06em 0 .01em,
+    .06em .01em .01em rgb(0 0 0 / .4),
+    .07em 0 .01em,
+    .07em .01em .01em rgb(0 0 0 / .4),
+    .08em 0 .01em,
+    .08em .01em .01em rgb(0 0 0 / .4),
+    .09em 0 .01em,
+    .09em .01em .01em rgb(0 0 0 / .4),
+    .1em 0 .01em,
+    .1em .01em .01em rgb(0 0 0 / .4),
+
+    .01em 0 .01em rgb(0 0 0 / .4),
+    .02em 0 .01em rgb(0 0 0 / .4),
+    .03em 0 .01em rgb(0 0 0 / .4),
+    .04em 0 .01em rgb(0 0 0 / .4),
+    .05em 0 .01em rgb(0 0 0 / .4),
+    .06em 0 .01em rgb(0 0 0 / .4),
+    .07em 0 .01em rgb(0 0 0 / .4),
+    .08em 0 .01em rgb(0 0 0 / .4),
+    .09em 0 .01em rgb(0 0 0 / .4),
+    .1em 0 .01em rgb(0 0 0);
+
+  --extrusion-right-bottom:
+    /* 3D layers */
+    0em 0em 0.01em currentColor,
+    0em 0.01em 0.01em currentColor,
+    0em 0.02em 0.01em currentColor,
+
+    0.01em 0.01em 0.01em currentColor,
+    0.01em 0.02em 0.01em currentColor,
+    0.01em 0.03em 0.01em currentColor,
+
+    0.02em 0.02em 0.01em currentColor,
+    0.02em 0.03em 0.01em currentColor,
+    0.02em 0.04em 0.01em currentColor;
+
+}
+
+:root { /* Ambient shadows */
+
+  --shadow-base-glow:
+    /* long soft bottom */
+    0.01em 0.1em 0.2em rgb(0 0 0 / 0.2),
+    0.01em 0.1em 0.5em rgb(0 0 0 / 0.2),
+    /* short soft bottom */
+    0.02em 0.04em 0.05em rgb(0 0 0 / 0.3),
+    0.00em 0.04em 0.05em rgb(0 0 0 / 0.3), /* left shadow */
+    0.04em 0.04em 0.05em rgb(0 0 0 / 0.3), /* right shadow */
+    /*white light*/
+    0.01em 0.01em 0.12em rgba(255, 255, 255, 0.5);
+
+  --shadow-ambient:
+    0.01em 0.12em 0.02em rgb(0 0 0 / 0.4),
+    0.01em 0.16em 0.04em rgb(0 0 0 / 0.2),
+    0.01em 0.22em 0.15em rgb(0 0 0 / 0.2),
+    0.01em 0.26em 0.25em rgb(0 0 0 / 0.4);
+
+  --shadow-ambient-small:
+    0.01em 0.12em 0.02em rgb(0 0 0 / 0.2),
+    0.01em 0.16em 0.04em rgb(0 0 0 / 0.1),
+    0.01em 0.22em 0.15em rgb(0 0 0 / 0.1);
+
+  --shadow-medium:
+    0 0.025em 0.005em rgba(0, 0, 0, .1),
+    0 0       0.025em rgba(0, 0, 0, .1),
+    0 0.005em 0.015em rgba(0, 0, 0, .3),
+    0 0.015em 0.025em rgba(0, 0, 0, .2),
+    0 0.025em 0.050em rgba(0, 0, 0, .2),
+    0 0.050em 0.050em rgba(0, 0, 0, .2),
+    0 0.100em 0.100em rgba(0, 0, 0, .15);
+
+}
+
+:root { /* Simple shadows */
+
+  --shadow-top-right: 0.04em -0.04em 0.05em var(--shadow-color);
+  --shadow-bottom: 0 0.03em 0.025em var(--shadow-color);
+  --shadow-simple: 0em 0.021em 0.012em var(--shadow-color);
+
+  --shadow-dark:   0em 0.01em 0.02em rgb(0 0 0 / 0.2);
+  --shadow-darker: 0em 0.01em 0.02em rgb(0 0 0 / 0.4);
+
+}

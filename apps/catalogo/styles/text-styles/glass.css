@@ -1,0 +1,45 @@
+/*
+{
+    id: 'glass',
+    name: 'Classic Glass',
+    description: 'Classic glass text effect',
+    category: 'Special',
+    tags: ['glass', 'classic', 'alpha'],
+    bestFor: ['body', 'heading', 'display'],
+    cssVariants: ['rushed'],
+    cssFile: 'glass.css',
+    previewText: 'Glass',
+    usesData: true,
+    background: 'radial2'
+},
+*/
+
+.text-glass {
+    & {
+        position: relative;
+        z-index: 0;
+        background: linear-gradient(45deg, white, #ffffff8f, #ffffffc4, #ffffff73, white);
+        filter: brightness(150%) contrast(1.5);
+        @apply text-clip;
+    }
+
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        z-index: 1;
+        background: radial-gradient(circle, #ffffff, transparent 62%) center/11% 26%, radial-gradient(circle, #ffffff, #ffffff00 25%) center/11.5% 26.5%;
+        filter: blur(0.01em);
+        @apply text-clip;
+    }
+
+    &,
+    &:before {
+        --style-text-color: transparent;
+        --style-fill-color: #000000;
+        @apply text-fill;
+    }
+}
+
+.text-glass.rushed {
+    text-shadow: 0 0 1em #1001f97a;
+}

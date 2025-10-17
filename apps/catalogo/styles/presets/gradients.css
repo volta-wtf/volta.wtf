@@ -1,0 +1,42 @@
+:root {
+
+  --gradient-to-right: linear-gradient(to right, #84ff3d, #2eabff);
+  --gradient-to-bottom: linear-gradient(#fee140, #fa709a);
+  --gradient-solid: linear-gradient(#09f1b8, #09f1b8);
+  --gradient-sweet: linear-gradient(142deg, #3fa1fb 0%, #fc46a8 100%);
+
+  --gradient-animated: linear-gradient(-45deg, #09f1b8, #00a2ff, #ff00d2, #54B2C7);
+  --gradient-multicolor: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+
+  --gradient-glass-stroke: linear-gradient(0deg,
+      transparent 5%,
+      rgba(255, 255, 255, .4));
+  --gradient-glass-fill: linear-gradient(0deg,
+      rgba(255, 255, 255, .1) 25%,
+      rgba(255, 255, 255, .0) 30%,
+      rgba(255, 255, 255, .0) 30%,
+      rgba(255, 255, 255, .4) 70%,
+      rgba(255, 255, 255, .6));
+
+  --gradient-gold-light: repeating-linear-gradient(5deg, var(--gold) 0%, var(--light-shadow) 23%, var(--gold) 31%);
+  --gradient-gold-dark: repeating-linear-gradient(105deg, var(--gold) 0%, var(--dark-shadow) 5%, var(--gold) 12%);
+
+  --gradient-rainbow: linear-gradient(#fd004c 16.7%,
+      #fe9000 16.7%,
+      #fe9000 33.4%,
+      #fff020 33.4%,
+      #fff020 50.1%,
+      #3edf4b 50.1%,
+      #3edf4b 66.8%,
+      #3363ff 66.8%,
+      #3363ff 83.5%,
+      #b102b7 83.5%);
+
+  --gradient-multistripes: linear-gradient(219deg,
+      var(--color-1) 0%, var(--color-1) 19%, transparent 19%, transparent 20%,
+      var(--color-2) 20%, var(--color-2) 39%, transparent 39%, transparent 40%,
+      var(--color-3) 40%, var(--color-3) 59%, transparent 59%, transparent 60%,
+      var(--color-4) 60%, var(--color-4) 79%, transparent 79%, transparent 80%,
+      var(--color-5) 80%);
+
+}

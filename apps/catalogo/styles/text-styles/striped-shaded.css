@@ -1,0 +1,46 @@
+/*
+{
+    id: 'striped-shaded',
+    cssFile: 'striped-shaded.css',
+    name: 'Striped Shaded',
+    description: 'Shaded striped text effect',
+    category: 'Decorative',
+    tags: ['stripes', 'shaded', 'complex'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Stripes',
+    usesData: true,
+    background: '#593439',
+},
+*/
+
+.text-striped-shaded {
+    & {
+        --style-text-color: currentColor;
+        --style-stroke-color: var(--background);
+    }
+
+    & {
+        position: relative;
+        display: inline-block;
+        color: var(--style-text-color);
+        cursor: pointer;
+        z-index: 0;
+    }
+
+    &::before {
+        content: attr(data-text);
+        position: absolute;
+        color: transparent;
+        left: 0px;
+        transform: translate3d(0.03em, 0.03em, 0);
+    }
+
+    &::before {
+        background-image: repeating-linear-gradient(45deg,
+            transparent 0,
+            transparent 0.03em,
+            var(--style-stroke-color) 0.03em,
+            var(--style-stroke-color) 0.06em);
+        background-clip: text;
+    }
+}

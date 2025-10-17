@@ -1,0 +1,36 @@
+@import './text-styles/neon-border.css';
+@import './text-styles/neon-glow.css';
+@import './text-styles/glowing-background.css';
+
+@import './text-styles/element-fire.css';
+@import './text-styles/element-ice.css';
+@import './text-styles/gold-emboss.css';
+
+
+
+/* Aqui van los efectos avanzados*/
+
+@import './text-styles/bevel.css';
+@import './text-styles/bevel-contrast.css';
+
+@import './text-styles/glass.css';
+@import './text-styles/glass-new.css';
+@import './text-styles/glass-reflex.css';
+
+@import './text-styles/lighting-focus.css';
+@import './text-styles/lighting-burned.css';
+@import './text-styles/lighting-bordered.css';
+
+
+@import './text-styles/texture-rusted.css';
+@import './text-styles/texture-dusted.css';
+@import './text-styles/texture-rushed.css';
+@import './text-styles/texture-neo.css';
+@import './text-styles/texture-neosticky.css';
+@import './text-styles/texture-neostick.css';
+@import './text-styles/texture-neoglow.css';
+@import './text-styles/texture-neosplit.css';
+@import './text-styles/texture-healtmap.css';
+@import './text-styles/texture-glowing.css';
+@import './text-styles/texture-toxic.css';
+@import './text-styles/texture-fluor.css';

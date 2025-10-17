@@ -1,0 +1,20 @@
+/*
+{
+    id: 'fill-blend',
+    name: 'Blend Fill',
+    description: 'Text with blend mode effects',
+    category: 'Basics',
+    tags: ['blend'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'fill-blend.css',
+    previewText: 'Blend',
+    background: 'waves3'
+},
+*/
+
+.text-fill-blend {
+    --style-text-color: red;
+    --style-layer-blend: difference;
+    @apply text-fill;
+    mix-blend-mode: var(--style-layer-blend);
+}

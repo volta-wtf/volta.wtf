@@ -1,0 +1,44 @@
+/*
+{
+    id: '3D-glow',
+    cssFile: '3d-glow.css',
+    name: '3D Glow',
+    description: 'Glowing 3D text effect',
+    category: '3D',
+    tags: [ 'glow', 'bright'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: '3D Text',
+    usesData: true,
+    background: '#c3c3c3',
+    reference: ['https://redstapler.co/create-3d-text-rgb-animation-css/']
+},
+*/
+
+.text-3D-glow {
+  & {
+    --style-text-color: rgb(207 207 207);
+    --style-shadow-color: rgb(0 0 0 / 0.2);
+  }
+
+  & {
+    position: relative;
+    color: var(--style-text-color);
+    text-shadow: var(--extrusion-right-bottom);
+  }
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    text-shadow: 0em 0em 0.2em var(--style-shadow-color);
+    animation: glow-cycle 10s linear infinite;
+  }
+}
+
+@keyframes glow-cycle {
+  0%  { text-shadow: 0em 0em 0.2em rgb(11 124 199 / 0.5); }
+  20% { text-shadow: 0em 0em 0.2em rgb(168 11 199 / 0.5); }
+  40% { text-shadow: 0em 0em 0.2em rgb(11 199 96 / 0.5); }
+  60% { text-shadow: 0em 0em 0.2em rgb(199 11 11 / 0.5); }
+  80% { text-shadow: 0em 0em 0.2em rgb(199 96 11 / 0.5); }
+}

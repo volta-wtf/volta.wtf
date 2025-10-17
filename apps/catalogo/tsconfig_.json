@@ -1,0 +1,28 @@
+{
+  "extends": "@workspace/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@workspace/ui-registry/*": ["../../registry/*"],
+      "@/components/ui/*": ["../../registry/uis/*"],
+      "@/hooks/*": ["../../registry/hooks/*"],
+      "@/lib/*": ["./lib/*", "../../registry/lib/*"],
+      "@/types/*": ["./types/*", "../../registry/types/*"],
+      "@/utils/*": ["../../registry/utils/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "next.config.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+, "../../.temp/TextStylePanel copy.tsx"  ],
+  "exclude": ["node_modules"]
+}

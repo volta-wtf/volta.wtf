@@ -1,0 +1,28 @@
+:root {
+  --image-2: url('https://images.pexels.com/photos/2382325/pexels-photo-2382325.jpeg');
+  --image-leafs: url('/images/pexels-photo-2382325.jpg');
+  --image-color: url('/images/background-color.jpg');
+  --image-dots: url('/images/bernard-hermant-Jlh7u4NjNAQ-unsplash.jpg');
+  --image-gradient: url('/images/gradienta-coj7UZ7iN60-unsplash.jpg');
+  --image-dark: url('/images/kamran-abdullayev-LLS74TRAseM-unsplash.jpg');
+  --image-colors: url('/images/li-zhang-K-DwbsTXliY-unsplash.jpg');
+  --image-lights: url('/images/mahdi-bafande-DAA3aD4nKZc-unsplash.jpg');
+  --image-reflect: url('/images/maxim-berg-ENIaPZytqzE-unsplash.jpg');
+  --image-reflect2: url('/images/sean-sinclair-1xZ0SqLPE4E-unsplash.jpg');
+  --image-reflect3: url('/images/sean-sinclair-cZgVpseeazg-unsplash.jpg');
+  --image-reflect4: url('/images/sean-sinclair-gai1YB3UmDA-unsplash.jpg');
+  --image-reflect5: url('/images/sean-sinclair-k0JNJRbrJAs-unsplash.jpg');
+  --image-waves: url('/images/milad-fakurian-iFu2HILEng8-unsplash.jpg');
+  --image-waves2: url('/images/milad-fakurian-nY14Fs8pxT8-unsplash.jpg');
+  --image-waves3: url('/images/richard-horvath-_nWaeTF6qo0-unsplash.jpg');
+  --image-waves4: url('/images/richard-horvath-is8jWT-mvng-unsplash.jpg');
+  --image-waves5: url('/images/richard-horvath-RAZU_R66vUc-unsplash.jpg');
+  --image-3d: url('/images/milad-fakurian-PjG_SXDkpwQ-unsplash.jpg');
+  --image-abstract: url('/images/orfeas-green-G5A5ZNjS2tE-unsplash.jpg');
+  --image-abstract2: url('/images/pawel-czerwinski-prMn9KINLtI-unsplash.jpg');
+  --image-abstract3: url('/images/valentin-beauvais-4YrVF0gVdjk-unsplash.jpg');
+  --image-escene: url('/images/pramod-tiwari-Br0F5xMArxI-unsplash.jpg');
+  --image-escene2: url('/images/pramod-tiwari-WHdC7jqTRlQ-unsplash.jpg');
+  --image-fabric: url('/images/zac-ong-v2UYbS3EfXA-unsplash.jpg');
+  --image-dots: url('/images/bernard-hermant-Jlh7u4NjNAQ-unsplash.jpg');
+}

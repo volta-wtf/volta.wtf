@@ -1,0 +1,29 @@
+/*
+{
+    id: 'emboss-blend',
+    name: 'Emboss',
+    description: 'Raised embossed text effect',
+    category: 'Effects',
+    tags: ['emboss', 'raised', '3d'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'emboss-blend.css',
+    previewText: 'Emboss',
+    background: '#606f72'
+},
+*/
+
+.text-emboss-blend {
+    --style-fill-color: rgba(255, 255, 255, 0.6);
+    --style-shadow-color: rgba(0, 0, 0, 0.4);
+    --style-layer-blend: luminosity;
+    text-shadow: 0.01em 0.01em 0.02em var(--style-shadow-color);
+    mix-blend-mode: var(--style-layer-blend);
+    @apply text-background;
+    @apply text-color;
+    @apply text-clip;
+}
+
+.dark .text-emboss-blend {
+    --style-fill-color: rgba(255, 255, 255, 0.6);
+    --style-shadow-color: rgba(0, 0, 0, 0.4);
+}

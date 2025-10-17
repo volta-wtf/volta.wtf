@@ -1,0 +1,28 @@
+/*
+{
+    id: 'image-stroke',
+    cssFile: 'image-stroke.css',
+    name: 'Image Stroke',
+    description: 'Text filled with image pattern and stroke',
+    category: 'Basics',
+    tags: ['image'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Image',
+    background: '#d6fad9'
+},
+*/
+
+.text-image-stroke {
+    --style-stroke-color: white;
+    --style-stroke-width: 0.03em;
+    --style-text-shadow: var(--shadow-simple);
+    --style-fill-image: var(--image-color);
+    --style-fill-size: 100% auto;
+    --style-shadow-color: rgb(0 0 0 / 0.2);
+    --style-shadow-filter: 0 0.03em 0.03em var(--style-shadow-color);
+    @apply text-image;
+    @apply text-clip;
+    @apply text-fill;
+    @apply filter-shadow;
+    @apply text-stroke;
+}

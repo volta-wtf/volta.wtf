@@ -1,0 +1,21 @@
+/*
+{
+    id: 'retro-wave',
+    name: 'Retro Wave',
+    description: 'Synthwave-inspired gradient text',
+    category: 'Gradients',
+    tags: ['retro', 'synthwave', '80s'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'retro-wave.css',
+    previewText: 'Retro',
+    background: '#1a0033'
+},
+*/
+
+.text-retro-wave {
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 10px #ff00ff;
+}

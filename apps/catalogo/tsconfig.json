@@ -1,0 +1,32 @@
+{
+  "extends": "@studio/config-typescript/nextjs.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/lib/*": ["./lib/*","../../resources/interface/lib/*","../../registry/primitives/lib/*"],
+      "@/utils/*": ["./utils/*","../../registry/primitives/utils/*"],
+      "@/hooks/*": ["./hooks/*","../../registry/primitives/hooks/*"],
+      "@/styles/*": ["./styles/*","../../registry/styles/*"],
+      "@/primitives/*": ["../../registry/primitives/src/*"],
+      "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
+      "@/components/ui/*": ["../../registry/components/ui/*"],
+      "@/registry/*": ["../../registry/*"],
+      "@/registry/components/ui/*": ["../../registry/components/ui/*"],
+      "@/registry/patterns/*": ["../../registry/patterns/*"],
+      "@/interface/*": ["../../resources/interface/*"],
+    },
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    ".source/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

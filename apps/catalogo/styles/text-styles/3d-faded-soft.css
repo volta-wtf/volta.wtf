@@ -1,0 +1,28 @@
+/*
+{
+    id: '3D-faded-soft',
+    cssFile: '3d-faded-soft.css',
+    name: '3D Faded Soft',
+    description: 'Faded 3D text effect',
+    category: '3D',
+    tags: ['current color', 'faded', 'soft'],
+    bestFor: ['body', 'heading', 'display'],
+    cssVariants: ['less-faded', 'less-faded-2'],
+    previewText: 'Shadow',
+    background: '#fed90f',
+    reference: ['https://codepen.io/ryandsouza13/pen/yEBJQV']
+},
+*/
+
+.text-3D-faded-soft {
+    /* color: mix(#fff, #ef6209, 85%); */
+    text-shadow: var(--bevel-top-left), var(--shadow-faded-soft);
+}
+
+.text-3D-faded-soft.less-faded {
+    text-shadow: var(--bevel-top-left), var(--shadow-faded-soft-less);
+}
+
+.text-3D-faded-soft.less-faded-2 {
+    text-shadow: var(--bevel-top-left), var(--shadow-faded-soft-less-2);
+}

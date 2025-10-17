@@ -1,0 +1,53 @@
+/*
+{
+    id: '3D-light',
+    name: '3D Light',
+    description: 'Illuminated 3D text effect',
+    category: '3D',
+    tags: ['illuminated'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: '3d-light.css',
+    previewText: '3D Text',
+    usesData: true,
+    background: '#10353e',
+    reference: ['https://codepen.io/nokiss/pen/OPexYR']
+},
+*/
+
+.text-3D-light {
+    & {
+        --style-tint-color: rgb(0 0 0 / 0.1);
+        --style-text-color: aqua;
+        --style-shadow-color: rgb(0 0 0 / 0.2);
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        color: var(--style-text-color);
+        text-shadow: var(--extrusion-light);
+    }
+
+    &:before,
+    &:after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        text-shadow: 0 0 0.01em, 0 0 0.01em, 0 0 0.01em;
+        /* text-shadow: 0 0 7px, 0 0 11px, 0 0 11px; */
+    }
+
+    &:before {
+        color: var(--style-shadow-color);
+        width: max-content;
+        left: 0.1em;
+        top: 0.1em;
+        filter: blur(.05em);
+        opacity: .6;
+        z-index: -1;
+    }
+
+    &:after {
+        color: var(--style-text-tint);
+    }
+}

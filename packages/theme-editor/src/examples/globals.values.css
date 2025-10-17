@@ -1,0 +1,29 @@
+:root {
+    --scheme: light dark;
+
+    /* Available color values */
+    --hex: #000000;
+    --hex-alpha: #80000000;
+    --rgb: rgb(0 0 0);
+    --rgb-alpha: rgb(0 0 0 / 50%);
+    --hsl: hsl(120deg 75% 75%);
+    --hsl-alpha: hsl(120deg 75% 75% / 50%);
+    --hwb: hwb(120deg 75% 75%);
+    --hwb-alpha: hwb(120deg 75% 75% / 50%);
+    --oklab: oklab(0.5 0.5 0.5);
+    --oklab-alpha: oklab(0.5 0.5 0.5 / 50%);
+
+    /* Legacy color values */
+    --rgb-legacy: rgb(0, 0, 0);
+    --rgba-legacy-1: rgba(0, 0, 0, 50%);
+    --rgba-legacy-2: rgba(0, 0, 0, 0.5);
+    --hsl-legacy: hsl(120, 75%, 75%);
+    --hsla-legacy-1: hsla(120deg, 75%, 75%, 0.5);
+    --hsla-legacy-2: hsla(120deg 75% 75% / 50%);
+
+    /* Variables & modifiers */
+    --variable: var(--hsl);
+    --variable-deep: var(--variable);
+    --alpha-variable: --alpha(var(--hex)/50%);
+    --variable-color: --alpha(#000000/50%);
+}

@@ -1,0 +1,29 @@
+/*
+{
+    id: 'image-light',
+    name: 'Image Light',
+    description: 'Light image text effect',
+    category: 'Effects',
+    tags: ['bright'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'image-light.css',
+    previewText: 'Image',
+    background: '#d6fad9'
+},
+*/
+
+.text-image-light {
+    --style-stroke-width: 0.03em;
+    --style-stroke-color: var(--foreground);
+    --style-tint-color: hsla(10, 100%, 55%, 0.5);
+    --style-fill-image: var(--image-color);
+    --style-fill-size: 100% auto;
+    --style-shadow-color: rgba(0, 0, 0, 0.1);
+    --style-shadow-filter: var(--shadow-simple);
+    text-shadow: 0 0 0.1em var(--style-tint-color);
+    @apply filter-shadow;
+    @apply text-image;
+    @apply text-clip;
+    @apply text-fill;
+    @apply text-stroke;
+}

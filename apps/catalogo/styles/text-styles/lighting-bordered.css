@@ -1,0 +1,57 @@
+/*
+{
+    id: 'lighting-bordered',
+    cssFile: 'lighting-bordered.css',
+    name: 'Lighting Bordered',
+    description: 'Dramatic lighting text effect with bordered',
+    category: 'Special',
+    tags: ['lighting', 'dramatic', 'bordered'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Focus',
+    usesData: true,
+    background: '#000000',
+},
+*/
+
+.text-lighting-bordered {
+
+    & {
+        --style-fill-color: white;
+        --style-tint-color: white;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        background: black;
+        filter: brightness(150%) contrast(1.3);
+        mix-blend-mode: color-dodge;
+        padding-inline: 0.06em;
+    }
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        padding-inline: 0.06em;
+    }
+
+    &:after {
+        z-index: 1;
+        color: var( --style-fill-color);
+        filter: blur(0.03em) brightness(1.2);
+
+    }
+
+    &:before {
+        z-index: 2;
+        color: red;
+        background:
+            radial-gradient(circle, var(--style-tint-color), transparent 25%) center / 235% 155%,
+            radial-gradient(circle, var(--style-tint-color), black 25%) center / 332.5% 2.4%;
+        mix-blend-mode: overlay;
+        animation: light 10s linear infinite;
+    }
+
+}

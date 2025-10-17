@@ -1,0 +1,21 @@
+/*
+{
+    id: 'stripes-colors',
+    name: 'Color Stripes',
+    description: 'Multi-color striped pattern',
+    category: 'Gradients',
+    tags: ['stripes', 'colors', 'pattern'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'stripes-colors.css',
+    previewText: 'Stripes',
+    background: '#4d094d',
+    reference: ['https://codepen.io/TajShireen/pen/YzZmbep']
+},
+*/
+
+.text-stripes-colors {
+    --style-fill-image: var(--gradient-multistripes);
+    @apply text-gradient;
+    @apply text-clip;
+    @apply text-fill;
+}

@@ -1,0 +1,104 @@
+/* Base themes */
+.light {}
+.dark {}
+
+.light-dim {}
+.dark-dim {}
+
+.light-high {}
+.light-dark {}
+
+/* Without prefixed */
+.light {}
+.dark {}
+
+/* Prefixed with theme- */
+.theme-light {}
+.theme-dark {}
+
+/* Prefixed with mode- */
+.mode-light {}
+.mode-dark {}
+
+:root {}
+@media (prefers-color-scheme: dark) {}
+@media (prefers-color-scheme: light) {}
+@media (prefers-color-scheme: no-preference) {}
+
+@media (forced-colors: active) {
+  /* Estilos cuando el usuario tiene activado el modo de alto contraste */
+}
+
+@media (prefers-color-scheme: light) and (forced-colors: active) {
+  :root {}
+}
+
+@media (prefers-color-scheme: dark) and (forced-colors: active) {
+  :root {}
+}
+
+
+
+
+
+/*--------------------------------*/
+
+
+:root {
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+:root {
+  color-scheme: dark light;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+
+/*--------------------------------*/
+
+
+/* Versión simple */
+:root {
+  color-scheme: light dark;
+}
+
+/* Versión con media query */
+:root {
+  color-scheme: light dark;
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+/* Versión con media query y clases */
+:root {
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+  }
+}
+.light { color-scheme: light; }
+.dark  { color-scheme: dark; }
+
+/* Versión inversa con media query y clases */
+:root {
+  color-scheme: dark light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.dark) {
+    color-scheme: light;
+  }
+}
+.dark  { color-scheme: dark; }
+.light { color-scheme: light; }

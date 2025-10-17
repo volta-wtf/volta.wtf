@@ -1,0 +1,28 @@
+
+:root {
+  --style-stroke-width: .03em;
+  --style-stroke-color: black;
+
+  --style-tint-color: white;
+
+  --style-fill-color: black;
+  --style-fill-image: none;
+  --style-fill-size: 100% 100%;
+
+  --style-text-color: black;
+
+  --style-bevel-color: black;
+  --style-bevel-size: 0.03em;
+
+  --style-extrusion-color: black;
+  --style-extrusion-depth: .03em;
+  --style-extrusion-angle: 45deg;
+
+  --style-shadow-start: 0em;
+  --style-shadow-color: rgba(0, 0, 0, 0.5);
+  --style-shadow-opacity: 0.7; /* For pseudoelements */
+
+  --style-layer-index: 0;
+  --style-layer-opacity: 1;
+  --style-layer-blend: normal;
+}

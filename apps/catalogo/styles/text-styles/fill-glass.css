@@ -1,0 +1,95 @@
+/*
+{
+    id: 'fill-glass',
+    cssFile: 'fill-glass.css',
+    name: 'Glass Fill',
+    description: 'Glass-like transparent text effect',
+    category: 'Materials',
+    tags: ['glass', 'alpha'],
+    bestFor: ['body', 'heading', 'display'],
+    cssVariants: ['tinted', 'lighter', 'frosted', 'frost', 'clear'],
+    previewText: 'Glass',
+    background: 'waves2'
+},
+*/
+
+.text-fill-glass {
+    --style-text-color: rgb(0 0 0 / 0.1);
+    --style-shadow-color: rgb(0 0 0 / 0.6);
+    --style-stroke-color: rgb(0 0 0 / 0.2);
+    --style-stroke-width: .01em;
+    --style-layer-blend: unset;
+    @apply text-fill;
+    @apply text-stroke;
+    paint-order: fill stroke;
+    filter: drop-shadow(0em .05em .02em var(--style-shadow-color));
+    mix-blend-mode: var(--style-layer-blend);
+
+    /* @apply filter-shadow; */
+    &.small {
+        --style-stroke-width: 0.5px;
+    }
+}
+
+.dark .text-fill-glass {
+    --style-text-color: rgb(255 255 255 / 0.4);
+    --style-shadow-color: rgb(0 0 0 / 0.3);
+    --style-stroke-color: rgb(255 255 255 / 0.3);
+    --style-layer-blend: color-dodge;
+    filter: drop-shadow(0em .02em .02em var(--style-shadow-color));
+}
+
+.text-fill-glass.tinted {
+    --style-text-color: rgb(0 105 251 / 0.3);
+    --style-shadow-color: rgb(0 105 251 / 0.3);
+    --style-stroke-color: rgb(0 105 251 / 0.3);
+}
+
+.dark .text-fill-glass.tinted {
+    --style-stroke-color: rgb(255 255 255 / 0.3);
+}
+
+.text-fill-glass.lighter {
+    --style-text-color: rgb(0 105 251 / 0.2);
+    --style-shadow-color: rgb(0 105 251 / 0.1);
+    --style-stroke-color: rgb(0 105 251 / 0.4);
+    --style-layer-blend: unset;
+}
+
+.dark .text-fill-glass.lighter {
+    --style-layer-blend: plus-lighter;
+}
+
+.text-fill-glass.frosted {
+    --style-text-color: rgb(0 0 0 / 0.2);
+    --style-shadow-color: rgb(0 0 0 / 0.1);
+    --style-stroke-color: rgb(0 0 0 / 0.05);
+    --style-stroke-width: 0.02em;
+    text-shadow: 0em 0em 0.02em rgb(255 255 255 / 0.1);
+}
+
+.dark .text-fill-glass.frosted {
+    --style-text-color: rgb(255 255 255 / 0.15);
+    --style-stroke-color: rgb(255 255 255 / 0.15);
+}
+
+.text-fill-glass.frost {
+    --style-text-color: rgb(0 0 0 / 0.1);
+    --style-stroke-color: rgb(0 0 0 / 0.1);
+    --style-shadow-color: rgb(0 0 0 / 0.1);
+}
+
+.dark .text-fill-glass.frost {
+    --style-text-color: rgb(255 255 255 / 0.1);
+    --style-stroke-color: rgb(255 255 255 / 0.1);
+}
+
+.text-fill-glass.clear {
+    --style-text-color: rgb(255 255 255 / 0.05);
+    --style-stroke-color: rgb(255 255 255 / 0.1);
+}
+
+.dark .text-fill-glass.clear {
+    --style-text-color: rgb(255 255 255 / 0.05);
+    --style-stroke-color: rgb(255 255 255 / 0.1);
+}

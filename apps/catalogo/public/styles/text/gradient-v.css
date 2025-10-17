@@ -1,0 +1,21 @@
+/*
+{
+    id: 'gradient-v',
+    name: 'Vertical Gradient',
+    description: 'Vertical gradient text fill',
+    category: 'Gradients',
+    tags: ['gradient', 'vertical', 'color'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'gradient-v.css',
+    previewText: 'Gradient',
+    background: '#292452',
+    reference: ['https://codepen.io/ryandsouza13/pen/NVjQBp']
+},
+*/
+
+.text-gradient-v {
+    --style-fill-image: var(--gradient-to-bottom);
+    @apply text-gradient;
+    @apply text-clip;
+    @apply text-fill;
+}
