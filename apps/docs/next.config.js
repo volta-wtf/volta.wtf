@@ -15,7 +15,12 @@ const nextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "avatar.vercel.sh" }
     ],
-  }
+  },
+  experimental: {
+    optimizePackageImports: ['react', 'react-dom'],
+  },
+  transpilePackages: ['@registry/primitives', '@registry/components', '@registry/patterns', '@registry/config'],
+  output: 'standalone'
 }
 
 const withMDX = createMDX({})
