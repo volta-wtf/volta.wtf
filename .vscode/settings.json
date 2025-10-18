@@ -34,7 +34,7 @@
     //"apps/demos": false,
     //"apps/catalog": false,
 
-    "sites/www": true,
+    //"sites/www": true,
     "sites/knowledge": true,
     "sites/globals": true,
     "sites/theme": true,
