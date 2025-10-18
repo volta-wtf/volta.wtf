@@ -12,21 +12,10 @@ export interface BaseStyle {
   isModified?: boolean;
 }
 
-export interface Gradient extends BaseStyle {
-  gradient: string;
-  colors: string[];
-  usage: string;
-  inspiration: string;
-}
-
-export interface TextClass extends BaseStyle {
-  cssFile: string;
-  previewText: string;
-  bestFor?: string[];
-  reference?: string[];
-  usesData?: boolean;
-  background?: string;
-  cssVariants?: string[];
+export interface FrameStyle extends BaseStyle {
+  material: string;
+  cssClass: string;
+  style: CSSProperties;
 }
 
 export interface TextStyle extends BaseStyle {
@@ -44,8 +33,29 @@ export interface TextStyle extends BaseStyle {
   };
 }
 
-export interface FrameStyle extends BaseStyle {
-  material: string;
-  cssClass: string;
-  style: CSSProperties;
+export interface TextClass extends BaseStyle {
+  cssFile: string;
+  previewText: string;
+  bestFor?: string[];
+  reference?: string[];
+  usesData?: boolean;
+  background?: string;
+  cssVariants?: string[];
+}
+
+export interface Gradient extends BaseStyle {
+  gradient: string;
+  colors: string[];
+  usage: string;
+  inspiration: string;
+}
+
+export interface Shadow {
+  id: string;
+  offsetX: number;
+  offsetY: number;
+  blurRadius: number;
+  spreadRadius?: number; // Only for box-shadow
+  color: string;
+  enabled: boolean;
 }

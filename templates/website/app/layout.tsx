@@ -4,7 +4,7 @@ import { fontVariables } from "@/lib/fonts";
 import { Providers } from "@/components/providers"
 import { Application } from "@/components/application"
 
-import "@/styles/globals.css";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Website | TEMPLATE",

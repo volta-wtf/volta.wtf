@@ -1,4 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    outputFileTracingIncludes: {
+        "/*": ["../../registry/**/*"],
+    },
+    experimental: {
+        optimizePackageImports: ['react', 'react-dom'],
+    },
+    transpilePackages: [
+        '@registry/styles',
+        '@registry/primitives',
+        '@registry/components',
+        '@registry/interface',
+    ],
+    output: 'standalone'
+}
 
 export default nextConfig;

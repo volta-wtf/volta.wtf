@@ -12,17 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { CSSPropertyEditor } from '@/components/feature/Editor/CSSProperty';
 import { CSSShadowEditor } from '@/components/feature/Editor/CSSShadow';
-import type { FrameStyle } from './Grid';
-
-interface Shadow {
-  id: string;
-  offsetX: number;
-  offsetY: number;
-  blurRadius: number;
-  spreadRadius?: number;
-  color: string;
-  enabled: boolean;
-}
+import type { FrameStyle, Shadow } from '@/types';
 
 interface FrameStylePanelProps {
   frameStyle: FrameStyle;

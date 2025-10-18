@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from '@/lib/motion';
 import { Search } from 'lucide-react';
-import type { Gradient } from '@/app/gallery/page';
+import type { Gradient } from '@/types';
 
 interface GradientGridProps {
   gradients: Gradient[];

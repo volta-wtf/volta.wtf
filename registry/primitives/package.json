@@ -2,6 +2,8 @@
   "name": "@registry/primitives",
   "version": "0.0.0",
   "private": true,
+  "sideEffects": false,
+  "type": "module",
   "exports": {
     "./*": "./src/*.tsx",
     "./primitives/*": "./src/*.ts",
@@ -13,10 +15,12 @@
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "next": "^15.5.0",
+    "next": "^15.5.0"
+  },
+  "dependencies": {
     "next-themes": "^0.4.4",
     "date-fns": "^4.1.0",
     "class-variance-authority": "^0.7.1",
@@ -35,11 +39,5 @@
     "@types/react-dom": "19.1.1",
     "eslint": "^9.34.0",
     "typescript": "5.9.2"
-  },
-  "bundledDependencies": [
-    "next",
-    "lucide-react",
-    "recharts",
-    "@tanstack/react-table"
-  ]
+  }
 }

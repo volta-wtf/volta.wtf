@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 
 import { TooltipProvider } from "@/registry/components/ui/tooltip"
 
-import "@/styles/globals.css"
+import "@/app/globals.css"
 
 
 export const metadata: Metadata = {

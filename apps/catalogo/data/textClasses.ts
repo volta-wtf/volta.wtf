@@ -1,4 +1,4 @@
-import { TextClass } from '../types';
+import { TextClass } from '@/types';
 
 export const textClassesCategories = [
   'All',

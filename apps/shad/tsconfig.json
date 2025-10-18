@@ -19,6 +19,7 @@
       "@/*": ["./*"],
       "@/lib/*": ["./lib/*","../../resources/interface/lib/*","../../registry/primitives/lib/*"],
       "@/utils/*": ["../../registry/primitives/utils/*"],
+      "@/styles/*": ["./styles/*","../../registry/styles/*"],
       "@/primitives/*": ["../../registry/primitives/src/*"],
       "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
       "@/components/ui/*": ["../../registry/components/ui/*"],

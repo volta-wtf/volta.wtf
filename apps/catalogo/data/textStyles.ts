@@ -1,4 +1,4 @@
-import { TextStyle } from '../gallery/types';
+import { TextStyle } from '@/types';
 
 export const textStyleCategories = [
   'All',

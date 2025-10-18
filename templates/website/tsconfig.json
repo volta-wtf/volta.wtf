@@ -7,7 +7,9 @@
     "paths": {
       "@/*": ["./*"],
       "@/lib/*": ["./lib/*","../../resources/interface/lib/*","../../registry/primitives/lib/*"],
-      "@/utils/*": ["../../registry/primitives/utils/*"],
+      "@/utils/*": ["./utils/*","../../registry/primitives/utils/*"],
+      "@/hooks/*": ["./hooks/*","../../registry/primitives/hooks/*"],
+      "@/styles/*": ["./styles/*","../../registry/styles/*"],
       "@/primitives/*": ["../../registry/primitives/src/*"],
       "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
       "@/components/ui/*": ["../../registry/components/ui/*"],
@@ -21,7 +23,8 @@
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".source/**/*.ts"
   ],
   "exclude": [
     "node_modules"

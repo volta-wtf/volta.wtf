@@ -1,17 +1,6 @@
 import { motion, AnimatePresence } from '@/lib/motion';
 import { Search } from 'lucide-react';
-
-export interface FrameStyle {
-  id: string;
-  name: string;
-  description: string;
-  style: React.CSSProperties;
-  category: string;
-  tags: string[];
-  cssClass: string;
-  material: string;
-  isCustom?: boolean;
-}
+import type { FrameStyle } from '@/types';
 
 interface FrameStylesGridProps {
   frameStyles: FrameStyle[];

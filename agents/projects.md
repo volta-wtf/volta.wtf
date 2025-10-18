@@ -8,7 +8,7 @@ sites (Websites)
 apps (Products)
 - 3004 docs             @volta/docs
 - 3003 catalog          @volta/catalog
-- 3007 catalog          @volta/catalogo
+- 3007 catalogo         @volta/catalogo
 - 3006 demos            @volta/demos
 - 3005 editor           @volta/editor
 - 3002 builder          @studio/builder

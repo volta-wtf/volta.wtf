@@ -452,6 +452,3 @@ export default function GalleryPage() {
     </AppLayout>
   );
 }
-
-// Re-export types for backward compatibility
-export type { Gradient, TextStyle, FrameStyle, Section } from '@/types';

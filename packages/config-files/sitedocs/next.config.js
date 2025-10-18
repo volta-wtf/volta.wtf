@@ -9,13 +9,6 @@ const nextConfig = {
   outputFileTracingIncludes: {
     "/*": ["../../registry/**/*"],
   },
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "avatars.githubusercontent.com" },
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "avatar.vercel.sh" }
-    ],
-  },
   experimental: {
     optimizePackageImports: ['react', 'react-dom'],
   },
@@ -23,9 +16,7 @@ const nextConfig = {
     '@registry/styles',
     '@registry/primitives',
     '@registry/components',
-    '@registry/patterns',
-    '@registry/interface',
-    '@registry/config'
+    '@registry/patterns'
   ],
   output: 'standalone'
 }

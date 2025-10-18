@@ -3,7 +3,6 @@
   "explorer.sortOrderLexicographicOptions": "upper",
   "files.exclude": {
     // Base
-    "**/.gitkeep": false,
     "**/.source": true,
     "**/.next": true,
     "**/.turbo": true,
@@ -11,17 +10,18 @@
     "**/node_modules": true,
 
     // Config
-    "pnpm-*.yaml": true,
     "**/.gitignore": true,
+    "**/.gitkeep": false,
     "**/.env*": true,
     "**/.npmrc": true,
+    "**/pnpm-*.yaml": true,
 
     // Apps
-    "**/next-env.d.ts": true,
-    "**/eslint.config.*": true,
-    "**/next.config.*": true,
-    "**/tsconfig.*": true,
-    "**/postcss.*": true,
+    //"**/next-env.d.ts": true,
+    //"**/next.config.*": true,
+    //"**/eslint.config.*": true,
+    //"**/tsconfig.*": true,
+    //"**/postcss.*": true,
 
     // Internal
     //".temp": true,
@@ -44,5 +44,13 @@
     //"templates/website": false,
     //"templates/sitedocs": false,
     //"templates/miltidocs": false,
+
+    "registry/features": true,
+    "registry/materials": true,
+
+    "packages/css-presets": true,
+    "packages/css-primitives": true,
+    "packages/css-system": true,
+    "packages/css-materials": true,
   }
 }

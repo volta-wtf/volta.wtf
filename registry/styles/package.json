@@ -4,8 +4,9 @@
   "private": true,
   "exports": {
     ".": "./stylewind.css",
-    "./stylewind.css": "./stylewind.css",
+    "./shadcnui.css": "./config/shadcnui.css",
+    "./stylewind.css": "./config/stylewind.css",
     "./themes/stylewind.css": "./themes/stylewind.css",
-    "./themes/shadcn.css": "./themes/shadcn.css"
+    "./themes/shadcnui.css": "./themes/shadcnui.css"
   }
 }

@@ -6,17 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Badge } from '@/components/ui/badge';
 import { Copy, Plus, Trash2, Palette, Tag, Eye, EyeOff, X } from 'lucide-react';
-import { toast } from 'sonner';
+import { toast } from '@/components/ui/toaster';
 
-interface Shadow {
-  id: string;
-  offsetX: number;
-  offsetY: number;
-  blurRadius: number;
-  spreadRadius?: number; // Only for box-shadow
-  color: string;
-  enabled: boolean;
-}
+import type { Shadow } from '@/types';
 
 interface CSSShadowEditorProps {
   name: string;
