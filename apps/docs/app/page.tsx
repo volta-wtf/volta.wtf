@@ -9,8 +9,8 @@ export default function Home() {
       <main className={styles.main}>
         <Image.themed
           className={styles.logo}
-          srcLight='/shared/logos/turborepo-dark.svg'
-          srcDark='/shared/logos/turborepo-light.svg'
+          srcLight='/shared/logos/turborepo-light.svg'
+          srcDark='/shared/logos/turborepo-dark.svg'
           alt="Turborepo logo"
           width={180}
           height={38}

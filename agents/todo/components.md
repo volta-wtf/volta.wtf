@@ -1,5 +1,8 @@
 https://open-ui.org/design-systems/
 
+https://animate-ui.com/docs/primitives/effects/magnetic
+https://ionicframework.com/docs/api/chip
+
 https://shadcnstore.com/cheatsheet/?ref=dailydev
 
 

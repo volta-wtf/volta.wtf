@@ -1,0 +1,42 @@
+# Excluir apps que no se están deployando
+apps/admin
+apps/builder
+apps/catalog
+apps/catalogo
+apps/demos
+apps/editor
+apps/shad
+
+# Excluir sites
+sites/*
+
+# Excluir templates
+templates/*
+
+# Excluir packages que no son necesarios en runtime
+packages/config-*
+packages/theme-editor
+
+# Excluir node_modules de otros packages
+**/node_modules
+!apps/docs/node_modules
+
+# Excluir archivos de desarrollo
+**/.next/cache
+**/.turbo
+**/dist
+**/.cache
+
+# Excluir documentación
+AGENTS.md
+DEVELOPMENT.md
+MIGRATION-REGISTRY.md
+agents/
+*.md
+!apps/docs/**/*.md
+!apps/docs/**/*.mdx
+
+# Excluir archivos de configuración
+.vscode
+.cursor
+*.log

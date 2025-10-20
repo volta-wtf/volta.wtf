@@ -4,4 +4,4 @@
 @source "../components/**/*.{js,jsx,ts,tsx}";
 @source "../../../registry/**/*.{js,jsx,ts,tsx}";
 
-@import "@registry/styles/stylewind.css";
+@import "@registry/styles/shadcnui.css";

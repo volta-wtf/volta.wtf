@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "pnpm install --shamefully-hoist",
+  "buildCommand": "pnpm -F @volta/docs build",
+  "outputDirectory": "apps/docs/.next",
+  "framework": "nextjs",
+  "functions": {
+    "apps/docs/**/*.func": {
+      "maxDuration": 30,
+      "memory": 1024
+    }
+  }
+}

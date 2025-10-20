@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    outputFileTracingIncludes: {
-        "/*": ["../../registry/**/*"],
-    },
     experimental: {
         optimizePackageImports: ['react', 'react-dom'],
     },
