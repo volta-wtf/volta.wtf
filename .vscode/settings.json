@@ -3,9 +3,9 @@
   "explorer.sortOrderLexicographicOptions": "upper",
   "files.exclude": {
     // Base
-    //"**/.{next,turbo,vercel}": true,
+    "**/.{next,turbo,vercel}": true,
     "**/.source": true,
-    //"**/node_modules": true,
+    "**/node_modules": true,
 
     // Config
     "**/.gitkeep": false,
