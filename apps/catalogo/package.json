@@ -5,7 +5,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "THEME_EDITOR_PORT=4445 theme-editor next dev --turbopack --port 3007",
+    "dev": "next dev --turbopack --port 3007",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --port 3007",
@@ -30,7 +30,6 @@
     "lucide-react": "^0.475.0"
   },
     "devDependencies": {
-    "@studio/theme-editor": "workspace:*",
     "@studio/config-eslint": "workspace:*",
     "@studio/config-typescript": "workspace:*",
     "@types/node": "^20",
