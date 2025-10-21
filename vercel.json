@@ -8,23 +8,11 @@
   "rewrites": [
     {
       "source": "/docs/:path*",
-      "destination": "https://docs.tudominio.com/:path*"
-    },
-    {
-      "source": "/shad/:path*",
-      "destination": "https://shad.tudominio.com/:path*"
-    },
-    {
-      "source": "/catalogo/:path*",
-      "destination": "https://catalogo.tudominio.com/:path*"
+      "destination": "https://docs.volta.wtf/:path*"
     },
     {
       "source": "/catalog/:path*",
-      "destination": "https://catalog.tudominio.com/:path*"
-    },
-    {
-      "source": "/demos/:path*",
-      "destination": "https://demos.tudominio.com/:path*"
+      "destination": "https://catalog.volta.wtf/:path*"
     }
   ]
 }
