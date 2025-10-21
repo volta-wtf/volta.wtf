@@ -14,7 +14,7 @@ sites/*
 templates/*
 
 # Excluir packages que no son necesarios en runtime
-packages/config-*
+# packages/config-*
 packages/theme-editor
 
 # Excluir node_modules de otros packages
