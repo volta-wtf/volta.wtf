@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "cd ../.. && pnpm -F @volta/catalogo build",
-  "installCommand": "cd ../.. && pnpm install --shamefully-hoist",
+  "installCommand": "cd ../.. && pnpm install --shamefully-hoist --filter @volta/catalogo...",
   "framework": "nextjs"
 }
