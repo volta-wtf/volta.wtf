@@ -8,12 +8,17 @@
 **/dist
 
 # Sites y templates (no se deployean)
+sites/*
 templates/*
 
 # Apps en desarrollo (no listas para production)
 apps/admin
 apps/builder
 apps/editor
+
+# Packages de desarrollo (no necesarios en runtime)
+packages/config-*
+packages/theme-editor
 
 # Documentación
 AGENTS.md
