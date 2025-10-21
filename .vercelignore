@@ -17,7 +17,6 @@ apps/builder
 apps/editor
 
 # Packages de desarrollo
-packages/config-*
 packages/theme-editor
 
 # Documentación
