@@ -1,13 +1,30 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "pnpm install --shamefully-hoist",
-  "buildCommand": "pnpm -F @volta/docs build",
-  "outputDirectory": "apps/docs/.next",
-  "framework": "nextjs",
-  "functions": {
-    "apps/docs/**/*.func": {
-      "maxDuration": 30,
-      "memory": 1024
+  "buildCommand": "pnpm build",
+  "github": {
+    "silent": true
+  },
+  "rewrites": [
+    {
+      "source": "/docs/:path*",
+      "destination": "https://docs.tudominio.com/:path*"
+    },
+    {
+      "source": "/shad/:path*",
+      "destination": "https://shad.tudominio.com/:path*"
+    },
+    {
+      "source": "/catalogo/:path*",
+      "destination": "https://catalogo.tudominio.com/:path*"
+    },
+    {
+      "source": "/catalog/:path*",
+      "destination": "https://catalog.tudominio.com/:path*"
+    },
+    {
+      "source": "/demos/:path*",
+      "destination": "https://demos.tudominio.com/:path*"
     }
-  }
+  ]
 }

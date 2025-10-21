@@ -1,42 +1,45 @@
-# Excluir apps que no se están deployando
-apps/admin
-apps/builder
-apps/catalog
-apps/catalogo
-apps/demos
-apps/editor
-apps/shad
+# Node modules (Vercel los reinstala durante el build)
+**/node_modules
 
-# Excluir sites
+# Archivos de build y cache
+**/.next
+**/.turbo
+**/.cache
+**/dist
+
+# Sites y templates (no se deployean)
 sites/*
-
-# Excluir templates
 templates/*
 
-# Excluir packages que no son necesarios en runtime
-# packages/config-*
+# Apps en desarrollo (no listas para production)
+apps/admin
+apps/builder
+apps/editor
+
+# Packages de desarrollo
+packages/config-*
 packages/theme-editor
 
-# Excluir node_modules de otros packages
-**/node_modules
-!apps/docs/node_modules
-
-# Excluir archivos de desarrollo
-**/.next/cache
-**/.turbo
-**/dist
-**/.cache
-
-# Excluir documentación
+# Documentación
 AGENTS.md
 DEVELOPMENT.md
 MIGRATION-REGISTRY.md
 agents/
+README.md
 *.md
+*.mdx
+# Excepciones para apps con contenido MDX
+!apps/*/content/**/*.mdx
 !apps/docs/**/*.md
-!apps/docs/**/*.mdx
 
-# Excluir archivos de configuración
+# Configuración del IDE
 .vscode
 .cursor
+
+# Logs y temporales
 *.log
+.temp
+
+# Git
+.git
+.gitignore
