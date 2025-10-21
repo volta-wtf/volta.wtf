@@ -3,15 +3,13 @@
   "explorer.sortOrderLexicographicOptions": "upper",
   "files.exclude": {
     // Base
+    //"**/.{next,turbo,vercel}": true,
     "**/.source": true,
-    "**/.next": true,
-    "**/.turbo": true,
-    "**/.vercel": true,
-    "**/node_modules": true,
+    //"**/node_modules": true,
 
     // Config
-    "**/.gitignore": true,
     "**/.gitkeep": false,
+    "**/.gitignore": true,
     "**/.env*": true,
     "**/.npmrc": true,
     "**/pnpm-*.yaml": true,
@@ -25,27 +23,12 @@
 
     // Internal
     //".temp": true,
-    "apps/admin": true,
-    "apps/builder": true,
-    "apps/editor": true,
+    "apps/{admin,builder,editor}": true,
+    "apps/{catalog,catalogo,demos,docs,shad}": false,
 
-    //"apps/shad": false,
-    //"apps/docs": false,
-    //"apps/demos": false,
-    //"apps/catalog": false,
-
-    //"sites/www": true,
-    //"sites/knowledge": true,
-    //"sites/design": true,
-
-    //"templates/": false,
-    //"templates/website": false,
-    //"templates/sitedocs": false,
-    //"templates/miltidocs": false,
-
-    "packages/css-presets": true,
-    "packages/css-primitives": true,
-    "packages/css-system": true,
-    "packages/css-materials": true,
+    "sites/{www,design,knowledge}": false,
+    "templates/{website,sitedocs,miltidocs}": false,
+    "templates/": false,
+    "packages/css-{presets,primitives,system,materials}": true
   }
 }

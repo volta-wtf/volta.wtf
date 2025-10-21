@@ -16,9 +16,9 @@
     "test:variables": "node src/test/variables-test.js",
     "test:cors": "node src/test/cors-test.js",
     "test:debug-selector": "node src/test/debug-selector.js",
-    "test": "npm run test:styles && npm run test:variables",
-    "test:all": "npm run test:styles && npm run test:variables && npm run test:cors",
-    "prepare": "npm run build"
+    "test": "pnpm run test:styles && pnpm run test:variables",
+    "test:all": "pnpm run test:styles && pnpm run test:variables && pnpm run test:cors",
+    "prepare": "pnpm run build"
   },
   "bin": {
     "theme-editor": "./bin/theme-editor.cjs"
