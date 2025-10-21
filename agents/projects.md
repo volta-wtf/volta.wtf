@@ -1,11 +1,9 @@
-sites (Websites)
+# sites (Websites)
 - 3000 www              @volta/website
+- 3010 design           @volta/design
 - 3020 knowledge        @volta/knowledge
-- 3010 globals          @volta/globals
-- 3040 theme            @volta/theme
-- 3030 styles           @volta/styles
 
-apps (Products)
+# apps (Products)
 - 3004 docs             @volta/docs
 - 3003 catalog          @volta/catalog
 - 3007 catalogo         @volta/catalogo
@@ -14,24 +12,19 @@ apps (Products)
 - 3002 builder          @studio/builder
 - 3001 admin            @studio/admin
 
-resources (App assets) recursos para las apps y sites del studio
+# resources (App assets) recursos para las apps y sites del studio
 - assets                @studio/assets
 - interface             @studio/interface
 
-packages  (Configs & Tools) internas y publicas
+# packages  (Configs & Tools) internas y publicas
+- files                 @studio/config-files        //
 - eslint                @studio/config-eslint       //
 - typescript            @studio/config-typescript   //
-- presets.css           @prebots/presets            // Style presets
-- primitives.css        @prebots/primitives         // Primitive tokens
-- globals.css           @prebots/globals            // Semantic tokens
-- theme.css             @prebots/theme              // Role-based tokens
-- materials.css         @prebots/materials          // Custom surafces and text styles
-- system.css            @prebots/system             // Systematic-layered tokens
-- stylewind-plugins     @stylewind/plugins          //
-- stylewind-postcss     @stylewind/postcss          //
-- stylewind-css         stylewindcss                //
+- presets               @prebots/presets            // Style presets
+- tokens                @prebots/tokens
+- materials             @prebots/materials          // Custom surafces and text styles
 
-registry (Library)  Base de componentes sin marca
+# registry (Library)  Base de componentes sin marca
 - config                @studio/config-registry
 - styles                @registry/styles
 - primitives            @registry/primitives
@@ -39,7 +32,7 @@ registry (Library)  Base de componentes sin marca
 - patterns              @registry/patterns
 - features              @registry/features
 
-templates
+# templates
 - 4010 website          @templates/website      // Base website app
 - 4020 sitedoc          @templates/sitedoc      // Website with documentation
 - 4030 miltidocs        @templates/miltidocs    // Multi-docs app without web

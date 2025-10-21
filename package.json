@@ -3,7 +3,6 @@
   "description": "A workspace to build Design Systems",
   "private": true,
   "scripts": {
-    "config": "node config.files.js",
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",

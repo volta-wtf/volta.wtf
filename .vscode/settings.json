@@ -35,18 +35,13 @@
     //"apps/catalog": false,
 
     //"sites/www": true,
-    "sites/knowledge": true,
-    "sites/globals": true,
-    "sites/theme": true,
-    //"sites/styles": false,
+    //"sites/knowledge": true,
+    //"sites/design": true,
 
     //"templates/": false,
     //"templates/website": false,
     //"templates/sitedocs": false,
     //"templates/miltidocs": false,
-
-    "registry/features": true,
-    "registry/materials": true,
 
     "packages/css-presets": true,
     "packages/css-primitives": true,
