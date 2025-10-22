@@ -1,8 +1,8 @@
 # Archivos de build y cache (generados durante el deploy)
-**/.next
-**/.turbo
-**/.cache
-**/dist
+# **/.next
+# **/.turbo
+# **/.cache
+# **/dist
 
 # Sites y templates (no se deployean)
 # sites/*
@@ -20,10 +20,10 @@ apps/demos
 packages/theme-editor
 
 # Documentación
+agents/*
 AGENTS.md
 DEVELOPMENT.md
 MIGRATION-REGISTRY.md
-agents/
 README.md
 *.md
 *.mdx
