@@ -23,9 +23,9 @@
 
     // Internal
     //".temp": true,
+
     "apps/{admin,builder,editor}": true,
     "apps/{catalog,catalogo,demos,docs,shad}": false,
-
     "sites/{www,design,knowledge}": false,
     "templates/{website,sitedocs,miltidocs}": false,
     "templates/": false,

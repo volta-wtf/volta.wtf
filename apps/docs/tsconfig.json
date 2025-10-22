@@ -16,6 +16,8 @@
       "@/registry/*": ["../../registry/*"],
       "@/registry/components/ui/*": ["../../registry/components/ui/*"],
       "@/registry/patterns/*": ["../../registry/patterns/*"],
+      "@/registry/lib/*": ["../../registry/primitives/lib/*"],
+      "@/registry/utils/*": ["../../registry/primitives/utils/*"],
       "@/interface/*": ["../../resources/interface/*"],
     },
   },

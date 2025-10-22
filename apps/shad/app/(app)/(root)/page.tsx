@@ -2,8 +2,8 @@ import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
-import { Announcement } from "@/components/partials/announcement"
-import { ExamplesNav } from "@/components/partials/examples-nav"
+import { Announcement } from "@/components/announcement"
+import { ExamplesNav } from "@/components/examples-nav"
 import {
   PageActions,
   PageHeader,
@@ -11,7 +11,7 @@ import {
   PageHeaderHeading,
 } from "@/components/page-header"
 import { PageNav } from "@/components/page-nav"
-import { ThemeSelector } from "@/components/partials/theme-selector"
+import { ThemeSelector } from "@/components/theme-selector"
 import { Button } from "@/registry/components/ui/button"
 
 import { RootComponents } from "./components"
