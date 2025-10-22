@@ -1,7 +1,4 @@
-# Node modules (Vercel los reinstala durante el build)
-**/node_modules
-
-# Archivos de build y cache
+# Archivos de build y cache (generados durante el deploy)
 **/.next
 **/.turbo
 **/.cache
@@ -30,6 +27,7 @@ agents/
 README.md
 *.md
 *.mdx
+
 # Excepciones para apps con contenido MDX
 !apps/*/content/**/*.mdx
 !apps/docs/**/*.md
