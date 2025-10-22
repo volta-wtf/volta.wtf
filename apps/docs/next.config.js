@@ -56,7 +56,15 @@ const nextConfig = {
     '@registry/interface',
     '@registry/config'
   ],
-  output: 'standalone'
+  output: 'standalone',
+  rewrites() {
+    return [
+      {
+        source: "/docs/:path*.md",
+        destination: "/llm/:path*",
+      },
+    ]
+  },
 }
 
 const withMDX = createMDX({})

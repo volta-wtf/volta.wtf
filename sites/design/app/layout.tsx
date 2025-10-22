@@ -7,7 +7,7 @@ import { Application } from "@/components/application"
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Styles | VOLTA",
+  title: "Design | VOLTA",
   description: "Catalog for styles, components and more.",
 };
 
