@@ -2,6 +2,15 @@
   "explorer.sortOrder": "default",
   "explorer.sortOrderLexicographicOptions": "upper",
   "files.exclude": {
+    // Internal
+    //".temp": true,
+    "apps/{admin,builder,editor}": true,
+    "apps/{catalog,catalogo,demos,docs,shad}": false,
+    "sites/{www,design,knowledge}": false,
+    "templates/{website,sitedocs,miltidocs}": false,
+    "templates/": false,
+    "packages/css-{presets,primitives,system,materials}": true,
+
     // Base
     "**/.{next,turbo,vercel}": true,
     "**/.source": true,
@@ -21,14 +30,13 @@
     //"**/tsconfig.*": true,
     //"**/postcss.*": true,
 
-    // Internal
-    //".temp": true,
-
-    "apps/{admin,builder,editor}": true,
-    "apps/{catalog,catalogo,demos,docs,shad}": false,
-    "sites/{www,design,knowledge}": false,
-    "templates/{website,sitedocs,miltidocs}": false,
-    "templates/": false,
-    "packages/css-{presets,primitives,system,materials}": true
+  },
+  "search.exclude": {
+    "**/.next": true,
+    "**/.turbo": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "pnpm-lock.yaml": true,
   }
 }
