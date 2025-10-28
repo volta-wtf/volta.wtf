@@ -1,0 +1,74 @@
+/*
+{
+    id: 'texture-neosticky',
+    cssFile: 'texture-neosticky.css',
+    name: 'Texture Neo Sticky',
+    description: 'Dramatic texture text effect with neo sticky',
+    category: 'Special',
+    tags: ['texture', 'dramatic', 'neo', 'sticky'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Sticky',
+    usesData: true,
+    background: '#000000',
+},
+*/
+
+.text-texture-neosticky {
+
+    & {
+        --style-tint-color: #c2acff;
+        --style-fill-color: #000000;
+        --style-text-color: #FFFFFF;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        background: black;
+        filter: brightness(330%) contrast(6.3) blur(.5px);
+        mix-blend-mode: color-dodge;
+        padding-inline: 0.06em;
+        color: var(--style-text-color);
+    }
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        padding-inline: 0.06em;
+    }
+
+    &:after {
+        z-index: 1;
+        color: var( --style-tint-color);
+        filter: blur(0.06em) brightness(1.2);
+
+    }
+
+    &:before {
+        z-index: 2;
+        /*color: var(--style-fill-color);*/
+        mix-blend-mode: exclusion;
+        filter: blur(0.04em);
+    }
+
+}
+
+.dark .text-texture-neosticky {
+    & {
+        --style-tint-color: #c2acff;
+        --style-fill-color: #4f4f4f;
+        --style-text-color: #000000;
+    }
+
+    & {
+        mix-blend-mode: lighten;
+        color: var(--style-text-color);
+    }
+
+    &:before {
+        color: var(--style-fill-color);
+        mix-blend-mode: color-burn;
+    }
+}

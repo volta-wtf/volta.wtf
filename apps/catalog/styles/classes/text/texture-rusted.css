@@ -1,0 +1,61 @@
+/*
+{
+    id: 'texture-rusted',
+    cssFile: 'texture-rusted.css',
+    name: 'Texture Rusted',
+    description: 'Dramatic texture text effect with rusted',
+    category: 'Special',
+    tags: ['texture', 'dramatic', 'rusted'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Rusted',
+    usesData: true,
+    background: '#000000',
+},
+*/
+
+.text-texture-rusted {
+
+    & {
+        --style-fill-color: #954646;
+        --style-tint-color: #b1b1b1;
+        --style-text-color: #ff3a3a;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        background: black;
+        filter: brightness(150%) contrast(1.3) blur(1px);
+        mix-blend-mode: color-dodge;
+        padding-inline: 0.06em;
+        color: var(--style-text-color);
+    }
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        padding-inline: 0.06em;
+    }
+
+    &:after {
+        z-index: 1;
+        color: var( --style-fill-color);
+        filter: blur(0.06em) brightness(1.2);
+
+    }
+
+    &:before {
+        z-index: 2;
+        color: var(--style-tint-color);
+        mix-blend-mode: color-burn;
+    }
+
+}
+
+/*
+.dark .text-texture-rusted {
+    mix-blend-mode: lighten;
+}
+*/

@@ -1,0 +1,26 @@
+/*
+{
+    id: 'emboss-clear',
+    cssFile: 'emboss-clear.css',
+    name: 'Emboss Clear',
+    description: 'Raised embossed text effect with clear fill',
+    category: 'Effects',
+    tags: ['emboss', 'clear'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Emboss',
+    background: '#1e9db6'
+},
+*/
+
+.text-emboss-clear {
+    --style-text-color: #808080;
+    --style-stroke-color: rgba(255, 255, 255, .2);
+    --style-stroke-width: 0.01em;
+    text-shadow:
+        0 0 .005em black,
+        -.02em -.02em .04em rgba(255, 255, 255, .4),
+        .02em .02em .04em rgba(0, 0, 0, .4);
+    @apply text-stroke;
+    @apply text-fill;
+    mix-blend-mode: hard-light;
+}

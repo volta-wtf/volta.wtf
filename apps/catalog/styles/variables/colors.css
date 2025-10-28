@@ -1,0 +1,23 @@
+:root{
+  --color-primary-50: oklch(0.95 0.03 260);
+  --color-primary-100: oklch(0.92 0.04 260);
+  --color-primary-200: oklch(0.88 0.06 260);
+  --color-primary-300: oklch(0.82 0.08 260);
+  --color-primary-400: oklch(0.75 0.10 260);
+  --color-primary-500: oklch(0.68 0.12 260);
+
+  --surface: oklch(0.98 0.01 260);
+  --card: oklch(0.98 0.01 260);
+  --text: oklch(0.25 0.03 260);
+  --accent: oklch(0.80 0.10 260);
+
+  --color-1: #186cb8;
+  --color-2: #2a9a9f;
+  --color-3: #f1b211;
+  --color-4: #e83611;
+  --color-5: #f9002f;
+
+  --gold: #ffb338;
+  --light-shadow: #77571d;
+  --dark-shadow: #3e2904;
+}

@@ -1,0 +1,1 @@
+"use client"; export default function DropdownOpen(){return <div className="p-4 border rounded">Dropdown motion</div>}

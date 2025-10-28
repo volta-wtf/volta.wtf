@@ -1,0 +1,52 @@
+/*
+{
+    id: 'shadow-animated',
+    name: 'Animated Shadow',
+    description: 'Text with animated shadow effects',
+    category: 'Decorative',
+    tags: ['shadow', 'animated', 'motion'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'shadow-animated.css',
+    previewText: 'Stripes',
+    usesData: true,
+    background: 'dark',
+    reference: ['https://codepen.io/carpenumidium/pen/nVgdez']
+},
+*/
+
+.text-shadow-animated {
+    --style-shadow-color: var(--background);
+    --style-text-color: var(--foreground);
+    --style-stroke-color: var(--text-color);
+
+    & {
+        position: relative;
+        display: inline-block;
+        color: var(--style-text-color);
+        text-shadow: .03em .03em 0 var(--style-shadow-color);
+        z-index: 0;
+    }
+
+    &:after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0.1em;
+        left: 0.1em;
+        z-index: -1;
+        text-shadow: none;
+        background-image:
+            linear-gradient(45deg,
+            var(--style-stroke-color) 5%,
+            transparent 5%,
+            transparent 40%,
+            var(--style-stroke-color) 40%,
+            var(--style-stroke-color) 55%,
+            transparent 55%,
+            transparent 90%,
+            var(--style-stroke-color) 90%);
+        background-size: 0.1em 0.1em;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shad-anim 30s linear infinite;
+    }
+}

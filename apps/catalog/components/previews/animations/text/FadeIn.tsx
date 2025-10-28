@@ -1,0 +1,1 @@
+"use client"; export default function FadeIn(){return <div className="animate-pulse p-4 border rounded">FadeIn</div>}

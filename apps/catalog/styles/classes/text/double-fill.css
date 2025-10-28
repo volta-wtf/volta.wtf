@@ -1,0 +1,36 @@
+/*
+{
+    id: 'double-fill',
+    cssFile: 'double-fill.css',
+    name: 'Double Fill',
+    description: 'Layered text with offset shadow effect',
+    category: 'Basics',
+    tags: ['double', 'layer', 'offset'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Double',
+    usesData: true,
+    background: '#f0f0f0'
+},
+*/
+
+.text-double-fill {
+    & {
+        --style-text-color: currentColor;
+        --style-shadow-color: #ff2600;
+        --style-shadow-opacity: 0.7;
+    }
+    & {
+        position: relative;
+        color: var(--style-text-color);
+        z-index: 0;
+    }
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        transform: translate3d(0.075em, 0.075em, 0);
+        color: var(--style-shadow-color);
+        opacity: var(--style-shadow-opacity);
+    }
+}

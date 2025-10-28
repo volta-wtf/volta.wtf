@@ -1,0 +1,22 @@
+/*
+{
+    id: 'stroke-only',
+    name: 'Stroke Only',
+    description: 'Outline text without fill',
+    category: 'Basics',
+    tags: ['stroke'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'stroke-only.css',
+    previewText: 'Stroke',
+    background: '#d6fad9',
+    reference: ['https://css-tricks.com/text-stroke-stuck-middle/']
+},
+*/
+
+.text-stroke-only {
+    --style-stroke-width: .03em;
+    --style-stroke-color: var(--foreground);
+    --style-text-color: transparent;
+    @apply text-fill;
+    @apply text-stroke;
+}

@@ -1,0 +1,18 @@
+/*
+{
+    id: 'neon-glow',
+    name: 'Neon Glow',
+    description: 'Bright neon text with multiple glow layers',
+    category: 'Special',
+    tags: ['neon', 'glow', 'bright'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'neon-glow.css',
+    previewText: 'Neon',
+    background: '#0a0a0a'
+},
+*/
+
+.text-neon-glow {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+}

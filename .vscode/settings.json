@@ -12,13 +12,13 @@
     "packages/css-{presets,primitives,system,materials}": true,
 
     // Base
-    "**/.{next,turbo,vercel}": true,
     "**/.source": true,
+    "**/.{next,turbo,vercel}": true,
     "**/node_modules": true,
 
     // Config
     "**/.gitkeep": false,
-    "**/.gitignore": true,
+    //"**/.gitignore": true,
     "**/.env*": true,
     "**/.npmrc": true,
     "**/pnpm-*.yaml": true,

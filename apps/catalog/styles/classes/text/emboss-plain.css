@@ -1,0 +1,23 @@
+/*
+{
+    id: 'emboss-plain',
+    cssFile: 'emboss-plain.css',
+    name: 'Emboss Plain',
+    description: 'Raised embossed text effect with plain fill',
+    category: 'Effects',
+    tags: ['fixed color', 'emboss'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Emboss',
+    background: '#1e9db6'
+},
+*/
+
+.text-emboss-plain {
+    --style-text-color: transparent;
+    text-shadow:
+        0 0 .005em black,
+        -.02em -.02em .04em rgba(255, 255, 255, .4),
+        .02em .02em .04em rgba(0, 0, 0, .4);
+    @apply text-fill;
+    mix-blend-mode: hard-light;
+}

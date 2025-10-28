@@ -1,0 +1,28 @@
+/*
+{
+    id: 'emboss-stroke',
+    name: 'Emboss Stroke',
+    description: 'Raised embossed text effect with stroke',
+    category: 'Effects',
+    tags: ['emboss', 'raised', '3d'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'emboss-stroke.css',
+    previewText: 'Bevel',
+    background: '#1e9db6'
+},
+*/
+
+.text-emboss-stroke {
+    --style-text-color: white;
+    --style-stroke-color: rgba(0, 0, 0, .3);
+    --style-stroke-width: 0.04em;
+    @apply text-stroke;
+    text-shadow:
+        0 0 .005em rgba(0, 0, 0, .1),
+        0 -.01em .01em rgba(255, 255, 255, .7),
+        -.01em 0 .03em rgba(128, 128, 128, .4),
+        0 -.01em .03em rgba(255, 255, 255, .4),
+        .01em .01em .03em rgba(0, 0, 0, .2);
+    @apply text-fill;
+    mix-blend-mode: hard-light;
+}

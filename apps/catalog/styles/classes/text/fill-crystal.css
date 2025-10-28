@@ -1,0 +1,44 @@
+/*
+{
+    id: 'fill-crystal',
+    name: 'Crystal Fill',
+    description: 'Crystal-like transparent text effect',
+    category: 'Materials',
+    tags: ['glass', 'alpha'],
+    bestFor: ['body', 'heading', 'display'],
+    cssVariants: ['light'],
+    cssFile: 'fill-crystal.css',
+    previewText: 'Crystal',
+    background: 'waves2'
+},
+*/
+
+.text-fill-crystal {
+    --style-tint-color: rgba(255, 255, 255, 0.8);
+    --style-text-color: rgba(0, 0, 0, 0.15);
+    --style-stroke-color: rgba(0, 0, 0, 0.2);
+    --style-stroke-width: .01em;
+    --style-shadow-color: rgba(0, 0, 0, 0.5);
+    --style-layer-blend: luminosity;
+    @apply text-fill;
+    @apply text-stroke;
+    filter: drop-shadow(0em 0.01em 0.02em var(--style-shadow-color));
+    mix-blend-mode: var(--style-layer-blend);
+
+    /* @apply filter-shadow; */
+    /* text-shadow: 0em 0em 0.02em var(--text-color); */
+    &.small {
+        --style-stroke-width: 0.5px;
+    }
+}
+
+.text-fill-crystal.light {
+    filter: drop-shadow(0em 0.02em 0.02em var(--style-tint-color)) drop-shadow(0em 0.04em 0.02em var(--style-shadow-color));
+}
+
+.dark .text-fill-crystal {
+    --style-text-color: rgba(255, 255, 255, 0.4);
+    --style-shadow-color: rgba(0, 0, 0, 0.3);
+    --style-stroke-color: rgba(255, 255, 255, 0.3);
+    --style-layer-blend: color-dodge;
+}

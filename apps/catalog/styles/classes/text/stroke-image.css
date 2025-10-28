@@ -1,0 +1,35 @@
+/*
+{
+    id: 'stroke-image',
+    name: 'Image Stroke',
+    cssFile: 'stroke-image.css',
+    description: 'Text with image-based stroke',
+    category: 'Basics',
+    tags: ['image', 'stroke'],
+    bestFor: ['body', 'heading', 'display'],
+    variants: ['with-fill', 'with-color'],
+    previewText: 'Border',
+    background: '#d6fad9'
+},
+*/
+
+.text-stroke-image {
+    --style-stroke-width: .1em;
+    --style-stroke-color: transparent;
+    --style-text-color: var(--background);
+    --style-fill-image: var(--image-color);
+    --style-fill-size: 100% auto;
+    padding: .05em;
+    @apply stroke-image;
+    @apply text-clip;
+    @apply text-fill;
+    @apply text-stroke;
+}
+
+.text-stroke-image.with-fill {
+    --text-color: var(--foreground);
+}
+
+.text-stroke-image.with-color {
+    --text-color: rgba(0, 255, 217, 0.5);
+}

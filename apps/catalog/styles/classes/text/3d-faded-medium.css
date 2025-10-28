@@ -1,0 +1,30 @@
+/*
+{
+    id: '3D-faded-medium',
+    cssFile: '3d-faded-medium.css',
+    name: '3D Faded Medium',
+    description: 'Faded 3D text effect',
+    category: '3D',
+    tags: ['current color', 'faded', 'medium'],
+    bestFor: ['body', 'heading', 'display'],
+    cssVariants: ['less-faded', 'less-faded-2'],
+    previewText: 'Shadow',
+    background: '#fed90f',
+    reference: ['https://codepen.io/ryandsouza13/pen/yEBJQV']
+},
+*/
+
+.text-3D-faded-medium {
+    /* color: #ff9f00; */
+    text-shadow: var(--bevel-top-left), var(--shadow-faded-medium);
+}
+
+.text-3D-faded-medium.less-faded {
+    text-shadow: var(--bevel-top-left), var(--shadow-faded-medium-less-1);
+}
+.text-3D-faded-medium.less-faded-2 {
+    --style-text-color: currentColor;
+    --style-tint-color: #fff;
+    color: color-mix(in srgb, var(--style-text-color) 100%, var(--style-text-tint) 10%);
+    text-shadow: var(--bevel-top-left), var(--shadow-faded-medium-less-2);
+}

@@ -1,0 +1,23 @@
+/*
+{
+    id: 'stroke-shadow',
+    cssFile: 'stroke-shadow.css',
+    name: 'Stroke Shadow',
+    description: 'Text filled with image pattern and shadow stroke',
+    category: 'Basics',
+    tags: ['stroke', 'inset'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Stroke',
+    background: '#d6fad9'
+},
+*/
+
+.text-stroke-shadow {
+    --style-stroke-color: var(--background);
+    --style-stroke-width: 0.03em;
+    --style-text-shadow: var(--shadow-simple);
+    --style-shadow-color: rgb(0 0 0 / 0.2);
+    --style-shadow-filter: 0 0.03em 0.03em var(--style-shadow-color);
+    @apply filter-shadow;
+    @apply text-stroke;
+}

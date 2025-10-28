@@ -1,0 +1,18 @@
+/*
+{
+    id: 'gold-emboss',
+    name: 'Gold Emboss',
+    description: 'Elegant gold embossed text effect',
+    category: 'Materials',
+    tags: ['gold', 'emboss', 'luxury'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'gold-emboss.css',
+    previewText: 'Gold',
+    background: '#2a2018'
+},
+*/
+
+.text-gold-emboss {
+    color: #daa520;
+    text-shadow: 2px 2px 0px #b8860b, 4px 4px 0px rgba(0, 0, 0, 0.2);
+}

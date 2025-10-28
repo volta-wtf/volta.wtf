@@ -1,0 +1,1 @@
+"use client"; export default function Stagger(){return <div className="grid grid-cols-3 gap-2">{Array.from({length:6}).map((_,i)=><div key={i} className="h-8 bg-foreground/20" />)}</div>}

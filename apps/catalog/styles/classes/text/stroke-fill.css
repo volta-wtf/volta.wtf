@@ -1,0 +1,22 @@
+/*
+{
+    id: 'stroke-fill',
+    name: 'Stroke + Fill',
+    description: 'Text with stroke and fill',
+    category: 'Basics',
+    tags: ['solid', 'stroke'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'stroke-fill.css',
+    previewText: 'Border',
+    background: '#d6fad9'
+},
+*/
+
+.text-stroke-fill {
+    --style-text-color: var(--background);
+    --style-stroke-color: var(--foreground);
+    --style-stroke-width: .06em;
+    @apply text-fill;
+    @apply text-stroke;
+    paint-order: stroke fill;
+}

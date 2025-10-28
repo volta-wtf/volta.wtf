@@ -1,0 +1,9 @@
+.link-interactive {
+    & {
+        text-decoration: underline;
+        transition: transform .15s;
+    }
+    &:hover {
+        transform: translateY(-1px);
+    }
+}

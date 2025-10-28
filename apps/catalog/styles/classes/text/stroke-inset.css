@@ -1,0 +1,27 @@
+/*
+{
+    id: 'stroke-inset',
+    cssFile: 'stroke-inset.css',
+    name: 'Stroke Inset',
+    description: 'Text filled with image pattern and inset stroke',
+    category: 'Basics',
+    tags: ['stroke', 'inset'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Stroke',
+    background: '#d6fad9'
+},
+*/
+
+.text-stroke-inset {
+    --style-stroke-color: white;
+    --style-stroke-width: 0.03em;
+    --style-text-color: transparent;
+    --style-text-shadow: var(--shadow-simple);
+    --style-fill-color: transparent;
+    --style-shadow-color: rgb(0 0 0 / 0.2);
+    --style-shadow-filter: 0 0.03em 0.03em var(--style-shadow-color);
+    text-shadow: hsla(0, 100%, 100%, 0.5) 0px 0.04em 0.03em, hsl(0 0% 0% / 0.2) 0px -0.01em 0em;
+    @apply text-fill;
+    @apply filter-shadow;
+    @apply text-stroke;
+}

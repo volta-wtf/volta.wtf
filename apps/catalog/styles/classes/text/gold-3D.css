@@ -1,0 +1,66 @@
+/*
+{
+    id: 'gold-3D',
+    cssFile: 'gold-3D.css',
+    name: '3D Gold',
+    description: 'Luxurious gold 3D text',
+    category: 'Materials',
+    tags: ['3d', 'gold', 'luxury'],
+    bestFor: ['body', 'heading', 'display'],
+    cssVariants: ['thin-stroke', 'tick-stroke'],
+    previewText: '3D Text',
+    usesData: true,
+    background: 'radial',
+    reference: ['https://codepen.io/TajShireen/pen/LYyOzJL?editors=1100']
+},
+*/
+
+.text-gold-3D {
+    & {
+        position: relative;
+        z-index: 0;
+        color: transparent;
+    }
+
+    &::after {
+        z-index: 0;
+        background-image: var(--gradient-gold-light);
+        color: #1e2127;
+        transform: scale(1);
+    }
+
+    &::before {
+        z-index: -1;
+        background-image: var(--gradient-gold-dark);
+        color: transparent;
+        filter: drop-shadow(0.05em 0.15em 0.15em rgb(0 0 0 / 0.4));
+        transform: scaleY(1.05);
+        transform-origin: top;
+    }
+
+    &::after,
+    &::before {
+        --style-stroke-color: transparent;
+        --style-stroke-width: .02em;
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        top: 0.075em;
+        @apply text-clip;
+        @apply text-stroke;
+    }
+}
+
+.text-gold-3D.thin-stroke {
+    &::after,
+    &::before {
+        --stroke-width: .04em;
+    }
+}
+
+.text-gold-3D.tick-stroke {
+    &::after,
+    &::before {
+        --stroke-width: .06em;
+    }
+}

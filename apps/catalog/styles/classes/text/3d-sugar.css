@@ -1,0 +1,29 @@
+/*
+{
+    id: '3D-sugar',
+    name: '3D Sugar',
+    description: 'Sweet candy-like 3D text',
+    category: '3D',
+    tags: ['3d', 'sugar', 'candy'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: '3d-sugar.css',
+    previewText: 'Emboss',
+    background: '#e589ff',
+    reference: ['https://codepen.io/havardob/pen/WNQwvze']
+},
+*/
+
+.text-3D-sugar {
+    --style-text-color: #e589ff;
+    --style-tint-color: #fff;
+    color: color-mix(in srgb, var(--style-text-color) 100%, var(--style-text-tint) 10%);
+    text-shadow:
+        -.006em .006em .02em rgb(255 25 25 / .6),
+        .005em .005em .01em rgb(191 97 217 /.2),
+        .01em  .01em  .01em rgb(191 97 217 /.2),
+        .015em .015em .01em rgb(191 97 217 /.2),
+        .02em  .02em  .01em rgb(191 97 217 /.2),
+        .025em .025em .01em rgb(191 97 217 /.2),
+        .03em  .03em  .01em rgb(191 97 217 /.2),
+        .035em .035em .01em rgb(191 97 217 /.2);
+}

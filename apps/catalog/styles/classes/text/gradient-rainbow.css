@@ -1,0 +1,20 @@
+/*
+{
+    id: 'gradient-rainbow',
+    name: 'Rainbow Gradient',
+    description: 'Full spectrum rainbow gradient text',
+    category: 'Colorful',
+    tags: ['gradient', 'rainbow', 'spectrum', 'colorful'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'gradient-rainbow.css',
+    previewText: 'Rainbow',
+    background: '#1a1a1a'
+}
+*/
+
+.text-gradient-rainbow {
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

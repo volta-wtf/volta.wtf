@@ -1,0 +1,84 @@
+@layer components {
+    .bloc {
+        overflow: hidden;
+        position: relative;
+        background: var(--bloc-color);
+
+        &:after {
+            content: "";
+            display: block;
+            background: linear-gradient(90deg, transparent, var(--bloc-color));
+            width: 80px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    .type-demo,
+    .type-demo-medium,
+    .type-demo-large {
+        /*font-size: 6rem;*/
+        /*font-size: 2rem;*/
+        font-size: calc(1em + 5vw);
+        font-weight: 900;
+        line-height: 1;
+        /*color: gray;*/
+    }
+    .type-demo-medium {
+        font-size: calc(1em + 3vw);
+    }
+    .type-demo-large {
+        font-size: calc(1.5em + 10vw);
+    }
+    @media (min-width: 768px) {
+        .type-demo-large {
+            font-size: calc(1em + 6vw);
+        }
+    }
+    @media (min-width: 640px) {
+        .type-demo {
+            font-size: calc(1em + 4vw);
+        }
+    }
+    @media (min-width: 768px) {
+        .type-demo {
+            font-size: calc(1em + 1vw);
+        }
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+.bg-preview-background { background: var(--background); }
+
+.bg-preview-default    { background: hsl(0, 0%, 97%); border-color: transparent; }
+
+.bg-preview-muted      { background: hsl(0, 0%, 90%); }
+.bg-preview-subtle     { background: hsl(0, 0%, 80%); }
+.bg-preview-color-1    { background: #fb923c; }
+.bg-preview-color-2    { background: #bfdbfe; }
+.bg-preview-color-3    { background: #a5f296; }
+.bg-preview-gradient   { background: linear-gradient(113.96deg, #F5F9EF 0%, #B6DCE2 100%), #FCFCFC; }
+.bg-preview-image      { background-image: url("/images/background-light.jpg"); }
+
+.dark .bg-preview-default   { background: hsl(0, 0%, 15%); }
+
+.dark .bg-preview-muted     { background: hsl(0, 0%, 5%); }
+.dark .bg-preview-subtle    { background: hsl(0, 0%, 15%); }
+.dark .bg-preview-color-1   { background: #8e4305; }
+.dark .bg-preview-color-2   { background: #114c95; }
+.dark .bg-preview-color-3   { background: #217211; }
+.dark .bg-preview-gradient  { background: linear-gradient(113.96deg, #9AA4B2 0%, #121926 100%),#FCFCFC; }
+.dark .bg-preview-image     { background-image: url("/images/background-dark.jpg"); }
+
+.bg-preview-image {
+    background-size: cover;
+    background-position: center;
+}

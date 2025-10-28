@@ -1,0 +1,20 @@
+/*
+{
+    id: 'metallic-chrome',
+    name: 'Metallic Chrome',
+    description: 'Realistic chrome metallic text effect',
+    category: 'Materials',
+    tags: ['metallic', 'chrome', 'silver'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'metallic-chrome.css',
+    previewText: 'Chrome',
+    background: '#2a2a2a'
+},
+*/
+
+.text-metallic-chrome {
+    background: linear-gradient(180deg, #eee 0%, #999 50%, #777 51%, #555 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

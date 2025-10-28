@@ -1,0 +1,56 @@
+/*
+{
+    id: 'texture-neoglow',
+    cssFile: 'texture-neoglow.css',
+    name: 'Texture Neo Glow',
+    description: 'Dramatic texture text effect with neo glow',
+    category: 'Special',
+    tags: ['texture', 'dramatic', 'neo', 'glow'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Glow',
+    usesData: true,
+    background: '#000000',
+},
+*/
+
+.text-texture-neoglow {
+
+    & {
+        --style-tint-color: #41326b;
+        --style-fill-color: #ffffff;
+        --style-text-color: black;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        background: black;
+        filter: brightness(400%) contrast(6.3) blur(0.5px);
+        mix-blend-mode: color-dodge;
+        padding-inline: 0.06em;
+        color: var(--style-text-color);
+    }
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        padding-inline: 0.06em;
+    }
+
+    &:after {
+        z-index: 1;
+        color: var( --style-tint-color);
+        filter: blur(0.06em) brightness(1.2);
+
+    }
+
+    &:before {
+        z-index: 2;
+        color: var(--style-fill-color);
+        mix-blend-mode: color-burn;
+        filter: blur(0.04em);
+    }
+
+}

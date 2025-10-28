@@ -1,0 +1,71 @@
+/*
+{
+    id: 'striped-layers',
+    name: 'Striped Layers',
+    description: 'Layered striped text effect',
+    category: 'Decorative',
+    tags: ['stripes', 'layers', 'complex'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'striped-layers.css',
+    previewText: 'Stripes',
+    usesData: true,
+    background: '#593439',
+    reference: ['https://codepen.io/prathkum/pen/dyMPErw']
+},
+*/
+
+.text-striped-layers {
+
+    & {
+        --style-text-color: currentColor;
+        --style-stroke-color: var(--background);
+    }
+
+    & {
+        position: relative;
+        display: inline-block;
+        color: var(--style-text-color);
+        cursor: pointer;
+        z-index: 0;
+    }
+
+    &::before {
+        content: attr(data-text);
+        position: absolute;
+        color: transparent;
+        top: 0px;
+        left: 0px;
+        transition: 1s;
+    }
+
+    &::before {
+        background-image: repeating-linear-gradient(45deg,
+            transparent 0,
+            transparent 0.03em,
+            var(--style-stroke-color) 0.03em,
+            var(--style-stroke-color) 0.06em);
+        background-clip: text;
+    }
+
+    /*
+    &::after {
+        background-image: repeating-linear-gradient(135deg,
+            transparent 0,
+            transparent 0.03em,
+            white 0.03em,
+            white 0.06em);
+        background-clip: text;
+        z-index: -1;
+    }
+
+    &:hover:before {
+        top: 10px;
+        left: 10px;
+    }
+
+    &:hover:after {
+        top: -10px;
+        left: -10px;
+    }
+    */
+}

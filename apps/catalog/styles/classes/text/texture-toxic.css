@@ -1,0 +1,58 @@
+/*
+{
+    id: 'texture-toxic',
+    cssFile: 'texture-toxic.css',
+    name: 'Texture Toxic',
+    description: 'Dramatic texture text effect with toxic',
+    category: 'Special',
+    tags: ['texture', 'dramatic', 'toxic'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Toxic',
+    usesData: true,
+    background: '#000000',
+},
+*/
+
+.text-texture-toxic {
+
+    & {
+        --style-fill-color: #c7a0a0;
+        --style-tint-color: #4d5e8f;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        filter: brightness(150%) contrast(1.3) blur(1px);
+        mix-blend-mode: color-dodge;
+        padding-inline: 0.06em;
+    }
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        padding-inline: 0.06em;
+    }
+
+    &:after {
+        z-index: 1;
+        color: var( --style-fill-color);
+        filter: blur(0.06em) brightness(1.2);
+
+    }
+
+    &:before {
+        z-index: 2;
+        color: var(--style-tint-color);
+        mix-blend-mode: color-burn;
+    }
+
+}
+
+/*
+.dark .text-texture-glowing {
+    mix-blend-mode: lighten;
+}
+*/

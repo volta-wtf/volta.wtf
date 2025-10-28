@@ -1,0 +1,67 @@
+/*
+{
+    id: 'lighting',
+    name: 'Lighting',
+    description: 'Dramatic lighting text effect',
+    category: 'Special',
+    tags: ['lighting', 'dramatic', 'bright'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'lighting.css',
+    previewText: 'Shine',
+    usesData: true,
+    background: '#000000',
+    reference: ['https://codepen.io/comehope/pen/GBwvxw']
+},
+*/
+
+.text-lighting {
+
+    & {
+        --style-fill-color: white;
+        --style-tint-color: white;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        background: black;
+        filter: brightness(150%) contrast(1.7);
+        mix-blend-mode: lighten;
+    }
+
+    &:after {
+        content: attr(data-text);
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        color: var( --style-fill-color);
+        filter: blur(0.01em);
+    }
+
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        z-index: 2;
+        top: 0.075em;
+        left: 0;
+        color: red;
+        background:
+            radial-gradient(circle, var(--style-tint-color), transparent 25%) center / 25% 25%,
+            radial-gradient(circle, var(--style-tint-color), black 25%) center / 12.5% 12.5%;
+        mix-blend-mode: color-dodge;
+        animation: light 10s linear infinite;
+    }
+
+}
+
+.text-lighting.always-light {
+    & {
+        background: black;
+        mix-blend-mode: lighten;
+    }
+}
+
+
+.dark .text-lighting {
+
+}

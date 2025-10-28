@@ -1,0 +1,58 @@
+/*
+{
+    id: 'striped-staked',
+    cssFile: 'striped-layers.css',
+    name: 'Striped Staked',
+    description: 'Staked striped text effect',
+    category: 'Decorative',
+    tags: ['stripes', 'staked', 'complex'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Stripes',
+    usesData: true,
+    background: '#593439',
+},
+*/
+
+.text-striped-staked {
+    & {
+        --style-text-color: currentColor;
+        --style-stroke-color: var(--background);
+        --style-shadow-color: var(--muted-foreground);
+    }
+
+    & {
+        position: relative;
+        display: inline-block;
+        z-index: 0;
+        color: var(--style-text-color);
+    }
+
+    &::after,
+    &::before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0px;
+        color: transparent;
+        background-clip: text;
+    }
+
+    &::after {
+        z-index: 1;
+        transform: translate3d(0.06em, 0.06em, 0);
+        background-image: repeating-linear-gradient(45deg,
+            transparent 0,
+            transparent 0.03em,
+            var(--style-stroke-color) 0.02em,
+            var(--style-stroke-color) 0.04em);
+    }
+
+    &::before {
+        z-index: -1;
+        transform: translate3d(-0.06em, -0.06em, 0);
+        background-image: repeating-linear-gradient(135deg,
+            transparent 0,
+            transparent 0.03em,
+            var(--style-shadow-color) 0.02em,
+            var(--style-shadow-color) 0.04em);
+    }
+}

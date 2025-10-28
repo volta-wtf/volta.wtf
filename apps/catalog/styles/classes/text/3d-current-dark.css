@@ -1,0 +1,23 @@
+/*
+{
+    id: '3D-current-dark',
+    cssFile: '3d-current-dark.css',
+    name: '3D Current Dark',
+    description: '3D text effect with current color on dark background',
+    category: '3D',
+    tags: ['current color', 'depth'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: '3D Text',
+    background: '#fed90f',
+},
+*/
+
+.text-3D-current-dark {
+    --style-text-color: currentColor;
+    --style-tint-color: #000;
+    color: color-mix(in srgb, var(--style-text-color) 100%, var(--style-text-tint) 10%);
+    text-shadow: var(--bevel-bottom-bright), var(--extrusion-current-on-dark), var(--shadow-ambient-small);
+}
+.dark .text-3D-current-dark {
+    text-shadow: var(--bevel-bottom-brighter), var(--extrusion-current-on-dark), var(--shadow-ambient);
+}

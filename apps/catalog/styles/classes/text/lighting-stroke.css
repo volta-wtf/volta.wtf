@@ -1,0 +1,72 @@
+/*
+{
+    id: 'lighting-stroke',
+    name: 'Lighting Stroke',
+    description: 'Illuminated stroke text effect',
+    category: 'Special',
+    tags: ['lighting', 'stroke', 'glow'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'lighting-stroke.css',
+    previewText: 'Shine',
+    usesData: true,
+    background: '#000000',
+    reference: ['https://codepen.io/comehope/pen/GBwvxw']
+},
+*/
+
+.text-lighting-stroke {
+    & {
+        --style-stroke-width: .05em;
+    }
+
+    &:before,
+    &:after {
+        -webkit-text-stroke-color: var(--style-stroke-color);
+        -webkit-text-stroke-width: var(--style-stroke-width);
+        padding: calc(var(--style-stroke-width) / 2);
+
+        /* @apply text-stroke; */
+        /* --color-background: #000000; */
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        filter: brightness(150%) contrast(1.7);
+    }
+
+    &:after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background:
+            radial-gradient(circle, white, transparent 25%) center / 25% 75%,
+            radial-gradient(circle, white, black 25%) center / 50% 32.5%;
+        animation: light 10s linear infinite;
+        mix-blend-mode: color-dodge;
+        color: transparent;
+    }
+
+    &:before {
+        content: attr(data-text);
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        filter: blur(0.01em);
+        background: linear-gradient(45deg, red, purple, blue);
+        /* filter: brightness(150%); */
+        /* filter: blur(0.01em) brightness(150%) contrast(1.7); */
+        /* mix-blend-mode: multiply; */
+    }
+
+    &,
+    &:before,
+    &:after {
+        @apply text-stroke-base;
+        padding: calc(var(--style-stroke-width) / 2);
+    }
+}

@@ -1,0 +1,37 @@
+/*
+{
+    id: 'gradient-motion',
+    name: 'Motion Gradient',
+    description: 'Animated gradient text effect',
+    category: 'Basics',
+    tags: ['gradient', 'motion', 'animated'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'gradient-motion.css',
+    previewText: 'Gradient',
+    background: '#4d094d',
+    reference: ['https://webflow.com/made-in-webflow/website/animated-gradient-text']
+},
+*/
+
+.text-gradient-motion {
+    --style-fill-image: var(--gradient-animated);
+    --style-fill-size: 300% auto;
+    @apply text-gradient;
+    @apply text-clip;
+    @apply text-fill;
+    animation: gradient 5s ease infinite !important;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
