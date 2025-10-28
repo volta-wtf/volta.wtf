@@ -20,6 +20,7 @@ sites/theme
 # sites/styles
 
 public/shared
+**/public/shared
 
 # Dependencies
 node_modules

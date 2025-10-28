@@ -964,7 +964,64 @@ export const CATEGORIES: Category[] = [
     "type": "variables",
     "view": "shape",
     "tags": [],
-    "items": []
+    "items": [
+      {
+        "title": "shape radius soft",
+        "slug": "shape-radius-soft",
+        "variableName": "--shape-radius-soft",
+        "value": "clamp(8px, 2vw, 24px)",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape radius pill",
+        "slug": "shape-radius-pill",
+        "variableName": "--shape-radius-pill",
+        "value": "9999px",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape radius squircle",
+        "slug": "shape-radius-squircle",
+        "variableName": "--shape-radius-squircle",
+        "value": "clamp(24px, 6vw, 64px)",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape radius subtle",
+        "slug": "shape-radius-subtle",
+        "variableName": "--shape-radius-subtle",
+        "value": "clamp(2px, 0.8vw, 10px)",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape clip diamond",
+        "slug": "shape-clip-diamond",
+        "variableName": "--shape-clip-diamond",
+        "value": "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape clip hexagon",
+        "slug": "shape-clip-hexagon",
+        "variableName": "--shape-clip-hexagon",
+        "value": "polygon(\n      25% 5%, 75% 5%,\n      100% 50%, 75% 95%,\n      25% 95%, 0% 50%\n    )",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape clip squircle",
+        "slug": "shape-clip-squircle",
+        "variableName": "--shape-clip-squircle",
+        "value": "path('M10,0 Q16,0 20,4 Q24,8 24,14 Q24,20 20,24 Q16,28 10,28 Q4,28 0,24 Q-4,20 -4,14 Q-4,8 0,4 Q4,0 10,0Z')",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape radius circle",
+        "slug": "shape-radius-circle",
+        "variableName": "--shape-radius-circle",
+        "value": "50%",
+        "sourceFile": "styles/presets/shapes.css"
+      }
+    ]
   },
   {
     "name": "presets-borders",

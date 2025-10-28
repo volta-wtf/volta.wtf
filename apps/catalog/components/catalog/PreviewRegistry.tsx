@@ -31,6 +31,10 @@ export function resolveRenderer(cat: Category) {
     case "presets:image": return ImagePreview;
     case "variables:color": return ColorPreview;
     case "variables:font": return FontPreview;
+    case "variables:gradient": return GradientPreview;
+    case "variables:shape": return ShapePreview;
+    case "variables:shadow": return ShadowPreview;
+    case "variables:image": return ImagePreview;
     // fallbacks
     default: return TextPreview;
   }

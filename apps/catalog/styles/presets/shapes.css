@@ -1,1 +1,57 @@
 /* shapes presets placeholder */
+/*
+  Radius and clip-path CSS variables for shapes
+  Responsive using clamp() and calc()
+*/
+
+/* Border radius shape presets */
+:root {
+  /* Soft Rounded */
+  --shape-radius-soft: clamp(8px, 2vw, 24px);
+  /* Pill/Full Rounded */
+  --shape-radius-pill: 9999px;
+  /* Squircle (approximate) */
+  --shape-radius-squircle: clamp(24px, 6vw, 64px);
+  /* Subtle rounded */
+  --shape-radius-subtle: clamp(2px, 0.8vw, 10px);
+
+  /* Responsive diamond/lozenge with clip-path */
+  --shape-clip-diamond: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  --shape-clip-hexagon: polygon(
+      25% 5%, 75% 5%,
+      100% 50%, 75% 95%,
+      25% 95%, 0% 50%
+    );
+  /* Responsive squircle with SVG path as a clip-path */
+  --shape-clip-squircle: path('M10,0 Q16,0 20,4 Q24,8 24,14 Q24,20 20,24 Q16,28 10,28 Q4,28 0,24 Q-4,20 -4,14 Q-4,8 0,4 Q4,0 10,0Z');
+
+  /* Responsive circle using aspect-ratio + border-radius */
+  --shape-radius-circle: 50%;
+}
+
+/* Example shape utility classes */
+.shape-soft {
+  border-radius: var(--shape-radius-soft);
+}
+.shape-pill {
+  border-radius: var(--shape-radius-pill);
+}
+.shape-squircle {
+  border-radius: var(--shape-radius-squircle);
+}
+.shape-subtle {
+  border-radius: var(--shape-radius-subtle);
+}
+.shape-diamond {
+  clip-path: var(--shape-clip-diamond);
+}
+.shape-hexagon {
+  clip-path: var(--shape-clip-hexagon);
+}
+.shape-squircle-clip {
+  clip-path: var(--shape-clip-squircle);
+}
+.shape-circle {
+  border-radius: var(--shape-radius-circle);
+  aspect-ratio: 1/1;
+}
