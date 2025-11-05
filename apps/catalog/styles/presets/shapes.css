@@ -6,30 +6,67 @@
 
 /* Border radius shape presets */
 :root {
-  /* Soft Rounded */
-  --shape-radius-soft: clamp(8px, 2vw, 24px);
-  /* Pill/Full Rounded */
-  --shape-radius-pill: 9999px;
-  /* Squircle (approximate) */
-  --shape-radius-squircle: clamp(24px, 6vw, 64px);
-  /* Subtle rounded */
-  --shape-radius-subtle: clamp(2px, 0.8vw, 10px);
+    /* Subtle rounded */
+    --shape-radius-subtle: clamp(2px, 0.8vw, 10px);
+    /* Soft Rounded */
+    --shape-radius-soft: clamp(8px, 2vw, 24px);
 
-  /* Responsive diamond/lozenge with clip-path */
-  --shape-clip-diamond: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  --shape-clip-hexagon: polygon(
-      25% 5%, 75% 5%,
-      100% 50%, 75% 95%,
-      25% 95%, 0% 50%
+    --shape-radius-custom-1: 24px 24px 56px 56px / 56px 56px 24px 24px;
+    --shape-radius-custom-2: 56px 56px 24px 24px / 24px 24px 56px 56px;
+    --shape-curved-inline: 20px / 40%;
+    --shape-curved-block: 40px / 16px;
+
+    /* Pill/Full Rounded */ --shape-radius-pill: 9999px;
+
+    /* --shape-radius-squircle: 20px / 40%; */
+    --shape-mask-scooped: radial-gradient(16px at 16px 16px, #0000 98%, #000) -16px -16px;
+
+    --shape-clip-bevel: polygon(
+        0 16px, 16px 0, calc(100% - 16px) 0,
+        100% 16px, 100% calc(100% - 16px),
+        calc(100% - 16px) 100%, 16px 100%,
+        0 calc(100% - 16px)
     );
-  /* Responsive squircle with SVG path as a clip-path */
-  --shape-clip-squircle: path('M10,0 Q16,0 20,4 Q24,8 24,14 Q24,20 20,24 Q16,28 10,28 Q4,28 0,24 Q-4,20 -4,14 Q-4,8 0,4 Q4,0 10,0Z');
 
-  /* Responsive circle using aspect-ratio + border-radius */
-  --shape-radius-circle: 50%;
+    --shape-clip-notch: polygon(
+        0% 16px, 16px 16px, 16px 0%,
+        calc(100% - 16px) 0%, calc(100% - 16px) 16px, 100% 16px,
+        100% calc(100% - 16px), calc(100% - 16px) calc(100% - 16px), calc(100% - 16px) 100%,
+        16px 100%, 16px calc(100% - 16px), 0% calc(100% - 16px)
+    );
+
+    --shape-radius-drawn: 15px 255px 15px 225px / 225px 15px 255px 15px;
+
+    /* Fluid shapes with clip-path */
+    --shape-clip-pointing: polygon(
+        20px  0%, calc(100% - 20px) 0%,
+        100% 50%, calc(100% - 20px) 100%,
+        20px 100%, 0% 50%
+    );
+
+    --shape-clip-chevron: polygon(
+        calc(100% - 16px) 0%, 100% 50%, calc(100% - 16px) 100%,
+        0% 100%, 16px 50%, 0% 0%);
+
+    --shape-clip-parallelogram: polygon(24px 0, 100% 0, calc(100% - 24px) 100%, 0 100%);
+    --shape-clip-trapezoid: polygon(16px 0, calc(100% - 16px) 0, 100% 100%, 0 100%);
+
+    --shape-radius-blob: 53% 47% 34% 66% / 63% 46% 54% 37%;
+    --shape-radius-growing: calc(0.28 * min(60%, 60%)) / calc(0.28 * 2 * min(60%, 60%));
+
+    /* Responsive hexagon with clip-path */
+    --shape-clip-hexagon: polygon(
+        25% 5%, 75% 5%,
+        100% 50%, 75% 95%,
+        25% 95%, 0% 50%
+    );
+    /* Responsive diamond with clip-path */
+    --shape-clip-diamond: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    /* Responsive circle using aspect-ratio + border-radius */
+    --shape-radius-circle: 50%;
 }
 
-/* Example shape utility classes */
+/* Example shape utility classes
 .shape-soft {
   border-radius: var(--shape-radius-soft);
 }
@@ -55,3 +92,4 @@
   border-radius: var(--shape-radius-circle);
   aspect-ratio: 1/1;
 }
+*/

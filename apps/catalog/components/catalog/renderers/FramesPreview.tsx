@@ -16,7 +16,7 @@ export default function FramesPreview({ item }: { cat: Category; item: CatalogIt
             {variant}
           </Badge>
         </div>
-        <div className="flex items-center justify-center p-8 min-h-[180px] bg-muted/30 rounded-lg border">
+        <div className="flex items-center justify-center p-8 min-h-[180px] bg-muted/40 aspect-6/3 rounded-lg border">
           <div className={`w-full max-w-xs ${className}`}>
             {variant === "card" ? (
               <div>

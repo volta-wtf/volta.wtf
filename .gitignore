@@ -2,6 +2,7 @@
 
 .base
 .temp
+.volta
 
 # apps/demos
 apps/admin

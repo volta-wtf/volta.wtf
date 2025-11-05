@@ -966,10 +966,45 @@ export const CATEGORIES: Category[] = [
     "tags": [],
     "items": [
       {
+        "title": "shape radius subtle",
+        "slug": "shape-radius-subtle",
+        "variableName": "--shape-radius-subtle",
+        "value": "clamp(2px, 0.8vw, 10px)",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
         "title": "shape radius soft",
         "slug": "shape-radius-soft",
         "variableName": "--shape-radius-soft",
         "value": "clamp(8px, 2vw, 24px)",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape radius custom 1",
+        "slug": "shape-radius-custom-1",
+        "variableName": "--shape-radius-custom-1",
+        "value": "24px 24px 56px 56px / 56px 56px 24px 24px",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape radius custom 2",
+        "slug": "shape-radius-custom-2",
+        "variableName": "--shape-radius-custom-2",
+        "value": "56px 56px 24px 24px / 24px 24px 56px 56px",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape curved inline",
+        "slug": "shape-curved-inline",
+        "variableName": "--shape-curved-inline",
+        "value": "20px / 40%",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape curved block",
+        "slug": "shape-curved-block",
+        "variableName": "--shape-curved-block",
+        "value": "40px / 16px",
         "sourceFile": "styles/presets/shapes.css"
       },
       {
@@ -980,17 +1015,80 @@ export const CATEGORIES: Category[] = [
         "sourceFile": "styles/presets/shapes.css"
       },
       {
-        "title": "shape radius squircle",
-        "slug": "shape-radius-squircle",
-        "variableName": "--shape-radius-squircle",
-        "value": "clamp(24px, 6vw, 64px)",
+        "title": "shape mask scooped",
+        "slug": "shape-mask-scooped",
+        "variableName": "--shape-mask-scooped",
+        "value": "radial-gradient(16px at 16px 16px, #0000 98%, #000) -16px -16px",
         "sourceFile": "styles/presets/shapes.css"
       },
       {
-        "title": "shape radius subtle",
-        "slug": "shape-radius-subtle",
-        "variableName": "--shape-radius-subtle",
-        "value": "clamp(2px, 0.8vw, 10px)",
+        "title": "shape clip bevel",
+        "slug": "shape-clip-bevel",
+        "variableName": "--shape-clip-bevel",
+        "value": "polygon(\n        0 16px, 16px 0, calc(100% - 16px) 0,\n        100% 16px, 100% calc(100% - 16px),\n        calc(100% - 16px) 100%, 16px 100%,\n        0 calc(100% - 16px)\n    )",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape clip notch",
+        "slug": "shape-clip-notch",
+        "variableName": "--shape-clip-notch",
+        "value": "polygon(\n        0% 16px, 16px 16px, 16px 0%,\n        calc(100% - 16px) 0%, calc(100% - 16px) 16px, 100% 16px,\n        100% calc(100% - 16px), calc(100% - 16px) calc(100% - 16px), calc(100% - 16px) 100%,\n        16px 100%, 16px calc(100% - 16px), 0% calc(100% - 16px)\n    )",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape radius drawn",
+        "slug": "shape-radius-drawn",
+        "variableName": "--shape-radius-drawn",
+        "value": "15px 255px 15px 225px / 225px 15px 255px 15px",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape clip pointing",
+        "slug": "shape-clip-pointing",
+        "variableName": "--shape-clip-pointing",
+        "value": "polygon(\n        20px  0%, calc(100% - 20px) 0%,\n        100% 50%, calc(100% - 20px) 100%,\n        20px 100%, 0% 50%\n    )",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape clip chevron",
+        "slug": "shape-clip-chevron",
+        "variableName": "--shape-clip-chevron",
+        "value": "polygon(\n        calc(100% - 16px) 0%, 100% 50%, calc(100% - 16px) 100%,\n        0% 100%, 16px 50%, 0% 0%)",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape clip parallelogram",
+        "slug": "shape-clip-parallelogram",
+        "variableName": "--shape-clip-parallelogram",
+        "value": "polygon(24px 0, 100% 0, calc(100% - 24px) 100%, 0 100%)",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape clip trapezoid",
+        "slug": "shape-clip-trapezoid",
+        "variableName": "--shape-clip-trapezoid",
+        "value": "polygon(16px 0, calc(100% - 16px) 0, 100% 100%, 0 100%)",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape radius blob",
+        "slug": "shape-radius-blob",
+        "variableName": "--shape-radius-blob",
+        "value": "53% 47% 34% 66% / 63% 46% 54% 37%",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape radius growing",
+        "slug": "shape-radius-growing",
+        "variableName": "--shape-radius-growing",
+        "value": "calc(0.28 * min(60%, 60%)) / calc(0.28 * 2 * min(60%, 60%))",
+        "sourceFile": "styles/presets/shapes.css"
+      },
+      {
+        "title": "shape clip hexagon",
+        "slug": "shape-clip-hexagon",
+        "variableName": "--shape-clip-hexagon",
+        "value": "polygon(\n        25% 5%, 75% 5%,\n        100% 50%, 75% 95%,\n        25% 95%, 0% 50%\n    )",
         "sourceFile": "styles/presets/shapes.css"
       },
       {
@@ -998,20 +1096,6 @@ export const CATEGORIES: Category[] = [
         "slug": "shape-clip-diamond",
         "variableName": "--shape-clip-diamond",
         "value": "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-        "sourceFile": "styles/presets/shapes.css"
-      },
-      {
-        "title": "shape clip hexagon",
-        "slug": "shape-clip-hexagon",
-        "variableName": "--shape-clip-hexagon",
-        "value": "polygon(\n      25% 5%, 75% 5%,\n      100% 50%, 75% 95%,\n      25% 95%, 0% 50%\n    )",
-        "sourceFile": "styles/presets/shapes.css"
-      },
-      {
-        "title": "shape clip squircle",
-        "slug": "shape-clip-squircle",
-        "variableName": "--shape-clip-squircle",
-        "value": "path('M10,0 Q16,0 20,4 Q24,8 24,14 Q24,20 20,24 Q16,28 10,28 Q4,28 0,24 Q-4,20 -4,14 Q-4,8 0,4 Q4,0 10,0Z')",
         "sourceFile": "styles/presets/shapes.css"
       },
       {
@@ -1029,7 +1113,92 @@ export const CATEGORIES: Category[] = [
     "type": "variables",
     "view": "shape",
     "tags": [],
-    "items": []
+    "items": [
+      {
+        "title": "border thin",
+        "slug": "border-thin",
+        "variableName": "--border-thin",
+        "value": "1px",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border base",
+        "slug": "border-base",
+        "variableName": "--border-base",
+        "value": "2px",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border bold",
+        "slug": "border-bold",
+        "variableName": "--border-bold",
+        "value": "4px",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border xbold",
+        "slug": "border-xbold",
+        "variableName": "--border-xbold",
+        "value": "6px",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border style solid",
+        "slug": "border-style-solid",
+        "variableName": "--border-style-solid",
+        "value": "solid",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border style dashed",
+        "slug": "border-style-dashed",
+        "variableName": "--border-style-dashed",
+        "value": "dashed",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border style dotted",
+        "slug": "border-style-dotted",
+        "variableName": "--border-style-dotted",
+        "value": "dotted",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border style double",
+        "slug": "border-style-double",
+        "variableName": "--border-style-double",
+        "value": "double",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border color default",
+        "slug": "border-color-default",
+        "variableName": "--border-color-default",
+        "value": "hsl(210, 14%, 83%)",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border color muted",
+        "slug": "border-color-muted",
+        "variableName": "--border-color-muted",
+        "value": "hsl(210, 16%, 85%)",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border color primary",
+        "slug": "border-color-primary",
+        "variableName": "--border-color-primary",
+        "value": "hsl(221, 70%, 55%)",
+        "sourceFile": "styles/presets/borders.css"
+      },
+      {
+        "title": "border color danger",
+        "slug": "border-color-danger",
+        "variableName": "--border-color-danger",
+        "value": "hsl(0, 80%, 60%)",
+        "sourceFile": "styles/presets/borders.css"
+      }
+    ]
   },
   {
     "name": "presets-shadows",

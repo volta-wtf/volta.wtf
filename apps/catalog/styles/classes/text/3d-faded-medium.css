@@ -22,6 +22,7 @@
 .text-3D-faded-medium.less-faded {
     text-shadow: var(--bevel-top-left), var(--shadow-faded-medium-less-1);
 }
+
 .text-3D-faded-medium.less-faded-2 {
     --style-text-color: currentColor;
     --style-tint-color: #fff;

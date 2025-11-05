@@ -19,23 +19,64 @@ function GalleryItemPreview({ item, view }: { item: CatalogItem; view: Category[
     );
   }
 
-  // Shape - Div con fondo blanco que muestra la forma (border-radius o clip-path)
+  // Shape - Div con fondo blanco que muestra la forma (border-radius, clip-path, mask o borders)
   if (view === "shape") {
     const isClipPath = item.variableName?.includes('clip') && !item.variableName.includes('squircle');
+    const isMask = item.variableName?.includes('mask');
+    const isBorder = item.variableName?.startsWith('--border-');
+    const isBorderWidth = isBorder && (item.variableName?.includes('thin') || item.variableName?.includes('base') || item.variableName?.includes('bold'));
+    const isBorderStyle = isBorder && item.variableName?.includes('style');
+    const isBorderColor = isBorder && item.variableName?.includes('color');
     const itemValue = (item as any).value;
-    const shapeStyle = item.variableName
-      ? isClipPath
-        ? { clipPath: itemValue || `var(${item.variableName})` }
-        : { borderRadius: itemValue || `var(${item.variableName})` }
-      : undefined;
 
-    // Para clip-path, necesitamos un contenedor con el filter
-    if (isClipPath) {
+    let shapeStyle: React.CSSProperties = {};
+
+    if (isBorder) {
+      // Renderizar borders
+      shapeStyle = { backgroundColor: 'white' };
+      if (isBorderWidth) {
+        shapeStyle = {
+          ...shapeStyle,
+          borderWidth: itemValue || `var(${item.variableName})`,
+          borderStyle: 'solid',
+          borderColor: 'hsl(221, 70%, 55%)',
+        };
+      } else if (isBorderStyle) {
+        shapeStyle = {
+          ...shapeStyle,
+          borderWidth: '2px',
+          borderStyle: itemValue || `var(${item.variableName})`,
+          borderColor: 'hsl(221, 70%, 55%)',
+        };
+      } else if (isBorderColor) {
+        shapeStyle = {
+          ...shapeStyle,
+          borderWidth: '2px',
+          borderStyle: 'solid',
+          borderColor: itemValue || `var(${item.variableName})`,
+        };
+      }
+    } else {
+      // Para clip-path, mask o border-radius
+      shapeStyle = item.variableName
+        ? isClipPath
+          ? { clipPath: itemValue || `var(${item.variableName})` }
+          : isMask
+            ? {
+                mask: itemValue || `var(${item.variableName})`,
+                WebkitMask: itemValue || `var(${item.variableName})`
+              }
+            : { borderRadius: itemValue || `var(${item.variableName})` }
+        : {};
+    }
+
+    // Para clip-path o mask, necesitamos un contenedor con el filter
+    if (isClipPath || isMask) {
       return (
         <div className="flex items-center justify-center p-6">
           <div style={{ filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06))' }}>
             <div
-              className={`w-20 h-20 bg-white ${className}`}
+              className={`w-40 h-20 bg-white ${className}`}
               style={shapeStyle}
             />
           </div>
@@ -43,14 +84,14 @@ function GalleryItemPreview({ item, view }: { item: CatalogItem; view: Category[
       );
     }
 
-    // Para border-radius, usamos box-shadow directamente
+    // Para border-radius o borders, usamos box-shadow directamente
     return (
       <div className="flex items-center justify-center p-6">
         <div
-          className={`w-20 h-20 bg-white ${className}`}
+          className={`w-40 h-20 ${isBorder ? 'rounded-md' : ''} bg-white ${className}`}
           style={{
             ...shapeStyle,
-            boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
+            ...(!isBorder && { boxShadow: '0 4px 6px rgb(0 0 0 / 0.1), 0 2px 4px rgb(0 0 0 / 0.1)' })
           }}
         />
       </div>
@@ -115,7 +156,7 @@ function GalleryItemPreview({ item, view }: { item: CatalogItem; view: Category[
   const textStyle = item.variableName ? { color: `var(${item.variableName})` } : undefined;
   return (
     <div
-      className={`text-center text-3xl select-none pointer-events-none ${className}`}
+      className={`text-center text-7xl font-bold select-none pointer-events-none ${className}`}
       style={textStyle}
     >
       {sample}
@@ -140,7 +181,7 @@ export default function GalleryView({ category, activeItemSlug, isPreviewOpen = 
             href={href}
             className={`
               group relative aspect-[4/3] rounded-md cursor-pointer
-              bg-muted/30 border transition-all duration-300 overflow-hidden
+              bg-muted/40 aspect-6/3 border transition-all duration-300 overflow-hidden
               hover:border-primary/30 hover:bg-muted/50
               ${isActive ? "border-primary/50 bg-muted/60 ring-1 ring-primary/20" : "border-transparent"}
             `}

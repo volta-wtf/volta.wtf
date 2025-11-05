@@ -23,7 +23,7 @@ export default function ComponentPreview({ cat, item }: { cat: Category; item: C
         </div>
         <p className="text-sm text-muted-foreground">Componente interactivo</p>
       </div>
-      <div className="bg-muted/30 p-6 rounded-lg border flex items-center justify-center min-h-[300px]">
+      <div className="bg-muted/40 aspect-6/3 p-6 rounded-lg border flex items-center justify-center min-h-[300px]">
         {/* @ts-ignore */}
         <Dyn />
       </div>

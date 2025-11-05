@@ -18,7 +18,7 @@ export default function ShadowPreview({ item }: { cat: Category; item: CatalogIt
             {variant}
           </Badge>
         </div>
-        <div className="flex items-center justify-center p-8 min-h-[180px] bg-muted/30 rounded-lg border">
+        <div className="flex items-center justify-center p-8 min-h-[180px] bg-muted/40 aspect-6/3 rounded-lg border">
           <div
             className="w-32 h-32 bg-white rounded-lg"
             style={shadowStyle}

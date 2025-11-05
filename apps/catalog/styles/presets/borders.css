@@ -1,1 +1,25 @@
 /* borders presets placeholder */
+/**
+ * Border presets: grosores y estilos reutilizables
+ * Usar con: border, border-t, border-b, etc.
+ */
+
+/* Border width presets */
+:root {
+  --border-thin: 1px;
+  --border-base: 2px;
+  --border-bold: 4px;
+  --border-xbold: 6px;
+
+  /* Estilos de línea */
+  --border-style-solid: solid;
+  --border-style-dashed: dashed;
+  --border-style-dotted: dotted;
+  --border-style-double: double;
+
+  /* Colores (ejemplo, sobrescribir según tema) */
+  --border-color-default: hsl(210, 14%, 83%);
+  --border-color-muted: hsl(210, 16%, 85%);
+  --border-color-primary: hsl(221, 70%, 55%);
+  --border-color-danger: hsl(0, 80%, 60%);
+}

@@ -30,7 +30,7 @@ export default function TextPreview({ item }: { cat: Category; item: CatalogItem
     }
     // default / wordart / content
     return (
-      <span className={`${className} text-4xl`} style={styleVar}>
+      <span className={`${className} text-8xl`} style={styleVar}>
         {sample}
       </span>
     );
@@ -40,18 +40,16 @@ export default function TextPreview({ item }: { cat: Category; item: CatalogItem
     <div className="space-y-6">
       {/* Preview */}
       <div className="space-y-3">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between hidden">
           <p className="text-xs font-medium text-muted-foreground uppercase">Vista previa</p>
           <Badge variant="secondary" className="font-mono text-xs">
             {variant}
           </Badge>
         </div>
-        <div className="flex items-center justify-center p-8 min-h-[180px] bg-muted/30 rounded-lg border">
+        <div className="flex items-center justify-center p-8 min-h-[180px] bg-muted/40 aspect-6/3 rounded-lg border">
           {renderPreview()}
         </div>
       </div>
-
-      <Separator />
 
       {/* CSS Class */}
       {item.cssClass && (
@@ -62,8 +60,6 @@ export default function TextPreview({ item }: { cat: Category; item: CatalogItem
           </code>
         </div>
       )}
-
-      <Separator />
 
       {/* HTML Usage */}
       {item.cssClass && (
@@ -87,8 +83,6 @@ export default function TextPreview({ item }: { cat: Category; item: CatalogItem
           </div>
         </>
       )}
-
-      <Separator />
 
       {/* CSS Output */}
       {item.cssClass && (
