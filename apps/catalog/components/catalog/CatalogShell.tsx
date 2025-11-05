@@ -82,7 +82,7 @@ export function CatalogShell({ categories, children }: CatalogShellProps) {
             {/* Columna de la galería */}
             <div
               key={activeCategoryData.name}
-              className="flex flex-col border-r"
+              className="flex flex-col"
               style={activeItem ? { flex: '2 1 0%', minWidth: 'calc(33.333% + 16px)' } : { flex: '1 1 0%' }}
             >
               <CatalogHeader
@@ -105,7 +105,7 @@ export function CatalogShell({ categories, children }: CatalogShellProps) {
                 className="flex flex-col bg-background/30"
                 style={{ flex: '4 1 0%', minWidth: 'calc(66.666% - 16px)' }}
               >
-                <header className="flex h-14 shrink-0 items-center gap-2 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
+                <header className="flex h-14 shrink-0 items-center gap-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
                   <h2 className="text-sm font-medium text-foreground truncate">
                     {activeItem.title}
                   </h2>

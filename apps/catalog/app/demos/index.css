@@ -1,3 +1,24 @@
 @import "./base.css";
 @import "./utilities.css";
 @import "./demo.css";
+
+/* Background preview options from catalogo */
+.bg-preview-background { background: var(--background); }
+
+.bg-preview-default    { background: hsl(0, 0%, 97%); border-color: transparent; }
+
+.bg-preview-muted      { background: hsl(0, 0%, 90%); }
+.bg-preview-subtle     { background: hsl(0, 0%, 80%); }
+.bg-preview-color-1    { background: #fb923c; }
+.bg-preview-color-2    { background: #bfdbfe; }
+.bg-preview-color-3    { background: #a5f296; }
+.bg-preview-gradient   { background: linear-gradient(113.96deg, #F5F9EF 0%, #B6DCE2 100%), #FCFCFC; }
+
+.dark .bg-preview-default   { background: hsl(0, 0%, 15%); }
+
+.dark .bg-preview-muted     { background: hsl(0, 0%, 5%); }
+.dark .bg-preview-subtle    { background: hsl(0, 0%, 15%); }
+.dark .bg-preview-color-1   { background: #8e4305; }
+.dark .bg-preview-color-2   { background: #114c95; }
+.dark .bg-preview-color-3   { background: #217211; }
+.dark .bg-preview-gradient  { background: linear-gradient(113.96deg, #9AA4B2 0%, #121926 100%),#FCFCFC; }

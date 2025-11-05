@@ -10,6 +10,1452 @@ export const CATEGORIES: Category[] = [
     "tags": [],
     "items": [
       {
+        "title": "3D Basic",
+        "slug": "3D",
+        "cssClass": "text-3D",
+        "sourceFile": "styles/classes/text/3d.css",
+        "description": "Basic 3D text effect",
+        "category": "3D",
+        "tags": [
+          "depth"
+        ],
+        "previewText": "3D Text",
+        "background": "#fed90f",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/ryandsouza13/pen/yEBJQV"
+        ]
+      },
+      {
+        "title": "3D Current",
+        "slug": "3D-current",
+        "cssClass": "text-3D-current",
+        "sourceFile": "styles/classes/text/3d-current.css",
+        "description": "3D text effect with current color",
+        "category": "3D",
+        "tags": [
+          "current color",
+          "depth"
+        ],
+        "previewText": "3D Text",
+        "background": "#fed90f",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "3D Current Dark",
+        "slug": "3D-current-dark",
+        "cssClass": "text-3D-current-dark",
+        "sourceFile": "styles/classes/text/3d-current-dark.css",
+        "description": "3D text effect with current color on dark background",
+        "category": "3D",
+        "tags": [
+          "current color",
+          "depth"
+        ],
+        "previewText": "3D Text",
+        "background": "#fed90f",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "3D Faded Hard",
+        "slug": "3D-faded-hard",
+        "cssClass": "text-3D-faded-hard",
+        "sourceFile": "styles/classes/text/3d-faded-hard.css",
+        "description": "Faded 3D text effect",
+        "category": "3D",
+        "tags": [
+          "current color",
+          "faded",
+          "hard"
+        ],
+        "previewText": "Shadow",
+        "background": "#fed90f",
+        "usesData": false,
+        "cssVariants": [
+          "bevel-soft",
+          "bevel-hard"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/ryandsouza13/pen/yEBJQV"
+        ]
+      },
+      {
+        "title": "3D Faded Medium",
+        "slug": "3D-faded-medium",
+        "cssClass": "text-3D-faded-medium",
+        "sourceFile": "styles/classes/text/3d-faded-medium.css",
+        "description": "Faded 3D text effect",
+        "category": "3D",
+        "tags": [
+          "current color",
+          "faded",
+          "medium"
+        ],
+        "previewText": "Shadow",
+        "background": "#fed90f",
+        "usesData": false,
+        "cssVariants": [
+          "less-faded",
+          "less-faded-2"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/ryandsouza13/pen/yEBJQV"
+        ]
+      },
+      {
+        "title": "3D Faded Soft",
+        "slug": "3D-faded-soft",
+        "cssClass": "text-3D-faded-soft",
+        "sourceFile": "styles/classes/text/3d-faded-soft.css",
+        "description": "Faded 3D text effect",
+        "category": "3D",
+        "tags": [
+          "current color",
+          "faded",
+          "soft"
+        ],
+        "previewText": "Shadow",
+        "background": "#fed90f",
+        "usesData": false,
+        "cssVariants": [
+          "less-faded",
+          "less-faded-2"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/ryandsouza13/pen/yEBJQV"
+        ]
+      },
+      {
+        "title": "3D Glow",
+        "slug": "3D-glow",
+        "cssClass": "text-3D-glow",
+        "sourceFile": "styles/classes/text/3d-glow.css",
+        "description": "Glowing 3D text effect",
+        "category": "3D",
+        "tags": [
+          "glow",
+          "bright"
+        ],
+        "previewText": "3D Text",
+        "background": "#c3c3c3",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://redstapler.co/create-3d-text-rgb-animation-css/"
+        ]
+      },
+      {
+        "title": "3D Glow Clear",
+        "slug": "3D-glow-clear",
+        "cssClass": "text-3D-glow-clear",
+        "sourceFile": "styles/classes/text/3d-glow-clear.css",
+        "description": "Glowing 3D text effect with clear fill",
+        "category": "3D",
+        "tags": [
+          "glow",
+          "bright"
+        ],
+        "previewText": "3D Text",
+        "background": "#c3c3c3",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://redstapler.co/create-3d-text-rgb-animation-css/"
+        ]
+      },
+      {
+        "title": "3D Glow Dark Fill",
+        "slug": "3D-glow-dark-fill",
+        "cssClass": "text-3D-glow-dark-fill",
+        "sourceFile": "styles/classes/text/3d-glow-dark-fill.css",
+        "description": "Glowing 3D text effect with dark fill",
+        "category": "3D",
+        "tags": [
+          "glow",
+          "bright"
+        ],
+        "previewText": "3D Text",
+        "background": "#c3c3c3",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://redstapler.co/create-3d-text-rgb-animation-css/"
+        ]
+      },
+      {
+        "title": "3D Glow Light Fill",
+        "slug": "3D-glow-light-fill",
+        "cssClass": "text-3D-glow-light-fill",
+        "sourceFile": "styles/classes/text/3d-glow-light-fill.css",
+        "description": "Glowing 3D text effect with light fill",
+        "category": "3D",
+        "tags": [
+          "glow",
+          "bright"
+        ],
+        "previewText": "3D Text",
+        "background": "#c3c3c3",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://redstapler.co/create-3d-text-rgb-animation-css/"
+        ]
+      },
+      {
+        "title": "3D Gold",
+        "slug": "gold-3D",
+        "cssClass": "text-gold-3D",
+        "sourceFile": "styles/classes/text/gold-3D.css",
+        "description": "Luxurious gold 3D text",
+        "category": "Materials",
+        "tags": [
+          "3d",
+          "gold",
+          "luxury"
+        ],
+        "previewText": "3D Text",
+        "background": "radial",
+        "usesData": true,
+        "cssVariants": [
+          "thin-stroke",
+          "tick-stroke"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/TajShireen/pen/LYyOzJL?editors=1100"
+        ]
+      },
+      {
+        "title": "3D Light",
+        "slug": "3D-light",
+        "cssClass": "text-3D-light",
+        "sourceFile": "styles/classes/text/3d-light.css",
+        "description": "Illuminated 3D text effect",
+        "category": "3D",
+        "tags": [
+          "illuminated"
+        ],
+        "previewText": "3D Text",
+        "background": "#10353e",
+        "usesData": true,
+        "cssVariants": [
+          "bright",
+          "brighter"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/nokiss/pen/OPexYR"
+        ]
+      },
+      {
+        "title": "3D Plain",
+        "slug": "3D-plain",
+        "cssClass": "text-3D-plain",
+        "sourceFile": "styles/classes/text/3d-plain.css",
+        "description": "Plain 3D text effect",
+        "category": "3D",
+        "tags": [
+          "fixed color",
+          "depth",
+          "plain"
+        ],
+        "previewText": "Shadow",
+        "background": "#fed90f",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/ryandsouza13/pen/yEBJQV"
+        ]
+      },
+      {
+        "title": "3D Shadow",
+        "slug": "shadow-3D",
+        "cssClass": "text-shadow-3D",
+        "sourceFile": "styles/classes/text/shadow-3d.css",
+        "description": "Deep 3D shadow text effect",
+        "category": "3D",
+        "tags": [
+          "3d",
+          "shadow",
+          "depth"
+        ],
+        "previewText": "Shadow",
+        "background": "ambient",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/davidlillo/pen/wZRagx"
+        ]
+      },
+      {
+        "title": "3D Sugar",
+        "slug": "3D-sugar",
+        "cssClass": "text-3D-sugar",
+        "sourceFile": "styles/classes/text/3d-sugar.css",
+        "description": "Sweet candy-like 3D text",
+        "category": "3D",
+        "tags": [
+          "3d",
+          "sugar",
+          "candy"
+        ],
+        "previewText": "Emboss",
+        "background": "#e589ff",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/havardob/pen/WNQwvze"
+        ]
+      },
+      {
+        "title": "3D Sweet",
+        "slug": "3D-sweet",
+        "cssClass": "text-3D-sweet",
+        "sourceFile": "styles/classes/text/3d-sweet.css",
+        "description": "Sweet pastel 3D text",
+        "category": "3D",
+        "tags": [
+          "fixed color",
+          "depth"
+        ],
+        "previewText": "3D Text",
+        "background": "sweet",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/mireille1306/pen/BawdXzY"
+        ]
+      },
+      {
+        "title": "3D Thin",
+        "slug": "3D-thin",
+        "cssClass": "text-3D-thin",
+        "sourceFile": "styles/classes/text/3d-thin.css",
+        "description": "Thin 3D text effect",
+        "category": "3D",
+        "tags": [
+          "depth",
+          "thin"
+        ],
+        "previewText": "3D Text",
+        "background": "#fed90f",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/ryandsouza13/pen/yEBJQV"
+        ]
+      },
+      {
+        "title": "Alpha Fill",
+        "slug": "fill-alpha",
+        "cssClass": "text-fill-alpha",
+        "sourceFile": "styles/classes/text/fill-alpha.css",
+        "description": "Semi-transparent text fill with background",
+        "category": "Basics",
+        "tags": [
+          "alpha",
+          "fill"
+        ],
+        "previewText": "Alpha",
+        "background": "waves",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Animated Shadow",
+        "slug": "shadow-animated",
+        "cssClass": "text-shadow-animated",
+        "sourceFile": "styles/classes/text/shadow-animated.css",
+        "description": "Text with animated shadow effects",
+        "category": "Decorative",
+        "tags": [
+          "shadow",
+          "animated",
+          "motion"
+        ],
+        "previewText": "Stripes",
+        "background": "dark",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/carpenumidium/pen/nVgdez"
+        ]
+      },
+      {
+        "title": "Bevel",
+        "slug": "bevel",
+        "cssClass": "text-bevel",
+        "sourceFile": "styles/classes/text/bevel.css",
+        "description": "Bevel text effect",
+        "category": "Special",
+        "tags": [
+          "bevel",
+          "dark",
+          "sharp"
+        ],
+        "previewText": "Bevel",
+        "background": "radial",
+        "usesData": true,
+        "cssVariants": [
+          "grlowing",
+          "color",
+          "bordered"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Bevel Contrast",
+        "slug": "bevel-contrast",
+        "cssClass": "text-bevel-contrast",
+        "sourceFile": "styles/classes/text/bevel-contrast.css",
+        "description": "Bevel text effect with contrast",
+        "category": "Special",
+        "tags": [
+          "fixed color",
+          "bevel",
+          "contrast"
+        ],
+        "previewText": "Bevel",
+        "background": "radial",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Blend Fill",
+        "slug": "fill-blend",
+        "cssClass": "text-fill-blend",
+        "sourceFile": "styles/classes/text/fill-blend.css",
+        "description": "Text with blend mode effects",
+        "category": "Basics",
+        "tags": [
+          "blend"
+        ],
+        "previewText": "Blend",
+        "background": "waves3",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Burn",
+        "slug": "burn",
+        "cssClass": "text-burn",
+        "sourceFile": "styles/classes/text/burn.css",
+        "description": "Burn text effect",
+        "category": "Special",
+        "tags": [
+          "burn",
+          "dark",
+          "sharp"
+        ],
+        "previewText": "Burn",
+        "background": "radial",
+        "usesData": true,
+        "cssVariants": [
+          "color",
+          "colored",
+          "coloring",
+          "dark"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Classic Glitch",
+        "slug": "glitch",
+        "cssClass": "text-glitch",
+        "sourceFile": "styles/classes/text/glitch.css",
+        "description": "Classic digital glitch effect",
+        "category": "Glitch",
+        "tags": [
+          "glitch",
+          "digital",
+          "classic"
+        ],
+        "previewText": "Glitch",
+        "background": "#7c7575",
+        "usesData": false,
+        "cssVariants": [
+          "darker",
+          "colored",
+          "lighter"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Color Stripes",
+        "slug": "stripes-colors",
+        "cssClass": "text-stripes-colors",
+        "sourceFile": "styles/classes/text/stripes-colors.css",
+        "description": "Multi-color striped pattern",
+        "category": "Gradients",
+        "tags": [
+          "stripes",
+          "colors",
+          "pattern"
+        ],
+        "previewText": "Stripes",
+        "background": "#4d094d",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/TajShireen/pen/YzZmbep"
+        ]
+      },
+      {
+        "title": "Crystal Fill",
+        "slug": "fill-crystal",
+        "cssClass": "text-fill-crystal",
+        "sourceFile": "styles/classes/text/fill-crystal.css",
+        "description": "Crystal-like transparent text effect",
+        "category": "Materials",
+        "tags": [
+          "glass",
+          "alpha"
+        ],
+        "previewText": "Crystal",
+        "background": "waves2",
+        "usesData": false,
+        "cssVariants": [
+          "light"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Cut Bright",
+        "slug": "cut-bright",
+        "cssClass": "text-cut-bright",
+        "sourceFile": "styles/classes/text/cut-bright.css",
+        "description": "Bright cut-out text effect",
+        "category": "Special",
+        "tags": [
+          "cut",
+          "bright",
+          "sharp"
+        ],
+        "previewText": "Cut",
+        "background": "radial3",
+        "usesData": true,
+        "cssVariants": [
+          "inverse",
+          "inverse2"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Cut Dark",
+        "slug": "cut-dark",
+        "cssClass": "text-cut-dark",
+        "sourceFile": "styles/classes/text/cut-dark.css",
+        "description": "Dark cut-out text effect",
+        "category": "Special",
+        "tags": [
+          "cut",
+          "dark",
+          "sharp"
+        ],
+        "previewText": "Cut",
+        "background": "radial",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Distortion",
+        "slug": "distortion",
+        "cssClass": "text-distortion",
+        "sourceFile": "styles/classes/text/distortion.css",
+        "description": "Distorted text appearance",
+        "category": "Special",
+        "tags": [
+          "distortion",
+          "warped",
+          "effect"
+        ],
+        "previewText": "Distortion",
+        "background": "#FFFFFF",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Double Fill",
+        "slug": "double-fill",
+        "cssClass": "text-double-fill",
+        "sourceFile": "styles/classes/text/double-fill.css",
+        "description": "Layered text with offset shadow effect",
+        "category": "Basics",
+        "tags": [
+          "double",
+          "layer",
+          "offset"
+        ],
+        "previewText": "Double",
+        "background": "#f0f0f0",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Double Stroke",
+        "slug": "double-stroke",
+        "cssClass": "text-double-stroke",
+        "sourceFile": "styles/classes/text/double-stroke.css",
+        "description": "Layered text with offset shadow effect",
+        "category": "Basics",
+        "tags": [
+          "double",
+          "layer",
+          "offset"
+        ],
+        "previewText": "Double Stroke",
+        "background": "#f0f0f0",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss",
+        "slug": "emboss-blend",
+        "cssClass": "text-emboss-blend",
+        "sourceFile": "styles/classes/text/emboss-blend.css",
+        "description": "Raised embossed text effect",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "raised",
+          "3d"
+        ],
+        "previewText": "Emboss",
+        "background": "#606f72",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss",
+        "slug": "emboss-shadow",
+        "cssClass": "text-emboss-shadow",
+        "sourceFile": "styles/classes/text/emboss-shadow.css",
+        "description": "Raised embossed text effect",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "raised",
+          "3d"
+        ],
+        "previewText": "Emboss",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss",
+        "slug": "emboss",
+        "cssClass": "text-emboss",
+        "sourceFile": "styles/classes/text/emboss.css",
+        "description": "Raised embossed text effect",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "raised",
+          "3d"
+        ],
+        "previewText": "Emboss",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss Bordered",
+        "slug": "emboss-bordered",
+        "cssClass": "text-emboss-bordered",
+        "sourceFile": "styles/classes/text/emboss-bordered.css",
+        "description": "Raised embossed text effect with bordered fill",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "raised",
+          "3d"
+        ],
+        "previewText": "Bevel",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss Clear",
+        "slug": "emboss-clear",
+        "cssClass": "text-emboss-clear",
+        "sourceFile": "styles/classes/text/emboss-clear.css",
+        "description": "Raised embossed text effect with clear fill",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "clear"
+        ],
+        "previewText": "Emboss",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss Plain",
+        "slug": "emboss-plain",
+        "cssClass": "text-emboss-plain",
+        "sourceFile": "styles/classes/text/emboss-plain.css",
+        "description": "Raised embossed text effect with plain fill",
+        "category": "Effects",
+        "tags": [
+          "fixed color",
+          "emboss"
+        ],
+        "previewText": "Emboss",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss Stroke",
+        "slug": "emboss-stroke",
+        "cssClass": "text-emboss-stroke",
+        "sourceFile": "styles/classes/text/emboss-stroke.css",
+        "description": "Raised embossed text effect with stroke",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "raised",
+          "3d"
+        ],
+        "previewText": "Bevel",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Fill Glow",
+        "slug": "fill-glow",
+        "cssClass": "text-fill-glow",
+        "sourceFile": "styles/classes/text/fill-glow.css",
+        "description": "Glowing fill text effect",
+        "category": "Fill",
+        "tags": [
+          "glow",
+          "bright"
+        ],
+        "previewText": "Glow",
+        "background": "#c3c3c3",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Fire Element",
+        "slug": "element-fire",
+        "cssClass": "text-element-fire",
+        "sourceFile": "styles/classes/text/element-fire.css",
+        "description": "Fiery text with orange glow effect",
+        "category": "Materials",
+        "tags": [
+          "fire"
+        ],
+        "previewText": "Fire",
+        "background": "#2a1a1a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Giro Glitch",
+        "slug": "glitch-giro",
+        "cssClass": "text-glitch-giro",
+        "sourceFile": "styles/classes/text/glitch-giro.css",
+        "description": "Rotating glitch text effect",
+        "category": "Glitch",
+        "tags": [
+          "glitch",
+          "giro",
+          "digital"
+        ],
+        "previewText": "Glitch",
+        "background": "#151515",
+        "usesData": false,
+        "cssVariants": [
+          "darker",
+          "colored",
+          "lighter"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/jackrugile/pen/krVZxw"
+        ]
+      },
+      {
+        "title": "Glass Fill",
+        "slug": "fill-glass",
+        "cssClass": "text-fill-glass",
+        "sourceFile": "styles/classes/text/fill-glass.css",
+        "description": "Glass-like transparent text effect",
+        "category": "Materials",
+        "tags": [
+          "glass",
+          "alpha"
+        ],
+        "previewText": "Glass",
+        "background": "waves2",
+        "usesData": false,
+        "cssVariants": [
+          "tinted",
+          "lighter",
+          "frosted",
+          "frost",
+          "clear"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Glossy Fill",
+        "slug": "fill-glossy",
+        "cssClass": "text-fill-glossy",
+        "sourceFile": "styles/classes/text/fill-glossy.css",
+        "description": "Glossy-like transparent text effect",
+        "category": "Materials",
+        "tags": [
+          "glass",
+          "alpha"
+        ],
+        "previewText": "Glossy",
+        "background": "waves2",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Glowing Background",
+        "slug": "glowing-background",
+        "cssClass": "text-glowing-background",
+        "sourceFile": "styles/classes/text/glowing-background.css",
+        "description": "Text with radial gradient glowing background",
+        "category": "Decorative",
+        "tags": [
+          "glow",
+          "background",
+          "radial"
+        ],
+        "previewText": "Glow",
+        "background": "#1a1a1a",
+        "usesData": false,
+        "cssVariants": []
+      },
+      {
+        "title": "Gold Emboss",
+        "slug": "gold-emboss",
+        "cssClass": "text-gold-emboss",
+        "sourceFile": "styles/classes/text/gold-emboss.css",
+        "description": "Elegant gold embossed text effect",
+        "category": "Materials",
+        "tags": [
+          "gold",
+          "emboss",
+          "luxury"
+        ],
+        "previewText": "Gold",
+        "background": "#2a2018",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Gradient Stroke",
+        "slug": "stroke-gradient",
+        "cssClass": "text-stroke-gradient",
+        "sourceFile": "styles/classes/text/stroke-gradient.css",
+        "description": "Text with gradient stroke effect",
+        "category": "Basics",
+        "tags": [
+          "gradient",
+          "stroke",
+          "colorful"
+        ],
+        "previewText": "Border",
+        "background": "#222222",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Horizontal Gradient",
+        "slug": "gradient-h",
+        "cssClass": "text-gradient-h",
+        "sourceFile": "styles/classes/text/gradient-h.css",
+        "description": "Horizontal gradient text fill",
+        "category": "Basics",
+        "tags": [
+          "gradient",
+          "color"
+        ],
+        "previewText": "Gradient",
+        "background": "#0e213a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/argyleink/pen/OJMEpGp"
+        ]
+      },
+      {
+        "title": "Ice Element",
+        "slug": "element-ice",
+        "cssClass": "text-element-ice",
+        "sourceFile": "styles/classes/text/element-ice.css",
+        "description": "Icy text with blue glow effect",
+        "category": "Materials",
+        "tags": [
+          "ice"
+        ],
+        "previewText": "Ice",
+        "background": "#1a1a2a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Image Fill",
+        "slug": "image",
+        "cssClass": "text-image",
+        "sourceFile": "styles/classes/text/image.css",
+        "description": "Text filled with image pattern",
+        "category": "Basics",
+        "tags": [
+          "image"
+        ],
+        "previewText": "Image",
+        "background": "#d6fad9",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Image Light",
+        "slug": "image-light",
+        "cssClass": "text-image-light",
+        "sourceFile": "styles/classes/text/image-light.css",
+        "description": "Light image text effect",
+        "category": "Effects",
+        "tags": [
+          "bright"
+        ],
+        "previewText": "Image",
+        "background": "#d6fad9",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Image Shadow",
+        "slug": "image-shadow",
+        "cssClass": "text-image-shadow",
+        "sourceFile": "styles/classes/text/image-shadow.css",
+        "description": "Text filled with image pattern and shadow",
+        "category": "Basics",
+        "tags": [
+          "image"
+        ],
+        "previewText": "Image",
+        "background": "#d6fad9",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Image Stroke",
+        "slug": "image-stroke",
+        "cssClass": "text-image-stroke",
+        "sourceFile": "styles/classes/text/image-stroke.css",
+        "description": "Text filled with image pattern and stroke",
+        "category": "Basics",
+        "tags": [
+          "image"
+        ],
+        "previewText": "Image",
+        "background": "#d6fad9",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Image Stroke",
+        "slug": "stroke-image",
+        "cssClass": "text-stroke-image",
+        "sourceFile": "styles/classes/text/stroke-image.css",
+        "description": "Text with image-based stroke",
+        "category": "Basics",
+        "tags": [
+          "image",
+          "stroke"
+        ],
+        "previewText": "Border",
+        "background": "#d6fad9",
+        "usesData": false,
+        "cssVariants": [
+          "with"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Inset Effect",
+        "slug": "inset-blend",
+        "cssClass": "text-inset-blend",
+        "sourceFile": "styles/classes/text/inset-blend.css",
+        "description": "Pressed or engraved text appearance",
+        "category": "Effects",
+        "tags": [
+          "inset",
+          "pressed",
+          "engraved"
+        ],
+        "previewText": "Inset",
+        "background": "#5f5b9d",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/vitamink/pen/rNayMyd"
+        ]
+      },
+      {
+        "title": "Inset Effect",
+        "slug": "inset",
+        "cssClass": "text-inset",
+        "sourceFile": "styles/classes/text/inset.css",
+        "description": "Pressed or engraved text appearance",
+        "category": "Effects",
+        "tags": [
+          "inset",
+          "pressed",
+          "engraved"
+        ],
+        "previewText": "Inset",
+        "background": "#606f72",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/vitamink/pen/rNayMyd"
+        ]
+      },
+      {
+        "title": "Layered Glitch",
+        "slug": "glitch-layers",
+        "cssClass": "text-glitch-layers",
+        "sourceFile": "styles/classes/text/glitch-layers.css",
+        "description": "Multi-layered glitch effect",
+        "category": "Glitch",
+        "tags": [
+          "glitch",
+          "layers",
+          "complex"
+        ],
+        "previewText": "Glitch",
+        "background": "#151515",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/kkhenriquez/pen/PGvmjm"
+        ]
+      },
+      {
+        "title": "Lighting Border",
+        "slug": "lighting-border",
+        "cssClass": "text-lighting-border",
+        "sourceFile": "styles/classes/text/lighting-border.css",
+        "description": "Text with illuminated border",
+        "category": "Special",
+        "tags": [
+          "lighting",
+          "border",
+          "glow"
+        ],
+        "previewText": "Shine",
+        "background": "#000000",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/comehope/pen/GBwvxw"
+        ]
+      },
+      {
+        "title": "Metallic Chrome",
+        "slug": "metallic-chrome",
+        "cssClass": "text-metallic-chrome",
+        "sourceFile": "styles/classes/text/metallic-chrome.css",
+        "description": "Realistic chrome metallic text effect",
+        "category": "Materials",
+        "tags": [
+          "metallic",
+          "chrome",
+          "silver"
+        ],
+        "previewText": "Chrome",
+        "background": "#2a2a2a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Motion Gradient",
+        "slug": "gradient-motion",
+        "cssClass": "text-gradient-motion",
+        "sourceFile": "styles/classes/text/gradient-motion.css",
+        "description": "Animated gradient text effect",
+        "category": "Basics",
+        "tags": [
+          "gradient",
+          "motion",
+          "animated"
+        ],
+        "previewText": "Gradient",
+        "background": "#4d094d",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://webflow.com/made-in-webflow/website/animated-gradient-text"
+        ]
+      },
+      {
+        "title": "Neon Base",
+        "slug": "neon-base",
+        "cssClass": "text-neon-base",
+        "sourceFile": "styles/classes/text/neon-base.css",
+        "description": "Text with neon glow effect",
+        "category": "Special",
+        "tags": [
+          "neon",
+          "cyberpunk"
+        ],
+        "previewText": "Neon",
+        "background": "#0a0a0a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Neon Glow",
+        "slug": "neon-glow",
+        "cssClass": "text-neon-glow",
+        "sourceFile": "styles/classes/text/neon-glow.css",
+        "description": "Bright neon text with multiple glow layers",
+        "category": "Special",
+        "tags": [
+          "neon",
+          "glow",
+          "bright"
+        ],
+        "previewText": "Neon",
+        "background": "#0a0a0a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Pop Art",
+        "slug": "pop-art",
+        "cssClass": "text-pop-art",
+        "sourceFile": "styles/classes/text/pop-art.css",
+        "description": "Pop art style text effect",
+        "category": "Decorative",
+        "tags": [
+          "pop-art",
+          "retro",
+          "vintage"
+        ],
+        "previewText": "Pop Art",
+        "background": "#0f88fe",
+        "usesData": false,
+        "cssVariants": [
+          "darker",
+          "lighter"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/creatz/pen/pooBeev"
+        ]
+      },
+      {
         "title": "Rainbow Gradient",
         "slug": "gradient-rainbow",
         "cssClass": "text-gradient-rainbow",
@@ -33,859 +1479,873 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "text 3D",
-        "slug": "text-3d",
-        "cssClass": "text-3D",
-        "sourceFile": "styles/classes/text/3d.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text 3D current",
-        "slug": "text-3d-current",
-        "cssClass": "text-3D-current",
-        "sourceFile": "styles/classes/text/3d-current.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text 3D current dark",
-        "slug": "text-3d-current-dark",
-        "cssClass": "text-3D-current-dark",
-        "sourceFile": "styles/classes/text/3d-current-dark.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text 3D faded hard",
-        "slug": "text-3d-faded-hard",
-        "cssClass": "text-3D-faded-hard",
-        "sourceFile": "styles/classes/text/3d-faded-hard.css",
-        "usesData": false,
-        "cssVariants": [
-          "bevel"
-        ]
-      },
-      {
-        "title": "text 3D faded medium",
-        "slug": "text-3d-faded-medium",
-        "cssClass": "text-3D-faded-medium",
-        "sourceFile": "styles/classes/text/3d-faded-medium.css",
-        "usesData": false,
-        "cssVariants": [
-          "less"
-        ]
-      },
-      {
-        "title": "text 3D faded soft",
-        "slug": "text-3d-faded-soft",
-        "cssClass": "text-3D-faded-soft",
-        "sourceFile": "styles/classes/text/3d-faded-soft.css",
-        "usesData": false,
-        "cssVariants": [
-          "less"
-        ]
-      },
-      {
-        "title": "text 3D glow",
-        "slug": "text-3d-glow",
-        "cssClass": "text-3D-glow",
-        "sourceFile": "styles/classes/text/3d-glow.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text 3D glow clear",
-        "slug": "text-3d-glow-clear",
-        "cssClass": "text-3D-glow-clear",
-        "sourceFile": "styles/classes/text/3d-glow-clear.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text 3D glow dark fill",
-        "slug": "text-3d-glow-dark-fill",
-        "cssClass": "text-3D-glow-dark-fill",
-        "sourceFile": "styles/classes/text/3d-glow-dark-fill.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text 3D glow light fill",
-        "slug": "text-3d-glow-light-fill",
-        "cssClass": "text-3D-glow-light-fill",
-        "sourceFile": "styles/classes/text/3d-glow-light-fill.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text 3D light",
-        "slug": "text-3d-light",
-        "cssClass": "text-3D-light",
-        "sourceFile": "styles/classes/text/3d-light.css",
-        "usesData": true,
-        "cssVariants": [
-          "bright",
-          "brighter"
-        ]
-      },
-      {
-        "title": "text 3D plain",
-        "slug": "text-3d-plain",
-        "cssClass": "text-3D-plain",
-        "sourceFile": "styles/classes/text/3d-plain.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text 3D sugar",
-        "slug": "text-3d-sugar",
-        "cssClass": "text-3D-sugar",
-        "sourceFile": "styles/classes/text/3d-sugar.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text 3D sweet",
-        "slug": "text-3d-sweet",
-        "cssClass": "text-3D-sweet",
-        "sourceFile": "styles/classes/text/3d-sweet.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text 3D thin",
-        "slug": "text-3d-thin",
-        "cssClass": "text-3D-thin",
-        "sourceFile": "styles/classes/text/3d-thin.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text bevel",
-        "slug": "text-bevel",
-        "cssClass": "text-bevel",
-        "sourceFile": "styles/classes/text/bevel.css",
-        "usesData": true,
-        "cssVariants": [
-          "grlowing",
-          "color",
-          "bordered"
-        ]
-      },
-      {
-        "title": "text bevel",
-        "slug": "text-bevel",
-        "cssClass": "text-bevel",
-        "sourceFile": "styles/classes/text/burn.css",
-        "usesData": true,
-        "cssVariants": [
-          "color",
-          "colored",
-          "coloring",
-          "dark"
-        ]
-      },
-      {
-        "title": "text bevel contrast",
-        "slug": "text-bevel-contrast",
-        "cssClass": "text-bevel-contrast",
-        "sourceFile": "styles/classes/text/bevel-contrast.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text cut bright",
-        "slug": "text-cut-bright",
-        "cssClass": "text-cut-bright",
-        "sourceFile": "styles/classes/text/cut-bright.css",
-        "usesData": true,
-        "cssVariants": [
-          "inverse",
-          "inverse2"
-        ]
-      },
-      {
-        "title": "text cut dark",
-        "slug": "text-cut-dark",
-        "cssClass": "text-cut-dark",
-        "sourceFile": "styles/classes/text/cut-dark.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text distortion",
-        "slug": "text-distortion",
-        "cssClass": "text-distortion",
-        "sourceFile": "styles/classes/text/distortion.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text double fill",
-        "slug": "text-double-fill",
-        "cssClass": "text-double-fill",
-        "sourceFile": "styles/classes/text/double-fill.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text double stroke",
-        "slug": "text-double-stroke",
-        "cssClass": "text-double-stroke",
-        "sourceFile": "styles/classes/text/double-stroke.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text element fire",
-        "slug": "text-element-fire",
-        "cssClass": "text-element-fire",
-        "sourceFile": "styles/classes/text/element-fire.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text element ice",
-        "slug": "text-element-ice",
-        "cssClass": "text-element-ice",
-        "sourceFile": "styles/classes/text/element-ice.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text emboss",
-        "slug": "text-emboss",
-        "cssClass": "text-emboss",
-        "sourceFile": "styles/classes/text/emboss.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text emboss blend",
-        "slug": "text-emboss-blend",
-        "cssClass": "text-emboss-blend",
-        "sourceFile": "styles/classes/text/emboss-blend.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text emboss bordered",
-        "slug": "text-emboss-bordered",
-        "cssClass": "text-emboss-bordered",
-        "sourceFile": "styles/classes/text/emboss-bordered.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text emboss clear",
-        "slug": "text-emboss-clear",
-        "cssClass": "text-emboss-clear",
-        "sourceFile": "styles/classes/text/emboss-clear.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text emboss plain",
-        "slug": "text-emboss-plain",
-        "cssClass": "text-emboss-plain",
-        "sourceFile": "styles/classes/text/emboss-plain.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text emboss shadow",
-        "slug": "text-emboss-shadow",
-        "cssClass": "text-emboss-shadow",
-        "sourceFile": "styles/classes/text/emboss-shadow.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text emboss stroke",
-        "slug": "text-emboss-stroke",
-        "cssClass": "text-emboss-stroke",
-        "sourceFile": "styles/classes/text/emboss-stroke.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text fill alpha",
-        "slug": "text-fill-alpha",
-        "cssClass": "text-fill-alpha",
-        "sourceFile": "styles/classes/text/fill-alpha.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text fill blend",
-        "slug": "text-fill-blend",
-        "cssClass": "text-fill-blend",
-        "sourceFile": "styles/classes/text/fill-blend.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text fill crystal",
-        "slug": "text-fill-crystal",
-        "cssClass": "text-fill-crystal",
-        "sourceFile": "styles/classes/text/fill-crystal.css",
-        "usesData": false,
-        "cssVariants": [
-          "light"
-        ]
-      },
-      {
-        "title": "text fill glass",
-        "slug": "text-fill-glass",
-        "cssClass": "text-fill-glass",
-        "sourceFile": "styles/classes/text/fill-glass.css",
-        "usesData": false,
-        "cssVariants": [
-          "tinted",
-          "lighter",
-          "frosted",
-          "frost",
-          "clear"
-        ]
-      },
-      {
-        "title": "text fill glossy",
-        "slug": "text-fill-glossy",
-        "cssClass": "text-fill-glossy",
-        "sourceFile": "styles/classes/text/fill-glossy.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text fill glow",
-        "slug": "text-fill-glow",
-        "cssClass": "text-fill-glow",
-        "sourceFile": "styles/classes/text/fill-glow.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text fill solid",
-        "slug": "text-fill-solid",
-        "cssClass": "text-fill-solid",
-        "sourceFile": "styles/classes/text/fill-solid.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text glass",
-        "slug": "text-glass",
-        "cssClass": "text-glass",
-        "sourceFile": "styles/classes/text/glass.css",
-        "usesData": true,
-        "cssVariants": [
-          "rushed"
-        ]
-      },
-      {
-        "title": "text glass new",
-        "slug": "text-glass-new",
-        "cssClass": "text-glass-new",
-        "sourceFile": "styles/classes/text/glass-new.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text glass reflex",
-        "slug": "text-glass-reflex",
-        "cssClass": "text-glass-reflex",
-        "sourceFile": "styles/classes/text/glass-reflex.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text glitch",
-        "slug": "text-glitch",
-        "cssClass": "text-glitch",
-        "sourceFile": "styles/classes/text/glitch.css",
-        "usesData": false,
-        "cssVariants": [
-          "darker",
-          "lighter",
-          "colored"
-        ]
-      },
-      {
-        "title": "text glitch giro",
-        "slug": "text-glitch-giro",
-        "cssClass": "text-glitch-giro",
-        "sourceFile": "styles/classes/text/glitch-giro.css",
-        "usesData": false,
-        "cssVariants": [
-          "darker",
-          "lighter",
-          "colored"
-        ]
-      },
-      {
-        "title": "text glitch layers",
-        "slug": "text-glitch-layers",
-        "cssClass": "text-glitch-layers",
-        "sourceFile": "styles/classes/text/glitch-layers.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text glowing background",
-        "slug": "text-glowing-background",
-        "cssClass": "text-glowing-background",
-        "sourceFile": "styles/classes/text/glowing-background.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text gold 3D",
-        "slug": "text-gold-3d",
-        "cssClass": "text-gold-3D",
-        "sourceFile": "styles/classes/text/gold-3D.css",
-        "usesData": true,
-        "cssVariants": [
-          "thin",
-          "tick"
-        ]
-      },
-      {
-        "title": "text gold emboss",
-        "slug": "text-gold-emboss",
-        "cssClass": "text-gold-emboss",
-        "sourceFile": "styles/classes/text/gold-emboss.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text gradient h",
-        "slug": "text-gradient-h",
-        "cssClass": "text-gradient-h",
-        "sourceFile": "styles/classes/text/gradient-h.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text gradient motion",
-        "slug": "text-gradient-motion",
-        "cssClass": "text-gradient-motion",
-        "sourceFile": "styles/classes/text/gradient-motion.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text gradient v",
-        "slug": "text-gradient-v",
-        "cssClass": "text-gradient-v",
-        "sourceFile": "styles/classes/text/gradient-v.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text image",
-        "slug": "text-image",
-        "cssClass": "text-image",
-        "sourceFile": "styles/classes/text/image.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text image light",
-        "slug": "text-image-light",
-        "cssClass": "text-image-light",
-        "sourceFile": "styles/classes/text/image-light.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text image shadow",
-        "slug": "text-image-shadow",
-        "cssClass": "text-image-shadow",
-        "sourceFile": "styles/classes/text/image-shadow.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text image stroke",
-        "slug": "text-image-stroke",
-        "cssClass": "text-image-stroke",
-        "sourceFile": "styles/classes/text/image-stroke.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text inset",
-        "slug": "text-inset",
-        "cssClass": "text-inset",
-        "sourceFile": "styles/classes/text/inset.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text inset blend",
-        "slug": "text-inset-blend",
-        "cssClass": "text-inset-blend",
-        "sourceFile": "styles/classes/text/inset-blend.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text lighting",
-        "slug": "text-lighting",
-        "cssClass": "text-lighting",
-        "sourceFile": "styles/classes/text/lighting copy.css",
-        "usesData": true,
-        "cssVariants": [
-          "always"
-        ]
-      },
-      {
-        "title": "text lighting",
-        "slug": "text-lighting",
-        "cssClass": "text-lighting",
-        "sourceFile": "styles/classes/text/lighting.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text lighting border",
-        "slug": "text-lighting-border",
-        "cssClass": "text-lighting-border",
-        "sourceFile": "styles/classes/text/lighting-border.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text lighting bordered",
-        "slug": "text-lighting-bordered",
-        "cssClass": "text-lighting-bordered",
-        "sourceFile": "styles/classes/text/lighting-bordered.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text lighting burned",
-        "slug": "text-lighting-burned",
-        "cssClass": "text-lighting-burned",
-        "sourceFile": "styles/classes/text/lighting-burned.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text lighting focus",
-        "slug": "text-lighting-focus",
-        "cssClass": "text-lighting-focus",
-        "sourceFile": "styles/classes/text/lighting-focus.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text lighting stroke",
-        "slug": "text-lighting-stroke",
-        "cssClass": "text-lighting-stroke",
-        "sourceFile": "styles/classes/text/lighting-stroke.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text metallic chrome",
-        "slug": "text-metallic-chrome",
-        "cssClass": "text-metallic-chrome",
-        "sourceFile": "styles/classes/text/metallic-chrome.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text neon border",
-        "slug": "text-neon-border",
-        "cssClass": "text-neon-border",
-        "sourceFile": "styles/classes/text/neon-border.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text neon glow",
-        "slug": "text-neon-glow",
-        "cssClass": "text-neon-glow",
-        "sourceFile": "styles/classes/text/neon-glow.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text pop art",
-        "slug": "text-pop-art",
-        "cssClass": "text-pop-art",
-        "sourceFile": "styles/classes/text/pop-art.css",
-        "usesData": false,
-        "cssVariants": [
-          "darker",
-          "lighter"
-        ]
-      },
-      {
-        "title": "text retro wave",
-        "slug": "text-retro-wave",
-        "cssClass": "text-retro-wave",
-        "sourceFile": "styles/classes/text/retro-wave.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text rgb split",
-        "slug": "text-rgb-split",
-        "cssClass": "text-rgb-split",
-        "sourceFile": "styles/classes/text/rgb-split.css",
-        "usesData": true,
-        "cssVariants": [
-          "blurred"
-        ]
-      },
-      {
-        "title": "text shadow 3D",
-        "slug": "text-shadow-3d",
-        "cssClass": "text-shadow-3D",
-        "sourceFile": "styles/classes/text/shadow-3d.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text shadow animated",
-        "slug": "text-shadow-animated",
-        "cssClass": "text-shadow-animated",
-        "sourceFile": "styles/classes/text/shadow-animated.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text shadow rainbow",
-        "slug": "text-shadow-rainbow",
+        "title": "Rainbow Shadow",
+        "slug": "shadow-rainbow",
         "cssClass": "text-shadow-rainbow",
         "sourceFile": "styles/classes/text/shadow-rainbow.css",
+        "description": "Text with rainbow shadow effect",
+        "category": "Shadows",
+        "tags": [
+          "shadow",
+          "rainbow",
+          "colorful"
+        ],
+        "previewText": "Rainbow",
+        "background": "#e0e0e0",
         "usesData": false,
         "cssVariants": [
           "clear",
           "inverse",
           "multicolor"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://www.foolishdeveloper.com/2022/03/css-rainbow-text-animation.html"
         ]
       },
       {
-        "title": "text shadow stripes",
-        "slug": "text-shadow-stripes",
+        "title": "Rainbow Stripes",
+        "slug": "stripes-rainbow",
+        "cssClass": "text-stripes-rainbow",
+        "sourceFile": "styles/classes/text/stripes-rainbow.css",
+        "description": "Rainbow striped text pattern",
+        "category": "Gradients",
+        "tags": [
+          "rainbow",
+          "stripes",
+          "colorful"
+        ],
+        "previewText": "Stripes",
+        "background": "#411b58",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Retro Fluor",
+        "slug": "retro-fluor",
+        "cssClass": "text-retro-fluor",
+        "sourceFile": "styles/classes/text/retro-fluor.css",
+        "description": "Dramatic retro text effect with fluor",
+        "category": "Special",
+        "tags": [
+          "retro",
+          "dramatic",
+          "fluor"
+        ],
+        "previewText": "Fluor",
+        "background": "#000000",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Retro Wave",
+        "slug": "retro-wave",
+        "cssClass": "text-retro-wave",
+        "sourceFile": "styles/classes/text/retro-wave.css",
+        "description": "Synthwave-inspired gradient text",
+        "category": "Gradients",
+        "tags": [
+          "retro",
+          "synthwave",
+          "80s"
+        ],
+        "previewText": "Retro",
+        "background": "#1a0033",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "RGB Split",
+        "slug": "rgb-split",
+        "cssClass": "text-rgb-split",
+        "sourceFile": "styles/classes/text/rgb-split.css",
+        "description": "RGB color separation effect",
+        "category": "Glitch",
+        "tags": [
+          "rgb",
+          "split",
+          "chromatic"
+        ],
+        "previewText": "Glitch",
+        "background": "#151515",
+        "usesData": true,
+        "cssVariants": [
+          "blurred-1",
+          "blurred-2"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/giannisKapa/pen/BaBJywb",
+          "https://codepen.io/erinesullivan/pen/ZMreqJ"
+        ]
+      },
+      {
+        "title": "Shadow Stripes",
+        "slug": "shadow-stripes",
         "cssClass": "text-shadow-stripes",
         "sourceFile": "styles/classes/text/shadow-stripes.css",
+        "description": "Striped shadow text effect",
+        "category": "Decorative",
+        "tags": [
+          "shadow",
+          "stripes",
+          "pattern"
+        ],
+        "previewText": "Stripes",
+        "background": "#ffc0cb",
         "usesData": true,
         "cssVariants": [
           "on"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/t_afif/pen/dyzZEVP"
         ]
       },
       {
-        "title": "text striped layers",
-        "slug": "text-striped-layers",
-        "cssClass": "text-striped-layers",
-        "sourceFile": "styles/classes/text/striped-layers.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text striped shaded",
-        "slug": "text-striped-shaded",
-        "cssClass": "text-striped-shaded",
-        "sourceFile": "styles/classes/text/striped-shaded.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text striped staked",
-        "slug": "text-striped-staked",
-        "cssClass": "text-striped-staked",
-        "sourceFile": "styles/classes/text/striped-staked.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text stripes",
-        "slug": "text-stripes",
-        "cssClass": "text-stripes",
-        "sourceFile": "styles/classes/text/stripes.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text stripes colors",
-        "slug": "text-stripes-colors",
-        "cssClass": "text-stripes-colors",
-        "sourceFile": "styles/classes/text/stripes-colors.css",
+        "title": "Solid Fill",
+        "slug": "fill-solid",
+        "cssClass": "text-fill-solid",
+        "sourceFile": "styles/classes/text/fill-solid.css",
+        "description": "Simple solid color text fill",
+        "category": "Basics",
+        "tags": [
+          "fill"
+        ],
+        "previewText": "Solid",
+        "background": "#f1fbae",
         "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text stripes rainbow",
-        "slug": "text-stripes-rainbow",
-        "cssClass": "text-stripes-rainbow",
-        "sourceFile": "styles/classes/text/stripes-rainbow.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text stroke fill",
-        "slug": "text-stroke-fill",
-        "cssClass": "text-stroke-fill",
-        "sourceFile": "styles/classes/text/stroke-fill.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text stroke gradient",
-        "slug": "text-stroke-gradient",
-        "cssClass": "text-stroke-gradient",
-        "sourceFile": "styles/classes/text/stroke-gradient.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text stroke image",
-        "slug": "text-stroke-image",
-        "cssClass": "text-stroke-image",
-        "sourceFile": "styles/classes/text/stroke-image.css",
-        "usesData": false,
-        "cssVariants": [
-          "with"
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
         ]
       },
       {
-        "title": "text stroke inset",
-        "slug": "text-stroke-inset",
-        "cssClass": "text-stroke-inset",
-        "sourceFile": "styles/classes/text/stroke-inset.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text stroke only",
-        "slug": "text-stroke-only",
-        "cssClass": "text-stroke-only",
-        "sourceFile": "styles/classes/text/stroke-only.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text stroke shadow",
-        "slug": "text-stroke-shadow",
-        "cssClass": "text-stroke-shadow",
-        "sourceFile": "styles/classes/text/stroke-shadow.css",
-        "usesData": false,
-        "cssVariants": []
-      },
-      {
-        "title": "text stroke solid",
-        "slug": "text-stroke-solid",
+        "title": "Solid Stroke",
+        "slug": "stroke-solid",
         "cssClass": "text-stroke-solid",
         "sourceFile": "styles/classes/text/stroke-solid.css",
+        "description": "Text with solid color stroke",
+        "category": "Basics",
+        "tags": [
+          "solid",
+          "stroke"
+        ],
+        "previewText": "Border",
+        "background": "#ddd",
         "usesData": false,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture dusted",
-        "slug": "text-texture-dusted",
+        "title": "Striped Layers",
+        "slug": "striped-layers",
+        "cssClass": "text-striped-layers",
+        "sourceFile": "styles/classes/text/striped-layers.css",
+        "description": "Layered striped text effect",
+        "category": "Decorative",
+        "tags": [
+          "stripes",
+          "layers",
+          "complex"
+        ],
+        "previewText": "Stripes",
+        "background": "#593439",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/prathkum/pen/dyMPErw"
+        ]
+      },
+      {
+        "title": "Striped Shaded",
+        "slug": "striped-shaded",
+        "cssClass": "text-striped-shaded",
+        "sourceFile": "styles/classes/text/striped-shaded.css",
+        "description": "Shaded striped text effect",
+        "category": "Decorative",
+        "tags": [
+          "stripes",
+          "shaded",
+          "complex"
+        ],
+        "previewText": "Stripes",
+        "background": "#593439",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Striped Staked",
+        "slug": "striped-staked",
+        "cssClass": "text-striped-staked",
+        "sourceFile": "styles/classes/text/striped-staked.css",
+        "description": "Staked striped text effect",
+        "category": "Decorative",
+        "tags": [
+          "stripes",
+          "staked",
+          "complex"
+        ],
+        "previewText": "Stripes",
+        "background": "#593439",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Stripes",
+        "slug": "stripes",
+        "cssClass": "text-stripes",
+        "sourceFile": "styles/classes/text/stripes.css",
+        "description": "Simple striped text pattern",
+        "category": "Decorative",
+        "tags": [
+          "stripes",
+          "pattern",
+          "lines"
+        ],
+        "previewText": "Stripes",
+        "background": "#278293",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/yoksel/pen/LYZYGrv"
+        ]
+      },
+      {
+        "title": "Stroke + Fill",
+        "slug": "stroke-fill",
+        "cssClass": "text-stroke-fill",
+        "sourceFile": "styles/classes/text/stroke-fill.css",
+        "description": "Text with stroke and fill",
+        "category": "Basics",
+        "tags": [
+          "solid",
+          "stroke"
+        ],
+        "previewText": "Border",
+        "background": "#d6fad9",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Stroke Inset",
+        "slug": "stroke-inset",
+        "cssClass": "text-stroke-inset",
+        "sourceFile": "styles/classes/text/stroke-inset.css",
+        "description": "Text filled with image pattern and inset stroke",
+        "category": "Basics",
+        "tags": [
+          "stroke",
+          "inset"
+        ],
+        "previewText": "Stroke",
+        "background": "#d6fad9",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Stroke Only",
+        "slug": "stroke-only",
+        "cssClass": "text-stroke-only",
+        "sourceFile": "styles/classes/text/stroke-only.css",
+        "description": "Outline text without fill",
+        "category": "Basics",
+        "tags": [
+          "stroke"
+        ],
+        "previewText": "Stroke",
+        "background": "#d6fad9",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://css-tricks.com/text-stroke-stuck-middle/"
+        ]
+      },
+      {
+        "title": "Stroke Shadow",
+        "slug": "stroke-shadow",
+        "cssClass": "text-stroke-shadow",
+        "sourceFile": "styles/classes/text/stroke-shadow.css",
+        "description": "Text filled with image pattern and shadow stroke",
+        "category": "Basics",
+        "tags": [
+          "stroke",
+          "inset"
+        ],
+        "previewText": "Stroke",
+        "background": "#d6fad9",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Vertical Gradient",
+        "slug": "gradient-v",
+        "cssClass": "text-gradient-v",
+        "sourceFile": "styles/classes/text/gradient-v.css",
+        "description": "Vertical gradient text fill",
+        "category": "Gradients",
+        "tags": [
+          "gradient",
+          "vertical",
+          "color"
+        ],
+        "previewText": "Gradient",
+        "background": "#292452",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/ryandsouza13/pen/NVjQBp"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "styles-text-wip",
+    "label": "Text (WIP)",
+    "type": "css-classes",
+    "view": "text",
+    "tags": [],
+    "items": [
+      {
+        "title": "Classic Glass",
+        "slug": "glass",
+        "cssClass": "text-glass",
+        "sourceFile": "styles/classes/text-wip/glass.css",
+        "description": "Classic glass text effect",
+        "category": "Special",
+        "tags": [
+          "glass",
+          "classic",
+          "alpha"
+        ],
+        "previewText": "Glass",
+        "background": "radial2",
+        "usesData": true,
+        "cssVariants": [
+          "rushed"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Glass Reflex",
+        "slug": "glass-reflex",
+        "cssClass": "text-glass-reflex",
+        "sourceFile": "styles/classes/text-wip/glass-reflex.css",
+        "description": "Reflective glass text effect",
+        "category": "Special",
+        "tags": [
+          "glass",
+          "reflex",
+          "shiny"
+        ],
+        "previewText": "Reflex",
+        "background": "radial",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Lighting",
+        "slug": "lighting",
+        "cssClass": "text-lighting",
+        "sourceFile": "styles/classes/text-wip/lighting.css",
+        "description": "Dramatic lighting text effect",
+        "category": "Special",
+        "tags": [
+          "lighting",
+          "dramatic",
+          "bright"
+        ],
+        "previewText": "Fluid",
+        "background": "#000000",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/comehope/pen/GBwvxw"
+        ]
+      },
+      {
+        "title": "Lighting Bordered",
+        "slug": "lighting-bordered",
+        "cssClass": "text-lighting-bordered",
+        "sourceFile": "styles/classes/text-wip/lighting-bordered.css",
+        "description": "Dramatic lighting text effect with bordered",
+        "category": "Special",
+        "tags": [
+          "lighting",
+          "dramatic",
+          "bordered"
+        ],
+        "previewText": "Focus",
+        "background": "#000000",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Lighting Burned",
+        "slug": "lighting-burned",
+        "cssClass": "text-lighting-burned",
+        "sourceFile": "styles/classes/text-wip/lighting-burned.css",
+        "description": "Dramatic lighting text effect with burned",
+        "category": "Special",
+        "tags": [
+          "lighting",
+          "dramatic",
+          "burned"
+        ],
+        "previewText": "Focus",
+        "background": "#000000",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Lighting Copy",
+        "slug": "lighting-copy",
+        "cssClass": "text-lighting-copy",
+        "sourceFile": "styles/classes/text-wip/lighting-copy.css",
+        "description": "Dramatic lighting text effect",
+        "category": "Special",
+        "tags": [
+          "lighting",
+          "dramatic",
+          "bright"
+        ],
+        "previewText": "Shine",
+        "background": "#000000",
+        "usesData": true,
+        "cssVariants": [
+          "always"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/comehope/pen/GBwvxw"
+        ]
+      },
+      {
+        "title": "Lighting Focus",
+        "slug": "lighting-focus",
+        "cssClass": "text-lighting-focus",
+        "sourceFile": "styles/classes/text-wip/lighting-focus.css",
+        "description": "Dramatic lighting text effect with focus",
+        "category": "Special",
+        "tags": [
+          "lighting",
+          "dramatic",
+          "bright"
+        ],
+        "previewText": "Fluid",
+        "background": "#000000",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Lighting Stroke",
+        "slug": "lighting-stroke",
+        "cssClass": "text-lighting-stroke",
+        "sourceFile": "styles/classes/text-wip/lighting-stroke.css",
+        "description": "Illuminated stroke text effect",
+        "category": "Special",
+        "tags": [
+          "lighting",
+          "stroke",
+          "glow"
+        ],
+        "previewText": "Shine",
+        "background": "#000000",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/comehope/pen/GBwvxw"
+        ]
+      },
+      {
+        "title": "New Glass",
+        "slug": "glass-new",
+        "cssClass": "text-glass-new",
+        "sourceFile": "styles/classes/text-wip/glass-new.css",
+        "description": "Modern glass text effect",
+        "category": "Special",
+        "tags": [
+          "glass",
+          "modern",
+          "clean"
+        ],
+        "previewText": "Glass",
+        "background": "radial2",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Texture Dusted",
+        "slug": "texture-dusted",
         "cssClass": "text-texture-dusted",
-        "sourceFile": "styles/classes/text/texture-dusted.css",
+        "sourceFile": "styles/classes/text-wip/texture-dusted.css",
+        "description": "Dramatic texture text effect with dusted",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "rusted"
+        ],
+        "previewText": "Dusted",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture fluor",
-        "slug": "text-texture-fluor",
-        "cssClass": "text-texture-fluor",
-        "sourceFile": "styles/classes/text/texture-fluor.css",
-        "usesData": true,
-        "cssVariants": []
-      },
-      {
-        "title": "text texture glowing",
-        "slug": "text-texture-glowing",
+        "title": "Texture Glowing",
+        "slug": "texture-glowing",
         "cssClass": "text-texture-glowing",
-        "sourceFile": "styles/classes/text/texture-glowing.css",
+        "sourceFile": "styles/classes/text-wip/texture-glowing.css",
+        "description": "Dramatic texture text effect with glowing",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "glowing"
+        ],
+        "previewText": "Glowing",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture healtmap",
-        "slug": "text-texture-healtmap",
+        "title": "Texture Healtmap",
+        "slug": "texture-healtmap",
         "cssClass": "text-texture-healtmap",
-        "sourceFile": "styles/classes/text/texture-healtmap.css",
+        "sourceFile": "styles/classes/text-wip/texture-healtmap.css",
+        "description": "Dramatic texture text effect with healtmap",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "healtmap"
+        ],
+        "previewText": "Healtmap",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture neo",
-        "slug": "text-texture-neo",
+        "title": "Texture Neo",
+        "slug": "texture-neo",
         "cssClass": "text-texture-neo",
-        "sourceFile": "styles/classes/text/texture-neo.css",
+        "sourceFile": "styles/classes/text-wip/texture-neo.css",
+        "description": "Dramatic texture text effect with neo",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "neo"
+        ],
+        "previewText": "Neo",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture neoglow",
-        "slug": "text-texture-neoglow",
+        "title": "Texture Neo Glow",
+        "slug": "texture-neoglow",
         "cssClass": "text-texture-neoglow",
-        "sourceFile": "styles/classes/text/texture-neoglow.css",
+        "sourceFile": "styles/classes/text-wip/texture-neoglow.css",
+        "description": "Dramatic texture text effect with neo glow",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "neo",
+          "glow"
+        ],
+        "previewText": "Glow",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture neosplit",
-        "slug": "text-texture-neosplit",
+        "title": "Texture Neo Split",
+        "slug": "texture-neosplit",
         "cssClass": "text-texture-neosplit",
-        "sourceFile": "styles/classes/text/texture-neosplit.css",
+        "sourceFile": "styles/classes/text-wip/texture-neosplit.css",
+        "description": "Dramatic texture text effect with neo split",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "neo",
+          "stick"
+        ],
+        "previewText": "Split",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture neostick",
-        "slug": "text-texture-neostick",
+        "title": "Texture Neo Stick",
+        "slug": "texture-neostick",
         "cssClass": "text-texture-neostick",
-        "sourceFile": "styles/classes/text/texture-neostick.css",
+        "sourceFile": "styles/classes/text-wip/texture-neostick.css",
+        "description": "Dramatic texture text effect with neo stick",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "neo",
+          "stick"
+        ],
+        "previewText": "Stick",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture neosticky",
-        "slug": "text-texture-neosticky",
+        "title": "Texture Neo Sticky",
+        "slug": "texture-neosticky",
         "cssClass": "text-texture-neosticky",
-        "sourceFile": "styles/classes/text/texture-neosticky.css",
+        "sourceFile": "styles/classes/text-wip/texture-neosticky.css",
+        "description": "Dramatic texture text effect with neo sticky",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "neo",
+          "sticky"
+        ],
+        "previewText": "Sticky",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture rushed",
-        "slug": "text-texture-rushed",
+        "title": "Texture Rushed",
+        "slug": "texture-rushed",
         "cssClass": "text-texture-rushed",
-        "sourceFile": "styles/classes/text/texture-rushed.css",
+        "sourceFile": "styles/classes/text-wip/texture-rushed.css",
+        "description": "Dramatic texture text effect with rushed",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "rushed"
+        ],
+        "previewText": "Rushed",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture rusted",
-        "slug": "text-texture-rusted",
+        "title": "Texture Rusted",
+        "slug": "texture-rusted",
         "cssClass": "text-texture-rusted",
-        "sourceFile": "styles/classes/text/texture-rusted.css",
+        "sourceFile": "styles/classes/text-wip/texture-rusted.css",
+        "description": "Dramatic texture text effect with rusted",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "rusted"
+        ],
+        "previewText": "Rusted",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
-        "title": "text texture toxic",
-        "slug": "text-texture-toxic",
+        "title": "Texture Toxic",
+        "slug": "texture-toxic",
         "cssClass": "text-texture-toxic",
-        "sourceFile": "styles/classes/text/texture-toxic.css",
+        "sourceFile": "styles/classes/text-wip/texture-toxic.css",
+        "description": "Dramatic texture text effect with toxic",
+        "category": "Special",
+        "tags": [
+          "texture",
+          "dramatic",
+          "toxic"
+        ],
+        "previewText": "Toxic",
+        "background": "#000000",
         "usesData": true,
-        "cssVariants": []
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       },
       {
         "title": "wordart emboss",
         "slug": "wordart-emboss",
         "cssClass": "wordart-emboss",
-        "sourceFile": "styles/classes/text/wordart-emboss.css",
+        "sourceFile": "styles/classes/text-wip/wordart-emboss.css",
         "usesData": false,
         "cssVariants": []
       }
@@ -930,6 +2390,28 @@ export const CATEGORIES: Category[] = [
         "sourceFile": "styles/classes/highlights/highlights.css",
         "usesData": false,
         "cssVariants": []
+      },
+      {
+        "title": "Neon Border",
+        "slug": "neon-border",
+        "cssClass": "text-neon-border",
+        "sourceFile": "styles/classes/highlights/neon.css",
+        "description": "Text with neon border and glow effect",
+        "category": "Special",
+        "tags": [
+          "neon",
+          "border",
+          "cyberpunk"
+        ],
+        "previewText": "Neon",
+        "background": "#0a0a0a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       }
     ]
   },

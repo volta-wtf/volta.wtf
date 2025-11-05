@@ -1,12 +1,12 @@
 /*
 {
-    id: 'lighting',
-    name: 'Lighting',
+    id: 'lighting-copy',
+    name: 'Lighting Copy',
     description: 'Dramatic lighting text effect',
     category: 'Special',
     tags: ['lighting', 'dramatic', 'bright'],
     bestFor: ['body', 'heading', 'display'],
-    cssFile: 'lighting.css',
+    cssFile: 'lighting-copy.css',
     previewText: 'Shine',
     usesData: true,
     background: '#000000',
@@ -14,7 +14,7 @@
 },
 */
 
-.text-lighting {
+.text-lighting-copy {
 
     & {
         --style-fill-color: white;
@@ -54,7 +54,7 @@
 
 }
 
-.text-lighting.always-light {
+.text-lighting-copy.always-light {
     & {
         background: black;
         mix-blend-mode: lighten;
@@ -62,6 +62,6 @@
 }
 
 
-.dark .text-lighting {
+.dark .text-lighting-copy {
 
 }

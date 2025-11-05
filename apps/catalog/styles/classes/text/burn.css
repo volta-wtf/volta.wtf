@@ -6,18 +6,18 @@
     category: 'Special',
     tags: ['burn', 'dark', 'sharp'],
     bestFor: ['body', 'heading', 'display'],
-    cssVariants: ['color', 'contrast'],
+    cssVariants: ['color', 'colored', 'coloring', 'dark'],
     previewText: 'Burn',
     usesData: true,
     background: 'radial'
 },
 */
 
-.text-bevel {
+.text-burn {
     & {
+        --style-text-color: rgb(255 255 255 / 1);
         --style-bevel-color: rgb(0 0 0 / 0.2);
         --style-bevel-size: 0.03em;
-        --style-text-color: rgb(255 255 255 / 1);
         --style-shadow-color: rgb(0 0 0 / 0.3);
     }
 
@@ -38,22 +38,22 @@
         filter: blur(var(--style-bevel-size));
     }
 }
-.text-bevel.color {
+.text-burn.color {
     --style-bevel-color: rgba(228, 4, 4, 0.2);
 }
 
-.text-bevel.colored {
+.text-burn.colored {
     --style-bevel-color: rgba(4, 26, 228, 0.2);
     --style-text-color: rgb(228 95 48);
 }
 
-.text-bevel.coloring {
+.text-burn.coloring {
     --style-text-color: #646464;
     --style-bevel-color: #ff00005e;
     filter: brightness(150%) contrast(10) drop-shadow(0 .06em .02em var(--style-bevel-color));
 }
 
-.text-bevel.dark {
+.text-burn.dark {
     --style-text-color: black;
     --style-shadow-color: rgb(233 233 233 / .3);
 }

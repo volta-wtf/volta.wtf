@@ -37,6 +37,7 @@ export const CATEGORIES_CONFIG: CategoryConfig[] = [
 
   // Styles (css-classes)
   { name: "styles-text",        label: "Text",        type: "css-classes", view: "text",       classesGlobs: ["styles/classes/text/**/*.css"] },
+  { name: "styles-text-wip",    label: "Text (WIP)",  type: "css-classes", view: "text",       classesGlobs: ["styles/classes/text-wip/**/*.css"] },
   { name: "styles-links",       label: "Links",       type: "css-classes", view: "text",       classesGlobs: ["styles/classes/links/**/*.css"] },
   { name: "styles-highlights",  label: "Highlights",  type: "css-classes", view: "text",       classesGlobs: ["styles/classes/highlights/**/*.css"] },
   { name: "styles-frames",      label: "Frames",      type: "css-classes", view: "frames",     classesGlobs: ["styles/classes/frames/**/*.css"] },

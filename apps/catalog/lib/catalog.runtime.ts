@@ -32,6 +32,15 @@ export type CatalogItem = {
   sourceFile?: string;    // origin file (optional)
   variant?: string;       // subtype (e.g., "palette","elevation","underline")
   renderProps?: Record<string, unknown>;
+  // Text style metadata
+  usesData?: boolean;     // uses data-text attribute
+  cssVariants?: string[]; // available CSS variants (.class.variant)
+  previewText?: string;   // text to show in preview
+  description?: string;   // description of the style
+  category?: string;      // category name
+  background?: string;    // background color for preview
+  bestFor?: string[];     // best use cases
+  reference?: string[];   // reference links
 };
 
 export type Category = {

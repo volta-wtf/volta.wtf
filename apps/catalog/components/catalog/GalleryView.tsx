@@ -10,7 +10,7 @@ interface GalleryViewProps {
 
 function GalleryItemPreview({ item, view }: { item: CatalogItem; view: Category["view"] }) {
   const className = item.cssClass ?? "";
-  const sample = (item.renderProps?.sampleText as string) || "Aa";
+  const usesData = item.usesData ?? false;
 
   // Frames - Solo mostrar el borde/marco sin texto
   if (view === "frames") {
@@ -154,12 +154,15 @@ function GalleryItemPreview({ item, view }: { item: CatalogItem; view: Category[
 
   // Text y otros - Mostrar texto con el estilo aplicado
   const textStyle = item.variableName ? { color: `var(${item.variableName})` } : undefined;
+  const dataAttrs = usesData ? { "data-text": "Aa" } : {};
+
   return (
     <div
       className={`text-center text-7xl font-bold select-none pointer-events-none ${className}`}
       style={textStyle}
+      {...dataAttrs}
     >
-      {sample}
+      Aa
     </div>
   );
 }

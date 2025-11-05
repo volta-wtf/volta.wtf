@@ -32,11 +32,11 @@
     left: 0;
     color: color-mix(in srgb, white 90%, var(--style-text-color) 100%);
     text-shadow: 0em 0em 0.2em var(--style-shadow-color);
-    animation: glow-cycle 10s linear infinite;
+    animation: glow-cycle-light 10s linear infinite;
   }
 }
 
-@keyframes glow-cycle {
+@keyframes glow-cycle-light {
   0%  { text-shadow: 0em 0em 0.2em rgb(11 124 199 / 0.5); }
   20% { text-shadow: 0em 0em 0.2em rgb(168 11 199 / 0.5); }
   40% { text-shadow: 0em 0em 0.2em rgb(11 199 96 / 0.5); }

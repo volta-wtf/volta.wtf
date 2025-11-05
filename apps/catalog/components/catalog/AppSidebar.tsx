@@ -40,8 +40,8 @@ export function AppSidebar({ categories, activeCategory, ...props }: AppSidebarP
   );
 
   return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader className="border-b">
+    <Sidebar collapsible="icon" className="!border-r-0" {...props}>
+      <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild size="lg">
@@ -109,7 +109,7 @@ export function AppSidebar({ categories, activeCategory, ...props }: AppSidebarP
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="border-t">
+      <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>

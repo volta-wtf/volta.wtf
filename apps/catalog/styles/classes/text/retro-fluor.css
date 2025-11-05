@@ -1,11 +1,11 @@
 /*
 {
-    id: 'texture-fluor',
-    cssFile: 'texture-fluor.css',
-    name: 'Texture Fluor',
-    description: 'Dramatic texture text effect with fluor',
+    id: 'retro-fluor',
+    cssFile: 'retro-fluor.css',
+    name: 'Retro Fluor',
+    description: 'Dramatic retro text effect with fluor',
     category: 'Special',
-    tags: ['texture', 'dramatic', 'fluor'],
+    tags: ['retro', 'dramatic', 'fluor'],
     bestFor: ['body', 'heading', 'display'],
     previewText: 'Fluor',
     usesData: true,
@@ -13,7 +13,7 @@
 },
 */
 
-.text-texture-fluor {
+.text-retro-fluor {
 
     & {
         --style-fill-color: #7900ff;

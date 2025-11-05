@@ -45,7 +45,7 @@
         content: attr(data-text);
         position: absolute;
         left: 0;
-        top: 0.075em;
+        /*top: 0.075em;*/
         @apply text-clip;
         @apply text-stroke;
     }
@@ -54,13 +54,13 @@
 .text-gold-3D.thin-stroke {
     &::after,
     &::before {
-        --stroke-width: .04em;
+        --style-stroke-width: .04em;
     }
 }
 
 .text-gold-3D.tick-stroke {
     &::after,
     &::before {
-        --stroke-width: .06em;
+        --style-stroke-width: .06em;
     }
 }

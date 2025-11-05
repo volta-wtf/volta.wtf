@@ -1,0 +1,19 @@
+/*
+{
+    id: 'neon-base',
+    name: 'Neon Base',
+    description: 'Text with neon glow effect',
+    category: 'Special',
+    tags: ['neon', 'cyberpunk'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'neon-base.css',
+    previewText: 'Neon',
+    background: '#0a0a0a'
+},
+*/
+
+.text-neon-base {
+    position: relative;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}

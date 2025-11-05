@@ -5,5 +5,5 @@
 @source "../../../registry/**/*.{js,jsx,ts,tsx}";
 
 @import "@registry/styles/stylewind.css";
-@import "../styles/index.css";
 @import "./demos/index.css";
+@import "../styles/index.css";
