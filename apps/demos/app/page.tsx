@@ -1,6 +1,7 @@
 import { Image } from "@/components/media/image";
 import { Button } from "@/components/ui/button";
 import { Button as Button2 } from "@/interface/base/button";
+
 import styles from "./page.module.css";
 
 export default function Home() {

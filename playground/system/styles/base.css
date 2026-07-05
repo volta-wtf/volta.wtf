@@ -1,0 +1,84 @@
+/* ============================================================
+   BASE — minimal reset + typographic defaults.
+   Mirrors shadcn's approach: border-box everywhere, border color
+   defaults to --border, body uses the sans stack and the
+   background/foreground role tokens.
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--border);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+  font-size: 1em;
+}
+
+button {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+/* Headings and paragraphs ship with a top margin by default; zero it out so
+   spacing is driven by layout (gap/margins) rather than inherited UA margins. */
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+}
+
+/* Global text selection — themed background with matching foreground for contrast. */
+::selection { background-color: var(--primary); color: var(--primary-foreground); }
+
+/* Shared focus ring — mirrors shadcn's focus-visible treatment:
+   3px ring at 50% opacity of --ring, plus a 1px border color shift. */
+.ds-focus-ring:focus-visible {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 50%, transparent);
+}
+
+/* Utility: visually-hidden (sr-only) */
+.ds-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Icon sizing default (Lucide) */
+.ds-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  pointer-events: none;
+}

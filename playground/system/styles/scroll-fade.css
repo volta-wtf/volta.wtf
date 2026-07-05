@@ -1,0 +1,104 @@
+/* ============================================================
+   scroll-fade — fade the edges of a scroll container, scroll-aware,
+   no JS. Ported from shadcn/ui (ui.shadcn.com/llm/utils/scroll-fade).
+
+   Base (any browser): a static edge fade via mask-image.
+   Enhancement (browsers with scroll-driven animations): the leading
+   edge only fades once you've scrolled away from it, and the trailing
+   edge fades until you reach the end — so a fade never hides content
+   you can't scroll to.
+
+   Usage: put a class on the scroll container.
+     .scroll-fade / .scroll-fade-y   vertical (both edges)
+     .scroll-fade-x                  horizontal (both edges)
+     .scroll-fade-t/-b/-l/-r         single edge
+     .scroll-fade-4/-8/-16/-24       fade size (1/2/4/6rem)
+     override --scroll-fade-size for a custom size
+     .scroll-fade-none               disable
+     .scrollbar-none                 hide the scrollbar
+   ============================================================ */
+
+@property --scroll-fade-t { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --scroll-fade-b { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --scroll-fade-s { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --scroll-fade-e { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+/* Configurable + runtime custom properties, registered as tokens under :root. */
+:root {
+  --scroll-fade-size: 2.5rem;   /* 40px */
+  --scroll-fade-reveal: 6rem;   /* distance over which an edge fades in/out */
+  --scroll-fade-t: 0px;
+  --scroll-fade-b: 0px;
+  --scroll-fade-s: 0px;
+  --scroll-fade-e: 0px;
+}
+
+/* ---- Static fallback: fade the relevant edge(s) at rest ---- */
+.scroll-fade, .scroll-fade-y {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--scroll-fade-size), #000 calc(100% - var(--scroll-fade-size)), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 var(--scroll-fade-size), #000 calc(100% - var(--scroll-fade-size)), transparent 100%);
+}
+.scroll-fade-x {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--scroll-fade-size), #000 calc(100% - var(--scroll-fade-size)), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 var(--scroll-fade-size), #000 calc(100% - var(--scroll-fade-size)), transparent 100%);
+}
+.scroll-fade-t { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--scroll-fade-size)); mask-image: linear-gradient(to bottom, transparent 0, #000 var(--scroll-fade-size)); }
+.scroll-fade-b { -webkit-mask-image: linear-gradient(to top, transparent 0, #000 var(--scroll-fade-size)); mask-image: linear-gradient(to top, transparent 0, #000 var(--scroll-fade-size)); }
+.scroll-fade-l { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--scroll-fade-size)); mask-image: linear-gradient(to right, transparent 0, #000 var(--scroll-fade-size)); }
+.scroll-fade-r { -webkit-mask-image: linear-gradient(to left, transparent 0, #000 var(--scroll-fade-size)); mask-image: linear-gradient(to left, transparent 0, #000 var(--scroll-fade-size)); }
+
+/* ---- Scroll-aware enhancement ---- */
+@supports (animation-timeline: scroll()) {
+  .scroll-fade, .scroll-fade-y {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--scroll-fade-t), #000 calc(100% - var(--scroll-fade-b)), transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 var(--scroll-fade-t), #000 calc(100% - var(--scroll-fade-b)), transparent 100%);
+    animation: scroll-fade-in-t linear both, scroll-fade-out-b linear both;
+    animation-timeline: scroll(self y), scroll(self y);
+    animation-range: 0 var(--scroll-fade-reveal), calc(100% - var(--scroll-fade-reveal)) 100%;
+  }
+  .scroll-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--scroll-fade-s), #000 calc(100% - var(--scroll-fade-e)), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 var(--scroll-fade-s), #000 calc(100% - var(--scroll-fade-e)), transparent 100%);
+    animation: scroll-fade-in-s linear both, scroll-fade-out-e linear both;
+    animation-timeline: scroll(self x), scroll(self x);
+    animation-range: 0 var(--scroll-fade-reveal), calc(100% - var(--scroll-fade-reveal)) 100%;
+  }
+  .scroll-fade-t {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--scroll-fade-t), #000 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 var(--scroll-fade-t), #000 100%);
+    animation: scroll-fade-in-t linear both; animation-timeline: scroll(self y); animation-range: 0 var(--scroll-fade-reveal);
+  }
+  .scroll-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - var(--scroll-fade-b)), transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - var(--scroll-fade-b)), transparent 100%);
+    animation: scroll-fade-out-b linear both; animation-timeline: scroll(self y); animation-range: calc(100% - var(--scroll-fade-reveal)) 100%;
+  }
+  .scroll-fade-l {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--scroll-fade-s), #000 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 var(--scroll-fade-s), #000 100%);
+    animation: scroll-fade-in-s linear both; animation-timeline: scroll(self x); animation-range: 0 var(--scroll-fade-reveal);
+  }
+  .scroll-fade-r {
+    -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - var(--scroll-fade-e)), transparent 100%);
+    mask-image: linear-gradient(to right, #000 0, #000 calc(100% - var(--scroll-fade-e)), transparent 100%);
+    animation: scroll-fade-out-e linear both; animation-timeline: scroll(self x); animation-range: calc(100% - var(--scroll-fade-reveal)) 100%;
+  }
+
+  @keyframes scroll-fade-in-t  { from { --scroll-fade-t: 0px; } to { --scroll-fade-t: var(--scroll-fade-size); } }
+  @keyframes scroll-fade-out-b { from { --scroll-fade-b: var(--scroll-fade-size); } to { --scroll-fade-b: 0px; } }
+  @keyframes scroll-fade-in-s  { from { --scroll-fade-s: 0px; } to { --scroll-fade-s: var(--scroll-fade-size); } }
+  @keyframes scroll-fade-out-e { from { --scroll-fade-e: var(--scroll-fade-size); } to { --scroll-fade-e: 0px; } }
+}
+
+/* ---- Size steps ---- */
+.scroll-fade-4  { --scroll-fade-size: 1rem; }
+.scroll-fade-8  { --scroll-fade-size: 2rem; }
+.scroll-fade-16 { --scroll-fade-size: 4rem; }
+.scroll-fade-24 { --scroll-fade-size: 6rem; }
+
+/* ---- Escape hatch ---- */
+.scroll-fade-none { -webkit-mask-image: none !important; mask-image: none !important; animation: none !important; }
+
+/* ---- Companion: hide the scrollbar (ships with scroll-fade in shadcn) ---- */
+.scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }

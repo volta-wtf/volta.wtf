@@ -1,0 +1,6 @@
+@layer primitives, theme, base, components, utilities;
+
+@import "./styles/primitives.css" layer(primitives);
+@import "./styles/semantic.css" layer(primitives);
+@import "./styles/theme.css" layer(theme);
+@import "./styles/base.css" layer(base);

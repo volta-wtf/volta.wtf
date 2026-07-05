@@ -1,5 +1,5 @@
-import { Geist, Geist_Mono } from "next/font/google"
 import { Providers } from "@/components/providers"
+import { ThemeEditorLoader } from "@/components/theme-editor-loader"
 
 // /shadcn | Opción con globals locales y shadcn.css en worspace
 import "./shadcn.css"
@@ -14,11 +14,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
         <Providers>{children}</Providers>
-
-        {/* Theme Editor - Solo en desarrollo */}
-        {process.env.NODE_ENV === 'development' && (
-          <script src="http://localhost:4445/theme-editor.js" async />
-        )}
+        {process.env.NODE_ENV === "development" && <ThemeEditorLoader />}
       </body>
     </html>
   )

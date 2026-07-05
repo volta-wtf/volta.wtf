@@ -1,0 +1,374 @@
+/*
+
+ ████████╗ ██╗  ██╗ ███████╗ ███╗   ███╗ ███████╗
+ ╚══██╔══╝ ██║  ██║ ██╔════╝ ████╗ ████║ ██╔════╝
+    ██║    ███████║ █████╗   ██╔████╔██║ █████╗
+    ██║    ██╔══██║ ██╔══╝   ██║╚██╔╝██║ ██╔══╝
+    ██║    ██║  ██║ ███████╗ ██║ ╚═╝ ██║ ███████╗
+    ╚═╝    ╚═╝  ╚═╝ ╚══════╝ ╚═╝     ╚═╝ ╚══════╝
+
+The theme system organizes and defines variables for the fundamental aspects
+of the interface: colors, layout, typography, styling, and motion.
+
+Each section groups specific properties that enable the construction of coherent,
+accessible, and adaptable visual experiences, making it easy to customize
+and maintain a consistent visual identity throughout the application.
+
+*/
+
+/* MARK: SETTINGS */
+:root {
+
+    --breakpoint-xs:    480px;
+    --breakpoint-sm:    640px;
+    --breakpoint-md:    768px;
+    --breakpoint-lg:    1024px;
+    --breakpoint-xl:    1280px;
+    --breakpoint-2xl:   1440px;
+    --breakpoint-3xl:   1536px;
+    --breakpoint-4xl:   2000px;
+
+    --spacing:          0.25rem;
+    --scaling:          1;
+
+    --font-size:        16px;
+    --font-scale:       var(--ratio-major-second);
+    --font-heading:     var(--font-family-sans);
+    --font-body:        var(--font-family-sans);
+    --font-code:        var(--font-family-mono);
+
+    --border-width:     1px;
+    --divider-width:    1px;
+    --line-width:       calc(var(--divider-width) / 2);
+    --rule-width:       calc(var(--divider-width) * 2);
+    --outline-width:    2px;
+    --ring-width:       3px;
+    --ring-offset:      2px;
+
+    --radius:           0.625rem;
+
+    --opacity-disabled: 0.5;
+    --opacity-surface:  0.85;
+    --opacity-backdrop: 0.85;
+
+    --blur-surface:     0px;
+    --blur-backdrop:    0px;
+
+    --scheme:           light dark;
+
+    /* Base colors */
+    --background:       var(--min-contrast);        /* Use background roles for document base background and contrasts in region backgrounds */
+    --foreground:       var(--tone-contrast-900);   /* Use foreground roles for content and controls against any surface or background */
+    --active:           var(--color-blue-500);      /* Use this for active elements like links, focus ring and active status or main dashbord indication, etc */
+    --accent:           var(--foreground);          /* Use this to manage the amount of color used on controls, selected blocks and text selection */
+    /* Base tints */
+    --content:          var(--foreground);          /* Text, icons and forms against any surface or background */
+    --control:          var(--foreground);          /* Inputs and Buttons on any surface or background  */
+    --ambient:          var(--foreground);          /* Use ambient roles for things like scrims, backdrops, and shadow */
+    --state:            var(--foreground);          /* For controls and component states  */
+    --scrim:            var(--ambient);             /* For scrims on images, video players and translucent controls */
+    --backdrop:         var(--ambient);             /* User on overlays backdrops like modals, drawers, sheets and alerts */
+    --shadow:           var(--ambient);             /* For elevation shadow mostly  */
+    --indication:       var(--cautionary);          /* For highligted text (mark), text search match and targeted elements */
+    --decoration:       var(--foreground);          /* For decorative texts, icons and borderss */
+    --inverse:          var(--background);          /* Auxiliary color for invert content colors */
+
+}
+
+/* MARK: COLORS */
+:root {
+    --body:                 var(--background); /* This role is used for apply color to the bootm bar in PWA or homescreen app on mobile */
+    --canvas:               var(--background); /* This role is for the app background */
+
+    --silent:               color-mix(in hsl, var(--ambient) 4%, transparent); /* Este color es para agregar tonalidades a alunas areas de la interfaz como el footer de un modal o de un dropdown */
+    --muted:                color-mix(in hsl, var(--ambient) 8%, transparent);
+    --muted-foreground:     var(--text-muted);
+
+    --surface:              var(--background); /* Use surface roles for more neutral backgrounds, and container colors for components */
+    --surface-tint:         var(--tertiary);
+    --surface-foreground:   var(--text);
+
+    --surface-bright:       var(--surface);
+    --surface-dim:          var(--surface);
+
+    --surface-lowest:       color-mix(in hsl, var(--surface), var(--surface-tint) 2%);
+    --surface-low:          color-mix(in hsl, var(--surface), var(--surface-tint) 4%);
+    --surface-base:         color-mix(in hsl, var(--surface), var(--surface-tint) 6%);
+    --surface-high:         color-mix(in hsl, var(--surface), var(--surface-tint) 8%);
+    --surface-highest:      color-mix(in hsl, var(--surface), var(--surface-tint) 12%);
+
+    /* Content */
+    --display:              var(--ambient); /* For display level text content */
+    --heading:              var(--content); /* For heading level text content */
+    --text:                 color-mix(in hsl, var(--content) 90%, transparent); /* For base level text content */
+    --text-subtle:          color-mix(in hsl, var(--text) 80%, transparent); /* Used for medium emphasis luke secondary text */
+    --text-muted:           color-mix(in hsl, var(--text) 60%, transparent); /* Used for low emphasis text, like meta descriptions. */
+    --text-disabled:        color-mix(in hsl, var(--text) 30%, transparent); /* Used for lower emphasis text, like disabled text or input placeholder. */
+    --text-hint:            color-mix(in hsl, var(--text) 40%, transparent); /* Used for low emphasis text in help/hint context, like Field help text. */
+    --text-silent:          color-mix(in hsl, var(--text) 20%, transparent); /* Used for pseudo-decorative text like big numbered lists. */
+    --icon:                 var(--text);
+    --icon-subtle:          var(--text-subtle);
+    --icon-muted:           var(--text-muted);
+    --icon-disabled:        var(--text-disabled);
+    --icon-hint:            var(--text-hint);
+    --icon-silent:          var(--text-silent);
+
+    /* Popup surfaces */
+    --card:                 var(--surface-lowest);
+    --card-foreground:      var(--text);
+    --picker:               var(--surface-base);
+    --picker-foreground:    var(--text);
+    --dropdown:             var(--surface-base);
+    --dropdown-foreground:  var(--text);
+    --popover:              var(--surface-low);
+    --popover-foreground:   var(--text);
+    --modal:                var(--surface-high);
+    --modal-foreground:     var(--text);
+    --dialog:               var(--surface-high);
+    --dialog-foreground:    var(--text);
+    --popup:                var(--surface-highest);
+    --popup-foreground:     var(--text);
+
+    /* Brand colors */
+    --primary:                  var(--tone-primary-500); /* Use primary roles for the most prominent components across the UI */
+    --primary-foreground:       var(--inverse);
+    --secondary:                var(--tone-secondary-200); /* Use secondary roles for less prominent components in the UI */
+    --secondary-foreground:     var(--on-light);
+    --tertiary:                 var(--tone-tertiary-300);     /* Use tertiary roles for contrasting accents that balance primary and secondary colors or bring heightened attention to an element */
+    --tertiary-foreground:      var(--on-light);
+
+    /* Backgrounds */
+    --accented:                 color-mix(in hsl, var(--accent) 8%, transparent);
+    --accented-foreground:      var(--on-light);
+    --highlighted:              color-mix(in hsl, var(--active) 8%, transparent);
+    --highlighted-foreground:   var(--on-light);
+    --selected:                 color-mix(in hsl, var(--active) 8%, transparent);
+    --selected-foreground:      var(--on-light);
+
+    /* Functionals */
+    --destructive:              var(--tone-destructive-500); /* Use destructive roles to communicate error states or destructive actions */
+    --destructive-foreground:   var(--inverse);
+    --cautionary:               var(--tone-cautionary-500);   /* Use cautionary roles for warning or alert states */
+    --cautionary-foreground:    var(--content);
+    --affirmative:              var(--tone-affirmative-500);  /* Use affirmative roles for success, confirmation, or positive states */
+    --affirmative-foreground:   var(--inverse);
+    --informative:              var(--tone-informative-500);  /* Use informative roles for info banners, help and educational information */
+    --informative-foreground:   var(--inverse);
+
+    /* Borders */
+    --border:                   color-mix(in hsl, var(--foreground) 10%, transparent); /* Decorative elements, such as card borders or acordion or any compoen, and when other elements provide 4.5:1 contrast */
+    --divider:                  var(--border);                                         /* Dividers for layouts, grids, lists or components */
+    --line:                     color-mix(in hsl, var(--foreground) 10%, transparent); /* Less prominent border or divider for dense views like tables, chart axis */
+    --rule:                     color-mix(in hsl, var(--foreground) 20%, transparent); /* More prominent border for using on content dividers, table heading, page grakes, main chart axis, etc. */
+
+    /* Controls */
+    --outline:                  color-mix(in hsl, var(--control) 20%, transparent); /* Important boundaries, such as a text field outline */
+    --input:                    color-mix(in hsl, var(--control) 5%, transparent); /* Input, Select, Textarea */
+    --track:                    color-mix(in hsl, var(--control) 10%, transparent); /* Progress, Slider */
+    --thumb:                    color-mix(in hsl, var(--control) 0%, var(--surface)); /* Switch, Slider handler */
+    --action:                   color-mix(in hsl, var(--state) 8%, transparent);
+    --button:                   var(--control); /* Button */
+
+    /* States */
+    --action-resting:   color-mix(in hsl, var(--state) 0%, transparent);
+    --action-raised:    color-mix(in hsl, var(--state) 8%, transparent);
+    --action-hovered:   color-mix(in hsl, var(--state) 16%, transparent);
+    --action-focused:   color-mix(in hsl, var(--state) 16%, transparent);
+    --action-pressed:   color-mix(in hsl, var(--state) 18%, transparent);
+    --action-dragging:  color-mix(in hsl, var(--state) 24%, transparent);
+
+    /* Interactive */
+    --link:             var(--active);
+    --visited:          color-mix(in hsl, var(--active) 80%, transparent);
+    --ring:             color-mix(in hsl, var(--active) 20%, transparent);
+    --caret:            var(--foreground);
+
+    /* Charts */
+    --chart-1: var(--color-blue-300);
+    --chart-2: var(--color-blue-500);
+    --chart-3: var(--color-blue-600);
+    --chart-4: var(--color-blue-700);
+    --chart-5: var(--color-blue-800);
+
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0% 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+
+    --main: var(--background);
+    --header: var(--background);
+    --footer: var(--background);
+    --aside: var(--background);
+
+    --code: var(--surface);
+    --code-foreground: var(--surface-foreground);
+    --code-highlight: oklch(0.96 0 0);
+    --code-number: oklch(0.56 0 0);
+
+    --selection:                var(--accent);
+    --selection-foreground:     var(--on-dark);
+    --mark:                     color-mix(in hsl, var(--indication) 80%, transparent);
+    --mark-foreground:          var(--on-light);
+    --target:                   var(--mark);
+    --mark-foreground:          var(--mark-foreground);
+    --search-text:              var(--mark);
+    --search-current:           var(--mark-foreground);
+
+    /* Overlays */
+    --scrim-hard:       color-mix(in hsl, var(--scrim) 50%, transparent);
+    --scrim-base:       color-mix(in hsl, var(--scrim) 30%, transparent);
+    --scrim-soft:       color-mix(in hsl, var(--scrim) 10%, transparent);
+    --backdrop-hard:    color-mix(in hsl, var(--backdrop) 80%, transparent);
+    --backdrop-base:    color-mix(in hsl, var(--backdrop) 60%, transparent);
+    --backdrop-soft:    color-mix(in hsl, var(--backdrop) 20%, transparent);
+    --shadow-hard:      color-mix(in hsl, var(--shadow) 15%, transparent);
+    --shadow-base:      color-mix(in hsl, var(--shadow) 10%, transparent);
+    --shadow-soft:      color-mix(in hsl, var(--shadow) 5%, transparent);
+}
+
+/* MARK: THEME */
+:root {
+
+    /* MARK: Spacing */
+
+    --scaling-layout:       var(--scaling);
+    --scaling-containers:   var(--scaling);
+    --scaling-controls:      var(--scaling);
+    --scaling-objects:       var(--scaling);
+    --scaling-elements:      var(--scaling);
+
+/*
+    --scaling-layout -> estructura de la pagina, headers, footers, etc.
+    --scaling-containers -> contenedores de la pagina, modals, drawers, sheets, etc.
+    --scaling-elementos -> elementos de la pagina, cards, irem, lists, etc.
+    --scaling-controls -> controles de la pagina, botones, inputs, etc.
+    --scaling-objects -> objetos de la pagina, imagenes, videos, etc.
+    --scaling-content -> contenido de la pagina, escala de texto, iconos, separacion de contenido, etc.
+    --scaling-elements -> elementos de la pagina, badges, icons, etc.
+*/
+
+/* MARK: Typography */
+
+    /* Display */
+    --text-display-1:       var(--text-scale-650);
+    --text-display-2:       var(--text-scale-550);
+    --text-display-3:       var(--text-scale-450);
+    /* Heading */
+    --text-headline:        var(--text-scale-400);
+    --text-subhead:         var(--text-scale-350);
+    --text-title:           var(--text-scale-300);
+    --text-subtitle:        var(--text-scale-250);
+    /* Copy */
+    --text-lead:            var(--text-scale-150);
+    --text-body:            var(--text-scale-100);
+    /* UI */
+    --text-base:            var(--text-scale-075);
+    --text-small:           var(--text-scale-050);
+    --text-micro:           var(--text-scale-025);
+    /* Utilities */
+    --text-overline:        var(--text-base);
+    --text-caption:         var(--text-overline);
+    --text-footnote:        var(--text-caption);
+    --text-hint:            var(--text-caption);
+    /* Fields */
+    --text-label:           var(--text-base);
+    --text-input:           var(--text-body);
+    --text-button:          var(--text-body);
+    --text-input-xs:        var(--text-small);
+    --text-input-sm:        var(--text-label);
+    --text-input-lg:        var(--text-lead);
+    --text-button-xs:       var(--text-small);
+    --text-button-sm:       var(--text-label);
+    --text-button-lg:       var(--text-lead);
+    /* Icons */
+    --icon-size-micro:      0.5rem;    /* 8px */
+    --icon-size-small:      0.75rem;   /* 12px */
+    --icon-size-base:       1rem;      /* 16px */
+    --icon-size-medium:     1.25rem;   /* 20px */
+    --icon-size-large:      1.5rem;    /* 24px */
+    --icon-size-title:      2rem;      /* 32px */
+    --icon-size-display:    4rem;      /* 80px */
+
+    /* MARK: Shapes */
+
+    /* Base scale */
+    --radius-xsmall:        4px;
+    --radius-small:         calc(var(--radius) - 4px);
+    --radius-medium:        calc(var(--radius) - 2px);
+    --radius-large:         var(--radius);
+    --radius-xlarge:        calc(var(--radius) + 4px);
+    /* Element radius */
+    --radius-item:          var(--radius-medium);
+    --radius-input:         var(--radius-medium);
+    --radius-check:         var(--radius-xsmall);
+    --radius-radio:         var(--radius-medium);
+    --radius-button:        var(--radius-medium);
+    /* Container radius */
+    --radius-card:          var(--radius-medium);
+    --radius-picker:        var(--radius-medium);
+    --radius-dropdown:      var(--radius-medium);
+    --radius-popover:       var(--radius-medium);
+    --radius-modal:         var(--radius-large);
+    --radius-dialog:        var(--radius-xlarge);
+    --radius-popup:         var(--radius-medium);
+    /* Layout radius */
+    --radius-layout:        0;
+    --radius-region:        var(--radius-layout);
+
+    /* MARK: Styling */
+
+    /* Borders */
+    --border-style:             solid;
+    --line-style:               var(--divider-style);
+    --rule-style:               var(--divider-style);
+    --divider-style:            var(--border-style);
+    --outline-style:            var(--border-style);
+    /* Modifiers */
+    --border-width-layout:      var(--border-width);
+    --border-width-region:      var(--border-width);
+    --border-width-overlay:     var(--border-width);
+    --border-width-element:     var(--border-width);
+
+    /* MARK: Effects */
+
+    /* Shadows */
+    --shadow-field:             var(--shadow-xs);
+    --shadow-action:            var(--shadow-xs);
+    --shadow-card:              var(--shadow-sm);
+    --shadow-picker:            var(--shadow-md);
+    --shadow-popover:           var(--shadow-lg);
+    --shadow-dialog:            var(--shadow-xl);
+    --shadow-tools:             var(--shadow-2xl);
+    /* Blurs */
+    --blur-surface-higher:      var(--blur-surface);
+    --blur-surface-high:        var(--blur-surface);
+    --blur-surface-base:        var(--blur-surface);
+    --blur-surface-low:         var(--blur-surface);
+    --blur-surface-lower:       var(--blur-surface);
+    --blur-backdrop-clear:      var(--blur-backdrop); /* Dialogs */
+    --blur-backdrop-focused:    var(--blur-backdrop);
+
+    /* MARK: Motion */
+
+    /* Transitions */
+    --duration-hover:       var(--duration-normal);
+    --duration-rest:        var(--duration-fast);
+    --duration-focus:       var(--duration-fast);
+    --duration-active:      var(--duration-fast);
+    --duration-pressed:     var(--duration-fast);
+    --duration-disabled:    var(--duration-fast);
+
+    /* Animations */
+    --duration-open:        var(--duration-normal);
+    --duration-close:       var(--duration-fast);
+
+    /* State scale ratios */
+    --transform-hover:      scale(var(--scale-enlarge));
+    --transform-hover-soft: scale(var(--scale-enlarge-soft));
+    --transform-active:     scale(var(--scale-shrink));
+    --transform-pressed:    scale(var(--scale-shrink-strong));
+}

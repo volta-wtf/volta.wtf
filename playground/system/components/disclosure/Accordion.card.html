@@ -1,0 +1,108 @@
+<!-- @dsCard group="Disclosure" viewport="900x1000" name="Accordion" subtitle="expandable sections — all variants" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 32px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 32px 36px; align-items: start; }
+  .cell .lbl { font-size: 12px; font-weight: 600; color: var(--muted-foreground); margin-bottom: 12px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Accordion, AccordionItem, AccordionTrigger, AccordionContent, Card, CardHeader, CardTitle, CardDescription, CardContent } = window.TestDesignSystem_be7089;
+
+const FAQ = [
+  { value: "shipping", q: "What are your shipping options?", a: "We offer standard (5–7 days), express (2–3 days), and overnight shipping. Free shipping on international orders." },
+  { value: "returns", q: "What is your return policy?", a: "Returns accepted within 30 days. Items must be unused and in original packaging. Refunds processed within 5–7 business days." },
+  { value: "support", q: "How can I contact customer support?", a: "Reach us via email, live chat, or phone. We respond within 24 hours during business days." },
+];
+
+function Cell({ label, children }) {
+  return <div className="cell"><div className="lbl">{label}</div>{children}</div>;
+}
+
+function App(){
+  return (
+    <div className="grid">
+      <Cell label="Basic (single)">
+        <Accordion defaultValue={["shipping"]}>
+          {FAQ.map((i) => (
+            <AccordionItem key={i.value} value={i.value}>
+              <AccordionTrigger>{i.q}</AccordionTrigger>
+              <AccordionContent>{i.a}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </Cell>
+
+      <Cell label="Multiple">
+        <Accordion multiple defaultValue={["shipping"]}>
+          {FAQ.map((i) => (
+            <AccordionItem key={i.value} value={i.value}>
+              <AccordionTrigger>{i.q}</AccordionTrigger>
+              <AccordionContent>{i.a}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </Cell>
+
+      <Cell label="Disabled item">
+        <Accordion defaultValue={["shipping"]}>
+          <AccordionItem value="shipping"><AccordionTrigger>Can I access my account history?</AccordionTrigger><AccordionContent>Yes, view your complete history in the Account History section of your dashboard.</AccordionContent></AccordionItem>
+          <AccordionItem value="premium" disabled><AccordionTrigger>Premium feature information</AccordionTrigger><AccordionContent>Upgrade your plan to access this content.</AccordionContent></AccordionItem>
+          <AccordionItem value="email"><AccordionTrigger>How do I update my email address?</AccordionTrigger><AccordionContent>Update it in your account settings; you'll receive a verification email.</AccordionContent></AccordionItem>
+        </Accordion>
+      </Cell>
+
+      <Cell label="Borders">
+        <Accordion defaultValue={["shipping"]} style={{ border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", padding: "0 16px" }}>
+          {FAQ.map((i) => (
+            <AccordionItem key={i.value} value={i.value}>
+              <AccordionTrigger>{i.q}</AccordionTrigger>
+              <AccordionContent>{i.a}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </Cell>
+
+      <Cell label="Card">
+        <Card>
+          <CardHeader>
+            <CardTitle>Subscription &amp; Billing</CardTitle>
+            <CardDescription>Common questions about your account, plans and payments.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Accordion className="ds-accordion--top-border" defaultValue={["shipping"]}>
+              {FAQ.map((i) => (
+                <AccordionItem key={i.value} value={i.value}>
+                  <AccordionTrigger>{i.q}</AccordionTrigger>
+                  <AccordionContent>{i.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </CardContent>
+        </Card>
+      </Cell>
+
+      <Cell label="RTL">
+        <Accordion defaultValue={["p1"]} dir="rtl">
+          <AccordionItem value="p1"><AccordionTrigger>كيف يمكنني إعادة تعيين كلمة المرور؟</AccordionTrigger><AccordionContent>انقر على 'نسيت كلمة المرور'، أدخل بريدك الإلكتروني، وسنرسل لك رابطًا لإعادة التعيين.</AccordionContent></AccordionItem>
+          <AccordionItem value="p2"><AccordionTrigger>هل يمكنني تغيير خطة الاشتراك؟</AccordionTrigger><AccordionContent>نعم، يمكنك الترقية أو التخفيض في أي وقت من إعدادات حسابك.</AccordionContent></AccordionItem>
+          <AccordionItem value="p3"><AccordionTrigger>ما هي طرق الدفع التي تقبلونها؟</AccordionTrigger><AccordionContent>نقبل جميع بطاقات الائتمان الرئيسية و PayPal والتحويلات المصرفية.</AccordionContent></AccordionItem>
+        </Accordion>
+      </Cell>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

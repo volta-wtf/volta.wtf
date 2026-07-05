@@ -19,7 +19,7 @@
     "@registry/interface": "workspace:*",
     "@registry/primitives": "workspace:*",
     "@registry/styles": "workspace:*",
-    "@tailwindcss/postcss": "^4.1.13",
+    "@tailwindcss/postcss": "^4.3.1",
     "lucide-react": "^0.552.0",
     "next": "^15.5.0",
     "postcss": "^8.5.3",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@studio/config-eslint": "workspace:*",
     "@studio/config-typescript": "workspace:*",
-    "@tailwindcss/postcss": "^4.1.13",
+    "@tailwindcss/postcss": "^4.3.1",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
@@ -39,7 +39,7 @@
     "gray-matter": "^4.0.3",
     "postcss-selector-parser": "^6.0.0",
     "react-markdown": "^9.0.0",
-    "tailwindcss": "^4.1.13",
+    "tailwindcss": "^4.3.1",
     "tsx": "^4.0.0",
     "typescript": "5.9.2"
   }

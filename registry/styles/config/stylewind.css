@@ -1,10 +1,36 @@
+/*
+
+ ████████╗ ██╗  ██╗ ███████╗ ███╗   ███╗ ███████╗
+ ╚══██╔══╝ ██║  ██║ ██╔════╝ ████╗ ████║ ██╔════╝
+    ██║    ███████║ █████╗   ██╔████╔██║ █████╗
+    ██║    ██╔══██║ ██╔══╝   ██║╚██╔╝██║ ██╔══╝
+    ██║    ██║  ██║ ███████╗ ██║ ╚═╝ ██║ ███████╗
+    ╚═╝    ╚═╝  ╚═╝ ╚══════╝ ╚═╝     ╚═╝ ╚══════╝
+
+The theme system organizes and defines variables for the fundamental aspects
+of the interface: colors, layout, typography, styling, and motion.
+
+Each section groups specific properties that enable the construction of coherent,
+accessible, and adaptable visual experiences, making it easy to customize
+and maintain a consistent visual identity throughout the application.
+
+1. Settings
+2. Colors
+3. Layout
+4. Typography
+5. Styling
+6. Motion
+
+*/
+
 @custom-variant dark (&:is(.dark *));
 @custom-variant fixed (&:is(.layout-fixed *));
 
 :root {
-    --scheme: light dark;
-    --radius: 0.625rem;
     --spacing: 0.25rem;
+    --radius: 0.625rem;
+
+    --scheme: light dark;
 
     --background: oklch(1 0 0);
     --foreground: rgb(0, 0, 0);
@@ -172,7 +198,7 @@
 
 @layer base {
     /* * {
-        @apply border-border outline-ring/50;
+        @apply border-border outline-ring;
     }*/
     *,
     ::after,
@@ -180,6 +206,20 @@
     ::backdrop,
     ::file-selector-button {
         border-color: var(--border, currentColor);
+    }
+
+    ::search-text {
+        /*
+        background: oklch(87% 0.17 90);
+        color: black;
+        */
+    }
+
+    ::search-text:current {
+        /*
+        background: oklch(62% 0.22 38);
+        color: white;
+        */
     }
 
     ::selection {

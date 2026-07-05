@@ -1,0 +1,22 @@
+
+:root {
+
+    /* Breakpoints */
+    --breakpoint-xs:              480px; /* Large mobile phones */
+    --breakpoint-sm:              640px; /* Mobile phones in landscape / Small tablets */
+    --breakpoint-md:              768px; /* Tablets */
+    --breakpoint-lg:             1024px; /* Laptops and large tablets */
+    --breakpoint-xl:             1280px; /* Large laptops */
+    --breakpoint-2xl:            1440px; /* HD monitors */
+    --breakpoint-3xl:            1536px; /* 2K and higher monitors */
+
+    /* Grid */
+    --spacing:                   0.25rem;
+
+    /*
+    --margin:                    calc(var(--spacing) * 4);
+    --gutter:                    calc(var(--spacing) * 2);
+    --gap:                       calc(var(--spacing) * 2);
+    */
+
+}

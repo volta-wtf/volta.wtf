@@ -1,0 +1,15 @@
+/* ------------------------------------------------------------------
+   Radius — a single --radius seed drives the ramp (shadcn convention).
+   Editor chrome uses sm/md; dialogs and cards use lg/xl.
+------------------------------------------------------------------ */
+:root {
+  --radius: 0.625rem; /* 10px seed */
+
+  --radius-xs: calc(var(--radius) - 6px); /* 4px  — inputs, chips, control rows */
+  --radius-sm: calc(var(--radius) - 4px); /* 6px  — buttons, small controls */
+  --radius-md: calc(var(--radius) - 2px); /* 8px  — cards, panes */
+  --radius-lg: var(--radius);             /* 10px — panels, popovers */
+  --radius-xl: calc(var(--radius) + 4px); /* 14px — dialogs, large surfaces */
+  --radius-2xl: calc(var(--radius) + 8px);/* 18px — hero / marketing */
+  --radius-full: 9999px;                  /* pills, avatars, handles */
+}

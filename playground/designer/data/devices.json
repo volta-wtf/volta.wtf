@@ -1,0 +1,18 @@
+{
+  "$schema": "Device registry — viewport sizes for previews, frames and the sites builder. CSS mirror: tokens/devices.css.",
+  "breakpoints": [
+    { "id": "sm", "min": 640 }, { "id": "md", "min": 768 }, { "id": "lg", "min": 1024 },
+    { "id": "xl", "min": 1280 }, { "id": "2xl", "min": 1536 }
+  ],
+  "devices": [
+    { "id": "phone-sm",  "name": "Phone S",   "class": "phone",   "icon": "device-phone",   "width": 320,  "height": 568 },
+    { "id": "phone",     "name": "Phone",     "class": "phone",   "icon": "device-phone",   "width": 390,  "height": 844 },
+    { "id": "phone-lg",  "name": "Phone L",   "class": "phone",   "icon": "device-phone",   "width": 430,  "height": 932 },
+    { "id": "tablet",    "name": "Tablet",    "class": "tablet",  "icon": "device-tablet",  "width": 768,  "height": 1024 },
+    { "id": "tablet-lg", "name": "Tablet L",  "class": "tablet",  "icon": "device-tablet",  "width": 834,  "height": 1194 },
+    { "id": "laptop",    "name": "Laptop",    "class": "laptop",  "icon": "device-laptop",  "width": 1280, "height": 832 },
+    { "id": "laptop-lg", "name": "Laptop L",  "class": "laptop",  "icon": "device-laptop",  "width": 1440, "height": 900 },
+    { "id": "desktop",   "name": "Desktop",   "class": "desktop", "icon": "device-desktop", "width": 1920, "height": 1080 },
+    { "id": "watch",     "name": "Watch",     "class": "watch",   "icon": "device-watch",   "width": 184,  "height": 224 }
+  ]
+}

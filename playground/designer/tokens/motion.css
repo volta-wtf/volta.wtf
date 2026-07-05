@@ -1,0 +1,23 @@
+/* ------------------------------------------------------------------
+   Motion — quick and mechanical. A tool should feel instant; motion
+   confirms an action, it never decorates. No bounces on chrome.
+------------------------------------------------------------------ */
+:root {
+  --duration-instant: 80ms; /* @kind other */
+  --duration-fast: 120ms;   /* @kind other */ /* hover / press feedback */
+  --duration: 160ms;        /* @kind other */ /* default control transitions */
+  --duration-slow: 240ms;   /* @kind other */ /* popovers, panel slide */
+
+  /* Standard material-ish ease for most UI */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  /* Decelerate — things entering (menus, popovers) */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  /* Accelerate — things leaving */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1); /* @kind other */
+
+  /* The single canonical transition for interactive chrome */
+  --transition-colors: color var(--duration-fast) var(--ease-standard),
+                        background-color var(--duration-fast) var(--ease-standard),
+                        border-color var(--duration-fast) var(--ease-standard),
+                        box-shadow var(--duration-fast) var(--ease-standard);
+}

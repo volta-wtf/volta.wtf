@@ -1,0 +1,156 @@
+/* Color tints */
+:root {
+    /* Base contrast */
+    --color-scheme:         light dark;
+    /* Base tints */
+    --background:           var(--min-contrast);
+    --foreground:           var(--key-contrast-900);
+
+
+    /* Main tints */
+    --tint-content:         var(--tint-foreground); /* @hsl */
+    --tint-controls:        var(--tint-foreground); /* @hsl */
+    --tint-ambient:         var(--tint-foreground); /* @hsl */
+    --tint-accent:          var(--tint-ambient); /* @hsl */
+    --tint-activity:        var(--tint-accent); /* @hsl */
+    /* Complementary tints */
+    --tint-inverse:         var(--tint-background); /* @hsl */
+    --tint-decoration:      var(--tint-accent); /* @hsl */
+    --tint-indication:      var(--key-asasdasd-400); /* @hsl */
+    /* Derivative tints */
+    --tint-state:           var(--tint-ambient); /* @hsl */
+    --tint-scrim:           var(--tint-ambient); /* @hsl */
+    --tint-backdrop:        var(--tint-ambient); /* @hsl */
+    --tint-shadow:          var(--tint-ambient); /* @hsl */
+
+}
+
+/* Color system */
+:root {
+
+    /* Backgrounds */
+    --body:                 hsl(var(--tint-background));
+    --canvas:               var(--body);
+    --surface:              var(--min-contrast);
+    --muted:                hsl(var(--tint-ambient) / 8%);
+    --silent:               hsl(var(--tint-ambient) / 4%);
+    /* Surfaces */
+    --card:                 var(--color-surface);
+    --dropdown:             var(--color-surface);
+    --popover:              var(--color-surface);
+    --modal:                var(--color-surface);
+    --tools:                var(--color-content);
+
+    /* Overlays */
+    --scrim-hard:           hsl(var(--tint-scrim) / 50%);
+    --scrim:                hsl(var(--tint-scrim) / 30%);
+    --scrim-soft:           hsl(var(--tint-scrim) / 10%);
+    --backdrop-hard:        hsl(var(--tint-backdrop) / 80%);
+    --backdrop:             hsl(var(--tint-backdrop) / 60%);
+    --backdrop-soft:        hsl(var(--tint-backdrop) / 20%);
+    /* Shadows */
+    --shadow-hard:          hsl(var(--tint-shadow) / 15%);
+    --shadow:               hsl(var(--tint-shadow) / 10%);
+    --shadow-soft:          hsl(var(--tint-shadow) / 5%);
+
+    /* Headings */
+    --display:              hsl(var(--tint-ambient));
+    --heading:              hsl(var(--tint-content));
+    /* Text */
+    --text:                 hsl(var(--tint-content) / 90%);
+    --text-subtle:          hsl(var(--tint-content) / 70%);
+    --text-muted:           hsl(var(--tint-content) / 40%);
+    --text-disabled:        hsl(var(--tint-content) / 30%);
+    --text-hint:            hsl(var(--tint-content) / 30%);
+    --text-silent:          hsl(var(--tint-content) / 10%);
+    /* Icons */
+    --icon:                 var(--text);
+    --icon-subtle:          var(--text-subtle);
+    --icon-muted:           var(--text-muted);
+    --icon-disabled:        var(--text-disabled);
+    --icon-hint:            var(--text-hint);
+    --icon-silent:          var(--text-silent);
+    /* Borders */
+    --border:               hsl(var(--tint-foreground) / 10%);
+    --divider:              var(--border);
+    --line:                 hsl(var(--tint-foreground) / 5%);
+    --rule:                 hsl(var(--tint-foreground) / 20%);
+
+    /* Controls */
+    --outline:              hsl(var(--tint-controls) / 10%);
+    --track:                hsl(var(--tint-controls) / 5%);
+    --input:                hsl(var(--tint-controls) / 5%);
+    --option:               var(--input);
+    --button:               hsl(var(--tint-controls) / 10%);
+    --thumb:                var(--button);
+    --accented:             hsl(var(--tint-accent) / 90%);
+    --highlighted:          hsl(var(--tint-accent) / 6%);
+    --selected:             hsl(var(--tint-accent) / 10%);
+
+    /* Interactivity */
+    --caret:                hsl(var(--tint-accent));
+    --selection:            hsl(var(--tint-accent));
+    --link:                 hsl(var(--tint-activity));
+    --visited:              hsl(var(--tint-activity) / 80%);
+    --active:               hsl(var(--tint-activity));
+    --ring:                 hsl(var(--tint-activity) / 60%);
+    --mark:                 hsl(var(--tint-indication) / 60%);
+    --target:               var(--mark);
+    --search-text:          var(--mark);
+    --search-current:       var(--search-text);
+
+    /* States */
+    --state-hovered:        hsl(var(--tint-state) / 8%);
+    --state-focused:        hsl(var(--tint-state) / 12%);
+    --state-pressed:        hsl(var(--tint-state) / 16%);
+    --state-dragging:       hsl(var(--tint-state) / 16%);
+
+    /* Functional colors */
+    --primary:            #3b82f6;
+    --destructive:        #ef4444;
+    --cautionary:         #f59e0b;
+    --affirmative:        #10b981;
+    --informative:          var(--color-primary);
+
+    /* Utilitarian */
+    --foreground:           hsl(var(--tint-foreground));
+    --content:              hsl(var(--tint-content));
+    --controls:             hsl(var(--tint-controls));
+    --ambient:              hsl(var(--tint-ambient));
+    --accent:               hsl(var(--tint-accent));
+    --inverse:              hsl(var(--tint-inverse));
+    --decoration:           hsl(var(--tint-decoration));
+    --indication:           hsl(var(--tint-indication));
+
+    /* On colors */
+    --on-light:             var(--color-content);
+    --on-dark:              var(--color-inverse);
+    --on-accented:          var(--color-on-dark);
+    --on-highlighted:       var(--color-on-light);
+    --on-selected:          var(--color-on-light);
+    --on-active:            var(--color-on-dark);
+    --on-selection:         var(--color-on-dark);
+    --on-mark:              var(--color-on-light);
+    --on-primary:           var(--color-on-dark);
+    --on-destructive:       var(--color-on-dark);
+    --on-cautionary:        var(--color-on-dark);
+    --on-affirmative:       var(--color-on-dark);
+    --on-informative:       var(--color-on-dark);
+
+}
+
+/* Dark mode */
+.dark {
+    --color-scheme: dark;
+    --tint-background: 222.2 84% 4.9%;
+    --tint-foreground: 210 40% 98%;
+    --tint-inverse: var(--tint-background);
+    --tint-content: var(--tint-foreground);
+    --tint-controls: var(--tint-foreground);
+    --tint-accent: var(--tint-ambient);
+    --tint-activity: var(--tint-accent);
+    --tint-ambient: var(--tint-foreground);
+    --tint-decoration: var(--tint-accent);
+    --tint-state: var(--tint-ambient);
+    --tint-scrim: var(--tint-ambient);
+}

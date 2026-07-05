@@ -1,0 +1,14 @@
+/* Badge — 11px status/count chip. */
+.dsr-badge {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  height: 18px; padding: 0 var(--space-1-5);
+  border: 1px solid transparent; border-radius: var(--radius-xs);
+  font-size: var(--text-ui-xs); font-weight: var(--font-weight-medium);
+  line-height: 1; white-space: nowrap;
+}
+.dsr-badge--default { background: var(--primary); color: var(--primary-foreground); }
+.dsr-badge--secondary { background: var(--secondary); color: var(--secondary-foreground); }
+.dsr-badge--outline { border-color: var(--border); color: var(--foreground); }
+.dsr-badge--destructive { background: var(--destructive); color: var(--destructive-foreground); }
+.dsr-badge--brand { background: var(--brand-muted); color: var(--brand); }
+.dsr-badge--selection { background: var(--selection-muted); color: var(--selection); }

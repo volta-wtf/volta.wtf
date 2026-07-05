@@ -1,0 +1,78 @@
+{
+  "$schema": "Gradient presets — consumed by utilities/GradientEditor and the asset library.",
+  "presets": [
+    {
+      "id": "graphite",
+      "name": "Graphite",
+      "type": "linear",
+      "angle": 135,
+      "stops": [
+        { "color": "oklch(0.37 0 0)", "position": 0 },
+        { "color": "oklch(0.15 0 0)", "position": 100 }
+      ]
+    },
+    {
+      "id": "silver",
+      "name": "Silver",
+      "type": "linear",
+      "angle": 180,
+      "stops": [
+        { "color": "oklch(0.97 0 0)", "position": 0 },
+        { "color": "oklch(0.87 0 0)", "position": 100 }
+      ]
+    },
+    {
+      "id": "ultramarine",
+      "name": "Ultramarine",
+      "type": "linear",
+      "angle": 120,
+      "stops": [
+        { "color": "oklch(0.62 0.19 256)", "position": 0 },
+        { "color": "oklch(0.45 0.21 275)", "position": 100 }
+      ]
+    },
+    {
+      "id": "dawn",
+      "name": "Dawn",
+      "type": "linear",
+      "angle": 90,
+      "stops": [
+        { "color": "oklch(0.85 0.07 60)", "position": 0 },
+        { "color": "oklch(0.75 0.12 25)", "position": 100 }
+      ]
+    },
+    {
+      "id": "moss",
+      "name": "Moss",
+      "type": "linear",
+      "angle": 160,
+      "stops": [
+        { "color": "oklch(0.80 0.10 150)", "position": 0 },
+        { "color": "oklch(0.55 0.12 165)", "position": 100 }
+      ]
+    },
+    {
+      "id": "halo",
+      "name": "Halo",
+      "type": "radial",
+      "angle": 0,
+      "stops": [
+        { "color": "oklch(1 0 0)", "position": 0 },
+        { "color": "oklch(0.92 0 0)", "position": 100 }
+      ]
+    },
+    {
+      "id": "spectrum",
+      "name": "Spectrum",
+      "type": "conic",
+      "angle": 0,
+      "stops": [
+        { "color": "oklch(0.7 0.15 0)", "position": 0 },
+        { "color": "oklch(0.7 0.15 90)", "position": 25 },
+        { "color": "oklch(0.7 0.15 180)", "position": 50 },
+        { "color": "oklch(0.7 0.15 270)", "position": 75 },
+        { "color": "oklch(0.7 0.15 360)", "position": 100 }
+      ]
+    }
+  ]
+}

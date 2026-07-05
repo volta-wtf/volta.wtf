@@ -42,7 +42,7 @@
         z-index: 1;
         color: var( --style-fill-color);
         filter: blur(0.06em) brightness(1.2);
-
+        top: 0.02em;
     }
 
     &:before {

@@ -1,0 +1,27 @@
+/* Tooltip — pure CSS via [data-tooltip]; no JS, no portal.
+   Applied by adding data-tooltip + the dsr-tooltip-host class. */
+.dsr-tooltip-host { position: relative; }
+.dsr-tooltip-host[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute; left: 50%; bottom: calc(100% + 6px);
+  transform: translateX(-50%) translateY(2px);
+  z-index: 50; padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  background: var(--foreground); color: var(--background);
+  font-family: var(--font-sans); font-size: var(--text-ui-xs);
+  font-weight: var(--font-weight-medium); line-height: 1.2;
+  white-space: nowrap; pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-standard),
+              transform var(--duration-fast) var(--ease-standard);
+}
+.dsr-tooltip-host[data-tooltip]:hover::after,
+.dsr-tooltip-host[data-tooltip]:focus-visible::after {
+  opacity: 1; transform: translateX(-50%) translateY(0);
+  transition-delay: 350ms;
+}
+.dsr-tooltip-host[data-side="bottom"]::after {
+  bottom: auto; top: calc(100% + 6px);
+  transform: translateX(-50%) translateY(-2px);
+}
+.dsr-tooltip-host[data-side="bottom"]:hover::after { transform: translateX(-50%) translateY(0); }

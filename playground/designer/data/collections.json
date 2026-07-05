@@ -1,0 +1,11 @@
+{
+  "$schema": "A collection = a structured dataset bound to canvas layers.",
+  "version": 1,
+  "collections": [
+    { "id": "products",     "file": "collections/products.json",     "name": "Products",     "icon": "package",  "count": 6 },
+    { "id": "team",         "file": "collections/team.json",         "name": "Team",         "icon": "users",    "count": 6 },
+    { "id": "posts",        "file": "collections/posts.json",        "name": "Blog Posts",   "icon": "file-text","count": 5 },
+    { "id": "testimonials", "file": "collections/testimonials.json", "name": "Testimonials", "icon": "quote",    "count": 5 }
+  ],
+  "fieldTypes": ["text", "richtext", "number", "boolean", "image", "select", "date", "color", "url"]
+}

@@ -1,0 +1,33 @@
+
+:root {
+    /* Spacing */
+    /*
+    --spacing-off:                  0;
+    --spacing-tight:                calc(var(--spacing) * 1);
+    --spacing-spaced:               calc(var(--spacing) * 2);
+    --spacing-loose:                calc(var(--spacing) * 3);
+    --spacing-extra:                calc(var(--spacing) * 4);
+    --spacing-huge:                 calc(var(--spacing) * 5);
+    --spacing-massive:              calc(var(--spacing) * 6);
+
+    --spacing-layout-expanded:      var(--spacing-extra);
+    --spacing-layout-medium:        var(--spacing-loose);
+    --spacing-layout-compact:       var(--spacing-tight);
+
+    --spacing-container-expanded:   var(--spacing-extra);
+    --spacing-container-medium:     var(--spacing-loose);
+    --spacing-container-compact:    var(--spacing-tight);
+
+    --spacing-object-expanded:      var(--spacing-extra);
+    --spacing-object-medium:        var(--spacing-loose);
+    --spacing-object-compact:       var(--spacing-tight);
+
+    --spacing-control-expanded:     var(--spacing-extra);
+    --spacing-control-medium:       var(--spacing-loose);
+    --spacing-control-compact:      var(--spacing-tight);
+
+    --spacing-element-expanded:     var(--spacing-extra);
+    --spacing-element-medium:       var(--spacing-loose);
+    --spacing-element-compact:      var(--spacing-tight);
+    */
+}

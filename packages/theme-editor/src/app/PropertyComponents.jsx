@@ -64,11 +64,11 @@ export function PropertyItem({
       onMouseEnter={() => onHover?.(varName)}
       onMouseLeave={() => onHover?.(null)}
     >
-      <div className={styles.property}>
-        <label className={styles.label}>
+      <div style={styles.property}>
+        <label style={styles.label}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span>{labelTransform(varName)}</span>
-            {isModified && <span className={styles.indicator}>●</span>}
+            {isModified && <span style={styles.indicator}>●</span>}
           </div>
         </label>
         <div style={{ position: 'relative', width: '100%' }}>
@@ -92,8 +92,8 @@ export function PropertyItem({
 
           <input
             type="text"
-            className={styles.input}
             style={{
+              ...styles.input,
               borderColor: (isFocused ? 'rgba(0,0,0,0.4)' : (isHovered ? 'rgba(0,0,0,0.1)' : 'transparent')),
               paddingLeft: showPreview ? '36px' : '12px', // Espacio para el preview
               paddingRight: '28px',
@@ -130,7 +130,7 @@ export function PropertyItem({
           )}
         </div>
       </div>
-      <div className={styles.value}>
+      <div style={styles.value}>
         Valor actual: {computedValueForPreview}
         {isModified && dropdownProps.originalValue && (
           <span style={{ color: '#ef4444', marginLeft: '12px', fontSize: '12px' }}>
@@ -513,7 +513,7 @@ export function SectionHeader({
 }) {
   return (
     <div
-      className={styles.sectionHeader}
+      style={styles.sectionHeader}
       onClick={onToggle}
       onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.03)'}
       onMouseLeave={(e) => e.target.style.backgroundColor = '#FFFFFF'}

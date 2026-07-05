@@ -1,0 +1,149 @@
+:root {
+
+    --background:   "";
+    --foreground:   "";
+
+    --content:      "";
+    --control:      "";
+    --indication:   "";
+    --ambient:      "";
+    --state:        "";
+    --scrim:        "";
+    --backdrop:     "";
+    --shadow:       "";
+
+    --primary:      "";
+    --secondary:    "";
+    --tertiary:     "";
+    --destructive:  "";
+    --cautionary:   "";
+    --affirmative:  "";
+    --informative:  "";
+
+    /* Base tints */
+    --active:       "";
+    --accent:       "";
+    --decoration:   "";
+    --inverse:      "";
+
+    --body:         "";
+    --canvas:       "";
+    --silent:       "";
+
+    --card:         "";
+    --picker:       "";
+    --dropdown:     "";
+    --popover:      "";
+    --modal:        "";
+    --dialog:       "";
+    --popup:        "";
+
+    --muted:        "";
+    --accented:     "";
+    --highlighted:  "";
+    --selected:     "";
+
+    --display:          "";
+    --heading:          "";
+    --text:             "";
+    --text-subtle:      "";
+    --text-muted:       "";
+    --text-disabled:    "";
+    --text-hint:        "";
+    --text-silent:      "";
+    --text-inverse:     "";
+    --icon:             "";
+
+    --border:           "";
+    --divider:          "";
+    --line:             "";
+    --rule:             "";
+
+    --outline:          "";
+    --input:            "";
+    --track:            "";
+    --thumb:            "";
+    --action:           "";
+    --button:           "";
+
+    --accent:           "";
+
+    --action-resting:   "";
+    --action-raised:    "";
+    --action-hovered:   "";
+    --action-focused:   "";
+    --action-pressed:   "";
+    --action-dragging:  "";
+
+    --ring:             "";
+    --link:             "";
+    --visited:          "";
+
+    --chart-1: var(--color-blue-300);
+    --chart-2: var(--color-blue-500);
+    --chart-3: var(--color-blue-600);
+    --chart-4: var(--color-blue-700);
+    --chart-5: var(--color-blue-800);
+
+    --sidebar: var(--emphasis-lowest);
+    --surface: "";
+    --main:    "";
+    --header:  "";
+    --footer:  "";
+    --aside:   "";
+
+    --code:              "";
+    --mark:              "";
+
+    --target:            "";
+    --search-text:       "";
+    --search-current:    "";
+
+    --selection:         "";
+    --caret:             "";
+
+
+    --sidebar-primary: var(--emphasis-highest);
+    --sidebar-accent: var(--accent);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
+
+    --surface-tint:    "";
+    --surface-bright:  "";
+    --surface-dim:     "";
+    --surface-lowest:  "";
+    --surface-low:     "";
+    --surface-base:    "";
+    --surface-high:    "";
+    --surface-highest: "";
+
+    --scrim-hard:      "";
+    --scrim-base:      "";
+    --scrim-soft:      "";
+    --backdrop-hard:   "";
+    --backdrop-base:   "";
+    --backdrop-soft:   "";
+
+    --code-highlight:  "";
+    --code-number:     "";
+
+    --shadow-hard:     "";
+    --shadow-base:     "";
+    --shadow-soft:     "";
+
+
+    --accent-foreground: var(--text-inverse);
+
+    --sidebar-foreground: var(--text);
+    --sidebar-primary-foreground: var(--text-inverse);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --surface-foreground: var(--text);
+    --card-foreground: var(--text);
+    --popover-foreground: var(--text);
+    --muted-foreground: var(--text-muted);
+    --accented-foreground: var(--text-subtle);
+    --highlighted-foreground: var(--on-light);
+    --selected-foreground: var(--on-light);
+    --code-foreground: var(--surface-foreground);
+    --selection-foreground: var(--emphasis-min);
+}

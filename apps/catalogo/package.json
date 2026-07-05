@@ -5,7 +5,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack --port 3007",
+    "dev": "THEME_EDITOR_PORT=4451 NEXT_PUBLIC_THEME_EDITOR_PORT=4451 THEME_EDITOR_PROJECT_ROOT=. theme-editor next dev --turbopack --port 3007",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --port 3007",
@@ -19,7 +19,7 @@
     "@registry/components": "workspace:*",
     "@registry/assets": "workspace:*",
     "@registry/interface": "workspace:*",
-    "@tailwindcss/postcss": "^4.1.13",
+    "@tailwindcss/postcss": "^4.3.1",
     "@tanstack/react-table": "^8.21.3",
     "postcss": "^8.5.3",
     "postcss-import": "^16.1.0",
@@ -30,13 +30,14 @@
     "lucide-react": "^0.475.0"
   },
     "devDependencies": {
+    "@studio/theme-editor": "workspace:*",
     "@studio/config-eslint": "workspace:*",
     "@studio/config-typescript": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4.1.13",
-    "tailwindcss": "^4.1.13",
+    "@tailwindcss/postcss": "^4.3.1",
+    "tailwindcss": "^4.3.1",
     "eslint": "^9.34.0",
     "typescript": "5.9.2"
   },

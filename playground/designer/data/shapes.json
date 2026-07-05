@@ -1,0 +1,19 @@
+{
+  "$schema": "Shape presets — generic geometry for the shapes micro-tool. viewBox is 0 0 100 100; `path` is the outline.",
+  "shapes": [
+    { "id": "rectangle",     "name": "Rectangle",     "path": "M0 0H100V100H0Z" },
+    { "id": "rounded",       "name": "Rounded",       "path": "M16 0H84C92.8 0 100 7.2 100 16V84C100 92.8 92.8 100 84 100H16C7.2 100 0 92.8 0 84V16C0 7.2 7.2 0 16 0Z" },
+    { "id": "pill",          "name": "Pill",          "path": "M50 0H50C77.6 0 100 22.4 100 50C100 77.6 77.6 100 50 100H50C22.4 100 0 77.6 0 50C0 22.4 22.4 0 50 0Z" },
+    { "id": "ellipse",       "name": "Ellipse",       "path": "M50 0C77.6 0 100 22.4 100 50C100 77.6 77.6 100 50 100C22.4 100 0 77.6 0 50C0 22.4 22.4 0 50 0Z" },
+    { "id": "triangle",      "name": "Triangle",      "path": "M50 0L100 100H0Z" },
+    { "id": "diamond",       "name": "Diamond",       "path": "M50 0L100 50L50 100L0 50Z" },
+    { "id": "pentagon",      "name": "Pentagon",      "path": "M50 0L100 38L81 100H19L0 38Z" },
+    { "id": "hexagon",       "name": "Hexagon",       "path": "M25 5H75L100 50L75 95H25L0 50Z" },
+    { "id": "star",          "name": "Star",          "path": "M50 0L61.8 35.1H98.8L68.9 56.9L80.9 92L50 70.2L19.1 92L31.1 56.9L1.2 35.1H38.2Z" },
+    { "id": "arrow-right",   "name": "Arrow",         "path": "M0 35H60V10L100 50L60 90V65H0Z" },
+    { "id": "plus",          "name": "Plus",          "path": "M35 0H65V35H100V65H65V100H35V65H0V35H35Z" },
+    { "id": "parallelogram", "name": "Parallelogram", "path": "M25 0H100L75 100H0Z" },
+    { "id": "half",          "name": "Half circle",   "path": "M0 100C0 44.8 22.4 0 50 0C77.6 0 100 44.8 100 100Z" },
+    { "id": "blob",          "name": "Blob",          "path": "M83 18C93 28 99 42 96 55C93 68 82 79 69 87C56 95 41 99 29 93C17 87 8 71 5 55C2 39 5 23 15 13C25 3 42 -1 56 3C64 6 76 11 83 18Z" }
+  ]
+}

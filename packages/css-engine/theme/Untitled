@@ -1,0 +1,6 @@
+    --primary-default:              var(--ramp-yellow-500);
+    --primary-hover:                var(--ramp-yellow-600);
+    --primary-pressed:              var(--ramp-yellow-700);
+    --primary-highlighted:          var(--ramp-yellow-200);
+    --primary-highlighted-hover:    var(--ramp-yellow-300);
+    --primary-highlighted-pressed:  var(--ramp-yellow-400);

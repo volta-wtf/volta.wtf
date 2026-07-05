@@ -1,0 +1,13 @@
+/* Label — control caption + section eyebrow. */
+.dsr-label {
+  display: inline-flex; align-items: center; gap: var(--space-1-5);
+  font-size: var(--text-ui-sm); font-weight: var(--font-weight-medium);
+  color: var(--foreground); line-height: var(--leading-tight);
+}
+.dsr-label__hint { color: var(--muted-foreground); font-weight: var(--font-weight-normal); }
+
+/* Uppercase micro-eyebrow for pane sections */
+.dsr-label--eyebrow {
+  font-size: var(--text-ui-xs); text-transform: uppercase;
+  letter-spacing: var(--tracking-widest); color: var(--muted-foreground);
+}

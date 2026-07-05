@@ -1,0 +1,13 @@
+/* designer/ group index */
+@import url('./Menubar.css');
+@import url('./Toolbar.css');
+@import url('./FloatingToolbar.css');
+@import url('./Panel.css');
+@import url('./Pane.css');
+@import url('./Canvas.css');
+@import url('./Frame.css');
+@import url('./LayerTree.css');
+@import url('./ZoomControls.css');
+@import url('./Filmstrip.css');
+@import url('./StatusBar.css');
+@import url('./PageList.css');

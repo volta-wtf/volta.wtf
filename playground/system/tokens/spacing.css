@@ -1,0 +1,42 @@
+/* ============================================================
+   SPACING — Tailwind 4px base scale (shadcn uses these directly)
+   The whole scale derives from a single --spacing base unit
+   (Tailwind v4 model), so re-tuning --spacing reflows every gap
+   and padding at once. --scale multiplies the root font-size, so
+   every rem-based token (spacing, type, radius) zooms together.
+   ============================================================ */
+
+/* Global UI scale multiplier (1em @ root = browser default, ×scale). */
+:root { font-size: calc(1em * var(--scale, 1)); }
+
+:root {
+  --spacing: 0.25rem;      /* base unit — 4px @ 1rem = 16px */
+
+  --spacing-0: 0px;
+  --spacing-px: 1px;
+  --spacing-0-5: calc(var(--spacing) * 0.5);  /* 2px */
+  --spacing-1:   calc(var(--spacing) * 1);     /* 4px */
+  --spacing-1-5: calc(var(--spacing) * 1.5);   /* 6px */
+  --spacing-2:   calc(var(--spacing) * 2);     /* 8px */
+  --spacing-2-5: calc(var(--spacing) * 2.5);   /* 10px */
+  --spacing-3:   calc(var(--spacing) * 3);     /* 12px */
+  --spacing-3-5: calc(var(--spacing) * 3.5);   /* 14px */
+  --spacing-4:   calc(var(--spacing) * 4);     /* 16px */
+  --spacing-5:   calc(var(--spacing) * 5);     /* 20px */
+  --spacing-6:   calc(var(--spacing) * 6);     /* 24px */
+  --spacing-7:   calc(var(--spacing) * 7);     /* 28px */
+  --spacing-8:   calc(var(--spacing) * 8);     /* 32px */
+  --spacing-9:   calc(var(--spacing) * 9);     /* 36px */
+  --spacing-10:  calc(var(--spacing) * 10);    /* 40px */
+  --spacing-11:  calc(var(--spacing) * 11);    /* 44px */
+  --spacing-12:  calc(var(--spacing) * 12);    /* 48px */
+  --spacing-14:  calc(var(--spacing) * 14);    /* 56px */
+  --spacing-16:  calc(var(--spacing) * 16);    /* 64px */
+  --spacing-20:  calc(var(--spacing) * 20);    /* 80px */
+  --spacing-24:  calc(var(--spacing) * 24);    /* 96px */
+
+  /* Semantic control heights (shadcn size variants) */
+  --control-h-sm: 2rem;    /* 32px  h-8 */
+  --control-h-default: 2.25rem; /* 36px h-9 */
+  --control-h-lg: 2.5rem;  /* 40px  h-10 */
+}

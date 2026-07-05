@@ -1,0 +1,89 @@
+<!-- @dsCard group="Components" viewport="700x430" name="Editor chrome" subtitle="Menubar · Toolbar · Panel · Pane · Canvas · Frame · LayerTree · ZoomControls — live mini editor" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.525.0/dist/umd/lucide.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>html, body, #root { height: 100%; } body { background: var(--background); margin: 0; }</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Menubar, Toolbar, Panel, Canvas, Frame, LayerTree, ZoomControls, IconButton, Button, Separator } = window.DesignerDesignSystem_6adbd8;
+
+function ChromeCard() {
+  const [sel, setSel] = React.useState('f1');
+  const [tool, setTool] = React.useState('select');
+  const [viewState, setViewState] = React.useState({ zoom: 0.75, x: 40, y: 28 });
+  const [frames, setFrames] = React.useState({
+    f1: { x: 0, y: 0, w: 280, h: 190, name: 'Cover' },
+    f2: { x: 320, y: 0, w: 200, h: 190, name: 'Detail' },
+  });
+  const patch = (id, p) => setFrames((f) => ({ ...f, [id]: { ...f[id], ...p } }));
+  const layers = [
+    { id: 'f1', name: 'Cover', type: 'frame', children: [
+      { id: 't1', name: 'Title', type: 'text', binding: 'title' },
+      { id: 'r1', name: 'Backdrop', type: 'rectangle' },
+    ]},
+    { id: 'f2', name: 'Detail', type: 'frame', children: [
+      { id: 'i1', name: 'Photo', type: 'image' },
+    ]},
+  ];
+  const tools = [['select','Select — V'],['frame','Frame — F'],['rectangle','Rectangle — R'],['text','Text — T'],['hand','Hand — H']];
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
+      <Menubar
+        doc="Untitled canvas" docMeta="saved 2m ago"
+        right={<React.Fragment><IconButton name="play" label="Present" /><Button size="sm">Share</Button></React.Fragment>}
+      />
+      <div style={{ display: 'flex', flex: 1, minHeight: 0 }}>
+        <Panel side="left" width={190}>
+          <LayerTree layers={layers} selectedId={sel} onSelect={setSel} />
+        </Panel>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+          <Toolbar>
+            {tools.map(([n, l]) => (
+              <IconButton key={n} name={n} label={l} active={tool === n} onClick={() => setTool(n)} />
+            ))}
+            <Separator orientation="vertical" />
+            <IconButton name="undo" label="Undo" size="sm" />
+            <IconButton name="redo" label="Redo" size="sm" disabled />
+          </Toolbar>
+          <div style={{ flex: 1, position: 'relative', minHeight: 0 }}>
+            <Canvas view={viewState} onViewChange={setViewState} onBackgroundPointerDown={() => setSel(null)}>
+              {Object.entries(frames).map(([id, f]) => (
+                <Frame
+                  key={id} x={f.x} y={f.y} width={f.w} height={f.h} name={f.name}
+                  zoom={viewState.zoom} selected={sel === id}
+                  onSelect={() => setSel(id)}
+                  onMove={({ x, y }) => patch(id, { x, y })}
+                  onResize={(b) => patch(id, { x: b.x, y: b.y, w: b.width, h: b.height })}
+                >
+                  {id === 'f1' ? (
+                    <div style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                      <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'var(--muted)' }}></div>
+                      <div style={{ height: 12, width: '70%', borderRadius: 3, background: 'var(--muted)' }}></div>
+                      <div style={{ height: 8, width: '50%', borderRadius: 3, background: 'var(--muted)' }}></div>
+                    </div>
+                  ) : (
+                    <div style={{ position: 'absolute', inset: 12, borderRadius: 'var(--radius-md)', background: 'var(--muted)' }}></div>
+                  )}
+                </Frame>
+              ))}
+            </Canvas>
+            <ZoomControls view={viewState} onViewChange={setViewState} onFit={() => setViewState({ zoom: 0.75, x: 40, y: 28 })} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<ChromeCard />);
+</script>
+</body>
+</html>

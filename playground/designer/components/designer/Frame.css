@@ -1,0 +1,32 @@
+/* Frame — an artboard on the canvas. */
+.dsr-frame {
+  position: absolute;
+  background: var(--frame);
+  outline: 1px solid var(--frame-border);
+}
+.dsr-frame.is-selected { outline: calc(1.5px) solid var(--selection); }
+.dsr-frame__label {
+  position: absolute; left: 0; bottom: 100%;
+  margin-bottom: 4px;
+  max-width: 100%;
+  font-size: var(--text-ui-xs); line-height: 1.2;
+  color: var(--muted-foreground);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  cursor: default; user-select: none;
+}
+.dsr-frame.is-selected > .dsr-frame__label { color: var(--selection); }
+.dsr-frame__content { position: absolute; inset: 0; overflow: hidden; }
+.dsr-frame--no-clip .dsr-frame__content { overflow: visible; }
+
+/* Resize handles — 8px white squares, selection border */
+.dsr-frame__handle {
+  position: absolute; width: 8px; height: 8px;
+  background: var(--background);
+  border: 1px solid var(--selection);
+  border-radius: 1.5px;
+  z-index: 2;
+}
+.dsr-frame__handle--nw { left: -5px; top: -5px; cursor: nwse-resize; }
+.dsr-frame__handle--ne { right: -5px; top: -5px; cursor: nesw-resize; }
+.dsr-frame__handle--sw { left: -5px; bottom: -5px; cursor: nesw-resize; }
+.dsr-frame__handle--se { right: -5px; bottom: -5px; cursor: nwse-resize; }

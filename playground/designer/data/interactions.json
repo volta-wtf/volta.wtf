@@ -1,0 +1,33 @@
+{
+  "$schema": "Prototyping vocabulary — triggers, actions, transitions, easings. Consumed by prototype/InteractionEditor; easing/duration map to tokens/motion.css.",
+  "triggers": [
+    { "id": "click",  "name": "On click",  "icon": "click" },
+    { "id": "hover",  "name": "While hovering", "icon": "select" },
+    { "id": "press",  "name": "While pressing", "icon": "click" },
+    { "id": "delay",  "name": "After delay", "icon": "delay" },
+    { "id": "drag",   "name": "On drag", "icon": "move" }
+  ],
+  "actions": [
+    { "id": "navigate", "name": "Navigate to" },
+    { "id": "overlay",  "name": "Open overlay" },
+    { "id": "back",     "name": "Go back" },
+    { "id": "scroll",   "name": "Scroll to" },
+    { "id": "open-url", "name": "Open link" }
+  ],
+  "transitions": [
+    { "id": "instant",  "name": "Instant" },
+    { "id": "dissolve", "name": "Dissolve" },
+    { "id": "smart",    "name": "Smart animate" },
+    { "id": "slide-in", "name": "Slide in" },
+    { "id": "slide-out","name": "Slide out" },
+    { "id": "push",     "name": "Push" }
+  ],
+  "easings": [
+    { "id": "ease-standard", "name": "Standard", "cssVar": "--ease-standard", "value": [0.2, 0, 0, 1] },
+    { "id": "ease-out",      "name": "Ease out", "cssVar": "--ease-out",      "value": [0.16, 1, 0.3, 1] },
+    { "id": "ease-in",       "name": "Ease in",  "cssVar": "--ease-in",       "value": [0.4, 0, 1, 1] },
+    { "id": "linear",        "name": "Linear",   "value": [0, 0, 1, 1] },
+    { "id": "spring",        "name": "Spring (content only)", "value": null }
+  ],
+  "durations": { "default": 240, "min": 0, "max": 2000, "step": 20 }
+}

@@ -1,0 +1,71 @@
+<!-- @dsCard group="Chat" viewport="720x520" name="Reaction" subtitle="applied-reaction chips, an add-reaction addon, and a floating quick-react toolbar" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 24px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  #root { display: flex; }
+  .lbl { font-size: var(--text-xs); color: var(--muted-foreground); margin-bottom: 8px; }
+  .bubble { max-width: 340px; padding: 10px 14px; border-radius: 14px; background: var(--secondary); font-size: var(--text-sm); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const S = window.TestDesignSystem_be7089;
+const { Reaction, ReactionBar, ReactionToolbar, AddReactionButton } = S;
+const Col = ({ children, style }) => <div style={{ display: "flex", flexDirection: "column", gap: 28, ...style }}>{children}</div>;
+
+function Demo() {
+  const [reactions, setReactions] = React.useState([
+    { emoji: "thumbs-up", count: 4, active: true },
+    { emoji: "joy", count: 2, active: false },
+    { emoji: "heart-eyes", count: 1, active: false },
+  ]);
+  const toggle = (emoji) => setReactions((rs) => {
+    const hit = rs.find((r) => r.emoji === emoji);
+    if (hit) return rs.map((r) => r.emoji === emoji
+      ? { ...r, active: !r.active, count: r.count + (r.active ? -1 : 1) }
+      : r).filter((r) => r.count > 0);
+    return [...rs, { emoji, count: 1, active: true }];
+  });
+
+  return (
+    <Col style={{ maxWidth: 420 }}>
+      <div>
+        <div className="lbl">Applied reactions + add button (ReactionBar)</div>
+        <div className="bubble" style={{ marginBottom: 10 }}>Ship it 🚀 — great work on the picker refactor.</div>
+        <ReactionBar reactions={reactions} onToggle={toggle} onReact={toggle} />
+      </div>
+
+      <div>
+        <div className="lbl">Single chips (Reaction) — active vs. inactive</div>
+        <div style={{ display: "flex", gap: 8 }}>
+          <Reaction emoji="thumbs-up" count={12} active onToggle={() => {}} />
+          <Reaction emoji="clap" count={3} onToggle={() => {}} />
+          <Reaction emoji="eyes" count={1} onToggle={() => {}} />
+        </div>
+      </div>
+
+      <div>
+        <div className="lbl">Floating quick-react toolbar (ReactionToolbar)</div>
+        <ReactionToolbar onReact={toggle} />
+      </div>
+
+      <div>
+        <div className="lbl">Add-reaction addon (AddReactionButton) — opens the toolbar</div>
+        <AddReactionButton onReact={toggle} />
+      </div>
+    </Col>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>
+</body>
+</html>

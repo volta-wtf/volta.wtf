@@ -1,0 +1,88 @@
+<!-- @dsCard group="Primitives" viewport="820x760" name="Text" subtitle="Display · Heading · Text — semantic level ≠ visual level" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 40px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  .wrap { max-width: 680px; display: flex; flex-direction: column; gap: 36px; }
+  .sec { display: flex; flex-direction: column; gap: 14px; }
+  .sec > .h { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted-foreground); }
+  .stack { display: flex; flex-direction: column; gap: 12px; }
+  .tag { font-family: var(--font-mono); font-size: 11px; color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Display, Heading, Text, Label } = window.TestDesignSystem_be7089;
+
+function App(){
+  return (
+    <div className="wrap">
+      <div className="sec">
+        <div className="h">Display</div>
+        <div className="stack">
+          <Display size="sm">Display sm</Display>
+          <Display size="md">Display md</Display>
+          <Display size="lg">Display lg</Display>
+        </div>
+      </div>
+
+      <div className="sec">
+        <div className="h">Heading — level drives element + visual</div>
+        <div className="stack">
+          <Heading level={1}>Heading level 1 (h1)</Heading>
+          <Heading level={2}>Heading level 2 (h2)</Heading>
+          <Heading level={3}>Heading level 3 (h3)</Heading>
+          <Heading level={4}>Heading level 4 (h4)</Heading>
+        </div>
+      </div>
+
+      <div className="sec">
+        <div className="h">Text</div>
+        <div className="stack">
+          <Text size="lg">Body large — the quick brown fox jumps over the lazy dog.</Text>
+          <Text>Body base — the quick brown fox jumps over the lazy dog.</Text>
+          <Text size="sm">Body small — the quick brown fox jumps over the lazy dog.</Text>
+          <Text variant="lead">Lead — a slightly larger, muted intro paragraph.</Text>
+          <Text variant="muted" size="sm">Muted small — supporting helper copy.</Text>
+        </div>
+      </div>
+
+      <div className="sec">
+        <div className="h">Label</div>
+        <div className="stack">
+          <Label>Email address</Label>
+        </div>
+      </div>
+
+      <div className="sec">
+        <div className="h">Semantic ≠ visual</div>
+        <div className="stack">
+          <div>
+            <Heading as="h1" size={4}>An h1 that looks like a level-4 heading</Heading>
+            <div className="tag">&lt;Heading as="h1" size=&#123;4&#125;&gt;</div>
+          </div>
+          <div>
+            <Text as="span" size="lg" weight={600}>A span styled as large emphasized text</Text>
+            <div className="tag">&lt;Text as="span" size="lg" weight=&#123;600&#125;&gt;</div>
+          </div>
+          <div>
+            <Display as="p" size="sm">A paragraph rendered at display scale</Display>
+            <div className="tag">&lt;Display as="p" size="sm"&gt;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

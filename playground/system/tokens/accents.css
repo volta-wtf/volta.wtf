@@ -1,0 +1,57 @@
+/* ============================================================
+   ACCENTS — brand-color presets applied via [data-accent].
+   Pure shadcn variable model: a preset only re-points the standard
+   --primary / --primary-foreground / --ring (+ their sidebar twins).
+   No new tokens are introduced. Default (no attribute, or
+   data-accent="neutral") keeps the monochrome primary from colors.css,
+   so every accent stays legible in both light and .dark.
+   ============================================================ */
+
+[data-accent="blue"] {
+  --primary: oklch(0.60 0.19 256); --primary-foreground: oklch(0.985 0 0);
+  --ring: oklch(0.60 0.19 256);
+  --sidebar-primary: oklch(0.60 0.19 256); --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-ring: oklch(0.60 0.19 256);
+}
+[data-accent="indigo"] {
+  --primary: oklch(0.55 0.22 277); --primary-foreground: oklch(0.985 0 0);
+  --ring: oklch(0.55 0.22 277);
+  --sidebar-primary: oklch(0.55 0.22 277); --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-ring: oklch(0.55 0.22 277);
+}
+[data-accent="violet"] {
+  --primary: oklch(0.56 0.24 300); --primary-foreground: oklch(0.985 0 0);
+  --ring: oklch(0.56 0.24 300);
+  --sidebar-primary: oklch(0.56 0.24 300); --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-ring: oklch(0.56 0.24 300);
+}
+[data-accent="emerald"] {
+  --primary: oklch(0.62 0.15 162); --primary-foreground: oklch(0.985 0 0);
+  --ring: oklch(0.62 0.15 162);
+  --sidebar-primary: oklch(0.62 0.15 162); --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-ring: oklch(0.62 0.15 162);
+}
+[data-accent="rose"] {
+  --primary: oklch(0.60 0.23 15); --primary-foreground: oklch(0.985 0 0);
+  --ring: oklch(0.60 0.23 15);
+  --sidebar-primary: oklch(0.60 0.23 15); --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-ring: oklch(0.60 0.23 15);
+}
+[data-accent="orange"] {
+  --primary: oklch(0.67 0.19 46); --primary-foreground: oklch(0.145 0 0);
+  --ring: oklch(0.67 0.19 46);
+  --sidebar-primary: oklch(0.67 0.19 46); --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-ring: oklch(0.67 0.19 46);
+}
+[data-accent="amber"] {
+  --primary: oklch(0.80 0.16 84); --primary-foreground: oklch(0.24 0.02 84);
+  --ring: oklch(0.80 0.16 84);
+  --sidebar-primary: oklch(0.80 0.16 84); --sidebar-primary-foreground: oklch(0.24 0.02 84);
+  --sidebar-ring: oklch(0.80 0.16 84);
+}
+[data-accent="cyan"] {
+  --primary: oklch(0.68 0.13 210); --primary-foreground: oklch(0.145 0 0);
+  --ring: oklch(0.68 0.13 210);
+  --sidebar-primary: oklch(0.68 0.13 210); --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-ring: oklch(0.68 0.13 210);
+}

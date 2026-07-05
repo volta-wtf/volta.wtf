@@ -1,0 +1,125 @@
+
+/* Spacing scale */
+:root {
+    --spacing-px:                   1px;
+    --spacing-0:                    0;
+    --spacing-1:                    0.25rem;
+    --spacing-2:                    0.5rem;
+    --spacing-3:                    0.75rem;
+    --spacing-4:                    1rem;
+    --spacing-5:                    1.25rem;
+    --spacing-6:                    1.5rem;
+    --spacing-8:                    2rem;
+    --spacing-10:                   2.5rem;
+    --spacing-12:                   3rem;
+    --spacing-16:                   4rem;
+    --spacing-20:                   5rem;
+    --spacing-24:                   6rem;
+}
+
+/* Radius scale */
+:root {
+    --scale-radius-000:              0px;        /* 0px */
+    --scale-radius-050:              0.0625rem;  /* 1px */
+    --scale-radius-075:              0.125rem;   /* 2px */
+    --scale-radius-100:              0.25rem;    /* 4px */
+    --scale-radius-150:              0.375rem;   /* 6px */
+    --scale-radius-200:              0.5rem;     /* 8px */
+    --scale-radius-300:              0.75rem;    /* 12px */
+    --scale-radius-400:              1rem;       /* 16px */
+    --scale-radius-500:              1.25rem;    /* 20px */
+    --scale-radius-600:              1.5rem;     /* 24px */
+    --scale-radius-700:              1.75rem;    /* 28px */
+    --scale-radius-800:              2.0rem;     /* 32px */
+    --scale-radius-900:              2.5rem;     /* 40px */
+    --scale-radius-950:              3.0rem;     /* 48px */
+    --scale-radius-999:              9999px;     /* 9999px */
+}
+
+/* Icon scale */
+:root {
+    --scale-icon-025:                0.5rem;   /* 8px */
+    --scale-icon-050:                0.75rem;  /* 12px */
+    --scale-icon-075:                0.875rem; /* 14px */
+    --scale-icon-100:                1rem;     /* 16px */
+    --scale-icon-150:                1.25rem;  /* 20px */
+    --scale-icon-200:                1.5rem;   /* 24px */
+    --scale-icon-250:                2rem;     /* 32px */
+    --scale-icon-300:                3rem;     /* 48px */
+    --scale-icon-400:                4rem;     /* 64px */
+    --scale-icon-500:                5rem;     /* 80px */
+    --scale-icon-600:                6rem;     /* 96px */
+    --scale-icon-700:                7rem;     /* 112px */
+    --scale-icon-800:                8rem;     /* 128px */
+    --scale-icon-900:                9rem;     /* 144px */
+}
+
+/* Containers */
+:root {
+    --scale-container-3xs:           16rem;
+    --scale-container-2xs:           18rem;
+    --scale-container-xs:            20rem;
+    --scale-container-sm:            24rem;
+    --scale-container-md:            28rem;
+    --scale-container-lg:            32rem;
+    --scale-container-xl:            36rem;
+    --scale-container-2xl:           42rem;
+    --scale-container-3xl:           48rem;
+    --scale-container-4xl:           56rem;
+    --scale-container-5xl:           64rem;
+    --scale-container-6xl:           72rem;
+    --scale-container-7xl:           80rem;
+}
+
+/* Typography scale */
+:root {
+    /*
+    --type-scale-005: calc(var(--font-size) * 0.5);   /* 8px  *
+    --type-scale-025: calc(var(--font-size) * 0.6875);/* 11px *
+    --type-scale-050: calc(var(--font-size) * 0.75);  /* 12px *
+    --type-scale-075: calc(var(--font-size) * 0.875); /* 14px *
+    --type-scale-100: var(--font-size);               /* 16px *
+    --type-scale-150: calc(var(--font-size) * 1.125);   /* 18px *
+    --type-scale-200: calc(var(--font-size) * 1.25);    /* 20px *
+    --type-scale-250: calc(var(--font-size) * 1.375);   /* 22px *
+    --type-scale-300: calc(var(--font-size) * 1.5625);  /* 25px *
+    --type-scale-350: calc(var(--font-size) * 1.75);    /* 28px *
+    --type-scale-400: calc(var(--font-size) * 2);       /* 32px *
+    --type-scale-450: calc(var(--font-size) * 2.25);    /* 36px *
+    --type-scale-500: calc(var(--font-size) * 2.5625);  /* 41px *
+    --type-scale-550: calc(var(--font-size) * 2.875);   /* 46px *
+    --type-scale-600: calc(var(--font-size) * 3.1875);  /* 51px *
+    --type-scale-650: calc(var(--font-size) * 3.625);   /* 58px *
+    --type-scale-700: calc(var(--font-size) * 4.0625);  /* 65px *
+    --type-scale-750: calc(var(--font-size) * 4.5625);  /* 73px *
+    --type-scale-800: calc(var(--font-size) * 5.1875);  /* 83px *
+    --type-scale-850: calc(var(--font-size) * 5.8125);  /* 93px *
+    --type-scale-900: calc(var(--font-size) * 6.5625);  /* 105px *
+    --type-scale-950: calc(var(--font-size) * 7.375);   /* 118px *
+    --type-scale-999: calc(var(--font-size) * 8.3125);  /* 133px *
+    */
+
+    --scale-text-005: calc(var(--scale-text-025) / var(--font-scale)); /* 8px ? */
+    --scale-text-025: calc(var(--scale-text-050) / var(--font-scale)); /* 11px */
+    --scale-text-050: calc(var(--scale-text-075) / var(--font-scale)); /* 12px */
+    --scale-text-075: calc(var(--scale-text-100) / var(--font-scale)); /* 14px */
+    --scale-text-100: var(--font-size); /* 16px */
+    --scale-text-150: calc(var(--scale-text-100) * var(--font-scale)); /* 18px */
+    --scale-text-200: calc(var(--scale-text-150) * var(--font-scale)); /* 20px */
+    --scale-text-250: calc(var(--scale-text-200) * var(--font-scale)); /* 22px */
+    --scale-text-300: calc(var(--scale-text-250) * var(--font-scale)); /* 25px */
+    --scale-text-350: calc(var(--scale-text-300) * var(--font-scale)); /* 28px */
+    --scale-text-400: calc(var(--scale-text-350) * var(--font-scale)); /* 32px */
+    --scale-text-450: calc(var(--scale-text-400) * var(--font-scale)); /* 36px */
+    --scale-text-500: calc(var(--scale-text-450) * var(--font-scale)); /* 41px */
+    --scale-text-550: calc(var(--scale-text-500) * var(--font-scale)); /* 46px */
+    --scale-text-600: calc(var(--scale-text-550) * var(--font-scale)); /* 51px */
+    --scale-text-650: calc(var(--scale-text-600) * var(--font-scale)); /* 58px */
+    --scale-text-700: calc(var(--scale-text-650) * var(--font-scale)); /* 65px */
+    --scale-text-750: calc(var(--scale-text-700) * var(--font-scale)); /* 73px */
+    --scale-text-800: calc(var(--scale-text-750) * var(--font-scale)); /* 83px */
+    --scale-text-850: calc(var(--scale-text-800) * var(--font-scale)); /* 93px */
+    --scale-text-900: calc(var(--scale-text-850) * var(--font-scale)); /* 105px */
+    --scale-text-950: calc(var(--scale-text-900) * var(--font-scale)); /* 118px */
+    --scale-text-999: calc(var(--scale-text-950) * var(--font-scale)); /* 133px */
+}

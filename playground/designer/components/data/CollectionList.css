@@ -1,0 +1,19 @@
+/* CollectionList — collections as selectable rows. */
+.dsr-collections { display: flex; flex-direction: column; padding: var(--space-1); }
+.dsr-collection-row {
+  display: flex; align-items: center; gap: var(--space-2);
+  height: var(--row-height); padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-ui); color: var(--foreground);
+  cursor: default; user-select: none;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+.dsr-collection-row:hover { background: var(--muted); }
+.dsr-collection-row.is-selected { background: var(--selection-muted); }
+.dsr-collection-row__icon { flex: none; color: var(--muted-foreground); display: inline-flex; }
+.dsr-collection-row.is-selected .dsr-collection-row__icon { color: var(--selection); }
+.dsr-collection-row__name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dsr-collection-row__count {
+  font-family: var(--font-mono); font-size: var(--text-ui-xs);
+  color: var(--muted-foreground); font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,14 @@
+/* Component style index — one @import per group index; each group
+   index imports one sheet per component. Modularity rule: a component's
+   selectors live ONLY in its own sheet, prefixed `dsr-`. */
+@import url('./ui/ui.css');
+@import url('./fields/fields.css');
+@import url('./designer/designer.css');
+@import url('./tokens/tokens-ui.css');
+@import url('./data/data.css');
+@import url('./library/library.css');
+@import url('./utilities/utilities.css');
+@import url('./commands/commands.css');
+@import url('./devices/devices.css');
+@import url('./prototype/prototype.css');
+@import url('./collab/collab.css');

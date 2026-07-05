@@ -1,0 +1,265 @@
+
+base {
+    * {
+        border-color: var(--border);
+    }
+    body {
+        background-color: var(--body);
+        color: var(--text);
+        accent-color: var(--accent);
+    }
+    h1, h2, h3, h4, h5, h6, .heading {
+        color: var(--heading);
+    }
+}
+utilities {
+    .border { border-color: var(--border); }
+    .line { border-color: var(--line); }
+    .rule { border-color: var(--rule); }
+    .outlined { border-color: var(--outline); }
+    .ring {}
+}
+defaults {
+/** base */
+    body,
+    text,
+    border,
+    accent,
+/** indication */
+    target,
+    search-text,
+    search-current,
+    selection,
+    caret,
+}
+elements {
+/** backgrounds */
+    body,
+    canvas,
+/** surfaces */
+    sidebar,
+    surface,
+    main,
+    header,
+    footer,
+    aside,
+/** contaiers */
+    card,
+    picker,
+    dropdown,
+    popover,
+    modal,
+    dialog,
+    popup,
+/** content */
+    display,
+    heading,
+    text,
+    label, /*?*/
+    icon,
+/** controls */
+    input,
+    track,
+    thumb,
+    action,
+    button,
+/** markup? */
+    link,
+    code,
+    mark,
+/** overlays */
+    scrim,
+    backdrop,
+}
+components {
+    .ui-surface {}
+    .ui-surface {}
+}
+asadsad {
+    /* MARK: Elements */
+    /* Text */
+    .display {}
+    .heading {}
+    .text {}
+    .label {}
+    .icon {}
+    /* Borders */
+    .border {}
+    .divider {}
+    .line {}
+    .rule {}
+    /* Controls */
+    .outlined {}
+    .ring {}
+    /* Markup ? */
+    .link {}
+    .code {}
+    .mark {}
+    /* Overlays ? */
+    .scrim {}
+    .backdrop {}
+}
+class {
+
+/* MARK: Content */
+    /* Text colors */
+    .text-display {}
+    .text-heading {}
+    .text-default {}
+    .text-subtle {}
+    .text-muted {}
+    .text-disabled {}
+    .text-hint {}
+    .text-silent {}
+
+    /* Icon colors */
+    .icon-display {}
+    .icon-heading {}
+    .icon-default {}
+    .icon-subtle {}
+    .icon-muted {}
+    .icon-disabled {}
+    .icon-hint {}
+    .icon-silent {}
+
+
+    /* Border colors */
+    .border-base {}
+    .border-line {}
+    .border-rule {}
+    .divider-base {}
+    .outlined-base {}
+
+/* MARK: Controls */
+    .bg-input {}
+    .bg-track {}
+    .bg-thumb {}
+    .bg-button {}
+    .bg-action {}
+
+    .bg-action-resting {}
+    .bg-action-raised {}
+    .bg-action-hovered {}
+    .bg-action-focused {}
+    .bg-action-pressed {}
+    .bg-action-dragging {}
+
+/* MARK: Accentual colors */
+    /* Brand colors */
+    .text-primary {}
+    .text-secondary {}
+    .text-tertiary {}
+    .bg-primary {}
+    .bg-secondary {}
+    .bg-tertiary {}
+    /* Functional colors */
+    .text-destructive {}
+    .text-cautionary {}
+    .text-affirmative {}
+    .text-informative {}
+    .bg-destructive {}
+    .bg-cautionary {}
+    .bg-affirmative {}
+    .bg-informative {}
+    /* Theme colors */
+    .text-active {}
+    .text-accent {}
+    .text-decoration {}
+    .text-inverse {}
+    .bg-active {}
+    .bg-accent {}
+    .bg-decoration {}
+    .bg-inverse {}
+
+
+/* MARK: Surfaces */
+    /* Background colors */
+    .bg-body {}
+    .bg-canvas {}
+    /* Region colors */
+    .bg-sidebar {}
+    .bg-surface {}
+    .bg-main {}
+    .bg-header {}
+    .bg-footer {}
+    .bg-aside {}
+    /* Container colors */
+    .bg-card {}
+    .bg-picker {}
+    .bg-dropdown {}
+    .bg-popover {}
+    .bg-modal {}
+    .bg-dialog {}
+    .bg-popup {}
+    /* Highlight colors */
+    .bg-muted {}
+    .bg-silent {}
+    .bg-highlighted {}
+    .bg-accented {}
+    .bg-selected {}
+    /* Markup colors */
+    .bg-code {}
+    .bg-mark {}
+    .bg-target {}
+    .bg-search-text {}
+    .bg-search-current {}
+    .bg-selection {}
+
+/* MARK: Elevations */
+    /* Surface variants */
+    .bg-surface-bright {}
+    .bg-surface-dim {}
+    /* Surface elevations */
+    .bg-surface-lowest {}
+    .bg-surface-low {}
+    .bg-surface-base {}
+    .bg-surface-high {}
+    .bg-surface-highest {}
+
+/* MARK: Overlays */
+    .bg-scrim-soft {}
+    .bg-scrim-base {}
+    .bg-scrim-hard {}
+    .bg-backdrop-soft {}
+    .bg-backdrop-base {}
+    .bg-backdrop-hard {}
+    .backdrop-soft {}
+    .backdrop-base {}
+    .backdrop-hard {}
+
+ /* MARK: Shadows */
+    .shadow-soft {}
+    .shadow-soft {}
+    .shadow-hard {}
+
+/* MARK: Contrast */
+    .text-card-foreground {}
+    .text-popover-foreground {}
+
+    .text-muted-foreground {}
+    .text-silent-foreground {}
+    .text-highlighted-foreground {}
+    .text-accented-foreground {}
+    .text-selected-foreground {}
+
+    .text-primary-foreground {}
+    .text-secondary-foreground {}
+    .text-tertiary-foreground {}
+    .text-destructive-foreground {}
+    .text-cautionary-foreground {}
+    .text-affirmative-foreground {}
+    .text-informative-foreground {}
+
+    .text-surface-foreground {}
+    .text-sidebar-foreground {}
+    .text-sidebar-primary-foreground {}
+    .text-sidebar-accent-foreground {}
+
+    .text-code-foreground {}
+    .text-mark-foreground {}
+    .text-target-foreground {}
+    .text-search-text-foreground {}
+    .text-search-current-foreground {}
+    .text-selection-foreground {}
+
+}

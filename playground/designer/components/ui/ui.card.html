@@ -1,0 +1,83 @@
+<!-- @dsCard group="Components" viewport="700x400" name="UI primitives" subtitle="Button · IconButton · Input · Select · Checkbox · Switch · Slider · Badge · Tabs · Kbd · Tooltip" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.525.0/dist/umd/lucide.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body { background: var(--background); margin: 0; }</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, Input, Select, Checkbox, Switch, Slider, Label, Separator, Badge, Tabs, Kbd, Icon } = window.DesignerDesignSystem_6adbd8;
+
+const uiCardRow = { display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' };
+
+function UiCard() {
+  const [tab, setTab] = React.useState('design');
+  return (
+    <div style={{ padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={uiCardRow}>
+        <Button>Publish</Button>
+        <Button variant="secondary">Duplicate</Button>
+        <Button variant="outline">Export as PNG</Button>
+        <Button variant="ghost">Cancel</Button>
+        <Button variant="destructive">Delete layer</Button>
+        <Button variant="link">Learn more</Button>
+        <Button size="sm" variant="outline">Small</Button>
+        <Button disabled>Disabled</Button>
+      </div>
+      <div style={uiCardRow}>
+        <IconButton name="select" label="Select — V" active />
+        <IconButton name="frame" label="Frame — F" />
+        <IconButton name="rectangle" label="Rectangle — R" />
+        <IconButton name="text" label="Text — T" />
+        <Separator orientation="vertical" />
+        <IconButton name="undo" label="Undo" size="sm" />
+        <IconButton name="redo" label="Redo" size="sm" disabled />
+        <Separator orientation="vertical" />
+        <Badge>Updated</Badge>
+        <Badge variant="outline">12 layers</Badge>
+        <Badge variant="selection">bound · title</Badge>
+        <Badge variant="brand">New</Badge>
+        <Badge variant="destructive">Missing font</Badge>
+        <Separator orientation="vertical" />
+        <Kbd keys={['mod','K']} />
+        <Kbd>V</Kbd>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, maxWidth: 560 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <Label htmlFor="c1">Layer name</Label>
+          <Input id="c1" mono defaultValue="Frame 12" />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <Label htmlFor="c2">Search</Label>
+          <Input id="c2" placeholder="Search layers…" />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <Label htmlFor="c3">Blend mode</Label>
+          <Select id="c3" options={['Normal', 'Multiply', 'Screen', 'Overlay']} defaultValue="Normal" />
+        </div>
+      </div>
+      <div style={{ ...uiCardRow, gap: 20 }}>
+        <Checkbox label="Clip content" defaultChecked />
+        <Checkbox label="Show in exports" />
+        <div style={{ width: 160 }}><Switch label="Autosave" defaultChecked /></div>
+        <div style={{ width: 140, display: 'flex', alignItems: 'center', gap: 8 }}>
+          <Slider min={0} max={100} defaultValue={80} />
+          <span className="mono" style={{ fontSize: 'var(--text-ui-sm)', color: 'var(--muted-foreground)' }}>80%</span>
+        </div>
+        <Tabs items={[{ value: 'design', label: 'Design' }, { value: 'prototype', label: 'Prototype' }]} value={tab} onChange={setTab} />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<UiCard />);
+</script>
+</body>
+</html>

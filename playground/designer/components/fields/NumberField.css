@@ -1,0 +1,35 @@
+/* NumberField — number + unit + scrubbable affix. */
+.dsr-numfield {
+  display: flex; align-items: center;
+  min-width: 0;
+  height: var(--control-height-sm);
+  border: 1px solid transparent; border-radius: var(--radius-xs);
+  background: var(--muted);
+  transition: var(--transition-colors);
+}
+.dsr-numfield:hover { background: color-mix(in oklab, var(--muted) 72%, var(--border)); }
+.dsr-numfield:focus-within {
+  background: var(--background);
+  border-color: var(--ring);
+  box-shadow: 0 0 0 var(--ring-width) var(--ring-color);
+}
+.dsr-numfield__affix {
+  flex: none; display: inline-flex; align-items: center; justify-content: center;
+  min-width: 22px; height: 100%; padding: 0 2px;
+  color: var(--muted-foreground);
+  font-family: var(--font-mono); font-size: var(--text-ui-xs);
+  cursor: ew-resize; user-select: none;
+}
+.dsr-numfield__input {
+  flex: 1 1 auto; min-width: 0; width: 100%;
+  border: none; background: transparent; padding: 0;
+  color: var(--foreground);
+  font-family: var(--font-mono); font-size: var(--text-ui-sm);
+  font-variant-numeric: tabular-nums;
+}
+.dsr-numfield__input:focus { outline: none; }
+.dsr-numfield__unit {
+  flex: none; padding: 0 var(--space-1-5) 0 2px;
+  color: var(--muted-foreground);
+  font-family: var(--font-mono); font-size: var(--text-ui-xs);
+}

@@ -13,6 +13,6 @@
 */
 
 .text-fill-solid {
-    --style-text-color: blue;
+    --style-text-color: currentColor;
     @apply text-fill;
 }

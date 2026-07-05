@@ -1,0 +1,166 @@
+/* Fixed colors */
+:root {
+    --clear: transparent;
+    --current: currentColor;
+    --black: #000;
+    --white: #fff;
+    --darkest: var(--black);
+    --lightest: var(--white);
+    --min-contrast: var(--lightest);
+    --max-contrast: var(--darkest);
+}
+
+.light {
+    --scheme: light;
+    --min-contrast: var(--lightest);
+    --max-contrast: var(--darkest);
+}
+.dark {
+    --scheme: dark;
+    --min-contrast: var(--darkest);
+    --max-contrast: var(--lightest);
+}
+
+:root {
+    --emphasis-max: var(--max-contrast); /* oklch(0% 0 0) */
+    --emphasis-highest: var(--tone-contrast-900); /* oklch(0.205 0 0) */
+    --emphasis-higher: var(--tone-contrast-700); /*  */
+    --emphasis-high: var(--tone-contrast-500); /* oklch(0.556 0 0) */
+    --emphasis-medium: var(--tone-contrast-400); /* oklch(0.708 0 0); */
+    --emphasis-low: var(--tone-contrast-200); /* oklch(0.922 0 0); */
+    --emphasis-lower: var(--tone-contrast-100); /* oklch(0.97 0 0); */
+    --emphasis-lowest: var(--tone-contrast-50); /* oklch(0.985 0 0); */
+    --emphasis-min: var(--min-contrast); /* oklch(1 0 0) */
+}
+.dark {
+    --emphasis-max: var(--max-contrast); /* oklch(1 0 0) */
+    --emphasis-highest: var(--tone-contrast-50); /* oklch(0.985 0 0) */
+    --emphasis-higher: var(--tone-contrast-200); /* oklch(0.922 0 0) */
+    --emphasis-high: var(--tone-contrast-400); /* oklch(0.708 0 0) */
+    --emphasis-medium: var(--tone-contrast-500); /* oklch(0.556 0 0) */
+    --emphasis-low: var(--tone-contrast-700); /* oklch(0.371 0 0) */
+    --emphasis-lower: var(--tone-contrast-800); /* oklch(0.269 0 0) */
+    --emphasis-lowest: var(--tone-contrast-900); /* oklch(0.205 0 0) */
+    --emphasis-min: var(--tone-contrast-950); /* oklch(0.145 0 0) */
+}
+
+/* Semantic colors */
+:root {
+    /* MARK: Contrast */
+    --tone-contrast-50: var(--color-neutral-50);
+    --tone-contrast-100: var(--color-neutral-100);
+    --tone-contrast-200: var(--color-neutral-200);
+    --tone-contrast-300: var(--color-neutral-300);
+    --tone-contrast-400: var(--color-neutral-400);
+    --tone-contrast-500: var(--color-neutral-500);
+    --tone-contrast-600: var(--color-neutral-600);
+    --tone-contrast-700: var(--color-neutral-700);
+    --tone-contrast-800: var(--color-neutral-800);
+    --tone-contrast-900: var(--color-neutral-900);
+    --tone-contrast-950: var(--color-neutral-950);
+
+    /* MARK: Ambiental */
+    --tone-ambiental-50: var(--tone-contrast-50);
+    --tone-ambiental-100: var(--tone-contrast-100);
+    --tone-ambiental-200: var(--tone-contrast-200);
+    --tone-ambiental-300: var(--tone-contrast-300);
+    --tone-ambiental-400: var(--tone-contrast-400);
+    --tone-ambiental-500: var(--tone-contrast-500);
+    --tone-ambiental-600: var(--tone-contrast-600);
+    --tone-ambiental-700: var(--tone-contrast-700);
+    --tone-ambiental-800: var(--tone-contrast-800);
+    --tone-ambiental-900: var(--tone-contrast-900);
+    --tone-ambiental-950: var(--tone-contrast-950);
+
+    /* MARK: Primary */
+    --tone-primary-50: var(--color-indigo-50);
+    --tone-primary-100: var(--color-indigo-100);
+    --tone-primary-200: var(--color-indigo-200);
+    --tone-primary-300: var(--color-indigo-300);
+    --tone-primary-400: var(--color-indigo-400);
+    --tone-primary-500: var(--color-indigo-500);
+    --tone-primary-600: var(--color-indigo-600);
+    --tone-primary-700: var(--color-indigo-700);
+    --tone-primary-800: var(--color-indigo-800);
+    --tone-primary-900: var(--color-indigo-900);
+    --tone-primary-950: var(--color-indigo-950);
+
+    /* MARK: Secondary */
+    --tone-secondary-50: var(--tone-contrast-50);
+    --tone-secondary-100: var(--tone-contrast-100);
+    --tone-secondary-200: var(--tone-contrast-200);
+    --tone-secondary-300: var(--tone-contrast-300);
+    --tone-secondary-400: var(--tone-contrast-400);
+    --tone-secondary-500: var(--tone-contrast-500);
+    --tone-secondary-600: var(--tone-contrast-600);
+    --tone-secondary-700: var(--tone-contrast-700);
+    --tone-secondary-800: var(--tone-contrast-800);
+    --tone-secondary-900: var(--tone-contrast-900);
+    --tone-secondary-950: var(--tone-contrast-950);
+
+    /* MARK: Tertiary */
+    --tone-tertiary-50: var(--tone-primary-50);
+    --tone-tertiary-100: var(--tone-primary-100);
+    --tone-tertiary-200: var(--tone-primary-200);
+    --tone-tertiary-300: var(--tone-primary-300);
+    --tone-tertiary-400: var(--tone-primary-400);
+    --tone-tertiary-500: var(--tone-primary-500);
+    --tone-tertiary-600: var(--tone-primary-600);
+    --tone-tertiary-700: var(--tone-primary-700);
+    --tone-tertiary-800: var(--tone-primary-800);
+    --tone-tertiary-900: var(--tone-primary-900);
+    --tone-tertiary-950: var(--tone-primary-950);
+
+    /* MARK: Informative */
+    --tone-informative-50: var(--tone-ambiental-50);
+    --tone-informative-100: var(--tone-ambiental-100);
+    --tone-informative-200: var(--tone-ambiental-200);
+    --tone-informative-300: var(--tone-ambiental-300);
+    --tone-informative-400: var(--tone-ambiental-400);
+    --tone-informative-500: var(--tone-ambiental-500);
+    --tone-informative-600: var(--tone-ambiental-600);
+    --tone-informative-700: var(--tone-ambiental-700);
+    --tone-informative-800: var(--tone-ambiental-800);
+    --tone-informative-900: var(--tone-ambiental-900);
+    --tone-informative-950: var(--tone-ambiental-950);
+
+    /* MARK: Destructive */
+    --tone-destructive-50: var(--color-rose-50);
+    --tone-destructive-100: var(--color-rose-100);
+    --tone-destructive-200: var(--color-rose-200);
+    --tone-destructive-300: var(--color-rose-300);
+    --tone-destructive-400: var(--color-rose-400);
+    --tone-destructive-500: var(--color-rose-500);
+    --tone-destructive-600: var(--color-rose-600);
+    --tone-destructive-700: var(--color-rose-700);
+    --tone-destructive-800: var(--color-rose-800);
+    --tone-destructive-900: var(--color-rose-900);
+    --tone-destructive-950: var(--color-rose-950);
+
+    /* MARK: Cautionary */
+    --tone-cautionary-50: var(--color-amber-50);
+    --tone-cautionary-100: var(--color-amber-100);
+    --tone-cautionary-200: var(--color-amber-200);
+    --tone-cautionary-300: var(--color-amber-300);
+    --tone-cautionary-400: var(--color-amber-400);
+    --tone-cautionary-500: var(--color-amber-500);
+    --tone-cautionary-600: var(--color-amber-600);
+    --tone-cautionary-700: var(--color-amber-700);
+    --tone-cautionary-800: var(--color-amber-800);
+    --tone-cautionary-900: var(--color-amber-900);
+    --tone-cautionary-950: var(--color-amber-950);
+
+    /* MARK: Affirmative */
+    --tone-affirmative-50: var(--color-emerald-50);
+    --tone-affirmative-100: var(--color-emerald-100);
+    --tone-affirmative-200: var(--color-emerald-200);
+    --tone-affirmative-300: var(--color-emerald-300);
+    --tone-affirmative-400: var(--color-emerald-400);
+    --tone-affirmative-500: var(--color-emerald-500);
+    --tone-affirmative-600: var(--color-emerald-600);
+    --tone-affirmative-700: var(--color-emerald-700);
+    --tone-affirmative-800: var(--color-emerald-800);
+    --tone-affirmative-900: var(--color-emerald-900);
+    --tone-affirmative-950: var(--color-emerald-950);
+
+}

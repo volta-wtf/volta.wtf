@@ -1,0 +1,28 @@
+/* ------------------------------------------------------------------
+   Devices — viewport dimensions + breakpoints, preloaded as variables.
+   Mirror: data/devices.json (registry with metadata).
+------------------------------------------------------------------ */
+:root {
+  /* Breakpoints */
+  --bp-sm: 640px;   /* @kind other */
+  --bp-md: 768px;   /* @kind other */
+  --bp-lg: 1024px;  /* @kind other */
+  --bp-xl: 1280px;  /* @kind other */
+  --bp-2xl: 1536px; /* @kind other */
+
+  /* Device viewports (CSS px, portrait unless noted) */
+  --device-phone-sm-w: 320px;  --device-phone-sm-h: 568px;
+  --device-phone-w: 390px;     --device-phone-h: 844px;
+  --device-phone-lg-w: 430px;  --device-phone-lg-h: 932px;
+  --device-tablet-w: 768px;    --device-tablet-h: 1024px;
+  --device-tablet-lg-w: 834px; --device-tablet-lg-h: 1194px;
+  --device-laptop-w: 1280px;   --device-laptop-h: 832px;
+  --device-laptop-lg-w: 1440px;--device-laptop-lg-h: 900px;
+  --device-desktop-w: 1920px;  --device-desktop-h: 1080px;
+  --device-watch-w: 184px;     --device-watch-h: 224px;
+
+  /* Bezel chrome for DeviceFrame */
+  --device-bezel: oklch(0.205 0.004 80);
+  --device-bezel-radius-phone: 42px;
+  --device-bezel-radius-tablet: 28px;
+}

@@ -1,0 +1,695 @@
+:root {
+    --radius: 0.625rem;
+
+    /* TINT COLORS */
+
+    /** Base tints */
+    --background: var(--emphasis-min);
+    --foreground: var(--emphasis-max);
+    /* Surface system */
+    /**/--surface:          var(--emphasis-lowest);
+    /**/--ambient:          var(--foreground);
+    /**/--guidance:         var(--cautionary);
+    /* Semantic references */
+    /**/--typograpfy:       var(--foreground);
+    /**/--control:          var(--foreground);
+    /**/--state:            var(--foreground);
+    /**/--scrim:            var(--ambient);
+    /**/--backdrop:         var(--ambient);
+    /**/--shadow:           var(--ambient);
+    /** Accent system */
+    /**/--decoration:       var(--foreground);
+    /**/--accent:           var(--foreground);
+    /**/--active:           var(--primary);
+
+    /* THEME VARIABLES */
+
+    /** Backgrounds */
+    /**/--body: var(--background);
+    /**/--canvas: var(--background);
+
+    /** Containers */
+    --card: var(--background);
+    --card-foreground: var(--text);
+    /**/--picker: var(--background);
+    /**/--dropdown: var(--background);
+    --popover: var(--background);
+    --popover-foreground: var(--text);
+    /**/--modal: var(--background);
+    /**/--dialog: var(--background);
+    /**/--popup: var(--background);
+
+
+    /** Brand colors */
+    --primary: var(--emphasis-max);
+    --primary-foreground: var(--text-inverse);
+    --secondary: var(--emphasis-lower);
+    --secondary-foreground: var(--text-subtle);
+    /**/--tertiary: var(--emphasis-lowest);
+    /**/--tertiary-foreground: var(--text-subtle);
+    /** Functional colors */
+    --destructive: var(--tone-destructive-600);
+    --destructive-foreground: var(--inverse);
+    /**/--cautionary: var(--tone-cautionary-500);
+    /**/--cautionary-foreground: var(--typograpfy);
+    /**/--affirmative: var(--tone-affirmative-500);
+    /**/--affirmative-foreground: var(--inverse);
+    /**/--informative: var(--tone-informative-500);
+    /**/--informative-foreground: var(--inverse);
+
+    /** Highlights */
+    --muted: var(--emphasis-lowest);
+    --muted-foreground: var(--text-muted);
+    /**/--silent: var(--emphasis-lowest);
+    /**/--silent-foreground: var(--text-disabled);
+    /**/--highlighted: var(--emphasis-lower);
+    /**/--highlighted-foreground: var(--text-subtle);
+    /**/--accented: var(--emphasis-lowest);
+    /**/--accented-foreground: var(--text);
+    /**/--selected: var(--emphasis-lower);
+    /**/--selected-foreground: var(--text);
+
+    /** typograpfy */
+    /**/--display:              var(--ambient);
+    /**/--heading:              var(--typograpfy);
+    /**/--text:                 var(--emphasis-max);
+    /**/--text-subtle:          var(--emphasis-highest);
+    /**/--text-muted:           var(--emphasis-high);
+    /**/--text-disabled:        var(--emphasis-medium);
+    /**/--text-hint:            var(--emphasis-high);
+    /**/--text-silent:          var(--emphasis-low);
+    /**/--icon:                 var(--text);
+    /**/--icon-subtle:          var(--text-subtle);
+    /**/--icon-muted:           var(--text-muted);
+    /**/--icon-disabled:        var(--text-disabled);
+    /**/--icon-hint:            var(--text-hint);
+    /**/--icon-silent:          var(--text-silent);
+
+    /** Borders */
+    --border: var(--emphasis-low);
+    /**/--divider: var(--border);
+    /**/--line: var(--emphasis-lower);
+    /**/--rule: var(--emphasis-medium);
+
+    /** Controls */
+    /**/--outline: var(--emphasis-low);
+    --input: var(--emphasis-low);
+    /**/--track: var(--emphasis-low);
+    /**/--thumb: var(--background);
+    /**/--button: var(--emphasis-max);
+    /**/--action: var(--emphasis-low);
+
+    /** States */
+    /**/--action-resting:   color-mix(in hsl, var(--state) 0%, transparent);
+    /**/--action-raised:    color-mix(in hsl, var(--state) 8%, transparent);
+    /**/--action-hovered:   color-mix(in hsl, var(--state) 16%, transparent);
+    /**/--action-focused:   color-mix(in hsl, var(--state) 16%, transparent);
+    /**/--action-pressed:   color-mix(in hsl, var(--state) 18%, transparent);
+    /**/--action-dragging:  color-mix(in hsl, var(--state) 24%, transparent);
+
+    --active: var(--active);
+    --active-foreground: var(--text-inverse);
+    --accent: var(--accent);
+    --accent-foreground: var(--text-inverse);
+
+    /** Interactive */
+    --ring:                 var(--emphasis-medium);
+    /**/--link:             var(--active);
+    /**/--link-hovered:     color-mix(in hsl, var(--active) 80%, transparent);
+    /**/--link-visited:     color-mix(in hsl, var(--active) 80%, transparent);
+
+    --chart-1: var(--color-blue-300);
+    --chart-2: var(--color-blue-500);
+    --chart-3: var(--color-blue-600);
+    --chart-4: var(--color-blue-700);
+    --chart-5: var(--color-blue-800);
+
+    /* Regions */
+    --sidebar: var(--emphasis-lowest);
+    --sidebar-foreground: var(--text);
+    /**/--main: transparent;
+    /**/--header: transparent;
+    /**/--footer: transparent;
+    /**/--typograpfy: transparent;
+    /**/--aside: transparent;
+
+    --sidebar-primary: var(--emphasis-highest);
+    --sidebar-primary-foreground: var(--text-inverse);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
+
+    /* Markup? */
+    --code: var(--surface);
+    --code-foreground: var(--surface-foreground);
+    --code-highlight: oklch(0.96 0 0);
+    --code-number: oklch(0.56 0 0);
+    /**/--mark:                         color-mix(in hsl, var(--guidance) 80%, transparent);
+    /**/--mark-foreground:              var(--on-light);
+
+    /**/--target:                       var(--mark);
+    /**/--target-foreground:            var(--mark-foreground);
+    /**/--search-text:                  var(--target);
+    /**/--search-text-foreground:       var(--target-foreground);
+    /**/--search-current:               var(--target);
+    /**/--search-current-foreground:    var(--target-foreground);
+
+    --selection:                        var(--emphasis-max);
+    --selection-foreground:             var(--emphasis-min);
+
+    /**/--caret:                        var(--foreground);
+
+        /* Surfaces */
+    /**/--surface-tint:         var(--tertiary);
+    --surface-foreground:       var(--text);
+    /**/--surface-inverse:      var(--emphasis-lowest);
+    /**/--surface-bright:       var(--surface);
+    /**/--surface-dim:          var(--surface);
+    /* Elevations */
+    /**/--surface-lowest:       color-mix(in hsl, var(--surface), var(--surface-tint) 2%);
+    /**/--surface-low:          color-mix(in hsl, var(--surface), var(--surface-tint) 4%);
+    /**/--surface-base:         color-mix(in hsl, var(--surface), var(--surface-tint) 6%);
+    /**/--surface-high:         color-mix(in hsl, var(--surface), var(--surface-tint) 8%);
+    /**/--surface-highest:      color-mix(in hsl, var(--surface), var(--surface-tint) 12%);
+    /* Overlays */
+    --scrim-soft:       color-mix(in hsl, var(--scrim) 10%, transparent);
+    --scrim-base:       color-mix(in hsl, var(--scrim) 30%, transparent);
+    --scrim-hard:       color-mix(in hsl, var(--scrim) 50%, transparent);
+    --backdrop-soft:    color-mix(in hsl, var(--backdrop) 20%, transparent);
+    --backdrop-base:    color-mix(in hsl, var(--backdrop) 60%, transparent);
+    --backdrop-hard:    color-mix(in hsl, var(--backdrop) 80%, transparent);
+    /* Shadows */
+    --shadow-soft:      color-mix(in hsl, var(--shadow) 5%, transparent);
+    --shadow-base:      color-mix(in hsl, var(--shadow) 10%, transparent);
+    --shadow-hard:      color-mix(in hsl, var(--shadow) 15%, transparent);
+
+
+}
+
+.dark {
+
+    --background: var(--emphasis-min);
+    --foreground: var(--text);
+
+    --primary: var(--emphasis-higher);
+    --primary-foreground: var(--text-inverse);
+    --secondary: var(--emphasis-lowest);
+    --secondary-foreground: var(--text-subtle);
+    --tertiery: var(--emphasis-lowest);
+    --tertiery-foreground: var(--text-subtle);
+    --destructive: var(--color-destructive-400);
+    --destructive-foreground: var(--color-destructive-600);
+
+    --sidebar: var(--emphasis-lowest);
+    --surface: var(--emphasis-lowest);
+    --card: var(--emphasis-lowest);
+    --popover: var(--emphasis-lowest);
+
+    --muted: var(--emphasis-lowest);
+    --accent: var(--emphasis-lower);
+
+    --text: var(--emphasis-highest);
+    --text-subtle: var(--emphasis-highest);
+    --text-muted: var(--emphasis-high);
+    --text-inverse: var(--emphasis-lowest);
+
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: var(--emphasis-low);
+
+    --code: var(--surface);
+    --selection: var(--emphasis-higher);
+
+    --chart-1: var(--color-blue-300);
+    --chart-2: var(--color-blue-500);
+    --chart-3: var(--color-blue-600);
+    --chart-4: var(--color-blue-700);
+    --chart-5: var(--color-blue-800);
+
+    --sidebar-primary: var(--color-blue-700);
+    --sidebar-accent: var(--accent);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--emphasis-medium);
+
+    --code-highlight: oklch(0.27 0 0);
+    --code-number: oklch(0.72 0 0);
+
+    --surface-foreground: var(--text-muted);
+    --sidebar-foreground: var(--text-subtle);
+    --sidebar-primary-foreground: var(--text-subtle);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --card-foreground: var(--text);
+    --popover-foreground: var(--text);
+    --muted-foreground: var(--text-muted);
+    --accent-foreground: var(--text-subtle);
+    --code-foreground: var(--surface-foreground);
+    --selection-foreground: var(--text-inverse);
+}
+
+:root {
+
+    /* MARK: Spacing */
+    --scaling-layout: var(--scaling);
+    --scaling-region: var(--scaling);
+    --scaling-control: var(--scaling);
+    --scaling-element: var(--scaling);
+
+    --spacing-main: 12px;
+    --gap-main: 12px;
+
+    --spacing-layout: 12px;
+    --gap-layout: 12px;
+
+    --spacing-region: 20px;
+    --spacing-region-sm: 12px;
+
+    /* MARK: Shapes */
+
+    /* Base scale */
+    --radius-xsmall: 4px;
+    --radius-small: calc(var(--radius) - 4px);
+    --radius-medium: calc(var(--radius) - 2px);
+    --radius-large: var(--radius);
+    --radius-xlarge: calc(var(--radius) + 4px);
+    /* Element radius */
+    --radius-item: var(--radius-medium);
+    --radius-input: var(--radius-medium);
+    --radius-check: var(--radius-xsmall);
+    --radius-radio: var(--radius-medium);
+    --radius-button: var(--radius-large);
+    /* Container radius */
+    --radius-card: var(--radius-medium);
+    --radius-picker: var(--radius-medium);
+    --radius-popover: var(--radius-medium);
+    --radius-dialog: var(--radius-xlarge);
+    --radius-tools: var(--radius-medium);
+    /* Layout radius */
+
+    --radius-layout: 20px;
+    --radius-region: var(--radius-layout);
+
+    --radius-surface: var(--radius-layout);
+
+    /* MARK: Styling */
+
+    /* Borders */
+
+    --border-layout: transparent;
+    --border-region: var(--border-layout);
+
+    --border-surface: var(--border);
+
+    --divider-layout: transparent;
+    --divider-region: transparent;
+
+
+    --border-style: solid;
+    /* @kind other */
+    --line-style: var(--divider-style);
+    --rule-style: var(--divider-style);
+    --divider-style: var(--border-style);
+    --outline-style: var(--border-style);
+
+    /* Modifiers */
+    --border-width-layout: var(--border-width);
+    --border-width-region: var(--border-width);
+    --border-width-overlay: var(--border-width);
+    --border-width-element: var(--border-width);
+
+    /* MARK: Effects */
+
+    /* Shadows */
+    --shadow-field: var(--shadow-xs);
+    --shadow-action: var(--shadow-xs);
+    --shadow-card: var(--shadow-sm);
+    --shadow-picker: var(--shadow-md);
+    --shadow-popover: var(--shadow-lg);
+    --shadow-dialog: var(--shadow-xl);
+    --shadow-tools: var(--shadow-2xl);
+    /* Blurs */
+    --blur-surface-higher: var(--blur-surface);
+    --blur-surface-high: var(--blur-surface);
+    --blur-surface-base: var(--blur-surface);
+    --blur-surface-low: var(--blur-surface);
+    --blur-surface-lower: var(--blur-surface);
+    --blur-backdrop-clear: var(--blur-backdrop);
+    --blur-backdrop-focused: var(--blur-backdrop);
+
+    /* MARK: Typography */
+
+    /* Display */
+    --text-display-1: var(--text-scale-650);
+    --text-display-2: var(--text-scale-550);
+    --text-display-3: var(--text-scale-450);
+    /* Heading */
+    --text-headline: var(--text-scale-400);
+    --text-subhead: var(--text-scale-350);
+    --text-title: var(--text-scale-300);
+    --text-subtitle: var(--text-scale-250);
+    /* Copy */
+    --text-lead: var(--text-scale-150);
+    --text-body: var(--text-scale-100);
+    /* UI */
+    --text-base: var(--text-scale-075);
+    --text-small: var(--text-scale-050);
+    --text-micro: var(--text-scale-025);
+    /* Utilities */
+    --text-overline: var(--text-base);
+    --text-caption: var(--text-overline);
+    --text-footnote: var(--text-caption);
+    /* Fields */
+    --text-label: var(--text-base);
+    --text-input: var(--text-body);
+    --text-button: var(--text-body);
+    --text-input-xs: var(--text-small);
+    --text-input-sm: var(--text-label);
+    --text-input-lg: var(--text-lead);
+    --text-button-xs: var(--text-small);
+    --text-button-sm: var(--text-label);
+    --text-button-lg: var(--text-lead);
+    /* Icons */
+    --icon-size-micro: 0.5rem;
+    /* 8px */
+    --icon-size-small: 0.75rem;
+    /* 12px */
+    --icon-size-base: 1rem;
+    /* 16px */
+    --icon-size-medium: 1.25rem;
+    /* 20px */
+    --icon-size-large: 1.5rem;
+    /* 24px */
+    --icon-size-title: 2rem;
+    /* 32px */
+    --icon-size-display: 4rem;
+    /* 80px */
+
+    /* MARK: Motion */
+
+    /* Transitions */
+    --duration-hover: var(--duration-normal);
+    --duration-rest: var(--duration-fast);
+    --duration-focus: var(--duration-fast);
+    --duration-active: var(--duration-fast);
+    --duration-pressed: var(--duration-fast);
+    --duration-disabled: var(--duration-fast);
+
+    /* Animations */
+    --duration-open: var(--duration-normal);
+    --duration-close: var(--duration-fast);
+
+    /* Easing */
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    /* @kind other */
+    --ease-emphasized: cubic-bezier(0.3, 0, 0, 1);
+    /* @kind other */
+    --ease-decelerate: cubic-bezier(0, 0, 0, 1);
+    /* @kind other */
+    --ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
+    /* @kind other */
+
+    /* State transforms */
+    --transform-hover: scale(var(--scale-enlarge));
+    --transform-hover-soft: scale(var(--scale-enlarge-soft));
+    --transform-active: scale(var(--scale-shrink));
+    --transform-pressed: scale(var(--scale-shrink-strong));
+}
+
+/* MARK: STYLING */
+:root {
+
+    /* MARK: Spacing */
+    --scaling-layout: var(--scaling);
+    --scaling-region: var(--scaling);
+    --scaling-control: var(--scaling);
+    --scaling-element: var(--scaling);
+
+    --spacing-main: 12px;
+    --gap-main: 12px;
+
+    --spacing-layout: 12px;
+    --gap-layout: 12px;
+
+    --spacing-region: 20px;
+    --spacing-region-sm: 12px;
+
+    /* MARK: Shapes */
+
+    /* Base scale */
+    --radius-xsmall: 4px;
+    --radius-small: calc(var(--radius) - 4px);
+    --radius-medium: calc(var(--radius) - 2px);
+    --radius-large: var(--radius);
+    --radius-xlarge: calc(var(--radius) + 4px);
+    /* Element radius */
+    --radius-item: var(--radius-medium);
+    --radius-input: var(--radius-medium);
+    --radius-check: var(--radius-xsmall);
+    --radius-radio: var(--radius-medium);
+    --radius-button: var(--radius-large);
+    /* Container radius */
+    --radius-card: var(--radius-medium);
+    --radius-picker: var(--radius-medium);
+    --radius-popover: var(--radius-medium);
+    --radius-dialog: var(--radius-xlarge);
+    --radius-tools: var(--radius-medium);
+    /* Layout radius */
+
+    --radius-layout: 20px;
+    --radius-region: var(--radius-layout);
+
+    --radius-surface: var(--radius-layout);
+
+    /* MARK: Styling */
+
+    /* Borders */
+
+    --border-layout: transparent;
+    --border-region: var(--border-layout);
+
+    --border-surface: var(--border);
+
+    --divider-layout: transparent;
+    --divider-region: transparent;
+
+
+    --border-style: solid;
+    /* @kind other */
+    --line-style: var(--divider-style);
+    --rule-style: var(--divider-style);
+    --divider-style: var(--border-style);
+    --outline-style: var(--border-style);
+
+    /* Modifiers */
+    --border-width-layout: var(--border-width);
+    --border-width-region: var(--border-width);
+    --border-width-overlay: var(--border-width);
+    --border-width-element: var(--border-width);
+
+    /* MARK: Effects */
+
+    /* Shadows */
+    --shadow-field: var(--shadow-xs);
+    --shadow-action: var(--shadow-xs);
+    --shadow-card: var(--shadow-sm);
+    --shadow-picker: var(--shadow-md);
+    --shadow-popover: var(--shadow-lg);
+    --shadow-dialog: var(--shadow-xl);
+    --shadow-tools: var(--shadow-2xl);
+    /* Blurs */
+    --blur-surface-higher: var(--blur-surface);
+    --blur-surface-high: var(--blur-surface);
+    --blur-surface-base: var(--blur-surface);
+    --blur-surface-low: var(--blur-surface);
+    --blur-surface-lower: var(--blur-surface);
+    --blur-backdrop-clear: var(--blur-backdrop);
+    --blur-backdrop-focused: var(--blur-backdrop);
+
+    /* MARK: Typography */
+
+    /* Display */
+    --text-display-1: var(--text-scale-650);
+    --text-display-2: var(--text-scale-550);
+    --text-display-3: var(--text-scale-450);
+    /* Heading */
+    --text-headline: var(--text-scale-400);
+    --text-subhead: var(--text-scale-350);
+    --text-title: var(--text-scale-300);
+    --text-subtitle: var(--text-scale-250);
+    /* Copy */
+    --text-lead: var(--text-scale-150);
+    --text-body: var(--text-scale-100);
+    /* UI */
+    --text-base: var(--text-scale-075);
+    --text-small: var(--text-scale-050);
+    --text-micro: var(--text-scale-025);
+    /* Utilities */
+    --text-overline: var(--text-base);
+    --text-caption: var(--text-overline);
+    --text-footnote: var(--text-caption);
+    /* Fields */
+    --text-label: var(--text-base);
+    --text-input: var(--text-body);
+    --text-button: var(--text-body);
+    --text-input-xs: var(--text-small);
+    --text-input-sm: var(--text-label);
+    --text-input-lg: var(--text-lead);
+    --text-button-xs: var(--text-small);
+    --text-button-sm: var(--text-label);
+    --text-button-lg: var(--text-lead);
+    /* Icons */
+    --icon-size-micro: 0.5rem;
+    /* 8px */
+    --icon-size-small: 0.75rem;
+    /* 12px */
+    --icon-size-base: 1rem;
+    /* 16px */
+    --icon-size-medium: 1.25rem;
+    /* 20px */
+    --icon-size-large: 1.5rem;
+    /* 24px */
+    --icon-size-title: 2rem;
+    /* 32px */
+    --icon-size-display: 4rem;
+    /* 80px */
+
+    /* MARK: Motion */
+
+    /* Transitions */
+    --duration-hover: var(--duration-normal);
+    --duration-rest: var(--duration-fast);
+    --duration-focus: var(--duration-fast);
+    --duration-active: var(--duration-fast);
+    --duration-pressed: var(--duration-fast);
+    --duration-disabled: var(--duration-fast);
+
+    /* Animations */
+    --duration-open: var(--duration-normal);
+    --duration-close: var(--duration-fast);
+
+    /* Easing */
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    /* @kind other */
+    --ease-emphasized: cubic-bezier(0.3, 0, 0, 1);
+    /* @kind other */
+    --ease-decelerate: cubic-bezier(0, 0, 0, 1);
+    /* @kind other */
+    --ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
+    /* @kind other */
+
+    /* State transforms */
+    --transform-hover: scale(var(--scale-enlarge));
+    --transform-hover-soft: scale(var(--scale-enlarge-soft));
+    --transform-active: scale(var(--scale-shrink));
+    --transform-pressed: scale(var(--scale-shrink-strong));
+}
+
+/* MARK: Brand & functional emphasis — per-scheme orientation
+   :root (above) holds the DARK orientation. These blocks let a `.light` or
+   `.dark` island override correctly, regardless of the surrounding scheme. */
+
+:root {
+    /* Brand & functional emphasis — fill ladders per role.
+       *-highest = strongest / most legible fill … *-lowest = subtlest tint nearest the surface.
+       DARK is the default: highest reaches the LIGHT end of each ramp so it pops on dark
+       surfaces; lowest reaches the DARK end. The `.light` block below mirrors this. */
+    --primary-highest: var(--tone-primary-200);
+    --primary-higher: var(--tone-primary-300);
+    --primary-high: var(--tone-primary-400);
+    --primary-low: var(--tone-primary-700);
+    --primary-lower: var(--tone-primary-800);
+    --primary-lowest: var(--tone-primary-900);
+
+    --secondary-highest: var(--tone-secondary-200);
+    --secondary-higher: var(--tone-secondary-300);
+    --secondary-high: var(--tone-secondary-400);
+    --secondary-low: var(--tone-secondary-700);
+    --secondary-lower: var(--tone-secondary-800);
+    --secondary-lowest: var(--tone-secondary-900);
+
+    --tertiary-highest: var(--tone-tertiary-200);
+    --tertiary-higher: var(--tone-tertiary-300);
+    --tertiary-high: var(--tone-tertiary-400);
+    --tertiary-low: var(--tone-tertiary-700);
+    --tertiary-lower: var(--tone-tertiary-800);
+    --tertiary-lowest: var(--tone-tertiary-900);
+
+    --informative-highest: var(--tone-informative-200);
+    --informative-higher: var(--tone-informative-300);
+    --informative-high: var(--tone-informative-400);
+    --informative-low: var(--tone-informative-700);
+    --informative-lower: var(--tone-informative-800);
+    --informative-lowest: var(--tone-informative-900);
+
+    --destructive-highest: var(--tone-destructive-200);
+    --destructive-higher: var(--tone-destructive-300);
+    --destructive-high: var(--tone-destructive-400);
+    --destructive-low: var(--tone-destructive-700);
+    --destructive-lower: var(--tone-destructive-800);
+    --destructive-lowest: var(--tone-destructive-900);
+
+    --cautionary-highest: var(--tone-cautionary-200);
+    --cautionary-higher: var(--tone-cautionary-300);
+    --cautionary-high: var(--tone-cautionary-400);
+    --cautionary-low: var(--tone-cautionary-700);
+    --cautionary-lower: var(--tone-cautionary-800);
+    --cautionary-lowest: var(--tone-cautionary-900);
+
+    --affirmative-highest: var(--tone-affirmative-200);
+    --affirmative-higher: var(--tone-affirmative-300);
+    --affirmative-high: var(--tone-affirmative-400);
+    --affirmative-low: var(--tone-affirmative-700);
+    --affirmative-lower: var(--tone-affirmative-800);
+    --affirmative-lowest: var(--tone-affirmative-900);
+}
+
+.light {
+    --primary-highest: var(--tone-primary-900);
+    --primary-higher: var(--tone-primary-800);
+    --primary-high: var(--tone-primary-700);
+    --primary-low: var(--tone-primary-200);
+    --primary-lower: var(--tone-primary-100);
+    --primary-lowest: var(--tone-primary-50);
+
+    --secondary-highest: var(--tone-secondary-900);
+    --secondary-higher: var(--tone-secondary-800);
+    --secondary-high: var(--tone-secondary-700);
+    --secondary-low: var(--tone-secondary-200);
+    --secondary-lower: var(--tone-secondary-100);
+    --secondary-lowest: var(--tone-secondary-50);
+
+    --tertiary-highest: var(--tone-tertiary-900);
+    --tertiary-higher: var(--tone-tertiary-800);
+    --tertiary-high: var(--tone-tertiary-700);
+    --tertiary-low: var(--tone-tertiary-200);
+    --tertiary-lower: var(--tone-tertiary-100);
+    --tertiary-lowest: var(--tone-tertiary-50);
+
+    --informative-highest: var(--tone-informative-900);
+    --informative-higher: var(--tone-informative-800);
+    --informative-high: var(--tone-informative-700);
+    --informative-low: var(--tone-informative-200);
+    --informative-lower: var(--tone-informative-100);
+    --informative-lowest: var(--tone-informative-50);
+
+    --destructive-highest: var(--tone-destructive-900);
+    --destructive-higher: var(--tone-destructive-800);
+    --destructive-high: var(--tone-destructive-700);
+    --destructive-low: var(--tone-destructive-200);
+    --destructive-lower: var(--tone-destructive-100);
+    --destructive-lowest: var(--tone-destructive-50);
+
+    --cautionary-highest: var(--tone-cautionary-900);
+    --cautionary-higher: var(--tone-cautionary-800);
+    --cautionary-high: var(--tone-cautionary-700);
+    --cautionary-low: var(--tone-cautionary-200);
+    --cautionary-lower: var(--tone-cautionary-100);
+    --cautionary-lowest: var(--tone-cautionary-50);
+
+    --affirmative-highest: var(--tone-affirmative-900);
+    --affirmative-higher: var(--tone-affirmative-800);
+    --affirmative-high: var(--tone-affirmative-700);
+    --affirmative-low: var(--tone-affirmative-200);
+    --affirmative-lower: var(--tone-affirmative-100);
+    --affirmative-lowest: var(--tone-affirmative-50);
+}

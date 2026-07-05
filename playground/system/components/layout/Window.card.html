@@ -1,0 +1,104 @@
+<!-- @dsCard group="Utilities" viewport="900x680" name="Window" subtitle="generalized window frame — topbar, toolbar, tabbar variants, viewport" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 32px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  .grid { display: flex; flex-direction: column; gap: 28px; max-width: 820px; }
+  .lbl { font-size: 12px; font-weight: 600; color: var(--muted-foreground); margin-bottom: 8px; letter-spacing: -0.01em; }
+  .ph { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; height: 100%; min-height: 0; border: 1px dashed color-mix(in oklch, var(--muted-foreground) 40%, transparent); border-radius: 8px; color: var(--muted-foreground); font-size: 12px; box-sizing: border-box; }
+  .bar-txt { font-size: 12px; color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Window, WindowTopbar, WindowToolbar, WindowTabbar, WindowContent, Icon } = window.TestDesignSystem_be7089;
+
+function Ph({ label, style, icon }) { return <div className="ph" style={style}>{icon && <Icon name="square-dashed" size={16} />}{label}</div>; }
+const noop = () => {};
+const TABS = [
+  { id: "a", title: "Overview", active: true, onClose: noop },
+  { id: "b", title: "Activity", onClose: noop },
+  { id: "c", title: "Settings", onClose: noop },
+];
+
+function App() {
+  return (
+    <div className="grid">
+      <div>
+        <div className="lbl">Topbar + toolbar + viewport (size md)</div>
+        <Window size="md" style={{ height: 220 }}>
+          <WindowTopbar onClose={noop} onMinimize={noop} onMaximize={noop}><Ph label="Topbar space" /></WindowTopbar>
+          <WindowToolbar><Ph label="Toolbar space" /></WindowToolbar>
+          <WindowContent><Ph label="Viewport" style={{ minHeight: "100%", margin: 8 }} /></WindowContent>
+        </Window>
+      </div>
+
+      <div>
+        <div className="lbl">Platform — macOS vs Windows</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <Window platform="macos" style={{ height: 120 }}>
+            <WindowTopbar onClose={noop} onMinimize={noop} onMaximize={noop}><Ph label="macOS" /></WindowTopbar>
+            <WindowContent><Ph label="Viewport" style={{ minHeight: "100%", margin: 8 }} /></WindowContent>
+          </Window>
+          <Window platform="macos" variant="muted">
+            <WindowTopbar onClose={noop} onMinimize={noop} onMaximize={noop}><Ph label="macOS · muted" /></WindowTopbar>
+          </Window>
+          <Window platform="windows" style={{ height: 120 }}>
+            <WindowTopbar onClose={noop} onMinimize={noop} onMaximize={noop}><Ph label="Windows" /></WindowTopbar>
+            <WindowContent><Ph label="Viewport" style={{ minHeight: "100%", margin: 8 }} /></WindowContent>
+          </Window>
+        </div>
+      </div>
+
+      <div>
+        <div className="lbl">Sizes — sm · md · lg</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {["sm", "md", "lg"].map((s) => (
+            <Window key={s} size={s}>
+              <WindowTopbar onClose={noop} onMinimize={noop} onMaximize={noop}><Ph label={"size " + s} /></WindowTopbar>
+            </Window>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <div className="lbl">WindowTabbar — pill</div>
+        <Window size="md" style={{ height: 160 }}>
+          <WindowTopbar onClose={noop} onMinimize={noop} onMaximize={noop}><Ph label="Topbar" /></WindowTopbar>
+          <WindowTabbar variant="pill" tabs={TABS} onNewTab={noop} />
+          <WindowContent><Ph label="Viewport" style={{ minHeight: "100%", margin: 8 }} /></WindowContent>
+        </Window>
+      </div>
+
+      <div>
+        <div className="lbl">WindowTabbar — tab</div>
+        <Window size="md" style={{ height: 160 }}>
+          <WindowTopbar onClose={noop} onMinimize={noop} onMaximize={noop}><Ph label="Topbar" /></WindowTopbar>
+          <WindowTabbar variant="tab" tabs={TABS} onNewTab={noop} />
+          <WindowContent><Ph label="Viewport" style={{ minHeight: "100%", margin: 8 }} /></WindowContent>
+        </Window>
+      </div>
+
+      <div>
+        <div className="lbl">WindowTabbar — block</div>
+        <Window size="md" style={{ height: 160 }}>
+          <WindowTopbar onClose={noop} onMinimize={noop} onMaximize={noop}><Ph label="Topbar" /></WindowTopbar>
+          <WindowTabbar variant="block" tabs={TABS} onNewTab={noop} />
+          <WindowContent><Ph label="Viewport" style={{ minHeight: "100%", margin: 8 }} /></WindowContent>
+        </Window>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

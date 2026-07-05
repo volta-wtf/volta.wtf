@@ -1,0 +1,29 @@
+/* ============================================================
+   TEXT PRIMITIVES — Display / Heading / Text.
+   Visual scale only; semantic element is chosen by the component's `as`.
+   ============================================================ */
+
+/* Display */
+.ds-display { margin: 0; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; text-wrap: balance; }
+.ds-display--sm { font-size: 2.5rem; }
+.ds-display--md { font-size: 3.25rem; }
+.ds-display--lg { font-size: 4rem; }
+.ds-display--xl { font-size: 5rem; }
+
+/* Heading */
+.ds-heading { margin: 0; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; text-wrap: balance; }
+.ds-heading--1 { font-size: 2.25rem; }
+.ds-heading--2 { font-size: 1.875rem; }
+.ds-heading--3 { font-size: 1.5rem; }
+.ds-heading--4 { font-size: 1.25rem; }
+.ds-heading--5 { font-size: 1.125rem; }
+.ds-heading--6 { font-size: 1rem; }
+
+/* Text */
+.ds-text { margin: 0; line-height: 1.6; }
+.ds-text--xs { font-size: 0.75rem; }
+.ds-text--sm { font-size: 0.875rem; }
+.ds-text--base { font-size: 1rem; }
+.ds-text--lg { font-size: 1.125rem; }
+.ds-text--muted { color: var(--muted-foreground); }
+.ds-text--lead { font-size: 1.25rem; line-height: 1.6; color: var(--muted-foreground); }

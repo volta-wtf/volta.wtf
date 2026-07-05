@@ -107,6 +107,27 @@ async function collectClasses(conf: CategoryConfig) {
   const files = await globby(conf.classesGlobs ?? [], { cwd: WEB_ROOT });
   const items: any[] = [];
 
+  // Obtener el orden de los imports del index.css si existe
+  let importOrder: string[] = [];
+  if (conf.classesGlobs && conf.classesGlobs.length > 0) {
+    // Encontrar el primer directorio base de los globs (ej: "styles/classes/text/**/*.css")
+    const firstGlob = conf.classesGlobs[0];
+    if (firstGlob) {
+      const baseDirMatch = firstGlob.match(/^(.+?)\/\*\*/);
+      if (baseDirMatch && baseDirMatch[1]) {
+        const baseDir = baseDirMatch[1];
+        const indexPath = path.join(WEB_ROOT, baseDir, 'index.css');
+
+        if (fs.existsSync(indexPath)) {
+          const indexContent = fs.readFileSync(indexPath, 'utf8');
+          const importMatches = Array.from(indexContent.matchAll(/@import\s+["']\.\/(.+?)["'];?/g));
+          importOrder = importMatches.map(match => match[1]).filter((fileName): fileName is string => fileName !== undefined);
+          console.log(`📋 Orden de index.css encontrado: ${importOrder.length} archivos`);
+        }
+      }
+    }
+  }
+
   for (const rel of files) {
     // Saltar archivos index.css
     if (rel.endsWith('index.css')) {
@@ -177,6 +198,26 @@ async function collectClasses(conf: CategoryConfig) {
         console.log(`⚠️  ${firstClass} (${rel}) - sin metadatos${usesData ? ' [usesData]' : ''}`);
       }
     }
+  }
+
+  // Ordenar según el orden del index.css si existe, sino alfabéticamente
+  if (importOrder.length > 0) {
+    return items.sort((a, b) => {
+      const aFileName = path.basename(a.sourceFile);
+      const bFileName = path.basename(b.sourceFile);
+      const aIndex = importOrder.indexOf(aFileName);
+      const bIndex = importOrder.indexOf(bFileName);
+
+      // Si ambos están en el orden, usar ese orden
+      if (aIndex !== -1 && bIndex !== -1) {
+        return aIndex - bIndex;
+      }
+      // Si solo uno está en el orden, el que está primero
+      if (aIndex !== -1) return -1;
+      if (bIndex !== -1) return 1;
+      // Si ninguno está, ordenar alfabéticamente al final
+      return a.title.localeCompare(b.title);
+    });
   }
 
   return items.sort((a, b) => a.title.localeCompare(b.title));
@@ -323,16 +364,8 @@ async function generateCSSIndexes(baseDir: string) {
       }
     }
 
-    // Generar imports: primero archivos CSS locales, luego subdirectorios
-    for (const file of cssFiles.sort()) {
-      imports.push(`@import "./${file}";`);
-    }
-    for (const subdir of subdirs.sort()) {
-      imports.push(`@import "./${subdir}/index.css";`);
-    }
-
     // Escribir index.css si hay imports
-    if (imports.length > 0) {
+    if (cssFiles.length > 0 || subdirs.length > 0) {
       const indexPath = path.join(dir, 'index.css');
 
       // Verificar si el archivo ya existe
@@ -345,48 +378,103 @@ async function generateCSSIndexes(baseDir: string) {
           .filter(line => line.trim().startsWith('@import'))
           .map(line => line.trim());
 
+        // Extraer nombres de archivos del orden existente
+        const existingOrder: string[] = [];
+        for (const imp of existingImports) {
+          const match = imp.match(/@import\s+["']\.\/(.+?)["'];?/);
+          if (match && match[1]) {
+            existingOrder.push(match[1]);
+          }
+        }
+
+        // Crear un Set de archivos existentes para verificación rápida
+        const existingFilesSet = new Set(existingOrder);
+
         // Encontrar imports que deben eliminarse (archivos que ya no existen)
         const removedImports = existingImports.filter(imp => {
-          // Extraer el nombre del archivo del import
           const match = imp.match(/@import\s+["']\.\/(.+?)["'];?/);
-          if (!match) return false;
+          if (!match || !match[1]) return false;
           const fileName = match[1];
-          // Verificar si el archivo existe
           const filePath = path.join(dir, fileName);
           return !fs.existsSync(filePath);
         });
 
-        // Encontrar imports nuevos que no existen
-        const newImports = imports.filter(imp => !existingImports.includes(imp));
+        // Encontrar archivos nuevos que no están en el orden existente
+        const newFiles = cssFiles.filter(file => !existingFilesSet.has(file));
+        const newSubdirs = subdirs.filter(subdir => !existingFilesSet.has(`${subdir}/index.css`));
+
+        // Construir el orden preservando el orden manual existente
+        const orderedImports: string[] = [];
+
+        // Primero mantener el orden existente de archivos que aún existen
+        for (const fileName of existingOrder) {
+          const filePath = path.join(dir, fileName);
+          if (fs.existsSync(filePath)) {
+            // Verificar si es un archivo CSS o un subdirectorio
+            if (fileName.endsWith('/index.css')) {
+              const subdirName = fileName.replace('/index.css', '');
+              if (subdirs.includes(subdirName)) {
+                orderedImports.push(`@import "./${fileName}";`);
+              }
+            } else if (cssFiles.includes(fileName)) {
+              orderedImports.push(`@import "./${fileName}";`);
+            }
+          }
+        }
+
+        // Agregar archivos nuevos al final, ordenados alfabéticamente
+        for (const file of newFiles.sort()) {
+          orderedImports.push(`@import "./${file}";`);
+        }
+        for (const subdir of newSubdirs.sort()) {
+          orderedImports.push(`@import "./${subdir}/index.css";`);
+        }
 
         // Comparar si hay cambios
-        const hasChanges = removedImports.length > 0 || newImports.length > 0;
+        const hasChanges = removedImports.length > 0 || newFiles.length > 0 || newSubdirs.length > 0;
 
         if (hasChanges) {
-          // Regenerar completamente el archivo con los imports correctos
-          const content = `/* AUTOGENERATED — run: pnpm run gen:catalog */\n${imports.join('\n')}\n`;
+          // Regenerar el archivo preservando el orden manual
+          const content = `/* AUTOGENERATED — run: pnpm run gen:catalog */\n${orderedImports.join('\n')}\n`;
           fs.writeFileSync(indexPath, content, 'utf8');
 
           const relPath = path.relative(WEB_ROOT, indexPath);
           const changes = [];
           if (removedImports.length > 0) changes.push(`${removedImports.length} eliminados`);
-          if (newImports.length > 0) changes.push(`${newImports.length} nuevos`);
+          if (newFiles.length > 0 || newSubdirs.length > 0) {
+            const totalNew = newFiles.length + newSubdirs.length;
+            changes.push(`${totalNew} nuevos`);
+          }
           console.log(`  ✔ ${relPath} (${changes.join(', ')})`);
         } else {
           const relPath = path.relative(WEB_ROOT, indexPath);
           console.log(`  ✔ ${relPath} (sin cambios)`);
         }
+
+        // Retornar los imports ordenados preservados (ya sea con cambios o sin cambios)
+        return orderedImports;
       } else {
-        // Crear nuevo archivo
-        const content = `/* AUTOGENERATED — run: pnpm run gen:catalog */\n${imports.join('\n')}\n`;
+        // Crear nuevo archivo - ordenar alfabéticamente
+        const newImports: string[] = [];
+        for (const file of cssFiles.sort()) {
+          newImports.push(`@import "./${file}";`);
+        }
+        for (const subdir of subdirs.sort()) {
+          newImports.push(`@import "./${subdir}/index.css";`);
+        }
+        const content = `/* AUTOGENERATED — run: pnpm run gen:catalog */\n${newImports.join('\n')}\n`;
         fs.writeFileSync(indexPath, content, 'utf8');
 
         const relPath = path.relative(WEB_ROOT, indexPath);
         console.log(`  ✔ ${relPath} (nuevo)`);
+
+        // Retornar los imports generados
+        return newImports;
       }
     }
 
-    return imports;
+    // Si no hay archivos CSS ni subdirectorios, retornar array vacío
+    return [];
   }
 
   console.log(`\n📝 Generando archivos index.css en ${baseDir}...`);

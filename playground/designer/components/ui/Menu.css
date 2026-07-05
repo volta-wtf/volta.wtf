@@ -1,0 +1,24 @@
+/* Menu — dropdown / context menu (popover surface). */
+.dsr-menu {
+  min-width: 180px; padding: var(--space-1);
+  background: color-mix(in oklab, var(--popover) 94%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--popover-foreground);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popover);
+}
+.dsr-menu__item {
+  display: flex; align-items: center; gap: var(--space-2);
+  height: var(--control-height); padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-ui); color: var(--foreground);
+  cursor: default; user-select: none;
+}
+.dsr-menu__item:hover { background: var(--accent); }
+.dsr-menu__item.is-danger { color: var(--destructive); }
+.dsr-menu__item.is-disabled { opacity: 0.5; pointer-events: none; }
+.dsr-menu__icon { display: inline-flex; color: var(--muted-foreground); width: 16px; justify-content: center; }
+.dsr-menu__item.is-danger .dsr-menu__icon { color: var(--destructive); }
+.dsr-menu__title { flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dsr-menu__sep { height: 1px; margin: var(--space-1) var(--space-2); background: var(--border); }

@@ -1,0 +1,24 @@
+<!-- @dsCard group="1.3 · Spacing & Elevation" viewport="700x150" name="Radius" subtitle="Derived from --radius: 0.625rem" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 20px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  .row { display: flex; gap: 18px; align-items: flex-end; }
+  .c { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .box { width: 72px; height: 56px; background: var(--secondary); border: 1px solid var(--border); }
+  .n { font: var(--font-weight-normal) 10px/1 var(--font-mono); color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="c"><div class="box" style="border-radius:var(--radius-sm)"></div><span class="n">sm</span></div>
+    <div class="c"><div class="box" style="border-radius:var(--radius-md)"></div><span class="n">md</span></div>
+    <div class="c"><div class="box" style="border-radius:var(--radius-lg)"></div><span class="n">lg</span></div>
+    <div class="c"><div class="box" style="border-radius:var(--radius-xl)"></div><span class="n">xl</span></div>
+    <div class="c"><div class="box" style="border-radius:9999px"></div><span class="n">full</span></div>
+  </div>
+</body>
+</html>

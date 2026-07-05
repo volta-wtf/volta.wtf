@@ -1,0 +1,140 @@
+/*
+input:     Input, Select
+button:    Button, Toggle
+media:     Video, Image, etc.
+list:
+item:      List, Grid, Tab
+card:      Card, Menu
+popover:   Popover, Dropdown, Pickers
+modal:     Modal, Drawer, Alert
+tool:      Listbox, Tooltip, Toast
+layout:    Headers, Sections, Footers
+*/
+
+/* Elements colors */
+:root {
+    /* Surfaces colors */
+    --surface-media:      var(--variant);
+    --surface-list:       var(--clear);
+    --surface-item:       var(--clear);
+    --surface-card:       var(--surface);
+    --surface-popover:    var(--surface);
+    --surface-modal:      var(--surface);
+    --surface-tool:       var(--surface);
+
+    /* TODO: Revisar si es necesaria el nombre -surface- en la variable */
+    /*
+    --input:              var(--surface);
+    --button:             var(--surface);
+    --item:               var(--surface);
+    --card:               var(--surface);
+    --media:              var(--variant);
+    --popover:            var(--surface-lower);
+    --dialog:             var(--surface-low);
+    --tool:               var(--foreground);
+    *
+
+    /* Background colors */
+    /* TODO: Revisar si es necesario renombrar el elemento -media a -image */
+    --color-surface-media: var(--color-variant);
+    --color-surface-list: var(--color-clear);
+    --color-surface-item: var(--color-clear);
+    --color-surface-card: var(--color-surface);
+    --color-surface-popover: var(--color-surface);
+    --color-surface-modal: var(--color-surface);
+    --color-surface-tool: var(--color-surface);
+
+    /* Decorative colors */
+    --color-border-input: var(--color-outline);
+    --color-border-button: var(--color-outline);
+    --color-border-media: var(--color-clear);
+    --color-border-list: var(--color-clear);
+    --color-border-item: var(--color-border);
+    --color-border-card: var(--color-border-item);
+    --color-border-popover: var(--color-border);
+    --color-border-modal: var(--color-border-popover);
+    --color-border-tool: var(--color-border-modal);
+    --color-border-layout: var(--color-clear);
+
+    /* Decorative colors */
+    --color-divider-input: var(--color-border-input);
+    --color-divider-button: var(--color-border-button);
+    --color-divider-media: var(--color-border-media);
+    --color-divider-list: var(--color-divider);
+    --color-divider-item: var(--color-divider);
+    --color-divider-card: var(--color-divider);
+    --color-divider-popover: var(--color-divider);
+    --color-divider-modal: var(--color-divider-popover);
+    --color-divider-tool: var(--color-divider-popover);
+    --color-divider-layout: var(--color-clear);
+
+    --border-width-input: var(--border-width);
+    --border-width-button: var(--border-width);
+    --border-width-media: var(--border-width-none);
+    --border-width-list: var(--border-width-none);
+    --border-width-item: var(--border-width);
+    --border-width-card: var(--border-width);
+    --border-width-popover: var(--border-width-none);
+    --border-width-modal: var(--border-width-none);
+    --border-width-tool: var(--border-width-none);
+    --border-width-layout: var(--border-width-none);
+
+    --border-style-input: var(--border-style);
+    --border-style-button: var(--border-style);
+    --border-style-media: var(--border-style-none);
+    --border-style-list: var(--border-style-none);
+    --border-style-item: var(--border-style);
+    --border-style-card: var(--border-style);
+    --border-style-popover: var(--border-style-none);
+    --border-style-dialog: var(--border-style-none);
+    --border-style-tool: var(--border-style-none);
+    --border-style-layout: var(--border-style-none);
+
+    /* Rounded corners */
+    --radius-input: var(--radius-sm);
+    --radius-button: var(--radius-sm);
+    --radius-media: initial;
+    --radius-list: initial;
+    --radius-item: initial;
+    --radius-card: var(--radius-md);
+    --radius-popover: var(--radius-card);
+    --radius-modal: var(--radius-popover);
+    --radius-tool: var(--radius-modal);
+    --radius-layout: initial;
+
+    /* Shadows */
+    --shadow-input: var(--shadow-sm);
+    --shadow-button: var(--shadow-sm);
+    --shadow-media: initial;
+    --shadow-list: initial;
+    --shadow-item: initial;
+    --shadow-card: var(--shadow-sm);
+    --shadow-popover: var(--shadow-xl);
+    --shadow-modal: var(--shadow-sm);
+    --shadow-tool: var(--shadow-sm);
+    --shadow-layout: initial;
+
+    /* Spacing */
+    --spacing-input: --spacing(2);
+    --spacing-button: --spacing(2);
+    --spacing-list: --spacing(2);
+    --spacing-item: --spacing(2);
+    --spacing-card: --spacing(2);
+    --spacing-popover: --spacing(2);
+    --spacing-modal: --spacing(2);
+    --spacing-tool: --spacing(2);
+    --spacing-layout: --spacing(2);
+
+    /* Gaps */
+    --gap-card: --spacing(6);
+    --gap-input: --spacing(4);
+    --gap-button: --spacing(4);
+    --gap-list: --spacing(4);
+    --gap-item: --spacing(4);
+    --gap-card: --spacing(4);
+    --gap-popover: --spacing(4);
+    --gap-modal: --spacing(4);
+    --gap-tool: --spacing(4);
+    --gap-layout: --spacing(4);
+
+}

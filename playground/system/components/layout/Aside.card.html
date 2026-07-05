@@ -1,0 +1,73 @@
+<!-- @dsCard group="Layout" viewport="760x420" name="Aside" subtitle="app layout shell — switch variant" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 24px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  #root { display: flex; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Aside, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarMenuBadge, SidebarTrigger, Tabs, TabsList, TabsTrigger, Toggle, ToggleGroup, ToggleGroupItem, Icon } = window.TestDesignSystem_be7089;
+function App(){
+  const [variant, setVariant] = React.useState("inset");
+  const [side, setSide] = React.useState("right");
+  const [collapsible, setCollapsible] = React.useState("offcanvas");
+  const sidebar = (
+    <SidebarContent>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, padding: "var(--spacing-2) var(--spacing-2) 0" }}>
+        <span style={{ fontSize: 13, fontWeight: 600 }}>Acme Inc</span>
+        <SidebarTrigger className="ds-btn--icon-sm" aria-label="Close aside" style={{ margin: variant === "floating" ? 0 : "0.5rem" }}><Icon name="x" size={16} /></SidebarTrigger>
+      </div>
+      <SidebarGroup>
+        <SidebarGroupLabel>Platform</SidebarGroupLabel>
+        <SidebarMenu>
+          <SidebarMenuItem><SidebarMenuButton isActive><Icon name="home" /> Dashboard</SidebarMenuButton></SidebarMenuItem>
+          <SidebarMenuItem><SidebarMenuButton><Icon name="inbox" /> Inbox</SidebarMenuButton><SidebarMenuBadge>4</SidebarMenuBadge></SidebarMenuItem>
+          <SidebarMenuItem><SidebarMenuButton><Icon name="calendar" /> Calendar</SidebarMenuButton></SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarGroup>
+    </SidebarContent>
+  );
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 16, width: "100%" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+        <Tabs value={variant} onValueChange={(v) => v && setVariant(v)}>
+          <TabsList>
+            <TabsTrigger value="sidebar">Sidebar</TabsTrigger>
+            <TabsTrigger value="floating">Floating</TabsTrigger>
+            <TabsTrigger value="inset">Inset</TabsTrigger>
+          </TabsList>
+        </Tabs>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Toggle variant="outline" size="sm" pressed={collapsible === "icon"} onPressedChange={(p) => setCollapsible(p ? "icon" : "offcanvas")} aria-label="Collapse to icon rail instead of hiding"><Icon name="panel-collapse" /></Toggle>
+          <ToggleGroup type="single" variant="outline" size="sm" value={side} onValueChange={(v) => v && setSide(v)}>
+            <ToggleGroupItem value="left" aria-label="Sidebar on left"><Icon name="sidebar-left" /></ToggleGroupItem>
+            <ToggleGroupItem value="right" aria-label="Sidebar on right"><Icon name="sidebar-right" /></ToggleGroupItem>
+          </ToggleGroup>
+        </div>
+      </div>
+      <Aside key={variant + side} variant={variant} side={side} collapsible={collapsible} sidebar={sidebar} style={{ height: 300, border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden" }}>
+        <div style={{ padding: 20, height: "100%", boxSizing: "border-box", display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, flexDirection: side === "right" ? "row-reverse" : "row" }}>
+            <SidebarTrigger className="ds-sidebar-inset-trigger ds-btn--icon-sm"><Icon name={side === "right" ? "sidebar-right" : "sidebar-left"} size={16} /></SidebarTrigger>
+            <div style={{ flex: 1, fontSize: 16, fontWeight: 600 }}>Dashboard</div>
+          </div>
+        </div>
+      </Aside>
+      <div style={{ fontSize: 12, color: "var(--muted-foreground)" }}>Aside layout · {variant} variant · {side} side · {collapsible} collapse</div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

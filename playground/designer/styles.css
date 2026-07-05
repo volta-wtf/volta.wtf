@@ -1,0 +1,18 @@
+/* ==================================================================
+   Designer DS — global stylesheet entry point.
+   @import lines only. Everything reachable from here ships to
+   consumers: tokens first, element base last.
+   ================================================================== */
+@import url('./tokens/fonts.css');
+@import url('./tokens/openprops.css'); /* primitive layer — must precede semantic tokens */
+@import url('./tokens/colors.css');
+@import url('./tokens/typography.css');
+@import url('./tokens/spacing.css');
+@import url('./tokens/devices.css');
+@import url('./tokens/radius.css');
+@import url('./tokens/shadows.css');
+@import url('./tokens/motion.css');
+@import url('./tokens/tiers.css'); /* optional 4-tier demo — inert unless [data-tiers] */
+@import url('./tokens/base.css');
+/* Component styles — one sheet per component, indexed per group */
+@import url('./components/components.css');

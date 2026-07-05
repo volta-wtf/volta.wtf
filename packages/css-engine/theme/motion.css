@@ -1,0 +1,21 @@
+:root {
+
+  /* Transitions */
+  --duration-hover:       var(--duration-normal);
+  --duration-rest:        var(--duration-fast);
+  --duration-focus:       var(--duration-fast);
+  --duration-active:      var(--duration-fast);
+  --duration-pressed:     var(--duration-fast);
+  --duration-disabled:    var(--duration-fast);
+
+  /* Animations */
+  --duration-open:        var(--duration-normal);
+  --duration-close:       var(--duration-fast);
+
+  /* State scale ratios */
+  --transform-hover:      scale(var(--scale-enlarge));
+  --transform-hover-soft: scale(var(--scale-enlarge-soft));
+  --transform-active:     scale(var(--scale-shrink));
+  --transform-pressed:    scale(var(--scale-shrink-strong));
+
+}

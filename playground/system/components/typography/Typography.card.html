@@ -1,0 +1,48 @@
+<!-- @dsCard group="Typography" viewport="720x900" name="Typography" subtitle="shadcn/ui text elements — H1–H4, P, lists, code, lead, muted…" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 32px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  .row { display: grid; grid-template-columns: 90px 1fr; gap: 20px; align-items: baseline; padding: 14px 0; border-top: 1px solid var(--border); }
+  .tag { font-size: 12px; font-family: var(--font-mono); color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { H1, H2, H3, H4, P, Blockquote, InlineCode, Lead, Large, Small, Muted, List } = window.TestDesignSystem_be7089;
+
+function Row({ tag, children }) {
+  return <div className="row"><span className="tag">{tag}</span><div>{children}</div></div>;
+}
+
+function App(){
+  return (
+    <div style={{ maxWidth: 640 }}>
+      <Row tag="H1"><H1>The Joke Tax Chronicles</H1></Row>
+      <Row tag="H2"><H2>The People of the Kingdom</H2></Row>
+      <Row tag="H3"><H3>The Joke Tax</H3></Row>
+      <Row tag="H4"><H4>People stopped telling jokes</H4></Row>
+      <Row tag="Lead"><Lead>A modal dialog that interrupts the user with important content and expects a response.</Lead></Row>
+      <Row tag="P"><P>The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax.</P></Row>
+      <Row tag="Blockquote"><Blockquote>"After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."</Blockquote></Row>
+      <Row tag="List"><List><li>1st level of puns: 5 gold coins</li><li>2nd level of jokes: 10 gold coins</li><li>3rd level of one-liners: 20 gold coins</li></List></Row>
+      <Row tag="Code">You can use <InlineCode>@radix-ui/react-alert-dialog</InlineCode> to build this.</Row>
+      <Row tag="Large"><Large>Are you absolutely sure?</Large></Row>
+      <Row tag="Small"><Small>Email address</Small></Row>
+      <Row tag="Muted"><Muted>Enter your email address.</Muted></Row>
+      <Row tag="RTL"><P dir="rtl">الملك، عندما رأى مدى سعادة رعيته، أدرك خطأه وألغى ضريبة النكتة.</P></Row>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

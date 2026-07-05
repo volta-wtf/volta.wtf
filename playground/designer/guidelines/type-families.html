@@ -1,0 +1,33 @@
+<!-- @dsCard group="Type" viewport="700x190" name="Families" subtitle="Geist (UI) · Geist Mono (valores) · Source Serif 4 (editorial)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--background); }
+  .rows { display: flex; flex-direction: column; padding: 10px 16px; }
+  .row { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--border); }
+  .row:last-child { border-bottom: none; }
+  .meta { font-family: var(--font-mono); font-size: 10px; color: var(--muted-foreground); }
+  .meta b { display: block; color: var(--foreground); font-weight: var(--font-weight-medium); font-size: var(--text-ui-sm); font-family: var(--font-sans); margin-bottom: 1px; }
+  .sample { font-size: 21px; letter-spacing: var(--tracking-tight); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+</style>
+</head>
+<body>
+<div class="rows">
+  <div class="row">
+    <span class="meta"><b>Geist</b>--font-sans · UI 400/500/600</span>
+    <span class="sample" style="font-family: var(--font-sans)">Add layer, bind to field, export as PNG</span>
+  </div>
+  <div class="row">
+    <span class="meta"><b>Geist Mono</b>--font-mono · valores, coords, código</span>
+    <span class="sample" style="font-family: var(--font-mono); font-size: 18px">x 128 · y 64 · w 480 · 75% · #d97757</span>
+  </div>
+  <div class="row">
+    <span class="meta"><b>Source Serif 4</b>--font-serif · display editorial</span>
+    <span class="sample" style="font-family: var(--font-serif); font-size: 24px">The canvas should disappear.</span>
+  </div>
+</div>
+</body>
+</html>

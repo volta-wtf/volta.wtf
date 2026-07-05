@@ -1,0 +1,17 @@
+/* All properties transitions */
+.transition        { transition: all var(--duration-normal) var(--ease-in-out); }
+.transition-fast   { transition: all var(--duration-fast) var(--ease-in-out); }
+.transition-slow   { transition: all var(--duration-slow) var(--ease-in-out); }
+.transition-slower { transition: all var(--duration-slower) var(--ease-in-out); }
+
+/* Specific property transitions */
+.transition-opacity   { transition: opacity var(--duration-normal) var(--ease-in-out); }
+.transition-transform { transition: transform var(--duration-normal) var(--ease-in-out); }
+.transition-shadow    { transition: box-shadow var(--duration-normal) var(--ease-in-out); }
+.transition-border    { transition: border var(--duration-normal) var(--ease-in-out); }
+
+.transition-colors {
+  transition: color var(--duration-normal) var(--ease-in-out),
+              background-color var(--duration-normal) var(--ease-in-out),
+              border-color var(--duration-normal) var(--ease-in-out);
+}

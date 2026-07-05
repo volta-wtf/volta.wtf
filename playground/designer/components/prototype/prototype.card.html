@@ -1,0 +1,69 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Prototyping" subtitle="ConnectionLayer (noodles) · InteractionEditor — transitions on motion tokens" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.525.0/dist/umd/lucide.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>html, body, #root { height: 100%; } body { background: var(--background); margin: 0; }</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Canvas, Frame, ConnectionLayer, InteractionEditor, Pane, Panel } = window.DesignerDesignSystem_6adbd8;
+
+const FALLBACK_VOCAB = {
+  triggers: [{ id: 'click', name: 'On click' }, { id: 'hover', name: 'While hovering' }],
+  actions: [{ id: 'navigate', name: 'Navigate to' }, { id: 'overlay', name: 'Open overlay' }],
+  transitions: [{ id: 'instant', name: 'Instant' }, { id: 'smart', name: 'Smart animate' }, { id: 'push', name: 'Push' }],
+  easings: [{ id: 'ease-standard', name: 'Standard' }, { id: 'ease-out', name: 'Ease out' }],
+  durations: { default: 240, min: 0, max: 2000, step: 20 },
+};
+
+function ProtoCard() {
+  const [vocab, setVocab] = React.useState(FALLBACK_VOCAB);
+  const [ix, setIx] = React.useState({ trigger: 'click', action: 'navigate', target: 'Detail', transition: 'smart', easing: 'ease-out', duration: 240 });
+  React.useEffect(() => {
+    fetch('../../data/interactions.json').then(r => r.json()).then(setVocab).catch(() => null);
+  }, []);
+  const f1 = { x: 20, y: 30, w: 170, h: 120 };
+  const f2 = { x: 290, y: 90, w: 170, h: 120 };
+  return (
+    <div style={{ display: 'flex', height: '100%' }}>
+      <div style={{ flex: 1, position: 'relative', minWidth: 0 }}>
+        <Canvas defaultView={{ zoom: 1, x: 10, y: 10 }} panOnDrag={false}>
+          <Frame {...{ x: f1.x, y: f1.y, width: f1.w, height: f1.h }} name="Home" selected>
+            <div style={{ padding: 12, display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <div style={{ height: 10, width: '60%', background: 'var(--muted)', borderRadius: 3 }}></div>
+              <div style={{ height: 44, background: 'var(--canvas)', borderRadius: 6, border: '1px solid var(--border)' }}></div>
+              <div style={{ height: 18, width: 64, background: 'var(--primary)', borderRadius: 5 }}></div>
+            </div>
+          </Frame>
+          <Frame {...{ x: f2.x, y: f2.y, width: f2.w, height: f2.h }} name="Detail">
+            <div style={{ padding: 12, display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <div style={{ height: 52, background: 'var(--canvas)', borderRadius: 6, border: '1px solid var(--border)' }}></div>
+              <div style={{ height: 10, width: '75%', background: 'var(--muted)', borderRadius: 3 }}></div>
+              <div style={{ height: 10, width: '45%', background: 'var(--muted)', borderRadius: 3 }}></div>
+            </div>
+          </Frame>
+          <ConnectionLayer connections={[
+            { id: 'c1', from: { x: f1.x + f1.w, y: f1.y + 96 }, to: { x: f2.x, y: f2.y + 60 } },
+          ]} />
+        </Canvas>
+      </div>
+      <Panel side="right" width={252}>
+        <Pane title="Interaction">
+          <InteractionEditor vocab={vocab} value={ix} onChange={setIx} targets={['Detail', 'Checkout', 'Back']} />
+        </Pane>
+      </Panel>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<ProtoCard />);
+</script>
+</body>
+</html>

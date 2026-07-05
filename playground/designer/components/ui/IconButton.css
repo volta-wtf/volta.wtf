@@ -1,0 +1,25 @@
+/* IconButton — square icon-only control; the toolbar/panel workhorse. */
+.dsr-iconbtn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: var(--control-height); height: var(--control-height);
+  padding: 0; border: 1px solid transparent; border-radius: var(--radius-sm);
+  background: transparent; color: var(--muted-foreground);
+  cursor: pointer; user-select: none;
+  transition: var(--transition-colors);
+}
+.dsr-iconbtn:hover { background: var(--accent); color: var(--foreground); }
+.dsr-iconbtn:active { background: color-mix(in oklab, var(--accent) 72%, var(--border)); }
+.dsr-iconbtn:focus-visible { outline: none; border-color: var(--ring); box-shadow: 0 0 0 var(--ring-width) var(--ring-color); }
+.dsr-iconbtn:disabled { opacity: 0.5; pointer-events: none; }
+
+/* Active tool state — the selection blue, softly */
+.dsr-iconbtn.is-active { background: var(--selection-muted); color: var(--selection); }
+.dsr-iconbtn.is-active:hover { background: var(--selection-muted); }
+
+/* On-primary variant for dark floating toolbars */
+.dsr-iconbtn--inverse { color: color-mix(in oklab, var(--primary-foreground) 72%, transparent); }
+.dsr-iconbtn--inverse:hover { background: oklch(1 0 0 / 0.10); color: var(--primary-foreground); }
+.dsr-iconbtn--inverse.is-active { background: var(--selection); color: var(--selection-foreground); }
+
+.dsr-iconbtn--sm { width: var(--control-height-sm); height: var(--control-height-sm); border-radius: var(--radius-xs); }
+.dsr-iconbtn--lg { width: 36px; height: 36px; }

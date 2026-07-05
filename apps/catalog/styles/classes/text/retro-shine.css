@@ -1,0 +1,59 @@
+/*
+{
+    id: 'retro-shine',
+    cssFile: 'retro-extrude.css',
+    name: 'Retro Shine',
+    description: 'Dramatic retro text effect with shine',
+    category: 'Special',
+    tags: ['retro', 'dramatic'],
+    bestFor: ['body', 'heading', 'display'],
+    previewText: 'Shine',
+    usesData: true,
+    background: '#000000',
+},
+*/
+
+.text-retro-shine {
+
+    & {
+        --style-fill-color: #fff200;
+        --style-text-color: #ff0000;
+        --style-tint-color: #000000;
+    }
+
+    & {
+        position: relative;
+        z-index: 0;
+        filter:brightness(120%) contrast(1.3) drop-shadow(2px 2px 0px #000);
+        /* mix-blend-mode: darken; */
+        padding-inline: 0.096em;
+        color: var(--style-text-color);
+    }
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        padding-inline: 0.06em;
+    }
+
+    &:after {
+        z-index: 1;
+        color: var( --style-fill-color);
+        filter: blur(0.03em) brightness(1.2);
+        top: 0.01em;
+    }
+
+    &:before {
+        z-index: 2;
+        color: var(--style-tint-color);
+    }
+
+}
+
+/*
+.dark .text-texture-rusted {
+    mix-blend-mode: lighten;
+}
+*/

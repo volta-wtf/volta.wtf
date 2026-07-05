@@ -1,0 +1,44 @@
+<!-- @dsCard group="Tokens" viewport="700x220" name="Token tiers — demo opt-in" subtitle="primitivas → alias de marca → theme → component vars; toggle para activar" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--background); }
+  .wrap { display: grid; grid-template-columns: 1fr 240px; gap: 16px; padding: 14px 16px; align-items: start; }
+  .chain { display: flex; flex-direction: column; gap: 4px; }
+  .step { display: grid; grid-template-columns: 92px 1fr; gap: 10px; align-items: center; padding: 6px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+  .tier { font-size: var(--text-ui-xs); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--muted-foreground); font-weight: var(--font-weight-medium); }
+  .var { font-family: var(--font-mono); font-size: 11px; }
+  .arrow { text-align: center; color: var(--muted-foreground); font-size: 10px; line-height: 1; }
+  .demo { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 1px dashed var(--border); border-radius: var(--radius-md); }
+  .toggle-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: var(--text-ui); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="chain">
+    <div class="step"><span class="tier">1 primitiva</span><span class="var">--t-terracotta-600: oklch(0.66 0.13 43)</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><span class="tier">2 alias marca</span><span class="var">--brand-primary: var(--t-terracotta-600)</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><span class="tier">3 theme</span><span class="var">--primary: var(--brand-primary)</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><span class="tier">4 component</span><span class="var">--btn-primary-bg: var(--primary)</span></div>
+  </div>
+  <div id="demo" class="demo">
+    <label class="toggle-row"><span>data-tiers</span><input id="sw" type="checkbox" class="dsr-switch" role="switch"></label>
+    <button class="dsr-btn dsr-btn--primary" type="button">Publish</button>
+    <span class="dsr-badge dsr-badge--selection">bound · title</span>
+    <label class="toggle-row"><span>Autosave</span><input type="checkbox" class="dsr-switch" role="switch" checked></label>
+  </div>
+</div>
+<script>
+  document.getElementById('sw').addEventListener('change', function () {
+    var d = document.getElementById('demo');
+    if (this.checked) d.setAttribute('data-tiers', ''); else d.removeAttribute('data-tiers');
+  });
+</script>
+</body>
+</html>

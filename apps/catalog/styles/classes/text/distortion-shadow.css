@@ -1,0 +1,29 @@
+/*
+{
+    id: 'distortion-shadow',
+    name: 'Distortion Shadow',
+    description: 'Distorted text appearance',
+    category: 'Special',
+    tags: ['distortion', 'warped', 'effect'],
+    bestFor: ['body', 'heading', 'display'],
+    cssFile: 'distortion-shadow.css',
+    previewText: 'Distortion',
+    usesData: true,
+    background: '#FFFFFF'
+},
+*/
+
+.text-distortion-shadow {
+    & {
+        --style-text-color: #000000;
+        --style-tint-color: rgba(0, 255, 255, 0.6);
+        --style-shadow-color: rgba(255, 0, 255, 0.6);
+    }
+
+    & {
+        position: relative;
+        color: var(--style-text-color);
+        text-shadow: -0.05em 0 0 var(--style-tint-color), 0.05em 0 0 var(--style-shadow-color);
+    }
+
+}

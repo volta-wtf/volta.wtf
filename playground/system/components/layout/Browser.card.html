@@ -1,0 +1,38 @@
+<!-- @dsCard group="Layout" viewport="820x420" name="Browser" subtitle="browser window chrome — traffic lights, nav, address bar" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 32px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Browser } = window.TestDesignSystem_be7089;
+
+function App(){
+  return (
+    <div style={{ maxWidth: 720, display: "flex", flexDirection: "column", gap: 24 }}>
+      <Browser url="vercel.com" favicon={<span style={{ width: 12, height: 12, borderRadius: 3, background: "var(--foreground)" }} />} height={180} />
+      <Browser url="figma.com/design/ui-kit" align="left" height={120} />
+      <Browser url="linear.app" variant="muted" height={120} />
+      <Browser url="stripe.com" lights={false} height={120} />
+      <Browser url="notion.so" nav="back" align="left" height={120} />
+      <Browser tabs={[{ favicon: <span style={{ width: 12, height: 12, borderRadius: 3, background: "#22c55e" }} />, title: "Vercel", active: true }, { favicon: <span style={{ width: 12, height: 12, borderRadius: 3, background: "#6366f1" }} />, title: "Linear" }]} onNewTab={() => {}} height={120} />
+      <Browser compact url="vercel.com/dashboard" tabsRow onNewTab={() => {}} tabs={[{ favicon: <span style={{ width: 12, height: 12, borderRadius: 3, background: "#22c55e" }} />, title: "Vercel", active: true }, { favicon: <span style={{ width: 12, height: 12, borderRadius: 3, background: "#6366f1" }} />, title: "Linear" }, { favicon: <span style={{ width: 12, height: 12, borderRadius: 3, background: "#f59e0b" }} />, title: "Figma" }]} height={120} />
+      <Browser url="google.com" compact variant="muted" nav="none" height={90} />
+      <Browser variant="muted" url="google.com" tabsRow="bottom" onNewTab={() => {}} tabs={[{ favicon: <span style={{ width: 12, height: 12, borderRadius: 3, background: "#22c55e" }} />, title: "as — Buscar con Google", active: true }, { favicon: <span style={{ width: 12, height: 12, borderRadius: 3, background: "#6366f1" }} />, title: "sad — Buscar con Google" }]} height={160} />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

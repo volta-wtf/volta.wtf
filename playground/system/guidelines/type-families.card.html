@@ -1,0 +1,30 @@
+<!-- @dsCard group="1.2 · Typography" viewport="700x150" name="Families & Weights" subtitle="Geist sans + Geist Mono, 400–700" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 20px; background: var(--background); color: var(--foreground); }
+  .block { display: flex; flex-direction: column; gap: 10px; }
+  .tag { font: var(--font-weight-normal) 11px/1 var(--font-mono); color: var(--muted-foreground); }
+  .sans { font-family: var(--font-sans); font-size: 22px; }
+  .mono { font-family: var(--font-mono); font-size: 22px; }
+  .weights { display: flex; gap: 20px; align-items: baseline; font-family: var(--font-sans); font-size: 18px; }
+</style>
+</head>
+<body>
+  <div class="block">
+    <span class="tag">font-sans · Geist</span>
+    <span class="sans">The quick brown fox jumps over the lazy dog</span>
+    <span class="tag">font-mono · Geist Mono</span>
+    <span class="mono">const answer = 42;</span>
+    <div class="weights">
+      <span style="font-weight:400">Regular 400</span>
+      <span style="font-weight:500">Medium 500</span>
+      <span style="font-weight:600">Semibold 600</span>
+      <span style="font-weight:700">Bold 700</span>
+    </div>
+  </div>
+</body>
+</html>

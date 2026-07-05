@@ -1,16 +1,18 @@
 import { useState, useMemo } from 'react';
+import { isTailwindColorVariable, isSemanticColorVariable } from '../utils/color-variable-utils.js';
 
 /**
  * useColorPanel - Hook que maneja toda la lógica de categorización y agrupación de variables de colores
  */
 export function useColorPanel(cssVars, modifiedVars) {
-  const [activeSection, setActiveSection] = useState('wheel'); // 'wheel' o 'palette'
+  const [activeSection, setActiveSection] = useState('semantic');
   const [hoveredItem, setHoveredItem] = useState(null);
 
   // Filtrar y agrupar variables de colores
   const colorVars = useMemo(() => {
     const wheelColors = {};
     const paletteColors = {};
+    const semanticColors = {};
 
     console.log('🎨 Analizando variables para ColorPanel:', Object.keys(cssVars));
 
@@ -28,8 +30,14 @@ export function useColorPanel(cssVars, modifiedVars) {
     ];
 
     Object.entries(cssVars).forEach(([varName, value]) => {
-      // Filtrar variables que empiecen con --color-, --tone- o --tint-
-      if (!varName.startsWith('--color-') && !varName.startsWith('--tone-') && !varName.startsWith('--tint-')) return;
+      // Tokens semánticos de shadcn (--background, --primary, etc.)
+      if (isSemanticColorVariable(varName)) {
+        if (!semanticColors.semantic) semanticColors.semantic = [];
+        semanticColors.semantic.push({ varName, value });
+        return;
+      }
+
+      if (!isTailwindColorVariable(varName)) return;
 
       console.log(`🔍 Analizando variable de color: ${varName} = ${value}`);
 
@@ -96,7 +104,7 @@ export function useColorPanel(cssVars, modifiedVars) {
       totalPalette: Object.keys(paletteColors).length
     });
 
-    return { wheelColors, paletteColors };
+    return { wheelColors, paletteColors, semanticColors };
   }, [cssVars]);
 
   // Función para transformar etiquetas de color
@@ -117,6 +125,12 @@ export function useColorPanel(cssVars, modifiedVars) {
       label: 'Color Palette',
       icon: '',
       count: Object.keys(colorVars.paletteColors).length
+    },
+    {
+      key: 'semantic',
+      label: 'Theme Tokens',
+      icon: '',
+      count: colorVars.semanticColors?.semantic?.length ?? 0
     }
   ];
 

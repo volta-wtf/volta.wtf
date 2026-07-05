@@ -1,0 +1,32 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Accents — one job each" subtitle="selection · brand · destructive; chrome stays gray" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--background); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding: 16px; }
+  .acc { display: flex; gap: 10px; align-items: flex-start; }
+  .sw { flex: none; width: 44px; height: 44px; border-radius: var(--radius-sm); }
+  h4 { margin: 2px 0 3px; font-size: var(--text-ui); font-weight: var(--font-weight-semibold); font-family: var(--font-mono); }
+  p { margin: 0; font-size: var(--text-ui-sm); color: var(--muted-foreground); line-height: var(--leading-snug); }
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="acc">
+    <div class="sw" style="background: var(--selection)"></div>
+    <div><h4>--selection</h4><p>Canvas selection UI only: handles, marquee, bindings, active tool.</p></div>
+  </div>
+  <div class="acc">
+    <div class="sw" style="background: var(--brand)"></div>
+    <div><h4>--brand</h4><p>Terracotta. Editorial &amp; marketing accents only — never editor chrome.</p></div>
+  </div>
+  <div class="acc">
+    <div class="sw" style="background: var(--destructive)"></div>
+    <div><h4>--destructive</h4><p>Danger only: delete, missing fonts, failed states.</p></div>
+  </div>
+</div>
+</body>
+</html>

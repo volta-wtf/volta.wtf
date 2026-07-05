@@ -1,0 +1,12 @@
+:root {
+
+    /* Icons */
+    --size-icon-micro:                0.5rem;    /* 8px */
+    --size-icon-small:                0.75rem;   /* 12px */
+    --size-icon-base:                 1rem;      /* 16px */
+    --size-icon-medium:               1.25rem;   /* 20px */
+    --size-icon-large:                1.5rem;    /* 24px */
+    --size-icon-xlarge:               2rem;      /* 32px */
+    --size-icon-xxlarge:              4rem;      /* 80px */
+
+}

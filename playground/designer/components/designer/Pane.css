@@ -1,0 +1,22 @@
+/* Pane — collapsible section inside a panel. */
+.dsr-pane { border-bottom: 1px solid var(--border); }
+.dsr-pane__header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-2);
+  height: var(--pane-header-height);
+  padding: 0 var(--space-2) 0 var(--space-3);
+  cursor: pointer; user-select: none;
+  transition: var(--transition-colors);
+}
+.dsr-pane__header:hover { background: var(--muted); }
+.dsr-pane__title {
+  display: inline-flex; align-items: center; gap: var(--space-1-5);
+  font-size: var(--text-ui-xs); font-weight: var(--font-weight-medium);
+  text-transform: uppercase; letter-spacing: var(--tracking-widest);
+  color: var(--muted-foreground);
+}
+.dsr-pane.is-open .dsr-pane__title { color: var(--foreground); }
+.dsr-pane__actions { display: inline-flex; align-items: center; gap: 2px; }
+.dsr-pane__chevron { color: var(--muted-foreground); transition: rotate var(--duration-fast) var(--ease-standard); rotate: -90deg; }
+.dsr-pane.is-open .dsr-pane__chevron { rotate: 0deg; }
+.dsr-pane__body { padding: var(--space-1) var(--space-3) var(--space-3); display: flex; flex-direction: column; gap: var(--space-1); }

@@ -1,0 +1,48 @@
+{
+  "$schema": "Editor layout archetypes — the shell configurations a design-tool suite needs. Regions map to shell/ components; each archetype is one screen in ui_kits/editor.",
+  "regions": ["topbar", "left", "canvas", "right", "bottom", "floating"],
+  "archetypes": [
+    {
+      "id": "design",
+      "name": "Design editor",
+      "for": "Vector/product design (Figma Design, Framer, Sketch class)",
+      "regions": { "topbar": "Menubar + doc title + share/present", "left": "Layers panel (tree) + pages", "canvas": "Infinite canvas, dot grid, frames", "right": "Inspector: property panes + fields", "floating": "Zoom HUD bottom-right" }
+    },
+    {
+      "id": "whiteboard",
+      "name": "Whiteboard",
+      "for": "Freeform collaboration (FigJam class)",
+      "regions": { "topbar": "Minimal: title + share", "canvas": "Infinite canvas, coarse dot grid, stickies/connectors", "floating": "Bottom-center floating toolbar (big tools), zoom HUD", "left": "— (collapsed by default)", "right": "—" }
+    },
+    {
+      "id": "slides",
+      "name": "Slides",
+      "for": "Deck editing (Figma Slides, Canva Docs/Präsi class)",
+      "regions": { "topbar": "Title + present button prominent", "left": "Filmstrip: slide thumbnails, drag to reorder", "canvas": "Single 16:9 slide centered, gray desk", "right": "Inspector (slide + selection)", "bottom": "Speaker-notes drawer" }
+    },
+    {
+      "id": "sites",
+      "name": "Site builder",
+      "for": "Responsive web design (Figma Sites, Framer Sites class)",
+      "regions": { "topbar": "Breakpoint switcher centered (desktop/tablet/phone) + publish", "left": "Pages + layers", "canvas": "Vertically scrolling page at active breakpoint width", "right": "Inspector: layout/style/CMS binding", "floating": "Zoom HUD" }
+    },
+    {
+      "id": "buzz",
+      "name": "Batch assets",
+      "for": "On-brand marketing assets at scale (Figma Buzz, Canva bulk class)",
+      "regions": { "topbar": "Template name + export all", "left": "Template & brand-kit panel", "canvas": "Grid of generated variants (one per collection record)", "right": "Collection table + field mapping", "bottom": "—" }
+    },
+    {
+      "id": "make",
+      "name": "Prompt to app",
+      "for": "AI-assisted building (Figma Make, v0 class)",
+      "regions": { "topbar": "Project + publish", "left": "Chat/prompt thread with generation steps", "canvas": "Live preview in device frame", "right": "— (code drawer toggles over preview)", "bottom": "Prompt composer docked in left panel" }
+    },
+    {
+      "id": "inspect",
+      "name": "Dev mode",
+      "for": "Handoff & inspection (Dev Mode class)",
+      "regions": { "topbar": "Mode toggle Design/Dev prominent", "left": "Layers (read-only)", "canvas": "Canvas with measurement overlays", "right": "Code panel: tokens, CSS, assets download" }
+    }
+  ]
+}

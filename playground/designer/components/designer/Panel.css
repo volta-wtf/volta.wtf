@@ -1,0 +1,24 @@
+/* Panel — docked side panel (layers, inspector, data). */
+.dsr-panel {
+  display: flex; flex-direction: column;
+  width: var(--panel-width); min-width: var(--panel-width);
+  height: 100%; min-height: 0;
+  background: var(--background);
+}
+.dsr-panel--left { border-right: 1px solid var(--border); }
+.dsr-panel--right { border-left: 1px solid var(--border); }
+.dsr-panel__header {
+  flex: none; display: flex; align-items: center; gap: var(--space-2);
+  min-height: var(--pane-header-height);
+  padding: var(--space-1) var(--space-2);
+  border-bottom: 1px solid var(--border);
+}
+.dsr-panel__body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; }
+.dsr-panel__footer {
+  flex: none; padding: var(--space-2);
+  border-top: 1px solid var(--border);
+}
+/* Quiet scrollbar */
+.dsr-panel__body::-webkit-scrollbar { width: 8px; }
+.dsr-panel__body::-webkit-scrollbar-thumb { background: var(--border); border-radius: var(--radius-full); border: 2px solid var(--background); }
+.dsr-panel__body::-webkit-scrollbar-track { background: transparent; }

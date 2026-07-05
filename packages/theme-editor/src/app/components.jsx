@@ -19,7 +19,7 @@ export const Tab = ({ isActive, onClick, icon, children, disabled = false }) => 
 
 // Componente TabBar que contiene todos los tabs
 export const AppTabs = ({ activeTab, onTabChange, disabled = false }) => (
-  <div className={styles.tabBar}>
+  <div className={cls('tabBar')}>
     <Tab
       isActive={activeTab === 'variables'}
       onClick={() => onTabChange('variables')}

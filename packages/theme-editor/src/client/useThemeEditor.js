@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useVariableDetection } from './useVariableDetection.js';
-import { NETWORK, API_ENDPOINTS, UI, CSS, DEV } from '../config/constants.js';
+import { API_ENDPOINTS, UI, DEV, getThemeEditorServerUrl } from '../config/constants.js';
+import { isColorVariable as checkIsColorVariable } from '../utils/color-variable-utils.js';
 
 export function useThemeEditor() {
   // Estados de UI
@@ -35,10 +36,7 @@ export function useThemeEditor() {
   // UTILIDADES
   // ========================
 
-  // Función para determinar si una variable es de colores
-  const isColorVariable = (varName) => {
-    return varName.startsWith('--color-') || varName.startsWith('--tone-') || varName.startsWith('--tint-');
-  };
+  const isColorVariable = checkIsColorVariable;
 
   // Función para obtener el tema actual
   const getCurrentTheme = () => {
@@ -164,15 +162,8 @@ export function useThemeEditor() {
       const activeTheme = getCurrentTheme();
       console.log(`${DEV.LOG_PREFIXES.THEME} Guardando variables en tema:`, activeTheme);
 
-      // Detectar puerto dinámicamente desde el script que nos cargó
-      const scripts = document.querySelectorAll(`script[src*="${CSS.FILE_NAMES.THEME_EDITOR_SCRIPT}"]`);
-      const themeEditorScript = scripts[scripts.length - 1]; // Último script cargado
-      const scriptSrc = themeEditorScript?.src || NETWORK.DEFAULT_SCRIPT_URL;
-      const scriptUrl = new URL(scriptSrc);
-      const port = scriptUrl.port || NETWORK.DEFAULT_PORT.toString();
-      const apiUrl = `${NETWORK.DEFAULT_PROTOCOL}://${NETWORK.DEFAULT_HOST}:${port}${API_ENDPOINTS.SAVE_CSS}`;
-
-      console.log(`${DEV.LOG_PREFIXES.PORT} Usando puerto dinámico:`, port);
+      const apiUrl = `${getThemeEditorServerUrl()}${API_ENDPOINTS.SAVE_CSS}`;
+      console.log(`${DEV.LOG_PREFIXES.PORT} Guardando en:`, apiUrl);
 
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -204,15 +195,8 @@ export function useThemeEditor() {
       const activeTheme = getCurrentTheme();
       console.log(`${DEV.LOG_PREFIXES.THEME} Guardando colores en tema:`, activeTheme);
 
-      // Detectar puerto dinámicamente desde el script que nos cargó
-      const scripts = document.querySelectorAll(`script[src*="${CSS.FILE_NAMES.THEME_EDITOR_SCRIPT}"]`);
-      const themeEditorScript = scripts[scripts.length - 1]; // Último script cargado
-      const scriptSrc = themeEditorScript?.src || NETWORK.DEFAULT_SCRIPT_URL;
-      const scriptUrl = new URL(scriptSrc);
-      const port = scriptUrl.port || NETWORK.DEFAULT_PORT.toString();
-      const apiUrl = `${NETWORK.DEFAULT_PROTOCOL}://${NETWORK.DEFAULT_HOST}:${port}${API_ENDPOINTS.SAVE_CSS}`;
-
-      console.log(`${DEV.LOG_PREFIXES.PORT} Usando puerto dinámico:`, port);
+      const apiUrl = `${getThemeEditorServerUrl()}${API_ENDPOINTS.SAVE_CSS}`;
+      console.log(`${DEV.LOG_PREFIXES.PORT} Guardando en:`, apiUrl);
 
       const response = await fetch(apiUrl, {
         method: 'POST',

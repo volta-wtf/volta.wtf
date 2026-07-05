@@ -1,0 +1,168 @@
+def {
+    type: {
+        internal: "internal",
+        reference: "used for composition only. Dont used in css",
+        variable: "disponible a traves de las clases",
+        variant: "used ",
+    }
+
+    role: {
+        tone: "",
+        tint: "",
+        theme: "",
+    }
+
+    ref: {
+        no_class: "no class name",
+        theme_class: "*-primary...",
+        utility_class: "*-primary...",
+    }
+}
+:root {
+    --background:   reference, tint, no_class,     "Use background roles for document base background and contrasts in region backgrounds";
+    --foreground:   reference, tint, no_class,     "Use foreground roles for content and controls against any surface or background";
+
+    --content:      reference, tint, no_class,     "Text, icons and forms against any surface or background";
+    --control:      reference, tint, no_class,     "Inputs and Buttons on any surface or background ";
+    --indication:   reference, tint, no_class,     "For highligted text (mark), text search match and targeted elements";
+    --ambient:      reference, tint, no_class,     "Use ambient roles for things like scrims, backdrops, and shadow";
+    --state:        reference, tint, no_class,     "For controls and component states ";
+    --scrim:        reference, tint, no_class,     "For scrims on images, video players and translucent controls";
+    --backdrop:     reference, tint, no_class,     "User on overlays backdrops like modals, drawers, sheets and alerts";
+    --shadow:       reference, tint, no_class,     "For elevation shadow mostly";
+
+    --primary:      variable, theme, theme_class,  "Use primary roles for the most prominent components across the UI";
+    --secondary:    variable, theme, theme_class,  "Use secondary roles for less prominent components in the UI";
+    --tertiary:     variable, theme, theme_class,  "Use tertiary roles for contrasting accents that balance primary and secondary colors or bring heightened attention to an element";
+    --destructive:  variable, theme, theme_class,  "Use destructive roles to communicate error states or destructive actions";
+    --cautionary:   variable, theme, theme_class,  "Use cautionary roles for warning or alert states";
+    --affirmative:  variable, theme, theme_class,  "Use affirmative roles for success, confirmation, or positive states";
+    --informative:  variable, theme, theme_class,  "Use informative roles for info banners, help and educational information";
+
+    /** accentual */
+    --active:       variable, theme, utility_class, "Use this for active elements like links, focus ring and active status or main dashbord indication, etc";
+    --accent:       variable, theme, utility_class, "Use this to manage the amount of color used on controls, selected blocks and text selection";
+    --decoration:   variable, theme, utility_class, "For decorative texts, icons and borderss";
+    --inverse:      variable, theme, utility_class, "Auxiliary color for invert content colors";
+
+    --body:         "variant", "bg-body...",            "text-inverse...",      "This role is used for apply color to the bootm bar in PWA or homescreen app on mobile";
+    --canvas:       "variant", "bg-canvas...",          "This role is for the app background";
+    --silent:       "variant", "bg-silent...",          "";
+
+    --card:         "variant", "bg-card...",            "";
+    --picker:       "variant", "bg-picker...",          "";
+    --dropdown:     "variant", "bg-dropdown...",        "";
+    --popover:      "variant", "bg-popover...",         "";
+    --modal:        "variant", "bg-modal...",           "";
+    --dialog:       "variant", "bg-dialog...",          "";
+    --popup:        "variant", "bg-popup...",           "";
+
+    --muted:        "";
+    --accented:     "";
+    --highlighted:  "";
+    --selected:     "";
+
+    --display:          "For display level text content";
+    --heading:          "For heading level text content";
+    --text:             "For base level text content";
+    --text-subtle:      "Used for medium emphasis luke secondary text";
+    --text-muted:       "Used for low emphasis text, like meta descriptions.";
+    --text-disabled:    "Used for lower emphasis text, like disabled text or input placeholder.";
+    --text-hint:        "Used for low emphasis text in help/hint context, like Field help text.";
+    --text-silent:      "Used for pseudo-decorative text like big numbered lists.";
+    --text-inverse:     "";
+    --icon:             "";
+
+    --border:           "Decorative elements, such as card borders or acordion or any compoen, and when other elements provide 4.5:1 contrast";
+    --divider:          "Dividers for layouts, grids, lists or components";
+    --line:             "Less prominent border or divider for dense views like tables, chart axis";
+    --rule:             "More prominent border for using on content dividers, table heading, page grakes, main chart axis, etc.";
+
+    --outline:          "Important boundaries, such as a text field outline";
+    --input:            "Input, Select, Textarea";
+    --track:            "Progress, Slider";
+    --thumb:            "Switch, Slider Handler";
+    --action:           "Action button";
+    --button:           "Default button";
+
+    --accent:           "";
+
+    --action-resting:   "";
+    --action-raised:    "";
+    --action-hovered:   "";
+    --action-focused:   "";
+    --action-pressed:   "";
+    --action-dragging:  "";
+
+    --ring:             "";
+    --link:             "";
+    --visited:          "";
+
+    --chart-1: "";
+    --chart-2: "";
+    --chart-3: "";
+    --chart-4: "";
+    --chart-5: "";
+
+    --sidebar: "";
+    --surface: "Use surface roles for more neutral backgrounds, and container colors for components";
+    --main:    "";
+    --header:  "";
+    --footer:  "";
+    --aside:   "";
+
+    --code:              "";
+    --mark:              "";
+
+    --target:            "";
+    --search-text:       "";
+    --search-current:    "";
+
+    --selection:         "";
+    --caret:             "";
+
+
+    --sidebar-primary: "";
+    --sidebar-accent: "";
+    --sidebar-border: "";
+    --sidebar-ring: "";
+
+    --surface-tint:    "";
+    --surface-bright:  "";
+    --surface-dim:     "";
+    --surface-lowest:  "";
+    --surface-low:     "";
+    --surface-base:    "";
+    --surface-high:    "";
+    --surface-highest: "";
+/** overlays */
+    --scrim-hard:      "";
+    --scrim-base:      "";
+    --scrim-soft:      "";
+    --backdrop-hard:   "";
+    --backdrop-base:   "";
+    --backdrop-soft:   "";
+
+    --code-highlight:  "";
+    --code-number:     "";
+
+    --shadow-hard:     "";
+    --shadow-base:     "";
+    --shadow-soft:     "";
+
+
+    --accent-foreground: "";
+
+    --sidebar-foreground: "";
+    --sidebar-primary-foreground: "";
+    --sidebar-accent-foreground: "";
+    --surface-foreground: "";
+    --card-foreground: "";
+    --popover-foreground: "";
+    --muted-foreground: "";
+    --accented-foreground: "";
+    --highlighted-foreground: "";
+    --selected-foreground: "";
+    --code-foreground: "";
+    --selection-foreground: "";
+}

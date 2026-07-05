@@ -1,0 +1,21 @@
+<!-- @dsCard group="1.2 · Typography" viewport="700x220" name="Type Scale" subtitle="Geist · text-xs → text-4xl" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 20px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  .r { display: flex; align-items: baseline; gap: 16px; padding: 5px 0; border-bottom: 1px solid var(--border); }
+  .r:last-child { border-bottom: 0; }
+  .tag { width: 72px; font: var(--font-weight-normal) 11px/1 var(--font-mono); color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+  <div class="r"><span class="tag">4xl / 36</span><span style="font-size:var(--text-4xl);font-weight:600;letter-spacing:var(--tracking-tight)">Display</span></div>
+  <div class="r"><span class="tag">2xl / 24</span><span style="font-size:var(--text-2xl);font-weight:600">Heading</span></div>
+  <div class="r"><span class="tag">lg / 18</span><span style="font-size:var(--text-lg);font-weight:500">Subheading</span></div>
+  <div class="r"><span class="tag">sm / 14</span><span style="font-size:var(--text-sm)">Body — the quick brown fox jumps over the lazy dog.</span></div>
+  <div class="r"><span class="tag">xs / 12</span><span style="font-size:var(--text-xs);color:var(--muted-foreground)">Caption / muted</span></div>
+</body>
+</html>

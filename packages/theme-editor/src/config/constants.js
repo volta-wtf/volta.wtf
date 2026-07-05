@@ -19,6 +19,56 @@ export const NETWORK = {
   }
 };
 
+/** Puerto del theme-editor por puerto de la app (ver agents/projects.md) */
+export const APP_TO_THEME_EDITOR_PORTS = {
+  3001: 4445, // admin
+  3002: 4446, // builder
+  3003: 4447, // catalog
+  3004: 4448, // docs
+  3005: 4449, // editor
+  3006: 4450, // demos
+  3007: 4451, // catalogo
+};
+
+/** Ruta de app relativa al monorepo por puerto del theme-editor (inverso de APP_TO_THEME_EDITOR_PORTS) */
+export const THEME_EDITOR_PORT_TO_APP = {
+  4445: 'apps/admin',
+  4446: 'apps/builder',
+  4447: 'apps/catalog',
+  4448: 'apps/docs',
+  4449: 'apps/editor',
+  4450: 'apps/demos',
+  4451: 'apps/catalogo',
+};
+
+export function getThemeEditorPortForApp(appPort) {
+  if (typeof window !== 'undefined' && window.__THEME_EDITOR_PORT__) {
+    return parseInt(window.__THEME_EDITOR_PORT__, 10);
+  }
+
+  const fromEnv = process.env.THEME_EDITOR_PORT || process.env.NEXT_PUBLIC_THEME_EDITOR_PORT;
+  if (fromEnv) return parseInt(fromEnv, 10);
+
+  const portNum = parseInt(appPort, 10);
+  return APP_TO_THEME_EDITOR_PORTS[portNum] ?? NETWORK.DEFAULT_PORT;
+}
+
+/** Puerto del servidor theme-editor en el contexto actual (browser o Node). */
+export function getThemeEditorPort() {
+  if (typeof window !== 'undefined') {
+    return getThemeEditorPortForApp(window.location.port || '3000');
+  }
+  const fromEnv = process.env.THEME_EDITOR_PORT || process.env.NEXT_PUBLIC_THEME_EDITOR_PORT;
+  if (fromEnv) return parseInt(fromEnv, 10);
+  return NETWORK.DEFAULT_PORT;
+}
+
+/** URL base del servidor theme-editor de esta app (sin path). */
+export function getThemeEditorServerUrl() {
+  const port = getThemeEditorPort();
+  return `${NETWORK.DEFAULT_PROTOCOL}://${NETWORK.DEFAULT_HOST}:${port}`;
+}
+
 // ---- Endpoints de API ----
 export const API_ENDPOINTS = {
   SAVE_CSS: '/save-css',

@@ -1,0 +1,66 @@
+<!-- @dsCard group="Chat" viewport="760x520" name="Attachment" subtitle="file/image chip — states, sizes, orientation, and groups" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<link rel="stylesheet" href="../../styles/scroll-fade.css" />
+<link rel="stylesheet" href="../../styles/shimmer.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 24px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  #root { display: flex; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const S = window.TestDesignSystem_be7089;
+const {
+    Button, Badge, Input, Textarea, Label, Checkbox, RadioGroup, RadioGroupItem, Switch,
+    Select, SelectTrigger, SelectValue, SelectContent, SelectItem, Toggle, ToggleGroup, ToggleGroupItem,
+    ButtonGroup, ButtonGroupText, InputGroup, InputGroupInput, InputGroupAddon, InputGroupText, InputGroupButton,
+    Field, FieldLabel, FieldDescription, FieldGroup, NativeSelect, InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator, Combobox,
+    Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Separator, AspectRatio, ScrollArea,
+    ResizablePanelGroup, ResizablePanel, ResizableHandle,
+    Avatar, AvatarImage, AvatarFallback, Skeleton, Progress, Slider,
+    Tabs, TabsList, TabsTrigger, TabsContent, Accordion, AccordionItem, AccordionTrigger, AccordionContent,
+    Collapsible, CollapsibleTrigger, CollapsibleContent,
+    Alert, AlertTitle, AlertDescription, Tooltip, TooltipTrigger, TooltipContent, Toaster, toast,
+    Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose,
+    Popover, PopoverTrigger, PopoverContent, DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuShortcut,
+    AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction,
+    Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter, SheetClose,
+    Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose,
+    HoverCard, HoverCardTrigger, HoverCardContent, ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem, ContextMenuSeparator, ContextMenuShortcut,
+    Table, TableHeader, TableBody, TableRow, TableHead, TableCell, TableCaption,
+    Calendar, DatePicker, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext,
+    ChartContainer, Chart, ChartLegend, DataTable,
+    Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis,
+    Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis,
+    Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem, MenubarSeparator, MenubarShortcut,
+    NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink,
+    Command, CommandInput, CommandList, CommandGroup, CommandItem, CommandSeparator, CommandShortcut,
+    Spinner, Kbd, KbdGroup, Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent,
+    Item, ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions, ItemGroup, ItemSeparator, Marker,
+    Attachment, AttachmentGroup, Bubble, Message, MessageScroller, Icon,
+  } = S;
+const Row = ({ children, style }) => <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap", ...style }}>{children}</div>;
+const Col = ({ children, style }) => <div style={{ display: "flex", flexDirection: "column", gap: 12, ...style }}>{children}</div>;
+const cap = { fontSize: 11, fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", color: "var(--muted-foreground)" };
+const IMG = "https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=200&q=80";
+const demoRender = () => (
+      <Col style={{ gap: 22 }}>
+        <Col style={{ gap: 8 }}><span style={cap}>Default</span><Row><Attachment name="sales-dashboard.pdf" size="PDF · 2.4 MB" icon="file" onRemove={()=>{}} /><Attachment name="quarterly-report.xlsx" size="1.1 MB" icon="invoice" /></Row></Col>
+        <Col style={{ gap: 8 }}><span style={cap}>Image (vertical) · Sizes</span><Row style={{ alignItems: "center" }}><Attachment orientation="vertical" name="workspace.png" size="480 KB" src={IMG} onRemove={()=>{}} /><Attachment name="default.pdf" size="2.4 MB" icon="file" /><Attachment scale="sm" name="small.pdf" size="2.4 MB" icon="file" /><Attachment scale="xs" name="extra-small.pdf" icon="file" /></Row></Col>
+        <Col style={{ gap: 8 }}><span style={cap}>States</span><Row><Attachment state="uploading" name="uploading.mov" size="Uploading… 40%" icon="file" /><Attachment state="processing" name="processing.zip" size="Processing…" icon="file" /><Attachment state="error" name="broken.pdf" size="Upload failed — too large" icon="file" onRemove={()=>{}} /></Row></Col>
+        <Col style={{ gap: 8 }}><span style={cap}>Group (scrollable)</span><AttachmentGroup style={{ maxWidth: 360 }}><Attachment name="research-summary.pdf" size="2.4 MB" icon="file" onRemove={()=>{}} /><Attachment name="quarterly-report.xlsx" size="1.1 MB" icon="invoice" onRemove={()=>{}} /><Attachment name="workspace.png" size="480 KB" src={IMG} onRemove={()=>{}} /><Attachment name="notes.txt" size="12 KB" icon="file" onRemove={()=>{}} /></AttachmentGroup></Col>
+      </Col>
+    );
+ReactDOM.createRoot(document.getElementById("root")).render(demoRender());
+</script>
+</body>
+</html>

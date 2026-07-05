@@ -1,0 +1,14 @@
+{
+  "$schema": "Web-builder blocks — insertable page sections for the sites archetype. `slots` describe the generic skeleton the builder renders; `bindable` lists collection-field hooks.",
+  "blocks": [
+    { "id": "navbar",   "name": "Navbar",   "icon": "menu",       "height": 64,  "slots": ["logo", "links", "cta"], "bindable": [] },
+    { "id": "hero",     "name": "Hero",     "icon": "star",       "height": 420, "slots": ["eyebrow", "heading", "subcopy", "cta", "media"], "bindable": ["heading", "media"] },
+    { "id": "logos",    "name": "Logo row", "icon": "grid",       "height": 96,  "slots": ["logos×6"], "bindable": [] },
+    { "id": "features", "name": "Features", "icon": "component",  "height": 320, "slots": ["heading", "card×3"], "bindable": ["card×3"] },
+    { "id": "gallery",  "name": "Gallery",  "icon": "image",      "height": 360, "slots": ["media×6"], "bindable": ["media×6"] },
+    { "id": "quote",    "name": "Quote",    "icon": "quote",      "height": 240, "slots": ["quote", "name", "avatar"], "bindable": ["quote", "name", "avatar"] },
+    { "id": "pricing",  "name": "Pricing",  "icon": "field-number","height": 380, "slots": ["heading", "tier×3"], "bindable": [] },
+    { "id": "cta",      "name": "CTA band", "icon": "play",       "height": 200, "slots": ["heading", "cta"], "bindable": [] },
+    { "id": "footer",   "name": "Footer",   "icon": "menu",       "height": 220, "slots": ["columns×4", "legal"], "bindable": [] }
+  ]
+}

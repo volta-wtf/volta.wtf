@@ -1,0 +1,507 @@
+# Intent Roles
+
+Intent Roles communicate meaning.
+
+Unlike Interface Roles, they are not responsible for the structure of the interface.
+
+Their responsibility is to express **why** something stands out.
+
+They define semantic emphasis, feedback and hierarchy independently of where they are used.
+
+```
+Interface Role
+
+↓
+
+Intent Role
+
+↓
+
+State
+
+↓
+
+Component
+```
+
+For example:
+
+```
+Button
+
+↓
+
+Primary
+
+↓
+
+Hovered
+```
+
+or
+
+```
+Card
+
+↓
+
+Destructive
+
+↓
+
+Selected
+```
+
+The Interface Role defines **what** the element is.
+
+The Intent Role defines **what it means**.
+
+---
+
+# Philosophy
+
+Intent should never define structure.
+
+A Primary color should work equally well on:
+
+- Buttons
+- Links
+- Badges
+- Icons
+- Cards
+- Progress bars
+- Charts
+
+because Primary represents intention rather than appearance.
+
+Changing a Button into a Link should not require changing the meaning.
+
+Only the component changes.
+
+---
+
+# Intent Hierarchy
+
+```
+Primary
+
+Secondary
+
+Tertiary
+
+──────────────
+
+Affirmative
+
+Informative
+
+Cautionary
+
+Destructive
+
+──────────────
+
+Accent
+
+Active
+
+Decoration
+
+Inverse
+```
+
+The first group expresses hierarchy.
+
+The second group expresses semantic feedback.
+
+The third group provides auxiliary emphasis.
+
+---
+
+# Hierarchy Intents
+
+Hierarchy intents determine relative importance.
+
+They do not communicate success, errors or warnings.
+
+---
+
+## Primary
+
+```css
+--primary
+```
+
+Primary represents the most important interactive intention within the current context.
+
+Typical examples:
+
+- Primary actions
+- Main navigation
+- Brand highlights
+- Selected primary controls
+
+There should generally be only one Primary action per decision context.
+
+Avoid using Primary repeatedly simply to attract attention.
+
+Overusing Primary reduces its meaning.
+
+---
+
+## Secondary
+
+```css
+--secondary
+```
+
+Secondary supports the Primary intention.
+
+It represents alternative actions that remain important but should never compete with the Primary action.
+
+Examples
+
+- Secondary buttons
+- Supporting actions
+- Alternative navigation
+
+---
+
+## Tertiary
+
+```css
+--tertiary
+```
+
+Tertiary provides visual balance.
+
+Its purpose is not necessarily lower importance.
+
+Instead it introduces complementary emphasis without competing with Primary.
+
+Typical usage
+
+- Complementary actions
+- Supporting highlights
+- Accent graphics
+
+---
+
+# Feedback Intents
+
+Feedback communicates system status.
+
+Unlike hierarchy intents, feedback always carries semantic meaning.
+
+---
+
+## Affirmative
+
+```css
+--affirmative
+```
+
+Represents positive outcomes.
+
+Examples
+
+- Success
+- Completed tasks
+- Connected state
+- Healthy systems
+
+Affirmative should communicate confidence.
+
+Avoid using it merely because something looks pleasant.
+
+---
+
+## Informative
+
+```css
+--informative
+```
+
+Communicates neutral information.
+
+Information does not imply success or failure.
+
+Examples
+
+- Tips
+- Educational banners
+- Documentation
+- Release notes
+- Help panels
+
+---
+
+## Cautionary
+
+```css
+--cautionary
+```
+
+Represents situations requiring user attention.
+
+Unlike Destructive, cautionary still allows safe continuation.
+
+Examples
+
+- Low storage
+- Expiring sessions
+- Unsaved changes
+- Recommendations
+
+---
+
+## Destructive
+
+```css
+--destructive
+```
+
+Represents danger.
+
+Examples
+
+- Delete
+- Remove
+- Permanent actions
+- Errors
+- Critical failures
+
+Destructive should be reserved for actions or states that may produce irreversible consequences.
+
+---
+
+# Auxiliary Intents
+
+Auxiliary intents reinforce interaction but do not define hierarchy.
+
+---
+
+## Accent
+
+```css
+--accent
+```
+
+Accent increases visual emphasis without changing semantic meaning.
+
+Typical usage
+
+- Selected items
+- Tabs
+- Chips
+- Small highlights
+
+Accent should feel complementary rather than dominant.
+
+---
+
+## Active
+
+```css
+--active
+```
+
+Represents the current active interaction.
+
+Examples
+
+- Active navigation
+- Focused workspace
+- Current page
+- Current tool
+
+Unlike Primary, Active communicates current location instead of importance.
+
+---
+
+## Decoration
+
+```css
+--decoration
+```
+
+Purely decorative emphasis.
+
+Decoration should never communicate meaning.
+
+Examples
+
+- Decorative borders
+- Illustrations
+- Background ornaments
+- Decorative icons
+
+If removing Decoration changes understanding, it is not Decoration.
+
+---
+
+## Inverse
+
+```css
+--inverse
+```
+
+Inverse reverses contrast.
+
+Typical usage
+
+Dark buttons on light surfaces.
+
+Light buttons on dark surfaces.
+
+Inverse should preserve readability while adapting to opposite contrast contexts.
+
+---
+
+# Combining Intents
+
+Intent Roles are designed to combine with Interface Roles.
+
+Examples
+
+```
+Button
+
+↓
+
+Primary
+
+↓
+
+Hovered
+```
+
+```
+Card
+
+↓
+
+Affirmative
+```
+
+```
+Text
+
+↓
+
+Secondary
+```
+
+```
+Border
+
+↓
+
+Cautionary
+```
+
+Intent should never depend on the component.
+
+---
+
+# Things Intent Should Never Define
+
+Intent should never decide
+
+- elevation
+
+- spacing
+
+- typography
+
+- shadows
+
+- borders
+
+- layout
+
+Those belong to other layers.
+
+Intent only communicates meaning.
+
+---
+
+# Relationships
+
+```
+Surface
+
+↓
+
+Primary
+
+↓
+
+Focused
+
+↓
+
+Button
+```
+
+```
+Surface
+
+↓
+
+Informative
+
+↓
+
+Card
+```
+
+```
+Text
+
+↓
+
+Destructive
+```
+
+The same Intent may appear across dozens of components.
+
+That consistency is the purpose of this layer.
+
+---
+
+# Design Principles
+
+Intent should answer one question.
+
+> Why does this element stand out?
+
+Not
+
+> What is this element?
+
+Not
+
+> What color is it?
+
+Not
+
+> Which component is using it?
+
+Intent exists independently from components.
+
+---
+
+# Summary
+
+Intent Roles define semantic meaning.
+
+They communicate hierarchy, feedback and emphasis.
+
+They remain stable regardless of the component consuming them.
+
+A Button, Link, Card or Badge may all use Primary.
+
+Primary never belongs to the Button.
+
+Primary belongs to the interface language.

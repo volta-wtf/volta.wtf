@@ -203,7 +203,7 @@ export function CardsPayments() {
         <CardTitle className="text-xl">Payments</CardTitle>
         <CardDescription>Manage your payments.</CardDescription>
         <CardAction>
-          <Button variant="secondary" size="sm" className="shadow-none">
+          <Button variant="resting" size="sm" className="shadow-none">
             Add Payment
           </Button>
         </CardAction>

@@ -1,0 +1,10 @@
+/* Kbd — keyboard key cap. */
+.dsr-kbd-group { display: inline-flex; align-items: center; gap: 2px; }
+.dsr-kbd {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 16px; height: 16px; padding: 0 4px;
+  border: 1px solid var(--border); border-bottom-width: 1.5px;
+  border-radius: var(--radius-xs);
+  background: var(--muted); color: var(--muted-foreground);
+  font-family: var(--font-mono); font-size: var(--text-ui-xs); line-height: 1;
+}

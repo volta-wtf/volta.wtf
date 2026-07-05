@@ -5,27 +5,14 @@ import {
   createThemeObserver,
   getDualValuesForThemeChange
 } from './computed-style-utils.js';
+import { getThemeEditorServerUrl } from '../config/constants.js';
 
 
 
 // Función para obtener variables del servidor (sistema de archivos)
 async function fetchVariablesFromServer() {
   try {
-    // Detectar el puerto del theme editor
-    const currentPort = window.location.port || '3000';
-    const portNum = parseInt(currentPort);
-
-    const portMapping = {
-      3001: 4445, // apps/styles
-      3002: 4446, // apps/stylewind
-      3003: 4447, // apps/shadcn
-      3004: 4448, // apps/tmp
-      3005: 4449, // apps/tmp-1
-      3006: 4450, // apps/tmp-2
-    };
-
-    const themeEditorPort = portMapping[portNum] || 4444;
-    const apiUrl = `http://localhost:${themeEditorPort}/api/variables`;
+    const apiUrl = `${getThemeEditorServerUrl()}/api/variables`;
 
     console.log(`🔍 Obteniendo variables desde: ${apiUrl}`);
 
@@ -50,7 +37,10 @@ async function fetchVariablesFromServer() {
       filePath: data.filePath
     };
   } catch (error) {
-    console.error('❌ Error obteniendo variables del servidor:', error.message);
+    console.error(
+      `❌ Error obteniendo variables del servidor (${getThemeEditorServerUrl()}/api/variables):`,
+      error.message
+    );
     throw error;
   }
 }

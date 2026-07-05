@@ -33,7 +33,7 @@ function GalleryItemPreview({ item, view }: { item: CatalogItem; view: Category[
 
     if (isBorder) {
       // Renderizar borders
-      shapeStyle = { backgroundColor: 'white' };
+      shapeStyle = {};
       if (isBorderWidth) {
         shapeStyle = {
           ...shapeStyle,
@@ -88,7 +88,7 @@ function GalleryItemPreview({ item, view }: { item: CatalogItem; view: Category[
     return (
       <div className="flex items-center justify-center p-6">
         <div
-          className={`w-40 h-20 ${isBorder ? 'rounded-md' : ''} bg-white ${className}`}
+          className={`w-40 h-20 ${isBorder ? 'rounded-md' : 'bg-white'} ${className}`}
           style={{
             ...shapeStyle,
             ...(!isBorder && { boxShadow: '0 4px 6px rgb(0 0 0 / 0.1), 0 2px 4px rgb(0 0 0 / 0.1)' })
@@ -198,7 +198,7 @@ export default function GalleryView({ category, activeItemSlug, isPreviewOpen = 
             <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
               <p className="text-xs font-medium truncate">{item.title}</p>
               {item.cssClass && (
-                <p className="text-[10px] text-muted-foreground font-mono truncate">
+                <p className="text-[10px] text-muted-foreground font-mono truncate hidden">
                   .{item.cssClass}
                 </p>
               )}

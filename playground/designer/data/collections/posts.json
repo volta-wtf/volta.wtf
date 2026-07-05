@@ -1,0 +1,21 @@
+{
+  "id": "posts",
+  "name": "Blog Posts",
+  "icon": "file-text",
+  "fields": [
+    { "key": "title",    "label": "Title",     "type": "text" },
+    { "key": "excerpt",  "label": "Excerpt",   "type": "richtext" },
+    { "key": "cover",    "label": "Cover",     "type": "image" },
+    { "key": "author",   "label": "Author",    "type": "text" },
+    { "key": "date",     "label": "Date",      "type": "date" },
+    { "key": "tag",      "label": "Tag",       "type": "select", "options": ["Craft", "Engineering", "Process", "Release"] },
+    { "key": "readTime", "label": "Read time", "type": "number", "unit": "min" }
+  ],
+  "records": [
+    { "id": "b1", "title": "Designing at 60fps",            "excerpt": "Why every interaction in the editor is budgeted, measured, and shipped under 16 milliseconds.", "cover": "https://picsum.photos/seed/ds-post1/640/400", "author": "Maya Lindqvist", "date": "2026-06-18", "tag": "Engineering", "readTime": 7 },
+    { "id": "b2", "title": "The case for boring chrome",    "excerpt": "A design tool should disappear. Gray, quiet, and out of the way — so the work is the loudest thing on screen.", "cover": "https://picsum.photos/seed/ds-post2/640/400", "author": "Diego Ferrer", "date": "2026-05-30", "tag": "Craft", "readTime": 5 },
+    { "id": "b3", "title": "Collections: data on canvas",   "excerpt": "Bind a layer to a field, repeat a frame over records, and let real content drive the layout.", "cover": "https://picsum.photos/seed/ds-post3/640/400", "author": "Ana Kovač", "date": "2026-05-12", "tag": "Release", "readTime": 6 },
+    { "id": "b4", "title": "Tokens are the contract",       "excerpt": "One seed radius, one neutral ramp, one selection blue. How a typed token graph keeps the UI honest.", "cover": "https://picsum.photos/seed/ds-post4/640/400", "author": "Tom Okafor", "date": "2026-04-27", "tag": "Process", "readTime": 8 },
+    { "id": "b5", "title": "Keyboard first, always",        "excerpt": "V, F, R, T. The four keys that replace three toolbars — and how we chose the rest of the map.", "cover": "https://picsum.photos/seed/ds-post5/640/400", "author": "Iris Chen", "date": "2026-04-02", "tag": "Craft", "readTime": 4 }
+  ]
+}

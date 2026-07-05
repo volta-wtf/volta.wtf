@@ -1,5 +1,39 @@
 #!/usr/bin/env node
 
+const { readFileSync, existsSync } = require('fs')
+const { join } = require('path')
+
+/** Fija la raíz de la app antes de arrancar el servidor (una instancia por app/puerto). */
+function ensureThemeEditorProjectRoot() {
+  if (process.env.THEME_EDITOR_PROJECT_ROOT) return
+
+  let dir = process.cwd()
+  for (let i = 0; i < 12; i++) {
+    const pkgPath = join(dir, 'package.json')
+    if (existsSync(pkgPath)) {
+      try {
+        const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'))
+        if (pkg.name === '@studio/theme-editor') {
+          dir = join(dir, '..')
+          continue
+        }
+        const deps = { ...pkg.dependencies, ...pkg.devDependencies }
+        if (deps.next) {
+          process.env.THEME_EDITOR_PROJECT_ROOT = dir
+          return
+        }
+      } catch {
+        // ignorar
+      }
+    }
+    const parent = join(dir, '..')
+    if (parent === dir) break
+    dir = parent
+  }
+}
+
+ensureThemeEditorProjectRoot()
+
 // 1) Carga tu ESM bundle con dynamic import
 ; (async () => {
   try {

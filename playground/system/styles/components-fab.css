@@ -1,0 +1,61 @@
+/* ============================================================
+   FAB — Floating Action Button (LINE LDSG-style, shadcn tokens).
+   A circular, elevated action; `extended` becomes a labelled pill.
+   Positioning is left to the consumer (e.g. position: fixed).
+   ============================================================ */
+
+.ds-fab {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--spacing-2);
+  border: 0; cursor: pointer; font-family: var(--font-sans); font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full); box-shadow: var(--shadow-lg);
+  transition: transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out);
+}
+.ds-fab:hover { box-shadow: var(--shadow-xl); transform: translateY(-1px); }
+.ds-fab:active { transform: translateY(0); box-shadow: var(--shadow-md); }
+.ds-fab:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+.ds-fab:disabled { opacity: 0.5; pointer-events: none; box-shadow: var(--shadow-sm); }
+
+/* Sizes (circular) */
+.ds-fab--sm { width: 40px; height: 40px; }
+.ds-fab--md { width: 56px; height: 56px; }
+.ds-fab--lg { width: 64px; height: 64px; }
+.ds-fab .ds-icon { width: 24px; height: 24px; }
+.ds-fab--sm .ds-icon { width: 20px; height: 20px; }
+
+/* Extended (icon + label pill) */
+.ds-fab--extended { width: auto; height: 56px; padding: 0 var(--spacing-5); font-size: var(--text-sm); }
+.ds-fab--extended.ds-fab--sm { height: 40px; padding: 0 var(--spacing-4); }
+.ds-fab--extended.ds-fab--lg { height: 64px; padding: 0 var(--spacing-6); font-size: var(--text-base); }
+
+/* Variants */
+.ds-fab--default { background: var(--primary); color: var(--primary-foreground); }
+.ds-fab--default:hover { background: color-mix(in oklch, var(--primary) 90%, black); }
+.ds-fab--secondary { background: var(--secondary); color: var(--secondary-foreground); }
+.ds-fab--secondary:hover { background: color-mix(in oklch, var(--secondary) 85%, var(--foreground)); }
+.ds-fab--surface { background: var(--card); color: var(--card-foreground); }
+.ds-fab--surface:hover { background: var(--accent); color: var(--accent-foreground); }
+
+/* ---- FloatingMenu (speed dial) ---- */
+.ds-fab-menu { display: inline-flex; flex-direction: column; align-items: flex-end; gap: var(--spacing-4); }
+.ds-fab-menu[data-overlay] { position: relative; z-index: 50; }
+.ds-fab-menu[data-bg="label"] .ds-fab-menu-label { background: var(--card); padding: 4px 10px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.ds-fab-menu[data-bg="icon"] .ds-fab-menu-action .ds-fab { box-shadow: 0 0 0 8px var(--card), var(--shadow-md); }
+/* Scrim — the standalone Overlay component's style (distinct from the Dialog
+   family's .ds-overlay so the two never collide) */
+.ds-scrim { position: absolute; inset: 0; z-index: 40; background: color-mix(in oklch, var(--foreground) 45%, transparent); opacity: 0; pointer-events: none; transition: opacity var(--duration-moderate) var(--ease-out); }
+.ds-scrim--fixed { position: fixed; }
+.ds-scrim[data-open] { opacity: 1; pointer-events: auto; }
+.ds-fab-menu-actions { display: flex; flex-direction: column; align-items: flex-end; gap: var(--spacing-3); }
+.ds-fab-menu-action {
+  display: flex; align-items: center; gap: var(--spacing-3);
+  /* Center the sm (40px) child buttons under the md (56px) trigger. */
+  padding-right: 8px;
+  opacity: 0; transform: translateY(8px) scale(0.9); transform-origin: bottom right; pointer-events: none;
+  transition: opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+.ds-fab-menu[data-open] .ds-fab-menu-action { opacity: 1; transform: none; pointer-events: auto; }
+.ds-fab-menu-label {
+  font-size: var(--text-sm); font-weight: var(--font-weight-medium); color: var(--foreground); white-space: nowrap;
+}

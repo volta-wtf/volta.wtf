@@ -1,0 +1,38 @@
+/* ------------------------------------------------------------------
+   Base — the minimum element defaults consumers expect. Everything
+   else is opt-in via tokens and components. Kept tiny on purpose.
+------------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv11", "ss01";
+  font-variation-settings: normal;
+}
+
+/* Selection uses the canvas selection hue, subtly */
+::selection {
+  background: var(--selection-muted);
+}
+
+/* Tabular figures everywhere numbers matter (coordinates, sizes) */
+.tabular, input[type="number"], .mono { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); }
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

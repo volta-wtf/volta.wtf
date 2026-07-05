@@ -1,0 +1,29 @@
+<!-- @dsCard group="Utilities" viewport="720x520" name="Shimmer" subtitle="moving highlight swept across text — pure CSS" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="shimmer.css" />
+<style>
+  body { margin: 0; padding: 32px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 28px 32px; }
+  .cell { display: flex; flex-direction: column; gap: 8px; }
+  .cell .p { font-size: 15px; color: var(--muted-foreground); }
+  .cell .tag { font-family: var(--font-mono); font-size: 11px; color: var(--muted-foreground); }
+  .big { font-size: 22px; font-weight: 600; color: var(--foreground); }
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="cell"><p class="p shimmer">Generating response…</p><span class="tag">shimmer</span></div>
+  <div class="cell"><p class="p shimmer shimmer-duration-1000">Generating response…</p><span class="tag">shimmer-duration-1000</span></div>
+  <div class="cell"><p class="p shimmer shimmer-spread-24">Generating response…</p><span class="tag">shimmer-spread-24</span></div>
+  <div class="cell"><p class="p shimmer shimmer-angle-45">Generating response…</p><span class="tag">shimmer-angle-45</span></div>
+  <div class="cell"><p class="p shimmer shimmer-reverse">Generating response…</p><span class="tag">shimmer-reverse</span></div>
+  <div class="cell"><p class="p shimmer shimmer-color-blue">Generating response…</p><span class="tag">shimmer-color-blue</span></div>
+  <div class="cell"><p class="big shimmer">Thinking…</p><span class="tag">on a heading</span></div>
+  <div class="cell"><p class="p shimmer" dir="rtl">جارٍ إنشاء الرد…</p><span class="tag">dir="rtl"</span></div>
+</div>
+</body>
+</html>

@@ -1,5 +1,7 @@
 import { readFileSync } from 'fs';
-import { findGlobalsCss } from './css-finder.js';
+import { basename } from 'path';
+import { findThemeCssFiles } from './css-theme-finder.js';
+import { getThemeEditorProjectRoot } from './project-root.js';
 
 /**
  * Parsea variables CSS de un archivo de texto
@@ -38,8 +40,8 @@ export function parseVariablesFromCSS(cssContent) {
         sources[varKey] = {
           selector,
           type,
-          file: 'globals.css',
-          baseName: `--${baseName}`, // Nombre base sin sufijo de tema
+          file: 'theme.css',
+          baseName: `--${baseName}`,
           isThemeSpecific: selector !== ':root'
         };
       }
@@ -54,28 +56,34 @@ export function parseVariablesFromCSS(cssContent) {
  * @param {string} startDir - Directorio de inicio (opcional)
  * @returns {Object} - { variables: {}, sources: {}, filePath: string }
  */
-export function extractVariablesFromGlobalsCss(startDir = process.cwd()) {
+export function extractVariablesFromGlobalsCss(startDir = getThemeEditorProjectRoot()) {
   try {
-    // Usar css-finder para encontrar el archivo
-    const globalsCssPath = findGlobalsCss(startDir);
+    const themeCssPaths = findThemeCssFiles(startDir);
+    const variables = {};
+    const sources = {};
 
-    // Leer el contenido del archivo
-    const cssContent = readFileSync(globalsCssPath, 'utf-8');
+    for (const themeCssPath of themeCssPaths) {
+      const cssContent = readFileSync(themeCssPath, 'utf-8');
+      const parsed = parseVariablesFromCSS(cssContent);
+      const fileName = basename(themeCssPath);
 
-    // Parsear variables
-    const { variables, sources } = parseVariablesFromCSS(cssContent);
+      Object.entries(parsed.variables).forEach(([varName, value]) => {
+        variables[varName] = value;
+        sources[varName] = {
+          ...parsed.sources[varName],
+          file: fileName,
+          filePath: themeCssPath,
+        };
+      });
+    }
 
-    // Agregar información del archivo a los sources
-    Object.keys(sources).forEach(varName => {
-      sources[varName].filePath = globalsCssPath;
-    });
-
-    console.log(`✅ Extraídas ${Object.keys(variables).length} variables de: ${globalsCssPath}`);
+    const filePath = themeCssPaths.join(', ');
+    console.log(`✅ Extraídas ${Object.keys(variables).length} variables de: ${filePath}`);
 
     return {
       variables,
       sources,
-      filePath: globalsCssPath
+      filePath
     };
   } catch (error) {
     console.error('❌ Error extrayendo variables del sistema de archivos:', error.message);
@@ -93,7 +101,7 @@ export function extractVariablesFromGlobalsCss(startDir = process.cwd()) {
  * @param {string} startDir - Directorio de inicio
  * @returns {Object} - Resultado con variables o información de error
  */
-export function getVariablesFromFileSystem(startDir = process.cwd()) {
+export function getVariablesFromFileSystem(startDir = getThemeEditorProjectRoot()) {
   const result = extractVariablesFromGlobalsCss(startDir);
 
   if (result.error) {

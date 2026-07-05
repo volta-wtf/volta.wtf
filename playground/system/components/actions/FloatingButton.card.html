@@ -1,0 +1,63 @@
+<!-- @dsCard group="Actions" viewport="720x460" name="Floating Button" subtitle="floating action button — circular, extended, sizes" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 32px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  .lbl { font-size: 12px; color: var(--muted-foreground); margin-bottom: 12px; }
+  .row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  section { margin-bottom: 32px; }
+  .surface { position: relative; height: 200px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: color-mix(in oklch, var(--muted) 50%, transparent); overflow: hidden; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { FloatingButton, Icon } = window.TestDesignSystem_be7089;
+
+function App(){
+  return (
+    <div style={{ maxWidth: 620 }}>
+      <section>
+        <div className="lbl">Variants</div>
+        <div className="row">
+          <FloatingButton aria-label="Add"><Icon name="add" /></FloatingButton>
+          <FloatingButton variant="secondary" aria-label="Edit"><Icon name="edit" /></FloatingButton>
+          <FloatingButton variant="surface" aria-label="Share"><Icon name="copy" /></FloatingButton>
+        </div>
+      </section>
+      <section>
+        <div className="lbl">Sizes</div>
+        <div className="row">
+          <FloatingButton size="sm" aria-label="Add"><Icon name="add" /></FloatingButton>
+          <FloatingButton size="md" aria-label="Add"><Icon name="add" /></FloatingButton>
+          <FloatingButton size="lg" aria-label="Add"><Icon name="add" /></FloatingButton>
+          <FloatingButton disabled aria-label="Add"><Icon name="add" /></FloatingButton>
+        </div>
+      </section>
+      <section>
+        <div className="lbl">Extended</div>
+        <div className="row">
+          <FloatingButton extended><Icon name="add" /> New item</FloatingButton>
+          <FloatingButton extended variant="secondary"><Icon name="edit" /> Compose</FloatingButton>
+        </div>
+      </section>
+      <section style={{ marginBottom: 0 }}>
+        <div className="lbl">Anchored (position: absolute)</div>
+        <div className="surface">
+          <FloatingButton aria-label="Add" style={{ position: "absolute", right: 20, bottom: 20 }}><Icon name="add" /></FloatingButton>
+        </div>
+      </section>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

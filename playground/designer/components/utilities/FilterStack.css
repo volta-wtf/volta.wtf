@@ -1,0 +1,20 @@
+/* FilterStack — SVG-filter plugin stack. */
+.dsr-filterstack { display: flex; flex-direction: column; gap: var(--space-2); }
+.dsr-filterstack__preview {
+  height: 88px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; position: relative;
+  background: var(--muted);
+}
+.dsr-filterstack__rows { display: flex; flex-direction: column; }
+.dsr-filterstack__row {
+  display: flex; align-items: center; gap: var(--space-2);
+  height: var(--control-height); padding: 0 var(--space-1);
+  border-radius: var(--radius-xs);
+  font-size: var(--text-ui);
+}
+.dsr-filterstack__row:hover { background: var(--muted); }
+.dsr-filterstack__row .dsr-filterstack__name { flex: 1 1 auto; }
+.dsr-filterstack__row.is-off .dsr-filterstack__name { color: var(--muted-foreground); }
+.dsr-filterstack__icon { display: inline-flex; color: var(--muted-foreground); }

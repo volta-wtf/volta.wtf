@@ -7,6 +7,7 @@
   "exports": {
     "./*": "./src/*.tsx",
     "./primitives/*": "./src/*.ts",
+    "./hooks/*": "./hooks/*.ts",
     "./utils/*": "./utils/*.ts",
     "./lib/*": "./lib/*.ts"
   },

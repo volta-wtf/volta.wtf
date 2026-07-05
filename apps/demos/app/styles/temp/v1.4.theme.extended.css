@@ -1,0 +1,260 @@
+:root {
+    --color-blue-50: oklch(0.97 0.014 254.604);
+    --color-blue-100: oklch(0.932 0.032 255.585);
+    --color-blue-200: oklch(0.882 0.059 254.128);
+    --color-blue-300: oklch(0.809 0.105 251.813);
+    --color-blue-400: oklch(0.707 0.165 254.624);
+    --color-blue-500: oklch(0.623 0.214 259.815);
+    --color-blue-600: oklch(0.546 0.245 262.881);
+    --color-blue-700: oklch(0.488 0.243 264.376);
+    --color-blue-800: oklch(0.424 0.199 265.638);
+    --color-blue-900: oklch(0.379 0.146 265.522);
+    --color-blue-950: oklch(0.282 0.091 267.935);
+}
+
+:root {
+    --radius: 0.625rem;
+
+    /** Base tints */
+    --background: var(--emphasis-min);
+    --foreground: var(--emphasis-max);
+
+    /** Brand colors */
+    --primary: var(--emphasis-max);
+    --primary-foreground: var(--text-inverse);
+    --secondary: var(--emphasis-lower);
+    --secondary-foreground: var(--text-subtle);
+    /**/--tertiary: var(--emphasis-lowest);
+    /**/--tertiary-foreground: var(--text-subtle);
+    /** Functional colors */
+    --destructive: var(--tone-destructive-600);
+    --destructive-foreground: var(--inverse);
+    /**/--cautionary: var(--tone-cautionary-500);
+    /**/--cautionary-foreground: var(--content);
+    /**/--affirmative: var(--tone-affirmative-500);
+    /**/--affirmative-foreground: var(--inverse);
+    /**/--informative: var(--tone-informative-500);
+    /**/--informative-foreground: var(--inverse);
+
+    /** Main colors */
+    /**/--inverse:          var(--background);
+    /**/--active:           var(--primary);
+    /**/--accent:           var(--foreground);
+    /**/--indication:       var(--cautionary);
+    /**/--decoration:       var(--foreground);
+    /** Complementary tints */
+    /**/--content:          var(--foreground);
+    /**/--control:          var(--foreground);
+    /* Derivative tints */
+    /**/--ambient:          var(--foreground);
+    /**/--state:            var(--foreground);
+    /**/--scrim:            var(--ambient);
+    /**/--backdrop:         var(--ambient);
+    /**/--shadow:           var(--ambient);
+
+    /** Backgrounds */
+    /**/--body: var(--background);
+    /**/--canvas: var(--background);
+
+    /** Containers */
+    --card: var(--background);
+    --card-foreground: var(--text);
+    /**/--picker: var(--background);
+    /**/--dropdown: var(--background);
+    --popover: var(--background);
+    --popover-foreground: var(--text);
+    /**/--modal: var(--background);
+    /**/--dialog: var(--background);
+    /**/--popup: var(--background);
+
+    /** Highlights */
+    --muted: var(--emphasis-lower);
+    --muted-foreground: var(--text-muted);
+    /**/--silent: var(--emphasis-lowest);
+    /**/--silent-foreground: var(--text-disabled);
+    /**/--accented: var(--emphasis-lower);
+    /**/--accented-foreground: var(--text-subtle);
+    /**/--highlighted: var(--emphasis-lower);
+    /**/--highlighted-foreground: var(--on-light);
+    /**/--selected: var(--emphasis-lower);
+    /**/--selected-foreground: var(--on-light);
+
+    /** Content */
+    /**/--display:              var(--ambient); /* For display level text content */
+    /**/--heading:              var(--content); /* For heading level text content */
+    /**/--text:                 var(--emphasis-max);
+    /**/--text-subtle:          var(--emphasis-highest);
+    /**/--text-muted:           var(--emphasis-high);
+    /**/--text-disabled:        var(--emphasis-high);
+    /**/--text-hint:            var(--emphasis-high);
+    /**/--text-silent:          var(--emphasis-medium);
+    /**/--text-inverse:         var(--emphasis-low);
+    /**/--icon:                 var(--text);
+    /**/--icon-subtle:          var(--text-subtle);
+    /**/--icon-muted:           var(--text-muted);
+    /**/--icon-disabled:        var(--text-disabled);
+    /**/--icon-hint:            var(--text-hint);
+    /**/--icon-silent:          var(--text-silent);
+    /**/--icon-inverse:         var(--text-inverse);
+
+    /** Borders */
+    --border: var(--emphasis-low);
+    /**/--divider: var(--border);
+    /**/--line: color-mix(in hsl, var(--foreground) 10%, transparent);
+    /**/--rule: color-mix(in hsl, var(--foreground) 20%, transparent);
+
+    /** Controls */
+    /**/--outline: var(--border);
+    --input: var(--emphasis-low);
+    /**/--track: var(--emphasis-low);
+    /**/--thumb: var(--background);
+    /**/--action: var(--emphasis-low);
+    /**/--button: var(--emphasis-max);
+
+    --accent: var(--accent-inverse);
+    --accent-foreground: var(--text-inverse);
+
+    /** States */
+    /**/--action-resting:   color-mix(in hsl, var(--state) 0%, transparent);
+    /**/--action-raised:    color-mix(in hsl, var(--state) 8%, transparent);
+    /**/--action-hovered:   color-mix(in hsl, var(--state) 16%, transparent);
+    /**/--action-focused:   color-mix(in hsl, var(--state) 16%, transparent);
+    /**/--action-pressed:   color-mix(in hsl, var(--state) 18%, transparent);
+    /**/--action-dragging:  color-mix(in hsl, var(--state) 24%, transparent);
+
+    /** Interactive */
+    /**/--link:             var(--active);
+    /**/--visited:          color-mix(in hsl, var(--active) 80%, transparent);
+    --ring:                 var(--emphasis-medium);
+
+    --chart-1: var(--color-blue-300);
+    --chart-2: var(--color-blue-500);
+    --chart-3: var(--color-blue-600);
+    --chart-4: var(--color-blue-700);
+    --chart-5: var(--color-blue-800);
+
+    /* Regions */
+    --sidebar: var(--emphasis-lowest);
+    --sidebar-foreground: var(--text);
+    --surface: var(--emphasis-lowest);
+    --surface-foreground: var(--text);
+    /**/--main: transparent;
+    /**/--header: transparent;
+    /**/--footer: transparent;
+    /**/--aside: transparent;
+
+    --sidebar-primary: var(--emphasis-highest);
+    --sidebar-primary-foreground: var(--text-inverse);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
+
+    /* Surfaces */
+    /**/--surface-tint:         var(--tertiary);
+    /**/--surface-bright:       var(--surface);
+    /**/--surface-dim:          var(--surface);
+    /* Elevations */
+    /**/--surface-lowest:       color-mix(in hsl, var(--surface), var(--surface-tint) 2%);
+    /**/--surface-low:          color-mix(in hsl, var(--surface), var(--surface-tint) 4%);
+    /**/--surface-base:         color-mix(in hsl, var(--surface), var(--surface-tint) 6%);
+    /**/--surface-high:         color-mix(in hsl, var(--surface), var(--surface-tint) 8%);
+    /**/--surface-highest:      color-mix(in hsl, var(--surface), var(--surface-tint) 12%);
+    /* Overlays */
+    --scrim-hard:       color-mix(in hsl, var(--scrim) 50%, transparent);
+    --scrim-base:       color-mix(in hsl, var(--scrim) 30%, transparent);
+    --scrim-soft:       color-mix(in hsl, var(--scrim) 10%, transparent);
+    --backdrop-hard:    color-mix(in hsl, var(--backdrop) 80%, transparent);
+    --backdrop-base:    color-mix(in hsl, var(--backdrop) 60%, transparent);
+    --backdrop-soft:    color-mix(in hsl, var(--backdrop) 20%, transparent);
+    /* Shadows */
+    --shadow-hard:      color-mix(in hsl, var(--shadow) 15%, transparent);
+    --shadow-base:      color-mix(in hsl, var(--shadow) 10%, transparent);
+    --shadow-soft:      color-mix(in hsl, var(--shadow) 5%, transparent);
+
+    /* Markup? */
+    --code: var(--surface);
+    --code-foreground: var(--surface-foreground);
+    --code-highlight: oklch(0.96 0 0);
+    --code-number: oklch(0.56 0 0);
+
+    /**/--mark:                         color-mix(in hsl, var(--indication) 80%, transparent);
+    /**/--mark-foreground:              var(--on-light);
+
+    /**/--target:                       var(--mark);
+    /**/--target-foreground:            var(--mark-foreground);
+    /**/--search-text:                  var(--mark);
+    /**/--search-text-foreground:       var(--mark-foreground);
+    /**/--search-current:               var(--mark-foreground);
+    /**/--search-current-foreground:    var(--mark-foreground);
+
+    --selection:                        var(--emphasis-max);
+    --selection-foreground:             var(--emphasis-min);
+
+    /**/--caret:                        var(--foreground);
+
+
+
+
+}
+
+.dark {
+
+    --background: var(--emphasis-min);
+    --foreground: var(--text);
+
+    --primary: var(--emphasis-higher);
+    --primary-foreground: var(--text-inverse);
+    --secondary: var(--emphasis-lowest);
+    --secondary-foreground: var(--text-subtle);
+    --tertiery: var(--emphasis-lowest);
+    --tertiery-foreground: var(--text-subtle);
+    --destructive: var(--color-destructive-400);
+    --destructive-foreground: var(--color-destructive-600);
+
+    --surface: var(--emphasis-lowest);
+
+    --sidebar: var(--emphasis-lowest);
+    --card: var(--emphasis-lowest);
+    --popover: var(--emphasis-lowest);
+
+    --muted: var(--emphasis-lowest);
+    --accent: var(--emphasis-lower);
+
+    --text: var(--emphasis-highest);
+    --text-subtle: var(--emphasis-highest);
+    --text-muted: var(--emphasis-high);
+    --text-inverse: var(--emphasis-lowest);
+
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: var(--emphasis-low);
+
+    --code: var(--surface);
+    --selection: var(--emphasis-higher);
+
+    --chart-1: var(--color-blue-300);
+    --chart-2: var(--color-blue-500);
+    --chart-3: var(--color-blue-600);
+    --chart-4: var(--color-blue-700);
+    --chart-5: var(--color-blue-800);
+
+    --sidebar-primary: var(--color-blue-700);
+    --sidebar-accent: var(--accent);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--emphasis-medium);
+
+    --code-highlight: oklch(0.27 0 0);
+    --code-number: oklch(0.72 0 0);
+
+    --surface-foreground: var(--text-muted);
+    --sidebar-foreground: var(--text-subtle);
+    --sidebar-primary-foreground: var(--text-subtle);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --card-foreground: var(--text);
+    --popover-foreground: var(--text);
+    --muted-foreground: var(--text-muted);
+    --accent-foreground: var(--text-subtle);
+    --code-foreground: var(--surface-foreground);
+    --selection-foreground: var(--text-inverse);
+}

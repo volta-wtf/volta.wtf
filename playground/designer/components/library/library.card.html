@@ -1,0 +1,57 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Asset library" subtitle="AssetGrid · LibraryItem — shapes, gradients and blocks from data/*.json" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.525.0/dist/umd/lucide.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body { background: var(--background); margin: 0; }</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { AssetGrid, LibraryItem } = window.DesignerDesignSystem_6adbd8;
+
+const cssGradient = (g) =>
+  g.type === 'radial' ? `radial-gradient(circle, ${g.stops.map(s => `${s.color} ${s.position}%`).join(', ')})`
+  : g.type === 'conic' ? `conic-gradient(${g.stops.map(s => `${s.color} ${s.position}%`).join(', ')})`
+  : `linear-gradient(${g.angle}deg, ${g.stops.map(s => `${s.color} ${s.position}%`).join(', ')})`;
+
+function LibraryCard() {
+  const [shapes, setShapes] = React.useState([]);
+  const [gradients, setGradients] = React.useState([]);
+  React.useEffect(() => {
+    fetch('../../data/shapes.json').then(r => r.json()).then(d => setShapes(d.shapes.slice(0, 8))).catch(() => null);
+    fetch('../../data/gradients.json').then(r => r.json()).then(d => setGradients(d.presets.slice(0, 8))).catch(() => null);
+  }, []);
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', height: '100%' }}>
+      <div style={{ borderRight: '1px solid var(--border)' }}>
+        <AssetGrid title="Shapes" count={shapes.length}>
+          {shapes.map((s) => (
+            <LibraryItem key={s.id} name={s.name} thumb={
+              <svg viewBox="-4 -4 108 108" width="26" height="26"><path d={s.path} fill="currentColor" /></svg>
+            } />
+          ))}
+        </AssetGrid>
+      </div>
+      <div>
+        <AssetGrid title="Gradients" count={gradients.length}>
+          {gradients.map((g) => (
+            <LibraryItem key={g.id} name={g.name} thumb={
+              <span style={{ width: '100%', height: '100%', background: cssGradient(g) }} />
+            } />
+          ))}
+        </AssetGrid>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<LibraryCard />);
+</script>
+</body>
+</html>

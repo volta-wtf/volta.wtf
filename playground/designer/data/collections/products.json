@@ -1,0 +1,21 @@
+{
+  "id": "products",
+  "name": "Products",
+  "icon": "package",
+  "fields": [
+    { "key": "title",    "label": "Title",    "type": "text" },
+    { "key": "price",    "label": "Price",    "type": "number", "unit": "€" },
+    { "key": "image",    "label": "Image",    "type": "image" },
+    { "key": "category", "label": "Category", "type": "select", "options": ["Seating", "Tables", "Lighting", "Storage"] },
+    { "key": "rating",   "label": "Rating",   "type": "number" },
+    { "key": "inStock",  "label": "In stock", "type": "boolean" }
+  ],
+  "records": [
+    { "id": "p1", "title": "Arc Lounge Chair",   "price": 640, "image": "https://picsum.photos/seed/ds-chair/480/360",  "category": "Seating",  "rating": 4.8, "inStock": true },
+    { "id": "p2", "title": "Slab Coffee Table",  "price": 420, "image": "https://picsum.photos/seed/ds-table/480/360",  "category": "Tables",   "rating": 4.6, "inStock": true },
+    { "id": "p3", "title": "Cone Floor Lamp",    "price": 210, "image": "https://picsum.photos/seed/ds-lamp/480/360",   "category": "Lighting", "rating": 4.4, "inStock": false },
+    { "id": "p4", "title": "Grid Shelving Unit", "price": 890, "image": "https://picsum.photos/seed/ds-shelf/480/360",  "category": "Storage",  "rating": 4.9, "inStock": true },
+    { "id": "p5", "title": "Puck Side Table",    "price": 180, "image": "https://picsum.photos/seed/ds-side/480/360",   "category": "Tables",   "rating": 4.2, "inStock": true },
+    { "id": "p6", "title": "Fold Desk Lamp",     "price": 120, "image": "https://picsum.photos/seed/ds-desk/480/360",   "category": "Lighting", "rating": 4.7, "inStock": false }
+  ]
+}

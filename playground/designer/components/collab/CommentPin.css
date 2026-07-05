@@ -1,0 +1,25 @@
+/* CommentPin — anchored comment marker + optional bubble. */
+.dsr-commentpin { position: absolute; z-index: 35; }
+.dsr-commentpin__marker {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; padding: 0;
+  border: 1.5px solid var(--background);
+  border-radius: 999px 999px 999px 3px;
+  background: var(--presence, var(--selection));
+  color: oklch(0.99 0 0);
+  font-size: 10px; font-weight: var(--font-weight-semibold);
+  cursor: pointer; box-shadow: var(--shadow-md);
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+.dsr-commentpin__marker:hover { transform: scale(1.08); }
+.dsr-commentpin__bubble {
+  position: absolute; left: 32px; top: 0;
+  width: 216px; padding: var(--space-2-5) var(--space-3);
+  background: var(--popover); color: var(--popover-foreground);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popover);
+}
+.dsr-commentpin__meta { display: flex; align-items: baseline; gap: var(--space-1-5); margin-bottom: 3px; }
+.dsr-commentpin__name { font-size: var(--text-ui-sm); font-weight: var(--font-weight-semibold); }
+.dsr-commentpin__time { font-size: var(--text-ui-xs); color: var(--muted-foreground); }
+.dsr-commentpin__text { margin: 0; font-size: var(--text-ui); line-height: var(--leading-snug); }

@@ -1,0 +1,36 @@
+/* Transitions values */
+:root {
+
+    /* Durations */
+    --duration-fast: 0.15s;
+    --duration-normal: 0.3s;
+    --duration-slow: 0.5s;
+    --duration-slower: 0.7s;
+
+    /* Easing functions */
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* State scale ratios */
+    --scale-enlarge: 1.05;
+    --scale-enlarge-soft: 1.02;
+    --scale-shrink: 0.95;
+    --scale-shrink-strong: 0.9;
+
+    /* Translations */
+    --translate-xsmall: 4px;
+    --translate-small: 8px;
+    --translate-medium: 16px;
+    --translate-large: 24px;
+    --translate-xlarge: 32px;
+
+    /* Opacity values */
+    --opacity-low: 0.5;
+    --opacity-medium: 0.8;
+    --opacity-high: 0.9;
+
+}

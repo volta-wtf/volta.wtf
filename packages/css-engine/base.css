@@ -1,0 +1,71 @@
+/* CSS Reset & Base Styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+}
+
+body {
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color-scheme: var(--color-scheme);
+  background-color: hsl(var(--color-body));
+  color: hsl(var(--color-text));
+  font-size: var(--font-size);
+  accent-color: var(--color-accented);
+  caret-color: var(--color-caret);
+}
+
+body::selection {
+  background: var(--color-selection);
+}
+
+::backdrop {
+  background-color: var(--color-backdrop);
+}
+
+mark {
+  background: var(--color-mark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+}
+
+* {
+  border-color: var(--color-border, currentColor);
+}
+
+.divide-y,
+.divide-x {
+  :where(.divide-y > :not(:last-child)) {
+    border-color: var(--color-divider, currentColor);
+  }
+}
+
+/*
+svg.icon {
+    fill: var(--default-fill-icon, initial);
+    stroke: var(--default-stroke-icon, initial);
+}
+*/

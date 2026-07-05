@@ -46,7 +46,7 @@ export function Shell({
   } = toaster || {}
 
   return (
-    <>
+    <div id="application">
       <Tooltips
         delayDuration={delayDuration}
         skipDelayDuration={skipDelayDuration}
@@ -62,6 +62,6 @@ export function Shell({
           />
         )}
       </Tooltips>
-    </>
+    </div>
   )
 }

@@ -1,0 +1,22 @@
+/* Tabs — segmented control (inspector Design/Prototype class). */
+.dsr-tabs {
+  display: inline-flex; align-items: center; gap: 2px;
+  padding: 2px; border-radius: var(--radius-sm);
+  background: var(--muted);
+}
+.dsr-tabs__tab {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1);
+  height: 22px; padding: 0 var(--space-2-5);
+  border: none; border-radius: var(--radius-xs);
+  background: transparent; color: var(--muted-foreground);
+  font-family: var(--font-sans); font-size: var(--text-ui-sm);
+  font-weight: var(--font-weight-medium); line-height: 1;
+  cursor: pointer; user-select: none; white-space: nowrap;
+  transition: var(--transition-colors);
+}
+.dsr-tabs__tab:hover { color: var(--foreground); }
+.dsr-tabs__tab:focus-visible { outline: none; box-shadow: 0 0 0 var(--ring-width) var(--ring-color); }
+.dsr-tabs__tab.is-selected { background: var(--background); color: var(--foreground); box-shadow: var(--shadow-2xs); }
+
+.dsr-tabs--full { display: flex; width: 100%; }
+.dsr-tabs--full .dsr-tabs__tab { flex: 1; }

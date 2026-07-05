@@ -1,28 +1,11 @@
 "use client"
 
 import * as React from "react"
-import {
-  IconCamera,
-  IconChartBar,
-  IconDashboard,
-  IconDatabase,
-  IconFileAi,
-  IconFileDescription,
-  IconFileWord,
-  IconFolder,
-  IconHelp,
-  IconInnerShadowTop,
-  IconListDetails,
-  IconReport,
-  IconSearch,
-  IconSettings,
-  IconUsers,
-} from "@tabler/icons-react"
 
-import { NavDocuments } from  "./nav-documents"
-import { NavMain } from  "./nav-main"
-import { NavSecondary } from  "./nav-secondary"
-import { NavUser } from  "./nav-user"
+import { NavDocuments } from "@/registry/bases/base/blocks/dashboard-01/components/nav-documents"
+import { NavMain } from "@/registry/bases/base/blocks/dashboard-01/components/nav-main"
+import { NavSecondary } from "@/registry/bases/base/blocks/dashboard-01/components/nav-secondary"
+import { NavUser } from "@/registry/bases/base/blocks/dashboard-01/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -31,7 +14,8 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/registry/bases/base/ui/sidebar"
+import { IconPlaceholder } from "@/app/(create)/components/icon-placeholder"
 
 const data = {
   user: {
@@ -43,33 +27,81 @@ const data = {
     {
       title: "Dashboard",
       url: "#",
-      icon: IconDashboard,
+      icon: (
+        <IconPlaceholder
+          lucide="LayoutDashboardIcon"
+          tabler="IconDashboard"
+          hugeicons="DashboardSquare01Icon"
+          phosphor="SquaresFourIcon"
+          remixicon="RiDashboardLine"
+        />
+      ),
     },
     {
       title: "Lifecycle",
       url: "#",
-      icon: IconListDetails,
+      icon: (
+        <IconPlaceholder
+          lucide="ListIcon"
+          tabler="IconListDetails"
+          hugeicons="Menu01Icon"
+          phosphor="ListIcon"
+          remixicon="RiListUnordered"
+        />
+      ),
     },
     {
       title: "Analytics",
       url: "#",
-      icon: IconChartBar,
+      icon: (
+        <IconPlaceholder
+          lucide="ChartBarIcon"
+          tabler="IconChartBar"
+          hugeicons="ChartHistogramIcon"
+          phosphor="ChartBarIcon"
+          remixicon="RiBarChartLine"
+        />
+      ),
     },
     {
       title: "Projects",
       url: "#",
-      icon: IconFolder,
+      icon: (
+        <IconPlaceholder
+          lucide="FolderIcon"
+          tabler="IconFolder"
+          hugeicons="Folder01Icon"
+          phosphor="FolderIcon"
+          remixicon="RiFolderLine"
+        />
+      ),
     },
     {
       title: "Team",
       url: "#",
-      icon: IconUsers,
+      icon: (
+        <IconPlaceholder
+          lucide="UsersIcon"
+          tabler="IconUsers"
+          hugeicons="UserGroupIcon"
+          phosphor="UsersIcon"
+          remixicon="RiGroupLine"
+        />
+      ),
     },
   ],
   navClouds: [
     {
       title: "Capture",
-      icon: IconCamera,
+      icon: (
+        <IconPlaceholder
+          lucide="CameraIcon"
+          tabler="IconCamera"
+          hugeicons="Camera01Icon"
+          phosphor="CameraIcon"
+          remixicon="RiCameraLine"
+        />
+      ),
       isActive: true,
       url: "#",
       items: [
@@ -85,7 +117,15 @@ const data = {
     },
     {
       title: "Proposal",
-      icon: IconFileDescription,
+      icon: (
+        <IconPlaceholder
+          lucide="FileTextIcon"
+          tabler="IconFileDescription"
+          hugeicons="File01Icon"
+          phosphor="FileTextIcon"
+          remixicon="RiFileTextLine"
+        />
+      ),
       url: "#",
       items: [
         {
@@ -100,7 +140,15 @@ const data = {
     },
     {
       title: "Prompts",
-      icon: IconFileAi,
+      icon: (
+        <IconPlaceholder
+          lucide="FileTextIcon"
+          tabler="IconFileAi"
+          hugeicons="File01Icon"
+          phosphor="FileTextIcon"
+          remixicon="RiFileTextLine"
+        />
+      ),
       url: "#",
       items: [
         {
@@ -118,38 +166,85 @@ const data = {
     {
       title: "Settings",
       url: "#",
-      icon: IconSettings,
+      icon: (
+        <IconPlaceholder
+          lucide="Settings2Icon"
+          tabler="IconSettings"
+          hugeicons="Settings05Icon"
+          phosphor="GearIcon"
+          remixicon="RiSettingsLine"
+        />
+      ),
     },
     {
       title: "Get Help",
       url: "#",
-      icon: IconHelp,
+      icon: (
+        <IconPlaceholder
+          lucide="CircleHelpIcon"
+          tabler="IconHelp"
+          hugeicons="HelpCircleIcon"
+          phosphor="QuestionIcon"
+          remixicon="RiQuestionLine"
+        />
+      ),
     },
     {
       title: "Search",
       url: "#",
-      icon: IconSearch,
+      icon: (
+        <IconPlaceholder
+          lucide="SearchIcon"
+          tabler="IconSearch"
+          hugeicons="SearchIcon"
+          phosphor="MagnifyingGlassIcon"
+          remixicon="RiSearchLine"
+        />
+      ),
     },
   ],
   documents: [
     {
       name: "Data Library",
       url: "#",
-      icon: IconDatabase,
+      icon: (
+        <IconPlaceholder
+          lucide="DatabaseIcon"
+          tabler="IconDatabase"
+          hugeicons="Database01Icon"
+          phosphor="DatabaseIcon"
+          remixicon="RiDatabase2Line"
+        />
+      ),
     },
     {
       name: "Reports",
       url: "#",
-      icon: IconReport,
+      icon: (
+        <IconPlaceholder
+          lucide="FileChartColumnIcon"
+          tabler="IconReport"
+          hugeicons="Analytics01Icon"
+          phosphor="ChartLineIcon"
+          remixicon="RiFileChartLine"
+        />
+      ),
     },
     {
       name: "Word Assistant",
       url: "#",
-      icon: IconFileWord,
+      icon: (
+        <IconPlaceholder
+          lucide="FileIcon"
+          tabler="IconFileWord"
+          hugeicons="File01Icon"
+          phosphor="FileIcon"
+          remixicon="RiFileLine"
+        />
+      ),
     },
   ],
 }
-
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="offcanvas" {...props}>
@@ -157,13 +252,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton
-              asChild
-              className="data-[slot=sidebar-menu-button]:!p-1.5"
+              className="data-[slot=sidebar-menu-button]:p-1.5!"
+              render={<a href="#" />}
             >
-              <a href="#">
-                <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
-              </a>
+              <IconPlaceholder
+                lucide="CommandIcon"
+                tabler="IconInnerShadowTop"
+                hugeicons="CommandIcon"
+                phosphor="CommandIcon"
+                remixicon="RiCommandLine"
+                className="size-5!"
+              />
+              <span className="text-base font-semibold">Acme Inc.</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

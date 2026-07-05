@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Designer — Workspace</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.525.0/dist/umd/lucide.js" crossorigin="anonymous"></script>
+<script src="_ds_bundle.js"></script>
+<script src="ui_kits/editor/store.js"></script>
+<script type="text/babel" src="ui_kits/editor/theme-panel.jsx"></script>
+<script type="text/babel" src="ui_kits/editor/chrome-theme.jsx"></script>
+<style>
+  html, body, #root { height: 100%; }
+  body { margin: 0; background: var(--background); overflow: hidden; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Menubar, Tabs, Button, IconButton, Icon, Label, Badge } = window.DesignerDesignSystem_6adbd8;
+
+/* ── file card preview: cheap thumbnail from element data ─────── */
+function FilePreview({ file }) {
+  const els = file.els || {};
+  const top = (file.order || []).filter((id) => els[id] && !els[id].parent);
+  const K = 6.5;
+  const accent = (file.theme && file.theme.accent) || '#d97757';
+  return (
+    <div style={{ position: 'relative', height: 118, background: 'var(--canvas)', borderRadius: 'var(--radius-sm)', overflow: 'hidden', backgroundImage: 'radial-gradient(circle, var(--canvas-dots) 1px, transparent 1px)', backgroundSize: '10px 10px' }}>
+      {top.length === 0 ? (
+        <span style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, color: 'var(--muted-foreground)' }}>Vacío</span>
+      ) : top.map((id) => {
+        const el = els[id];
+        const fill = el.fillToken === 'accent' ? accent : (el.fill || (el.type === 'frame' ? '#ffffff' : 'var(--muted)'));
+        return (
+          <span key={id} style={{
+            position: 'absolute', left: 10 + el.x / K, top: 10 + el.y / K,
+            width: Math.max(4, el.w / K), height: Math.max(3, el.h / K),
+            background: fill, borderRadius: el.type === 'ellipse' ? 999 : 2,
+            boxShadow: el.type === 'frame' ? 'inset 0 0 0 1px oklch(0 0 0 / 0.10)' : 'none',
+          }}></span>
+        );
+      })}
+    </div>
+  );
+}
+
+const timeAgo = (t) => {
+  const m = Math.max(0, Math.round((Date.now() - t) / 60000));
+  if (m < 1) return 'ahora';
+  if (m < 60) return `hace ${m}m`;
+  const h = Math.round(m / 60);
+  return h < 24 ? `hace ${h}h` : `hace ${Math.round(h / 24)}d`;
+};
+
+function WorkspaceTab() {
+  const [store, setStore] = React.useState(() => window.EDITOR_STORE.load());
+  const refresh = () => setStore({ ...window.EDITOR_STORE.load() });
+  React.useEffect(() => {
+    const h = () => refresh();
+    window.addEventListener('focus', h);
+    return () => window.removeEventListener('focus', h);
+  }, []);
+  const open = (id) => {
+    window.EDITOR_STORE.save({ ...store, lastOpen: id });
+    window.location.href = `ui_kits/editor/index.html#file=${id}`;
+  };
+  const last = store.files[store.lastOpen];
+  const create = () => {
+    const f = window.EDITOR_STORE.newFile(store, 'Untitled');
+    window.location.href = `ui_kits/editor/index.html#file=${f.id}`;
+  };
+  return (
+    <div style={{ maxWidth: 1040, margin: '0 auto', padding: '28px 24px 80px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+        <div>
+          <div style={{ fontSize: 'var(--text-xl)', fontWeight: 'var(--font-weight-semibold)', letterSpacing: 'var(--tracking-tight)' }}>Archivos</div>
+          <div style={{ fontSize: 'var(--text-ui)', color: 'var(--muted-foreground)' }}>Los cambios del editor se guardan solos — vuelve cuando quieras.</div>
+        </div>
+        <div style={{ display: 'flex', gap: 8 }}>
+          {last ? <Button variant="outline" onClick={() => open(last.id)}>Abrir “{last.name}”</Button> : null}
+          <Button onClick={create}>New file</Button>
+        </div>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))', gap: 12 }}>
+        {store.fileOrder.map((id) => {
+          const f = store.files[id];
+          if (!f) return null;
+          return (
+            <div key={id} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', padding: 8, cursor: 'pointer', transition: 'var(--transition-colors)' }}
+              onClick={() => open(id)}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--ring)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; }}>
+              <FilePreview file={f} />
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6, padding: '8px 4px 2px' }}>
+                <span
+                  contentEditable suppressContentEditableWarning
+                  onClick={(e) => e.stopPropagation()}
+                  onBlur={(e) => { window.EDITOR_STORE.patchFile(store, id, { name: e.currentTarget.textContent || 'Untitled' }); refresh(); }}
+                  title="Click para renombrar"
+                  style={{ fontSize: 'var(--text-ui)', fontWeight: 'var(--font-weight-medium)', outline: 'none', cursor: 'text', borderRadius: 3, minWidth: 40 }}
+                >{f.name}</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                  <span style={{ fontSize: 'var(--text-ui-xs)', color: 'var(--muted-foreground)', whiteSpace: 'nowrap' }}>{timeAgo(f.updatedAt)}</span>
+                  <IconButton size="sm" name="delete" label="Delete file" tooltip={false}
+                    onClick={(e) => { e.stopPropagation(); if (store.fileOrder.length > 1) { window.EDITOR_STORE.removeFile(store, id); refresh(); } }} />
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ── resources tab: the previous hub content ───────────────────── */
+const RES = {
+  'UI kits': [
+    ['Editor — multi-arquetipo', 'ui_kits/editor/index.html', 'Design · Board · Slides · Sites · Buzz · Make · Dev · ⌘K'],
+    ['Playground', 'ui_kits/playground/index.html', 'Catálogo en vivo de todos los assets'],
+  ],
+  'Fundamentos': [
+    ['Neutral ramp', 'guidelines/colors-neutral.html', 'Escala warm-neutral oklch'],
+    ['Semantic surfaces', 'guidelines/colors-semantic.html', 'Light + dark'],
+    ['Accents', 'guidelines/colors-accents.html', 'selection · brand · destructive'],
+    ['Type — families', 'guidelines/type-families.html', 'Geist · Mono · Source Serif 4'],
+    ['Type — UI scale', 'guidelines/type-ui-scale.html', '11–14px chrome'],
+    ['Type — content', 'guidelines/type-content-scale.html', '16→48 editorial'],
+    ['Spacing', 'guidelines/spacing-scale.html', 'Base 4px'],
+    ['Chrome dimensions', 'guidelines/spacing-chrome.html', '48 · 264 · 28 · 32 · 36'],
+    ['Radius', 'guidelines/radius.html', 'Seed 10px'],
+    ['Shadows', 'guidelines/shadows.html', 'Profundidad ganada'],
+    ['Motion', 'guidelines/motion.html', '80–240ms mecánico'],
+    ['Token tiers', 'guidelines/token-tiers.html', 'Demo 4 capas opt-in'],
+    ['Canvas & selection', 'guidelines/canvas-selection.html', 'Dot grid · handles'],
+    ['readme.md', 'readme.md', 'Guía completa: voz, fundamentos, arquitectura'],
+    ['styles.css', 'styles.css', 'Entry point de CSS (tokens + componentes)'],
+  ],
+  'Componentes (cards en vivo)': [
+    ['Icon library', 'components/icons/icons.card.html', '~95 roles → Lucide'],
+    ['UI primitives', 'components/ui/ui.card.html', 'Button · Input · Switch · Tabs…'],
+    ['Typed fields', 'components/fields/fields.card.html', 'NumberField (unit system) · ColorField…'],
+    ['Editor chrome', 'components/designer/designer.card.html', 'Mini editor vivo'],
+    ['Token manager', 'components/tokens/tokens-ui.card.html', 'Tokens tipados W3C'],
+    ['Data collections', 'components/data/data.card.html', 'Colecciones → canvas binding'],
+    ['Asset library', 'components/library/library.card.html', 'Shapes + gradientes'],
+    ['Micro-tools', 'components/utilities/utilities.card.html', 'GradientEditor · FilterStack · Shapes'],
+    ['Device previews', 'components/devices/devices.card.html', 'Phone / tablet / laptop / watch'],
+    ['Prototyping', 'components/prototype/prototype.card.html', 'Noodles + transiciones'],
+    ['Commands', 'components/commands/commands.card.html', '⌘K palette + atajos'],
+    ['Actions', 'components/actions/actions.card.html', 'Fill · Rotate · Opacity · Align'],
+    ['Collaboration', 'components/collab/collab.card.html', 'Cursores, comentarios, presencia'],
+  ],
+  'Datos (JSON)': [
+    ['tokens.json', 'data/tokens.json', 'Tokens tipados (W3C)'],
+    ['collections.json', 'data/collections.json', '+ products · team · posts · testimonials'],
+    ['keybindings.json', 'data/keybindings.json', 'Comandos + atajos'],
+    ['layouts.json', 'data/layouts.json', 'Arquetipos de editor'],
+    ['devices.json', 'data/devices.json', 'Viewports + breakpoints'],
+    ['interactions.json', 'data/interactions.json', 'Triggers · transiciones · easings'],
+    ['blocks.json', 'data/blocks.json', 'Bloques del web builder'],
+    ['gradients.json', 'data/gradients.json', 'Presets de utilidades (+ shapes, filters)'],
+  ],
+};
+
+function ResourcesTab() {
+  const [viewing, setViewing] = React.useState(null);
+  if (viewing) {
+    return (
+      <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderBottom: '1px solid var(--border)', flex: 'none' }}>
+          <IconButton name="chevron-left" label="Volver a recursos" onClick={() => setViewing(null)} />
+          <span style={{ fontSize: 'var(--text-ui)', fontWeight: 'var(--font-weight-medium)', flex: 1 }}>{viewing[0]}</span>
+          <a href={viewing[1]} target="_blank" rel="noreferrer" style={{ fontSize: 'var(--text-ui-sm)', color: 'var(--muted-foreground)', textDecoration: 'none' }}>abrir en pestaña ↗</a>
+        </div>
+        <iframe src={viewing[1]} title={viewing[0]} style={{ flex: 1, border: 'none', width: '100%', background: 'var(--background)' }}></iframe>
+      </div>
+    );
+  }
+  return (
+    <div style={{ maxWidth: 1040, margin: '0 auto', padding: '28px 24px 80px' }}>
+      {Object.entries(RES).map(([sec, items]) => (
+        <section key={sec} style={{ marginBottom: 28 }}>
+          <Label eyebrow style={{ display: 'block', marginBottom: 10 }}>{sec}</Label>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))', gap: 8 }}>
+            {items.map(([t, href, d]) => (
+              <div key={href} role="button" tabIndex={0} onClick={() => setViewing([t, href])}
+                onKeyDown={(e) => { if (e.key === 'Enter') setViewing([t, href]); }}
+                style={{ display: 'flex', flexDirection: 'column', gap: 2, padding: '12px 14px', cursor: 'pointer', background: 'var(--card)', color: 'var(--card-foreground)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--muted)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--card)'; }}>
+                <span style={{ fontSize: 'var(--text-ui)', fontWeight: 'var(--font-weight-medium)' }}>{t}</span>
+                <span style={{ fontSize: 'var(--text-ui-xs)', color: 'var(--muted-foreground)', lineHeight: 1.4 }}>{d}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+      <p style={{ fontSize: 'var(--text-ui-sm)', color: 'var(--muted-foreground)', borderTop: '1px solid var(--border)', paddingTop: 14 }}>
+        Todo se abre aquí dentro; usa “abrir en pestaña” para la página completa. Para correrlo local: <code className="mono">npx serve .</code>
+      </p>
+    </div>
+  );
+}
+
+/* ── presets catalog tab ───────────────────────────────── */
+const { AssetGrid, LibraryItem, Badge: PBadgeUi } = window.DesignerDesignSystem_6adbd8;
+const gCss = window.DesignerDesignSystem_6adbd8.GradientCss || ((g) => `linear-gradient(${g.angle || 135}deg, ${g.stops.map((s) => `${s.color} ${s.position}%`).join(', ')})`);
+
+function PresetsTab() {
+  const [d, setD] = React.useState({ gradients: [], shapes: [], filters: [], blocks: [] });
+  React.useEffect(() => {
+    const jobs = [
+      ['data/gradients.json', (x) => ({ gradients: x.presets })],
+      ['data/shapes.json', (x) => ({ shapes: x.shapes })],
+      ['data/filters.json', (x) => ({ filters: x.presets })],
+      ['data/blocks.json', (x) => ({ blocks: x.blocks })],
+    ];
+    jobs.forEach(([u, fn]) => fetch(u).then((r) => r.json()).then((x) => setD((p) => ({ ...p, ...fn(x) }))).catch(() => null));
+  }, []);
+  return (
+    <div style={{ maxWidth: 1040, margin: '0 auto', padding: '20px 24px 80px' }}>
+      <AssetGrid title="Gradients" count={d.gradients.length}>
+        {d.gradients.map((g) => (
+          <LibraryItem key={g.id} name={g.name} thumb={<span style={{ width: '100%', height: '100%', background: gCss(g) }}></span>} />
+        ))}
+      </AssetGrid>
+      <AssetGrid title="Shapes" count={d.shapes.length}>
+        {d.shapes.map((s) => (
+          <LibraryItem key={s.id} name={s.name} thumb={<svg viewBox="-4 -4 108 108" width="26" height="26"><path d={s.path} fill="currentColor" /></svg>} />
+        ))}
+      </AssetGrid>
+      <AssetGrid title="SVG filters" count={d.filters.length}>
+        {d.filters.map((f) => (
+          <LibraryItem key={f.id} name={f.name} icon="effects" />
+        ))}
+      </AssetGrid>
+      <AssetGrid title="Web blocks" count={d.blocks.length}>
+        {d.blocks.map((b) => (
+          <LibraryItem key={b.id} name={b.name} icon={b.icon || 'rectangle'} />
+        ))}
+      </AssetGrid>
+      <p style={{ fontSize: 'var(--text-ui-xs)', color: 'var(--muted-foreground)', paddingTop: 10 }}>Catálogo de <span className="mono">data/*.json</span> — los mismos presets que usan las micro-herramientas y el editor.</p>
+    </div>
+  );
+}
+
+/* ── editor-chrome theme tab (persist + live preview on this page) ─ */
+function EditorThemeTab({ chrome, onChrome }) {
+  const [sub, setSub] = React.useState('theme');
+  const set = (next) => { window.chromeThemeSave(next); onChrome(next); };
+  return (
+    <div style={{ maxWidth: 480, margin: '0 auto', padding: '28px 24px 80px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div>
+        <div style={{ fontSize: 'var(--text-xl)', fontWeight: 'var(--font-weight-semibold)', letterSpacing: 'var(--tracking-tight)' }}>Theme del editor</div>
+        <div style={{ fontSize: 'var(--text-ui)', color: 'var(--muted-foreground)' }}>Solo el chrome (este workspace y el editor) — independiente de tus proyectos. Persistente.</div>
+      </div>
+      <Tabs full value={sub} onChange={setSub} items={[{ value: 'theme', label: 'Theme' }, { value: 'vars', label: 'Variables' }]} />
+      <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: 16, display: 'flex', flexDirection: 'column', gap: 14 }}>
+        {sub === 'theme' ? (
+          <React.Fragment>
+            <window.ThemeControls theme={chrome.theme} defaults={window.CHROME_THEME_DEFAULTS} onChange={(theme) => set({ ...chrome, theme })} />
+            <Button variant="secondary" onClick={() => set({ ...chrome, theme: { ...window.CHROME_THEME_DEFAULTS } })}>Reset to defaults</Button>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <window.VarsTable groups={window.CHROME_VAR_GROUPS} values={chrome.vars} onChange={(k, v) => set({ ...chrome, vars: { ...chrome.vars, [k]: v } })} />
+            <Button variant="secondary" onClick={() => set({ ...chrome, vars: {} })}>Reset variables</Button>
+          </React.Fragment>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function WorkspaceApp() {
+  const [tab, setTab] = React.useState('workspace');
+  const [chrome, setChrome] = React.useState(() => window.chromeThemeLoad());
+  React.useEffect(() => { window.chromeApplyScale(chrome); }, [chrome]);
+  return (
+    <div className={chrome.theme.mode === 'dark' ? 'dark' : ''} style={{ height: '100%', display: 'flex', flexDirection: 'column', background: 'var(--background)', color: 'var(--foreground)', ...window.chromeCssVars(chrome) }}>
+      <Menubar
+        wordmark="Designer"
+        center={<Tabs value={tab} onChange={setTab} items={[{ value: 'workspace', label: 'Workspace' }, { value: 'presets', label: 'Presets' }, { value: 'editor', label: 'Editor' }, { value: 'recursos', label: 'Recursos' }]} />}
+        right={<Badge variant="outline">design system</Badge>}
+      />
+      <div style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
+        {tab === 'workspace' ? <WorkspaceTab /> : null}
+        {tab === 'presets' ? <PresetsTab /> : null}
+        {tab === 'editor' ? <EditorThemeTab chrome={chrome} onChrome={setChrome} /> : null}
+        {tab === 'recursos' ? <ResourcesTab /> : null}
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<WorkspaceApp />);
+</script>
+</body>
+</html>

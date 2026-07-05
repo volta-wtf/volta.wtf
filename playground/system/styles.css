@@ -1,0 +1,31 @@
+/* ============================================================
+   ROOT STYLESHEET — import manifest only.
+   Consumers link THIS one file. Layer order: tokens → fonts →
+   base reset → component styles. Keep this file @import-only.
+   ============================================================ */
+
+/* Tokens */
+@import "./tokens/colors.css";
+@import "./tokens/accents.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/radius.css";
+@import "./tokens/shadows.css";
+@import "./tokens/motion.css";
+@import "./tokens/misc.css";
+
+/* Fonts */
+@import "./tokens/fonts.css";
+
+/* Base reset + primitives */
+@import "./styles/base.css";
+
+/* Component styles (grouped) */
+@import "./styles/components-forms.css";
+@import "./styles/components-layout.css";
+@import "./styles/components-overlay.css";
+@import "./styles/components-extended.css";
+@import "./styles/components-typography.css";
+@import "./styles/components-primitives.css";
+@import "./styles/components-fab.css";
+@import "./styles/components-geist.css";

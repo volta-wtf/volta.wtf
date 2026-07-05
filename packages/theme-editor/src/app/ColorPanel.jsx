@@ -42,6 +42,28 @@ export function ColorPanel({
         sections={sectionTabs}
       />
 
+      {/* Tokens semánticos (shadcn: --background, --primary, etc.) */}
+      {activeSection === 'semantic' && (
+        <div style={{ marginTop: '-1px' }}>
+          {(colorVars.semanticColors?.semantic ?? []).map(({ varName, value }) => (
+            <PropertyItem
+              key={varName}
+              varName={varName}
+              value={value}
+              isModified={modifiedVars.hasOwnProperty(varName)}
+              onUpdate={updateCSSVar}
+              onReset={resetVar}
+              placeholder="Valor de color"
+              labelTransform={(name) => name.replace(/^--/, '')}
+              hoveredItem={hoveredItem}
+              onHover={setHoveredItem}
+              showPreview={true}
+              showTypeIndicator={false}
+            />
+          ))}
+        </div>
+      )}
+
       {/* Contenido de Color Wheel */}
       {activeSection === 'wheel' && (
         <div style={{ marginTop: '-1px' }}>
@@ -122,11 +144,14 @@ export function ColorPanel({
       )}
 
       {/* Mensaje si no hay variables */}
-      {((activeSection === 'wheel' && Object.keys(colorVars.wheelColors).length === 0) ||
-        (activeSection === 'palette' && Object.keys(colorVars.paletteColors).length === 0)) && (
-        <EmptyState
-          message={`No se encontraron variables de ${activeSection === 'wheel' ? 'Color Wheel' : 'Color Palette'}`}
-        />
+      {activeSection === 'semantic' && (colorVars.semanticColors?.semantic?.length ?? 0) === 0 && (
+        <EmptyState message="No se encontraron tokens de color del tema (--background, --primary, etc.)" />
+      )}
+      {activeSection === 'wheel' && Object.keys(colorVars.wheelColors).length === 0 && (
+        <EmptyState message="No se encontraron variables de Color Wheel" />
+      )}
+      {activeSection === 'palette' && Object.keys(colorVars.paletteColors).length === 0 && (
+        <EmptyState message="No se encontraron variables de Color Palette" />
       )}
 
       {/* Footer elegante para guardar */}

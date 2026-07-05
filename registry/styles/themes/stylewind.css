@@ -1,13 +1,274 @@
+/*
+
+ ████████╗ ██╗  ██╗ ███████╗ ███╗   ███╗ ███████╗
+ ╚══██╔══╝ ██║  ██║ ██╔════╝ ████╗ ████║ ██╔════╝
+    ██║    ███████║ █████╗   ██╔████╔██║ █████╗
+    ██║    ██╔══██║ ██╔══╝   ██║╚██╔╝██║ ██╔══╝
+    ██║    ██║  ██║ ███████╗ ██║ ╚═╝ ██║ ███████╗
+    ╚═╝    ╚═╝  ╚═╝ ╚══════╝ ╚═╝     ╚═╝ ╚══════╝
+
+The theme system organizes and defines variables for the fundamental aspects
+of the interface: colors, layout, typography, styling, and motion.
+
+Each section groups specific properties that enable the construction of coherent,
+accessible, and adaptable visual experiences, making it easy to customize
+and maintain a consistent visual identity throughout the application.
+
+1. Settings
+3. Layout
+2. Tints
+4. Fonts
+4. Typography
+2. Colors
+5. Styling
+6. Motion
+
+*/
+
 :root {
-    --scheme: light dark;
-    --radius: 0.625rem;
-    --background: oklch(1 0 0);
-    --foreground: rgb(0, 0, 0);
+
+    /* Breakpoints */
+    --breakpoint-xs:        480px;
+    --breakpoint-sm:        640px;
+    --breakpoint-md:        768px;
+    --breakpoint-lg:        1024px;
+    --breakpoint-xl:        1280px;
+    --breakpoint-2xl:       1440px;
+    --breakpoint-3xl:       1536px;
+
+    /* Grid */
+    --spacing:              0.25rem;
+    --margin:               calc(var(--spacing) * 4);
+    --gutter:               calc(var(--spacing) * 2);
+    --gap:                  calc(var(--spacing) * 2);
+
+    /* Styling */
+    --radius:               0.625rem;
+    --border-width:         1px;
+    --outline-width:        1px;
+    --ring-width:           3px;
+
+    /* Colors */
+    --color-scheme:         light dark;
+    --tint-background:      150 30% 98%; /* @hsl */
+    --tint-foreground:      120 10% 40%; /* @hsl */
+    --tint-content:         var(--tint-foreground); /* @hsl */
+    --tint-controls:        var(--tint-foreground); /* @hsl */
+    --tint-ambient:         var(--tint-foreground); /* @hsl */
+    --tint-accent:          var(--tint-ambient); /* @hsl */
+    --tint-activity:        var(--tint-accent); /* @hsl */
+    --tint-inverse:         var(--tint-background); /* @hsl */
+    --tint-decoration:      var(--tint-accent); /* @hsl */
+    --tint-indication:      var(--val-cautionary-OKL); /* @okl */
+    --tint-state:           var(--tint-ambient); /* @hsl */
+    --tint-scrim:           var(--tint-ambient); /* @hsl */
+    --tint-backdrop:        var(--tint-ambient); /* @hsl */
+    --tint-shadow:          var(--tint-ambient); /* @hsl */
+
+    /* Font families */
+    --font-brand: var(--font-family-sans);
+    --font-content: var(--font-family-sans);
+    --font-decoration: var(--font-family-sans);
+    --font-code: var(--font-family-mono);
+    --font-math: var(--font-family-serif);
+    --font-digits: var(--font-family-mono);
+
+    /* Typography */
+    --font-size: 16px;
+    --font-scale: var(--ratio-major-second);
+    /* Display */
+    --text-display-1:       var(--scale-text-650);
+    --text-display-2:       var(--scale-text-550);
+    --text-display-3:       var(--scale-text-450);
+    /* Heading */
+    --text-headline:        var(--scale-text-400);
+    --text-subhead:         var(--scale-text-350);
+    --text-title:           var(--scale-text-300);
+    --text-subtitle:        var(--scale-text-250);
+    /* Copy */
+    --text-lead:            var(--scale-text-150);
+    --text-body:            var(--scale-text-100);
+    /* UI */
+    --text-base:            var(--scale-text-075);
+    --text-small:           var(--scale-text-050);
+    --text-micro:           var(--scale-text-025);
+    /* Utilities */
+    --text-overline:        var(--text-base);
+    --text-caption:         var(--text-overline);
+    --text-footnote:        var(--text-caption);
+    --text-hint:            var(--text-caption);
+    /* Fields */
+    --text-label:           var(--text-base);
+    --text-input:           var(--text-body);
+    --text-button:          var(--text-body);
+    --text-input-xs:        var(--text-small);
+    --text-input-sm:        var(--text-label);
+    --text-input-lg:        var(--text-lead);
+    --text-button-xs:       var(--text-small);
+    --text-button-sm:       var(--text-label);
+    --text-button-lg:       var(--text-lead);
+    /* Icons */
+    --icon-size-micro:      0.5rem;    /* 8px */
+    --icon-size-small:      0.75rem;   /* 12px */
+    --icon-size-base:       1rem;      /* 16px */
+    --icon-size-medium:     1.25rem;   /* 20px */
+    --icon-size-large:      1.5rem;    /* 24px */
+    --icon-size-title:      2rem;      /* 32px */
+    --icon-size-display:    4rem;      /* 80px */
+
+    /* Backgrounds */
+    --background:           hsl(var(--tint-background));
+    --body:                 hsl(var(--tint-background));
+    --canvas:               var(--body);
+    --surface:              var(--min-contrast);
+    --muted:                hsl(var(--tint-ambient) / 8%);
+    --silent:               hsl(var(--tint-ambient) / 4%);
+    /* Surfaces */
+    --card:                 var(--color-surface);
+    --dropdown:             var(--color-surface);
+    --popover:              var(--color-surface);
+    --modal:                var(--color-surface);
+    --tools:                var(--color-content);
+    /* Overlays */
+    --scrim-hard:           hsl(var(--tint-scrim) / 50%);
+    --scrim:                hsl(var(--tint-scrim) / 30%);
+    --scrim-soft:           hsl(var(--tint-scrim) / 10%);
+    --backdrop-hard:        hsl(var(--tint-backdrop) / 80%);
+    --backdrop:             hsl(var(--tint-backdrop) / 60%);
+    --backdrop-soft:        hsl(var(--tint-backdrop) / 20%);
+    /* Shadows */
+    --shadow-hard:          hsl(var(--tint-shadow) / 15%);
+    --shadow:               hsl(var(--tint-shadow) / 10%);
+    --shadow-soft:          hsl(var(--tint-shadow) / 5%);
+    /* Headings */
+    --display:              hsl(var(--tint-ambient));
+    --heading:              hsl(var(--tint-content));
+    /* Text */
+    --text:                 hsl(var(--tint-content) / 90%);
+    --text-subtle:          hsl(var(--tint-content) / 70%);
+    --text-muted:           hsl(var(--tint-content) / 40%);
+    --text-disabled:        hsl(var(--tint-content) / 30%);
+    --text-hint:            hsl(var(--tint-content) / 30%);
+    --text-silent:          hsl(var(--tint-content) / 10%);
+    /* Icons */
+    --icon:                 var(--text);
+    --icon-subtle:          var(--text-subtle);
+    --icon-muted:           var(--text-muted);
+    --icon-disabled:        var(--text-disabled);
+    --icon-hint:            var(--text-hint);
+    --icon-silent:          var(--text-silent);
+    /* Borders */
+    --border:               hsl(var(--tint-foreground) / 10%);
+    --divider:              var(--border);
+    --line:                 hsl(var(--tint-foreground) / 5%);
+    --rule:                 hsl(var(--tint-foreground) / 20%);
+    /* Controls */
+    --outline:              hsl(var(--tint-controls) / 10%);
+    --track:                hsl(var(--tint-controls) / 5%);
+    --input:                hsl(var(--tint-controls) / 5%);
+    --option:               var(--input);
+    --button:               hsl(var(--tint-controls) / 10%);
+    --thumb:                var(--button);
+    --accented:             hsl(var(--tint-accent) / 90%);
+    --highlighted:          hsl(var(--tint-accent) / 6%);
+    --selected:             hsl(var(--tint-accent) / 10%);
+    /* Interactivity */
+    --caret:                hsl(var(--tint-accent));
+    --selection:            hsl(var(--tint-accent));
+    --link:                 hsl(var(--tint-activity));
+    --visited:              hsl(var(--tint-activity) / 80%);
+    --active:               hsl(var(--tint-activity));
+    --ring:                 hsl(var(--tint-activity) / 60%);
+    --mark:                 oklch(var(--tint-indication) / 60%);
+    --target:               var(--mark);
+    --search-text:          var(--mark);
+    --search-current:       var(--search-text);
+    /* States */
+    --state-hovered:        hsl(var(--tint-state) / 8%);
+    --state-focused:        hsl(var(--tint-state) / 12%);
+    --state-pressed:        hsl(var(--tint-state) / 16%);
+    --state-dragging:       hsl(var(--tint-state) / 16%);
+    /* Functional colors */
+    --primary:              var(--key-primary-500);
+    --destructive:          var(--key-destructive-500);
+    --cautionary:           var(--key-cautionary-500);
+    --affirmative:          var(--key-affirmative-500);
+    --informative:          var(--key-informative-500);
+    /* Utilitarian */
+    --foreground:           hsl(var(--tint-foreground));
+    --content:              hsl(var(--tint-content));
+    --controls:             hsl(var(--tint-controls));
+    --ambient:              hsl(var(--tint-ambient));
+    --accent:               hsl(var(--tint-accent));
+    --inverse:              hsl(var(--tint-inverse));
+    --decoration:           hsl(var(--tint-decoration));
+    --indication:           oklch(var(--tint-indication));
+    /* On colors */
+    --on-light:             var(--content);
+    --on-dark:              var(--inverse);
+    --on-accented:          var(--on-dark);
+    --on-highlighted:       var(--on-light);
+    --on-selected:          var(--on-light);
+    --on-active:            var(--on-dark);
+    --on-selection:         var(--on-dark);
+    --on-mark:              var(--on-light);
+    --on-primary:           var(--on-dark);
+    --on-destructive:       var(--on-dark);
+    --on-cautionary:        var(--on-dark);
+    --on-affirmative:       var(--on-dark);
+    --on-informative:       var(--on-dark);
+
+    /* Borders */
+    --border-width-muted:   var(--border-width);
+    --border-width-active:  var(--border-width);
+    --border-style:         solid;
+    --border-style-muted:   dashed;
+    --border-style-active:  solid;
+    /* Dividers */
+    --divider-width:        var(--border-width);
+    --line-width:           var(--divider-width);
+    --rule-width:           var(--divider-width);
+    --divider-style:        var(--border-style);
+    --line-style:           var(--divider-style);
+    --rule-style:           var(--divider-style);
+    /* Outline & Ring */
+    --outline-offset:       0px;
+    --ring-offset:          2px;
+
+    /* Shadows */
+    --shadow-button:        var(--shadow-2xs);
+    --shadow-input:         var(--shadow-xs);
+    --shadow-card:          var(--shadow-sm);
+    --shadow-modal:         var(--shadow-md);
+    --shadow-popover:       var(--shadow-lg);
+    --shadow-modal:         var(--shadow-xl);
+    --shadow-tools:         var(--shadow-2xl);
+
+    /* Opacity values */
+    --opacity-disabled:     var(--opacity-low);
+    --opacity-hover:        var(--opacity-medium);
+    --opacity-focus:        var(--opacity-high);
+    /* Transitions */
+    --duration-hover:       var(--duration-normal);
+    --duration-rest:        var(--duration-fast);
+    --duration-focus:       var(--duration-fast);
+    --duration-active:      var(--duration-fast);
+    --duration-pressed:     var(--duration-fast);
+    --duration-disabled:    var(--duration-fast);
+    /* Animations */
+    --duration-open:        var(--duration-normal);
+    --duration-close:       var(--duration-fast);
+    /* State scale ratios */
+    --transform-hover:      scale(var(--scale-enlarge));
+    --transform-hover-soft: scale(var(--scale-enlarge-soft));
+    --transform-active:     scale(var(--scale-shrink));
+    --transform-pressed:    scale(var(--scale-shrink-strong));
 
 }
 
 .dark {
     --scheme: dark;
+
     --background: oklch(0.145 0 0);
     --foreground: oklch(0.985 0 0);
 }

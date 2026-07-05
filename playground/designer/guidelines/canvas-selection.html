@@ -1,0 +1,40 @@
+<!-- @dsCard group="Canvas" viewport="700x200" name="Canvas & selection" subtitle="Dot grid · frame · outline azul + handles · label" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; }
+  .cv {
+    position: relative; height: 200px; overflow: hidden;
+    background-color: var(--canvas);
+    background-image: radial-gradient(circle, var(--canvas-dots) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+</style>
+</head>
+<body>
+<div class="cv">
+  <div class="dsr-frame" style="left: 40px; top: 44px; width: 200px; height: 120px;">
+    <div class="dsr-frame__label">Cover</div>
+    <div class="dsr-frame__content" style="padding: 12px">
+      <div style="height: 10px; width: 60%; background: var(--muted); border-radius: 3px; margin-bottom: 6px"></div>
+      <div style="height: 8px; width: 80%; background: var(--muted); border-radius: 3px"></div>
+    </div>
+  </div>
+  <div class="dsr-frame is-selected" style="left: 300px; top: 44px; width: 160px; height: 120px;">
+    <div class="dsr-frame__label">Detail</div>
+    <div class="dsr-frame__content" style="padding: 12px">
+      <div style="height: 48px; background: var(--canvas); border: 1px solid var(--border); border-radius: 6px; margin-bottom: 6px"></div>
+      <div style="height: 8px; width: 55%; background: var(--muted); border-radius: 3px"></div>
+    </div>
+    <span class="dsr-frame__handle dsr-frame__handle--nw"></span>
+    <span class="dsr-frame__handle dsr-frame__handle--ne"></span>
+    <span class="dsr-frame__handle dsr-frame__handle--sw"></span>
+    <span class="dsr-frame__handle dsr-frame__handle--se"></span>
+  </div>
+  <div style="position: absolute; left: 508px; top: 80px; width: 120px; height: 56px; border: 1px solid var(--selection); background: var(--selection-muted)"></div>
+</div>
+</body>
+</html>

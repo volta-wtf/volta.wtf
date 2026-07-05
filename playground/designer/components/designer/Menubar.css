@@ -1,0 +1,25 @@
+/* Menubar — 48px top app bar: identity · context · actions. */
+.dsr-menubar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-4);
+  height: var(--toolbar-height); padding: 0 var(--space-3);
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+.dsr-menubar__side { display: flex; align-items: center; gap: var(--space-1); min-width: 0; }
+.dsr-menubar__center { display: flex; align-items: center; gap: var(--space-1); flex: none; }
+.dsr-menubar__wordmark {
+  font-weight: var(--font-weight-semibold); font-size: var(--text-ui-lg);
+  letter-spacing: var(--tracking-tight); padding: 0 var(--space-2);
+  white-space: nowrap;
+}
+.dsr-menubar__doc {
+  display: inline-flex; align-items: center; gap: var(--space-1-5);
+  font-size: var(--text-ui); color: var(--foreground);
+  padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm);
+  cursor: pointer; transition: var(--transition-colors);
+  min-width: 0;
+}
+.dsr-menubar__doc:hover { background: var(--accent); }
+.dsr-menubar__doc-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dsr-menubar__doc-meta { color: var(--muted-foreground); font-size: var(--text-ui-sm); white-space: nowrap; }

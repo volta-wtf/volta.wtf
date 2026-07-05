@@ -1,0 +1,47 @@
+<!-- @dsCard group="Components" viewport="700x260" name="Collaboration" subtitle="AvatarStack · CursorChip · CommentPin — multiplayer presence" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.525.0/dist/umd/lucide.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>html, body, #root { height: 100%; } body { background: var(--background); margin: 0; }</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Canvas, Frame, CursorChip, CommentPin, AvatarStack } = window.DesignerDesignSystem_6adbd8;
+
+function CollabCard() {
+  const [open, setOpen] = React.useState(true);
+  const users = [{ name: 'Maya Lindqvist' }, { name: 'Diego Ferrer' }, { name: 'Ana Kovač' }, { name: 'Tom Okafor' }, { name: 'Iris Chen' }];
+  return (
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '8px 12px', borderBottom: '1px solid var(--border)' }}>
+        <AvatarStack users={users} max={4} />
+      </div>
+      <div style={{ flex: 1, position: 'relative', minHeight: 0 }}>
+        <Canvas defaultView={{ zoom: 1, x: 24, y: 16 }} panOnDrag={false}>
+          <Frame x={16} y={12} width={240} height={140} name="Hero">
+            <div style={{ padding: 14, display: 'flex', flexDirection: 'column', gap: 7 }}>
+              <div style={{ height: 12, width: '65%', background: 'var(--muted)', borderRadius: 3 }}></div>
+              <div style={{ height: 8, width: '85%', background: 'var(--muted)', borderRadius: 3 }}></div>
+              <div style={{ height: 52, background: 'var(--canvas)', borderRadius: 6, border: '1px solid var(--border)' }}></div>
+            </div>
+          </Frame>
+          <CursorChip name="Diego Ferrer" x={120} y={150} />
+          <CursorChip name="Iris Chen" x={330} y={60} />
+          <CommentPin name="Ana Kovač" time="2h" x={274} y={110} open={open} onClick={() => setOpen(!open)} text="Can we try the serif display here instead?" />
+        </Canvas>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<CollabCard />);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* ZoomControls — floating HUD, bottom-right of the canvas. */
+.dsr-zoomhud {
+  position: absolute; right: var(--space-4); bottom: var(--space-4);
+  display: flex; align-items: center; gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in oklab, var(--background) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-popover);
+  z-index: 30;
+}
+.dsr-zoomhud__value {
+  min-width: 44px; height: 24px; padding: 0 var(--space-1-5);
+  display: inline-flex; align-items: center; justify-content: center;
+  border: none; border-radius: var(--radius-xs);
+  background: transparent; color: var(--muted-foreground);
+  font-family: var(--font-mono); font-size: var(--text-ui-xs);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer; transition: var(--transition-colors);
+}
+.dsr-zoomhud__value:hover { background: var(--accent); color: var(--foreground); }

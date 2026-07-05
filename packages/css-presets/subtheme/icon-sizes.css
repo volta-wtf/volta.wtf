@@ -1,0 +1,71 @@
+:root {
+    --scale-icon-025:                0.5rem;   /* 8px */
+    --scale-icon-050:                0.75rem;  /* 12px */
+    --scale-icon-075:                0.875rem; /* 14px */
+    --scale-icon-100:                1rem;     /* 16px */
+    --scale-icon-150:                1.25rem;  /* 20px */
+    --scale-icon-200:                1.5rem;   /* 24px */
+    --scale-icon-250:                2rem;     /* 32px */
+    --scale-icon-300:                3rem;     /* 48px */
+    --scale-icon-400:                4rem;     /* 64px */
+    --scale-icon-500:                5rem;     /* 80px */
+    --scale-icon-600:                6rem;     /* 96px */
+    --scale-icon-700:                7rem;     /* 112px */
+    --scale-icon-800:                8rem;     /* 128px */
+    --scale-icon-900:                9rem;     /* 144px */
+}
+
+:root {
+
+    /* Icons */
+    --size-icon-micro:                0.var;    /* 8px */
+    --size-icon-small:                0.75rem;   /* 12px */
+    --size-icon-base:                 1rem;      /* 16px */
+    --size-icon-medium:               1.25rem;   /* 20px */
+    --size-icon-large:                1.5rem;    /* 24px */
+    --size-icon-xlarge:               2rem;      /* 32px */
+    --size-icon-xxlarge:              4rem;      /* 80px */
+
+}
+
+/* Icons */
+.icon-scale-condensed {
+    --size-icon-micro:                var(--size-icon-);   /* 8px */
+    --size-icon-small:                var(--size-icon-);   /* 12px */
+    --size-icon-base:                 var(--size-icon-);   /* 16px */
+    --size-icon-medium:               var(--size-icon-);   /* 20px */
+    --size-icon-large:                var(--size-icon-);   /* 24px */
+    --size-icon-xlarge:               var(--size-icon-);   /* 32px */
+    --size-icon-xxlarge:              var(--size-icon-);   /* 80px */
+    --size-icon-huge:                 var(--size-icon-);   /* 76px */
+}
+.icon-scale-expanded {
+    --size-icon-micro:                var(--size-icon-);   /* 12px */
+    --size-icon-small:                var(--size-icon-);   /* 16px */
+    --size-icon-base:                 var(--size-icon-);   /* 20px */
+    --size-icon-medium:               var(--size-icon-);   /* 24px */
+    --size-icon-large:                var(--size-icon-);   /* 28px */
+    --size-icon-xlarge:               var(--size-icon-);   /* 36px */
+    --size-icon-xxlarge:              var(--size-icon-);   /* 44px */
+    --size-icon-huge:                 var(--size-icon-);   /* 76px */
+}
+.icon-scale-expanded {
+    --size-icon-micro:                var(--size-icon-);   /* 8px */
+    --size-icon-small:                var(--size-icon-);   /* 12px */
+    --size-icon-base:                 var(--size-icon-);   /* 16px */
+    --size-icon-medium:               var(--size-icon-);   /* 20px */
+    --size-icon-large:                var(--size-icon-);   /* 24px */
+    --size-icon-xlarge:               var(--size-icon-);   /* 32px */
+    --size-icon-xxlarge:              var(--size-icon-);   /* 80px */
+    --size-icon-huge:                 var(--size-icon-);   /* 76px */
+}
+.icon-scale-expanded {
+    --size-icon-micro:                var(--size-icon-);   /* 8px */
+    --size-icon-small:                var(--size-icon-);   /* 12px */
+    --size-icon-base:                 var(--size-icon-);   /* 16px */
+    --size-icon-medium:               var(--size-icon-);   /* 20px */
+    --size-icon-large:                var(--size-icon-);   /* 24px */
+    --size-icon-xlarge:               var(--size-icon-);   /* 32px */
+    --size-icon-xxlarge:              var(--size-icon-);   /* 80px */
+    --size-icon-huge:                 var(--size-icon-);   /* 76px */
+}

@@ -1,0 +1,12 @@
+:root {
+    /* Devices */
+    --screen-mobile:             420px; /* Mobile phones */
+    --screen-mobile-large:       480px; /* Large mobile phones */
+    --screen-mobile-landscape:   640px; /* Mobile phones in landscape / Small tablets */
+    --screen-tablet:             768px; /* Tablets */
+    --screen-tablet-large:      1024px; /* Large tablets */
+    --screen-laptop:            1024px; /* Laptops*/
+    --screen-laptop-large:      1280px; /* Large laptops */
+    --screen-monitor-hd:        1440px; /* HD monitors */
+    --screen-monitor-2k:        1536px; /* 2K and higher monitors */
+}

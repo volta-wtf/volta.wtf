@@ -10,17 +10,60 @@ export const CATEGORIES: Category[] = [
     "tags": [],
     "items": [
       {
-        "title": "3D Basic",
-        "slug": "3D",
-        "cssClass": "text-3D",
-        "sourceFile": "styles/classes/text/3d.css",
-        "description": "Basic 3D text effect",
-        "category": "3D",
+        "title": "Solid Fill",
+        "slug": "fill-solid",
+        "cssClass": "text-fill-solid",
+        "sourceFile": "styles/classes/text/fill-solid.css",
+        "description": "Simple solid color text fill",
+        "category": "Basics",
         "tags": [
-          "depth"
+          "fill"
         ],
-        "previewText": "3D Text",
-        "background": "#fed90f",
+        "previewText": "Solid",
+        "background": "#f1fbae",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Stroke + Fill",
+        "slug": "stroke-fill",
+        "cssClass": "text-stroke-fill",
+        "sourceFile": "styles/classes/text/stroke-fill.css",
+        "description": "Text with stroke and fill",
+        "category": "Basics",
+        "tags": [
+          "solid",
+          "stroke"
+        ],
+        "previewText": "Border",
+        "background": "#d6fad9",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Motion Gradient",
+        "slug": "gradient-motion",
+        "cssClass": "text-gradient-motion",
+        "sourceFile": "styles/classes/text/gradient-motion.css",
+        "description": "Animated gradient text effect",
+        "category": "Basics",
+        "tags": [
+          "gradient",
+          "motion",
+          "animated"
+        ],
+        "previewText": "Gradient",
+        "background": "#4d094d",
         "usesData": false,
         "cssVariants": [],
         "bestFor": [
@@ -29,15 +72,40 @@ export const CATEGORIES: Category[] = [
           "display"
         ],
         "reference": [
-          "https://codepen.io/ryandsouza13/pen/yEBJQV"
+          "https://webflow.com/made-in-webflow/website/animated-gradient-text"
         ]
       },
       {
-        "title": "3D Current",
-        "slug": "3D-current",
-        "cssClass": "text-3D-current",
-        "sourceFile": "styles/classes/text/3d-current.css",
-        "description": "3D text effect with current color",
+        "title": "Distortion Layers",
+        "slug": "distortion-layers",
+        "cssClass": "text-distortion-layers",
+        "sourceFile": "styles/classes/text/distortion-layers.css",
+        "description": "Distorted text appearance",
+        "category": "Special",
+        "tags": [
+          "distortion",
+          "warped",
+          "effect"
+        ],
+        "previewText": "Distortion",
+        "background": "#FFFFFF",
+        "usesData": true,
+        "cssVariants": [
+          "alpha",
+          "colors"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "3D Current Dark",
+        "slug": "3D-current-dark",
+        "cssClass": "text-3D-current-dark",
+        "sourceFile": "styles/classes/text/3d-current-dark.css",
+        "description": "3D text effect with current color on dark background",
         "category": "3D",
         "tags": [
           "current color",
@@ -54,11 +122,11 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "3D Current Dark",
-        "slug": "3D-current-dark",
-        "cssClass": "text-3D-current-dark",
-        "sourceFile": "styles/classes/text/3d-current-dark.css",
-        "description": "3D text effect with current color on dark background",
+        "title": "3D Current",
+        "slug": "3D-current",
+        "cssClass": "text-3D-current",
+        "sourceFile": "styles/classes/text/3d-current.css",
+        "description": "3D text effect with current color",
         "category": "3D",
         "tags": [
           "current color",
@@ -159,130 +227,6 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "3D Glow",
-        "slug": "3D-glow",
-        "cssClass": "text-3D-glow",
-        "sourceFile": "styles/classes/text/3d-glow.css",
-        "description": "Glowing 3D text effect",
-        "category": "3D",
-        "tags": [
-          "glow",
-          "bright"
-        ],
-        "previewText": "3D Text",
-        "background": "#c3c3c3",
-        "usesData": true,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ],
-        "reference": [
-          "https://redstapler.co/create-3d-text-rgb-animation-css/"
-        ]
-      },
-      {
-        "title": "3D Glow Clear",
-        "slug": "3D-glow-clear",
-        "cssClass": "text-3D-glow-clear",
-        "sourceFile": "styles/classes/text/3d-glow-clear.css",
-        "description": "Glowing 3D text effect with clear fill",
-        "category": "3D",
-        "tags": [
-          "glow",
-          "bright"
-        ],
-        "previewText": "3D Text",
-        "background": "#c3c3c3",
-        "usesData": true,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ],
-        "reference": [
-          "https://redstapler.co/create-3d-text-rgb-animation-css/"
-        ]
-      },
-      {
-        "title": "3D Glow Dark Fill",
-        "slug": "3D-glow-dark-fill",
-        "cssClass": "text-3D-glow-dark-fill",
-        "sourceFile": "styles/classes/text/3d-glow-dark-fill.css",
-        "description": "Glowing 3D text effect with dark fill",
-        "category": "3D",
-        "tags": [
-          "glow",
-          "bright"
-        ],
-        "previewText": "3D Text",
-        "background": "#c3c3c3",
-        "usesData": true,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ],
-        "reference": [
-          "https://redstapler.co/create-3d-text-rgb-animation-css/"
-        ]
-      },
-      {
-        "title": "3D Glow Light Fill",
-        "slug": "3D-glow-light-fill",
-        "cssClass": "text-3D-glow-light-fill",
-        "sourceFile": "styles/classes/text/3d-glow-light-fill.css",
-        "description": "Glowing 3D text effect with light fill",
-        "category": "3D",
-        "tags": [
-          "glow",
-          "bright"
-        ],
-        "previewText": "3D Text",
-        "background": "#c3c3c3",
-        "usesData": true,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ],
-        "reference": [
-          "https://redstapler.co/create-3d-text-rgb-animation-css/"
-        ]
-      },
-      {
-        "title": "3D Gold",
-        "slug": "gold-3D",
-        "cssClass": "text-gold-3D",
-        "sourceFile": "styles/classes/text/gold-3D.css",
-        "description": "Luxurious gold 3D text",
-        "category": "Materials",
-        "tags": [
-          "3d",
-          "gold",
-          "luxury"
-        ],
-        "previewText": "3D Text",
-        "background": "radial",
-        "usesData": true,
-        "cssVariants": [
-          "thin-stroke",
-          "tick-stroke"
-        ],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ],
-        "reference": [
-          "https://codepen.io/TajShireen/pen/LYyOzJL?editors=1100"
-        ]
-      },
-      {
         "title": "3D Light",
         "slug": "3D-light",
         "cssClass": "text-3D-light",
@@ -296,6 +240,7 @@ export const CATEGORIES: Category[] = [
         "background": "#10353e",
         "usesData": true,
         "cssVariants": [
+          "soft",
           "bright",
           "brighter"
         ],
@@ -331,31 +276,6 @@ export const CATEGORIES: Category[] = [
         ],
         "reference": [
           "https://codepen.io/ryandsouza13/pen/yEBJQV"
-        ]
-      },
-      {
-        "title": "3D Shadow",
-        "slug": "shadow-3D",
-        "cssClass": "text-shadow-3D",
-        "sourceFile": "styles/classes/text/shadow-3d.css",
-        "description": "Deep 3D shadow text effect",
-        "category": "3D",
-        "tags": [
-          "3d",
-          "shadow",
-          "depth"
-        ],
-        "previewText": "Shadow",
-        "background": "ambient",
-        "usesData": true,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ],
-        "reference": [
-          "https://codepen.io/davidlillo/pen/wZRagx"
         ]
       },
       {
@@ -432,41 +352,18 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Alpha Fill",
-        "slug": "fill-alpha",
-        "cssClass": "text-fill-alpha",
-        "sourceFile": "styles/classes/text/fill-alpha.css",
-        "description": "Semi-transparent text fill with background",
-        "category": "Basics",
+        "title": "3D Basic",
+        "slug": "3D",
+        "cssClass": "text-3D",
+        "sourceFile": "styles/classes/text/3d.css",
+        "description": "Basic 3D text effect",
+        "category": "3D",
         "tags": [
-          "alpha",
-          "fill"
+          "depth"
         ],
-        "previewText": "Alpha",
-        "background": "waves",
+        "previewText": "3D Text",
+        "background": "#fed90f",
         "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Animated Shadow",
-        "slug": "shadow-animated",
-        "cssClass": "text-shadow-animated",
-        "sourceFile": "styles/classes/text/shadow-animated.css",
-        "description": "Text with animated shadow effects",
-        "category": "Decorative",
-        "tags": [
-          "shadow",
-          "animated",
-          "motion"
-        ],
-        "previewText": "Stripes",
-        "background": "dark",
-        "usesData": true,
         "cssVariants": [],
         "bestFor": [
           "body",
@@ -474,33 +371,7 @@ export const CATEGORIES: Category[] = [
           "display"
         ],
         "reference": [
-          "https://codepen.io/carpenumidium/pen/nVgdez"
-        ]
-      },
-      {
-        "title": "Bevel",
-        "slug": "bevel",
-        "cssClass": "text-bevel",
-        "sourceFile": "styles/classes/text/bevel.css",
-        "description": "Bevel text effect",
-        "category": "Special",
-        "tags": [
-          "bevel",
-          "dark",
-          "sharp"
-        ],
-        "previewText": "Bevel",
-        "background": "radial",
-        "usesData": true,
-        "cssVariants": [
-          "grlowing",
-          "color",
-          "bordered"
-        ],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
+          "https://codepen.io/ryandsouza13/pen/yEBJQV"
         ]
       },
       {
@@ -526,178 +397,10 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Blend Fill",
-        "slug": "fill-blend",
-        "cssClass": "text-fill-blend",
-        "sourceFile": "styles/classes/text/fill-blend.css",
-        "description": "Text with blend mode effects",
-        "category": "Basics",
-        "tags": [
-          "blend"
-        ],
-        "previewText": "Blend",
-        "background": "waves3",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Burn",
-        "slug": "burn",
-        "cssClass": "text-burn",
-        "sourceFile": "styles/classes/text/burn.css",
-        "description": "Burn text effect",
-        "category": "Special",
-        "tags": [
-          "burn",
-          "dark",
-          "sharp"
-        ],
-        "previewText": "Burn",
-        "background": "radial",
-        "usesData": true,
-        "cssVariants": [
-          "color",
-          "colored",
-          "coloring",
-          "dark"
-        ],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Classic Glitch",
-        "slug": "glitch",
-        "cssClass": "text-glitch",
-        "sourceFile": "styles/classes/text/glitch.css",
-        "description": "Classic digital glitch effect",
-        "category": "Glitch",
-        "tags": [
-          "glitch",
-          "digital",
-          "classic"
-        ],
-        "previewText": "Glitch",
-        "background": "#7c7575",
-        "usesData": false,
-        "cssVariants": [
-          "darker",
-          "colored",
-          "lighter"
-        ],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Color Stripes",
-        "slug": "stripes-colors",
-        "cssClass": "text-stripes-colors",
-        "sourceFile": "styles/classes/text/stripes-colors.css",
-        "description": "Multi-color striped pattern",
-        "category": "Gradients",
-        "tags": [
-          "stripes",
-          "colors",
-          "pattern"
-        ],
-        "previewText": "Stripes",
-        "background": "#4d094d",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ],
-        "reference": [
-          "https://codepen.io/TajShireen/pen/YzZmbep"
-        ]
-      },
-      {
-        "title": "Crystal Fill",
-        "slug": "fill-crystal",
-        "cssClass": "text-fill-crystal",
-        "sourceFile": "styles/classes/text/fill-crystal.css",
-        "description": "Crystal-like transparent text effect",
-        "category": "Materials",
-        "tags": [
-          "glass",
-          "alpha"
-        ],
-        "previewText": "Crystal",
-        "background": "waves2",
-        "usesData": false,
-        "cssVariants": [
-          "light"
-        ],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Cut Bright",
-        "slug": "cut-bright",
-        "cssClass": "text-cut-bright",
-        "sourceFile": "styles/classes/text/cut-bright.css",
-        "description": "Bright cut-out text effect",
-        "category": "Special",
-        "tags": [
-          "cut",
-          "bright",
-          "sharp"
-        ],
-        "previewText": "Cut",
-        "background": "radial3",
-        "usesData": true,
-        "cssVariants": [
-          "inverse",
-          "inverse2"
-        ],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Cut Dark",
-        "slug": "cut-dark",
-        "cssClass": "text-cut-dark",
-        "sourceFile": "styles/classes/text/cut-dark.css",
-        "description": "Dark cut-out text effect",
-        "category": "Special",
-        "tags": [
-          "cut",
-          "dark",
-          "sharp"
-        ],
-        "previewText": "Cut",
-        "background": "radial",
-        "usesData": true,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Distortion",
-        "slug": "distortion",
-        "cssClass": "text-distortion",
-        "sourceFile": "styles/classes/text/distortion.css",
+        "title": "Distortion Blur",
+        "slug": "distortion-blur",
+        "cssClass": "text-distortion-blur",
+        "sourceFile": "styles/classes/text/distortion-blur.css",
         "description": "Distorted text appearance",
         "category": "Special",
         "tags": [
@@ -760,158 +463,6 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Emboss",
-        "slug": "emboss-blend",
-        "cssClass": "text-emboss-blend",
-        "sourceFile": "styles/classes/text/emboss-blend.css",
-        "description": "Raised embossed text effect",
-        "category": "Effects",
-        "tags": [
-          "emboss",
-          "raised",
-          "3d"
-        ],
-        "previewText": "Emboss",
-        "background": "#606f72",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Emboss",
-        "slug": "emboss-shadow",
-        "cssClass": "text-emboss-shadow",
-        "sourceFile": "styles/classes/text/emboss-shadow.css",
-        "description": "Raised embossed text effect",
-        "category": "Effects",
-        "tags": [
-          "emboss",
-          "raised",
-          "3d"
-        ],
-        "previewText": "Emboss",
-        "background": "#1e9db6",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Emboss",
-        "slug": "emboss",
-        "cssClass": "text-emboss",
-        "sourceFile": "styles/classes/text/emboss.css",
-        "description": "Raised embossed text effect",
-        "category": "Effects",
-        "tags": [
-          "emboss",
-          "raised",
-          "3d"
-        ],
-        "previewText": "Emboss",
-        "background": "#1e9db6",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Emboss Bordered",
-        "slug": "emboss-bordered",
-        "cssClass": "text-emboss-bordered",
-        "sourceFile": "styles/classes/text/emboss-bordered.css",
-        "description": "Raised embossed text effect with bordered fill",
-        "category": "Effects",
-        "tags": [
-          "emboss",
-          "raised",
-          "3d"
-        ],
-        "previewText": "Bevel",
-        "background": "#1e9db6",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Emboss Clear",
-        "slug": "emboss-clear",
-        "cssClass": "text-emboss-clear",
-        "sourceFile": "styles/classes/text/emboss-clear.css",
-        "description": "Raised embossed text effect with clear fill",
-        "category": "Effects",
-        "tags": [
-          "emboss",
-          "clear"
-        ],
-        "previewText": "Emboss",
-        "background": "#1e9db6",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Emboss Plain",
-        "slug": "emboss-plain",
-        "cssClass": "text-emboss-plain",
-        "sourceFile": "styles/classes/text/emboss-plain.css",
-        "description": "Raised embossed text effect with plain fill",
-        "category": "Effects",
-        "tags": [
-          "fixed color",
-          "emboss"
-        ],
-        "previewText": "Emboss",
-        "background": "#1e9db6",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Emboss Stroke",
-        "slug": "emboss-stroke",
-        "cssClass": "text-emboss-stroke",
-        "sourceFile": "styles/classes/text/emboss-stroke.css",
-        "description": "Raised embossed text effect with stroke",
-        "category": "Effects",
-        "tags": [
-          "emboss",
-          "raised",
-          "3d"
-        ],
-        "previewText": "Bevel",
-        "background": "#1e9db6",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
         "title": "Fill Glow",
         "slug": "fill-glow",
         "cssClass": "text-fill-glow",
@@ -925,26 +476,6 @@ export const CATEGORIES: Category[] = [
         "previewText": "Glow",
         "background": "#c3c3c3",
         "usesData": true,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Fire Element",
-        "slug": "element-fire",
-        "cssClass": "text-element-fire",
-        "sourceFile": "styles/classes/text/element-fire.css",
-        "description": "Fiery text with orange glow effect",
-        "category": "Materials",
-        "tags": [
-          "fire"
-        ],
-        "previewText": "Fire",
-        "background": "#2a1a1a",
-        "usesData": false,
         "cssVariants": [],
         "bestFor": [
           "body",
@@ -982,69 +513,83 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Glass Fill",
-        "slug": "fill-glass",
-        "cssClass": "text-fill-glass",
-        "sourceFile": "styles/classes/text/fill-glass.css",
-        "description": "Glass-like transparent text effect",
-        "category": "Materials",
+        "title": "Layered Glitch",
+        "slug": "glitch-layers",
+        "cssClass": "text-glitch-layers",
+        "sourceFile": "styles/classes/text/glitch-layers.css",
+        "description": "Multi-layered glitch effect",
+        "category": "Glitch",
         "tags": [
-          "glass",
-          "alpha"
+          "glitch",
+          "layers",
+          "complex"
         ],
-        "previewText": "Glass",
-        "background": "waves2",
-        "usesData": false,
-        "cssVariants": [
-          "tinted",
-          "lighter",
-          "frosted",
-          "frost",
-          "clear"
-        ],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Glossy Fill",
-        "slug": "fill-glossy",
-        "cssClass": "text-fill-glossy",
-        "sourceFile": "styles/classes/text/fill-glossy.css",
-        "description": "Glossy-like transparent text effect",
-        "category": "Materials",
-        "tags": [
-          "glass",
-          "alpha"
-        ],
-        "previewText": "Glossy",
-        "background": "waves2",
-        "usesData": false,
+        "previewText": "Glitch",
+        "background": "#151515",
+        "usesData": true,
         "cssVariants": [],
         "bestFor": [
           "body",
           "heading",
           "display"
+        ],
+        "reference": [
+          "https://codepen.io/kkhenriquez/pen/PGvmjm"
         ]
       },
       {
-        "title": "Glowing Background",
-        "slug": "glowing-background",
-        "cssClass": "text-glowing-background",
-        "sourceFile": "styles/classes/text/glowing-background.css",
-        "description": "Text with radial gradient glowing background",
-        "category": "Decorative",
+        "title": "Classic Glitch",
+        "slug": "glitch",
+        "cssClass": "text-glitch",
+        "sourceFile": "styles/classes/text/glitch.css",
+        "description": "Classic digital glitch effect",
+        "category": "Glitch",
         "tags": [
-          "glow",
-          "background",
-          "radial"
+          "glitch",
+          "digital",
+          "classic"
         ],
-        "previewText": "Glow",
-        "background": "#1a1a1a",
+        "previewText": "Glitch",
+        "background": "#7c7575",
         "usesData": false,
-        "cssVariants": []
+        "cssVariants": [
+          "darker",
+          "colored",
+          "lighter"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "3D Gold",
+        "slug": "gold-3D",
+        "cssClass": "text-gold-3D",
+        "sourceFile": "styles/classes/text/gold-3D.css",
+        "description": "Luxurious gold 3D text",
+        "category": "Materials",
+        "tags": [
+          "3d",
+          "gold",
+          "luxury"
+        ],
+        "previewText": "3D Text",
+        "background": "radial",
+        "usesData": true,
+        "cssVariants": [
+          "thin-stroke",
+          "tick-stroke"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/TajShireen/pen/LYyOzJL?editors=1100"
+        ]
       },
       {
         "title": "Gold Emboss",
@@ -1060,28 +605,6 @@ export const CATEGORIES: Category[] = [
         ],
         "previewText": "Gold",
         "background": "#2a2018",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Gradient Stroke",
-        "slug": "stroke-gradient",
-        "cssClass": "text-stroke-gradient",
-        "sourceFile": "styles/classes/text/stroke-gradient.css",
-        "description": "Text with gradient stroke effect",
-        "category": "Basics",
-        "tags": [
-          "gradient",
-          "stroke",
-          "colorful"
-        ],
-        "previewText": "Border",
-        "background": "#222222",
         "usesData": false,
         "cssVariants": [],
         "bestFor": [
@@ -1115,17 +638,20 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Ice Element",
-        "slug": "element-ice",
-        "cssClass": "text-element-ice",
-        "sourceFile": "styles/classes/text/element-ice.css",
-        "description": "Icy text with blue glow effect",
-        "category": "Materials",
+        "title": "Rainbow Gradient",
+        "slug": "gradient-rainbow",
+        "cssClass": "text-gradient-rainbow",
+        "sourceFile": "styles/classes/text/gradient-rainbow.css",
+        "description": "Full spectrum rainbow gradient text",
+        "category": "Colorful",
         "tags": [
-          "ice"
+          "gradient",
+          "rainbow",
+          "spectrum",
+          "colorful"
         ],
-        "previewText": "Ice",
-        "background": "#1a1a2a",
+        "previewText": "Rainbow",
+        "background": "#1a1a1a",
         "usesData": false,
         "cssVariants": [],
         "bestFor": [
@@ -1135,23 +661,28 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Image Fill",
-        "slug": "image",
-        "cssClass": "text-image",
-        "sourceFile": "styles/classes/text/image.css",
-        "description": "Text filled with image pattern",
-        "category": "Basics",
+        "title": "Vertical Gradient",
+        "slug": "gradient-v",
+        "cssClass": "text-gradient-v",
+        "sourceFile": "styles/classes/text/gradient-v.css",
+        "description": "Vertical gradient text fill",
+        "category": "Gradients",
         "tags": [
-          "image"
+          "gradient",
+          "vertical",
+          "color"
         ],
-        "previewText": "Image",
-        "background": "#d6fad9",
+        "previewText": "Gradient",
+        "background": "#292452",
         "usesData": false,
         "cssVariants": [],
         "bestFor": [
           "body",
           "heading",
           "display"
+        ],
+        "reference": [
+          "https://codepen.io/ryandsouza13/pen/NVjQBp"
         ]
       },
       {
@@ -1215,22 +746,19 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Image Stroke",
-        "slug": "stroke-image",
-        "cssClass": "text-stroke-image",
-        "sourceFile": "styles/classes/text/stroke-image.css",
-        "description": "Text with image-based stroke",
+        "title": "Image Fill",
+        "slug": "image",
+        "cssClass": "text-image",
+        "sourceFile": "styles/classes/text/image.css",
+        "description": "Text filled with image pattern",
         "category": "Basics",
         "tags": [
-          "image",
-          "stroke"
+          "image"
         ],
-        "previewText": "Border",
+        "previewText": "Image",
         "background": "#d6fad9",
         "usesData": false,
-        "cssVariants": [
-          "with"
-        ],
+        "cssVariants": [],
         "bestFor": [
           "body",
           "heading",
@@ -1288,31 +816,6 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Layered Glitch",
-        "slug": "glitch-layers",
-        "cssClass": "text-glitch-layers",
-        "sourceFile": "styles/classes/text/glitch-layers.css",
-        "description": "Multi-layered glitch effect",
-        "category": "Glitch",
-        "tags": [
-          "glitch",
-          "layers",
-          "complex"
-        ],
-        "previewText": "Glitch",
-        "background": "#151515",
-        "usesData": true,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ],
-        "reference": [
-          "https://codepen.io/kkhenriquez/pen/PGvmjm"
-        ]
-      },
-      {
         "title": "Lighting Border",
         "slug": "lighting-border",
         "cssClass": "text-lighting-border",
@@ -1360,74 +863,6 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Motion Gradient",
-        "slug": "gradient-motion",
-        "cssClass": "text-gradient-motion",
-        "sourceFile": "styles/classes/text/gradient-motion.css",
-        "description": "Animated gradient text effect",
-        "category": "Basics",
-        "tags": [
-          "gradient",
-          "motion",
-          "animated"
-        ],
-        "previewText": "Gradient",
-        "background": "#4d094d",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ],
-        "reference": [
-          "https://webflow.com/made-in-webflow/website/animated-gradient-text"
-        ]
-      },
-      {
-        "title": "Neon Base",
-        "slug": "neon-base",
-        "cssClass": "text-neon-base",
-        "sourceFile": "styles/classes/text/neon-base.css",
-        "description": "Text with neon glow effect",
-        "category": "Special",
-        "tags": [
-          "neon",
-          "cyberpunk"
-        ],
-        "previewText": "Neon",
-        "background": "#0a0a0a",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Neon Glow",
-        "slug": "neon-glow",
-        "cssClass": "text-neon-glow",
-        "sourceFile": "styles/classes/text/neon-glow.css",
-        "description": "Bright neon text with multiple glow layers",
-        "category": "Special",
-        "tags": [
-          "neon",
-          "glow",
-          "bright"
-        ],
-        "previewText": "Neon",
-        "background": "#0a0a0a",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
         "title": "Pop Art",
         "slug": "pop-art",
         "cssClass": "text-pop-art",
@@ -1456,21 +891,20 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Rainbow Gradient",
-        "slug": "gradient-rainbow",
-        "cssClass": "text-gradient-rainbow",
-        "sourceFile": "styles/classes/text/gradient-rainbow.css",
-        "description": "Full spectrum rainbow gradient text",
-        "category": "Colorful",
+        "title": "Retro Acrilic",
+        "slug": "retro-acrilic",
+        "cssClass": "text-retro-acrilic",
+        "sourceFile": "styles/classes/text/retro-acrilic.css",
+        "description": "Dramatic retro text effect with acrilic",
+        "category": "Special",
         "tags": [
-          "gradient",
-          "rainbow",
-          "spectrum",
-          "colorful"
+          "retro",
+          "dramatic",
+          "acrilic"
         ],
-        "previewText": "Rainbow",
-        "background": "#1a1a1a",
-        "usesData": false,
+        "previewText": "Acrilic",
+        "background": "#000000",
+        "usesData": true,
         "cssVariants": [],
         "bestFor": [
           "body",
@@ -1479,49 +913,41 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Rainbow Shadow",
-        "slug": "shadow-rainbow",
-        "cssClass": "text-shadow-rainbow",
-        "sourceFile": "styles/classes/text/shadow-rainbow.css",
-        "description": "Text with rainbow shadow effect",
-        "category": "Shadows",
+        "title": "Retro Donut",
+        "slug": "retro-donut",
+        "cssClass": "text-retro-donut",
+        "sourceFile": "styles/classes/text/retro-donut.css",
+        "description": "Dramatic retro text effect with donut",
+        "category": "Special",
         "tags": [
-          "shadow",
-          "rainbow",
-          "colorful"
+          "retro",
+          "dramatic"
         ],
-        "previewText": "Rainbow",
-        "background": "#e0e0e0",
-        "usesData": false,
-        "cssVariants": [
-          "clear",
-          "inverse",
-          "multicolor"
-        ],
+        "previewText": "Donut",
+        "background": "#000000",
+        "usesData": true,
+        "cssVariants": [],
         "bestFor": [
           "body",
           "heading",
           "display"
-        ],
-        "reference": [
-          "https://www.foolishdeveloper.com/2022/03/css-rainbow-text-animation.html"
         ]
       },
       {
-        "title": "Rainbow Stripes",
-        "slug": "stripes-rainbow",
-        "cssClass": "text-stripes-rainbow",
-        "sourceFile": "styles/classes/text/stripes-rainbow.css",
-        "description": "Rainbow striped text pattern",
-        "category": "Gradients",
+        "title": "Retro Extrude",
+        "slug": "retro-extrude",
+        "cssClass": "text-retro-extrude",
+        "sourceFile": "styles/classes/text/retro-extrude.css",
+        "description": "Dramatic retro text effect with extrude",
+        "category": "Special",
         "tags": [
-          "rainbow",
-          "stripes",
-          "colorful"
+          "retro",
+          "dramatic",
+          "extrude"
         ],
-        "previewText": "Stripes",
-        "background": "#411b58",
-        "usesData": false,
+        "previewText": "Extrude",
+        "background": "#000000",
+        "usesData": true,
         "cssVariants": [],
         "bestFor": [
           "body",
@@ -1542,6 +968,27 @@ export const CATEGORIES: Category[] = [
           "fluor"
         ],
         "previewText": "Fluor",
+        "background": "#000000",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Retro Shine",
+        "slug": "retro-shine",
+        "cssClass": "text-retro-shine",
+        "sourceFile": "styles/classes/text/retro-shine.css",
+        "description": "Dramatic retro text effect with shine",
+        "category": "Special",
+        "tags": [
+          "retro",
+          "dramatic"
+        ],
+        "previewText": "Shine",
         "background": "#000000",
         "usesData": true,
         "cssVariants": [],
@@ -1603,6 +1050,85 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
+        "title": "3D Shadow",
+        "slug": "shadow-3D",
+        "cssClass": "text-shadow-3D",
+        "sourceFile": "styles/classes/text/shadow-3d.css",
+        "description": "Deep 3D shadow text effect",
+        "category": "3D",
+        "tags": [
+          "3d",
+          "shadow",
+          "depth"
+        ],
+        "previewText": "Shadow",
+        "background": "ambient",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/davidlillo/pen/wZRagx"
+        ]
+      },
+      {
+        "title": "Animated Shadow",
+        "slug": "shadow-animated",
+        "cssClass": "text-shadow-animated",
+        "sourceFile": "styles/classes/text/shadow-animated.css",
+        "description": "Text with animated shadow effects",
+        "category": "Decorative",
+        "tags": [
+          "shadow",
+          "animated",
+          "motion"
+        ],
+        "previewText": "Stripes",
+        "background": "dark",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/carpenumidium/pen/nVgdez"
+        ]
+      },
+      {
+        "title": "Rainbow Shadow",
+        "slug": "shadow-rainbow",
+        "cssClass": "text-shadow-rainbow",
+        "sourceFile": "styles/classes/text/shadow-rainbow.css",
+        "description": "Text with rainbow shadow effect",
+        "category": "Shadows",
+        "tags": [
+          "shadow",
+          "rainbow",
+          "colorful"
+        ],
+        "previewText": "Rainbow",
+        "background": "#e0e0e0",
+        "usesData": false,
+        "cssVariants": [
+          "clear",
+          "inverse",
+          "multicolor"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://www.foolishdeveloper.com/2022/03/css-rainbow-text-animation.html"
+        ]
+      },
+      {
         "title": "Shadow Stripes",
         "slug": "shadow-stripes",
         "cssClass": "text-shadow-stripes",
@@ -1627,47 +1153,6 @@ export const CATEGORIES: Category[] = [
         ],
         "reference": [
           "https://codepen.io/t_afif/pen/dyzZEVP"
-        ]
-      },
-      {
-        "title": "Solid Fill",
-        "slug": "fill-solid",
-        "cssClass": "text-fill-solid",
-        "sourceFile": "styles/classes/text/fill-solid.css",
-        "description": "Simple solid color text fill",
-        "category": "Basics",
-        "tags": [
-          "fill"
-        ],
-        "previewText": "Solid",
-        "background": "#f1fbae",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
-        ]
-      },
-      {
-        "title": "Solid Stroke",
-        "slug": "stroke-solid",
-        "cssClass": "text-stroke-solid",
-        "sourceFile": "styles/classes/text/stroke-solid.css",
-        "description": "Text with solid color stroke",
-        "category": "Basics",
-        "tags": [
-          "solid",
-          "stroke"
-        ],
-        "previewText": "Border",
-        "background": "#ddd",
-        "usesData": false,
-        "cssVariants": [],
-        "bestFor": [
-          "body",
-          "heading",
-          "display"
         ]
       },
       {
@@ -1740,6 +1225,53 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
+        "title": "Color Stripes",
+        "slug": "stripes-colors",
+        "cssClass": "text-stripes-colors",
+        "sourceFile": "styles/classes/text/stripes-colors.css",
+        "description": "Multi-color striped pattern",
+        "category": "Gradients",
+        "tags": [
+          "stripes",
+          "colors",
+          "pattern"
+        ],
+        "previewText": "Stripes",
+        "background": "#4d094d",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://codepen.io/TajShireen/pen/YzZmbep"
+        ]
+      },
+      {
+        "title": "Rainbow Stripes",
+        "slug": "stripes-rainbow",
+        "cssClass": "text-stripes-rainbow",
+        "sourceFile": "styles/classes/text/stripes-rainbow.css",
+        "description": "Rainbow striped text pattern",
+        "category": "Gradients",
+        "tags": [
+          "rainbow",
+          "stripes",
+          "colorful"
+        ],
+        "previewText": "Stripes",
+        "background": "#411b58",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
         "title": "Stripes",
         "slug": "stripes",
         "cssClass": "text-stripes",
@@ -1765,20 +1297,44 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Stroke + Fill",
-        "slug": "stroke-fill",
-        "cssClass": "text-stroke-fill",
-        "sourceFile": "styles/classes/text/stroke-fill.css",
-        "description": "Text with stroke and fill",
+        "title": "Gradient Stroke",
+        "slug": "stroke-gradient",
+        "cssClass": "text-stroke-gradient",
+        "sourceFile": "styles/classes/text/stroke-gradient.css",
+        "description": "Text with gradient stroke effect",
         "category": "Basics",
         "tags": [
-          "solid",
+          "gradient",
+          "stroke",
+          "colorful"
+        ],
+        "previewText": "Border",
+        "background": "#222222",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Image Stroke",
+        "slug": "stroke-image",
+        "cssClass": "text-stroke-image",
+        "sourceFile": "styles/classes/text/stroke-image.css",
+        "description": "Text with image-based stroke",
+        "category": "Basics",
+        "tags": [
+          "image",
           "stroke"
         ],
         "previewText": "Border",
         "background": "#d6fad9",
         "usesData": false,
-        "cssVariants": [],
+        "cssVariants": [
+          "with"
+        ],
         "bestFor": [
           "body",
           "heading",
@@ -1851,28 +1407,46 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Vertical Gradient",
-        "slug": "gradient-v",
-        "cssClass": "text-gradient-v",
-        "sourceFile": "styles/classes/text/gradient-v.css",
-        "description": "Vertical gradient text fill",
-        "category": "Gradients",
+        "title": "Solid Stroke",
+        "slug": "stroke-solid",
+        "cssClass": "text-stroke-solid",
+        "sourceFile": "styles/classes/text/stroke-solid.css",
+        "description": "Text with solid color stroke",
+        "category": "Basics",
         "tags": [
-          "gradient",
-          "vertical",
-          "color"
+          "solid",
+          "stroke"
         ],
-        "previewText": "Gradient",
-        "background": "#292452",
+        "previewText": "Border",
+        "background": "#ddd",
         "usesData": false,
         "cssVariants": [],
         "bestFor": [
           "body",
           "heading",
           "display"
+        ]
+      },
+      {
+        "title": "Distortion Shadow",
+        "slug": "distortion-shadow",
+        "cssClass": "text-distortion-shadow",
+        "sourceFile": "styles/classes/text/distortion-shadow.css",
+        "description": "Distorted text appearance",
+        "category": "Special",
+        "tags": [
+          "distortion",
+          "warped",
+          "effect"
         ],
-        "reference": [
-          "https://codepen.io/ryandsouza13/pen/NVjQBp"
+        "previewText": "Distortion",
+        "background": "#FFFFFF",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
         ]
       }
     ]
@@ -1885,23 +1459,21 @@ export const CATEGORIES: Category[] = [
     "tags": [],
     "items": [
       {
-        "title": "Classic Glass",
-        "slug": "glass",
-        "cssClass": "text-glass",
-        "sourceFile": "styles/classes/text-wip/glass.css",
-        "description": "Classic glass text effect",
+        "title": "New Glass",
+        "slug": "glass-new",
+        "cssClass": "text-glass-new",
+        "sourceFile": "styles/classes/text-wip/glass-new.css",
+        "description": "Modern glass text effect",
         "category": "Special",
         "tags": [
           "glass",
-          "classic",
-          "alpha"
+          "modern",
+          "clean"
         ],
         "previewText": "Glass",
         "background": "radial2",
         "usesData": true,
-        "cssVariants": [
-          "rushed"
-        ],
+        "cssVariants": [],
         "bestFor": [
           "body",
           "heading",
@@ -1931,28 +1503,27 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "Lighting",
-        "slug": "lighting",
-        "cssClass": "text-lighting",
-        "sourceFile": "styles/classes/text-wip/lighting.css",
-        "description": "Dramatic lighting text effect",
+        "title": "Classic Glass",
+        "slug": "glass",
+        "cssClass": "text-glass",
+        "sourceFile": "styles/classes/text-wip/glass.css",
+        "description": "Classic glass text effect",
         "category": "Special",
         "tags": [
-          "lighting",
-          "dramatic",
-          "bright"
+          "glass",
+          "classic",
+          "alpha"
         ],
-        "previewText": "Fluid",
-        "background": "#000000",
+        "previewText": "Glass",
+        "background": "radial2",
         "usesData": true,
-        "cssVariants": [],
+        "cssVariants": [
+          "rushed"
+        ],
         "bestFor": [
           "body",
           "heading",
           "display"
-        ],
-        "reference": [
-          "https://codepen.io/comehope/pen/GBwvxw"
         ]
       },
       {
@@ -2074,25 +1645,28 @@ export const CATEGORIES: Category[] = [
         ]
       },
       {
-        "title": "New Glass",
-        "slug": "glass-new",
-        "cssClass": "text-glass-new",
-        "sourceFile": "styles/classes/text-wip/glass-new.css",
-        "description": "Modern glass text effect",
+        "title": "Lighting",
+        "slug": "lighting",
+        "cssClass": "text-lighting",
+        "sourceFile": "styles/classes/text-wip/lighting.css",
+        "description": "Dramatic lighting text effect",
         "category": "Special",
         "tags": [
-          "glass",
-          "modern",
-          "clean"
+          "lighting",
+          "dramatic",
+          "bright"
         ],
-        "previewText": "Glass",
-        "background": "radial2",
+        "previewText": "Fluid",
+        "background": "#000000",
         "usesData": true,
         "cssVariants": [],
         "bestFor": [
           "body",
           "heading",
           "display"
+        ],
+        "reference": [
+          "https://codepen.io/comehope/pen/GBwvxw"
         ]
       },
       {
@@ -2348,6 +1922,566 @@ export const CATEGORIES: Category[] = [
         "sourceFile": "styles/classes/text-wip/wordart-emboss.css",
         "usesData": false,
         "cssVariants": []
+      },
+      {
+        "title": "Cut Bright",
+        "slug": "cut-bright",
+        "cssClass": "text-cut-bright",
+        "sourceFile": "styles/classes/text-wip/cut-bright.css",
+        "description": "Bright cut-out text effect",
+        "category": "Special",
+        "tags": [
+          "cut",
+          "bright",
+          "sharp"
+        ],
+        "previewText": "Cut",
+        "background": "radial3",
+        "usesData": true,
+        "cssVariants": [
+          "inverse",
+          "inverse2"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Cut Dark",
+        "slug": "cut-dark",
+        "cssClass": "text-cut-dark",
+        "sourceFile": "styles/classes/text-wip/cut-dark.css",
+        "description": "Dark cut-out text effect",
+        "category": "Special",
+        "tags": [
+          "cut",
+          "dark",
+          "sharp"
+        ],
+        "previewText": "Cut",
+        "background": "radial",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Fire Element",
+        "slug": "element-fire",
+        "cssClass": "text-element-fire",
+        "sourceFile": "styles/classes/text-wip/element-fire.css",
+        "description": "Fiery text with orange glow effect",
+        "category": "Materials",
+        "tags": [
+          "fire"
+        ],
+        "previewText": "Fire",
+        "background": "#2a1a1a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Ice Element",
+        "slug": "element-ice",
+        "cssClass": "text-element-ice",
+        "sourceFile": "styles/classes/text-wip/element-ice.css",
+        "description": "Icy text with blue glow effect",
+        "category": "Materials",
+        "tags": [
+          "ice"
+        ],
+        "previewText": "Ice",
+        "background": "#1a1a2a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Glowing Background",
+        "slug": "glowing-background",
+        "cssClass": "text-glowing-background",
+        "sourceFile": "styles/classes/text-wip/glowing-background.css",
+        "description": "Text with radial gradient glowing background",
+        "category": "Decorative",
+        "tags": [
+          "glow",
+          "background",
+          "radial"
+        ],
+        "previewText": "Glow",
+        "background": "#1a1a1a",
+        "usesData": false,
+        "cssVariants": []
+      },
+      {
+        "title": "Neon Base",
+        "slug": "neon-base",
+        "cssClass": "text-neon-base",
+        "sourceFile": "styles/classes/text-wip/neon-base.css",
+        "description": "Text with neon glow effect",
+        "category": "Special",
+        "tags": [
+          "neon",
+          "cyberpunk"
+        ],
+        "previewText": "Neon",
+        "background": "#0a0a0a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Neon Glow",
+        "slug": "neon-glow",
+        "cssClass": "text-neon-glow",
+        "sourceFile": "styles/classes/text-wip/neon-glow.css",
+        "description": "Bright neon text with multiple glow layers",
+        "category": "Special",
+        "tags": [
+          "neon",
+          "glow",
+          "bright"
+        ],
+        "previewText": "Neon",
+        "background": "#0a0a0a",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss",
+        "slug": "emboss-blend",
+        "cssClass": "text-emboss-blend",
+        "sourceFile": "styles/classes/text-wip/emboss-blend.css",
+        "description": "Raised embossed text effect",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "raised",
+          "3d"
+        ],
+        "previewText": "Emboss",
+        "background": "#606f72",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss Bordered",
+        "slug": "emboss-bordered",
+        "cssClass": "text-emboss-bordered",
+        "sourceFile": "styles/classes/text-wip/emboss-bordered.css",
+        "description": "Raised embossed text effect with bordered fill",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "raised",
+          "3d"
+        ],
+        "previewText": "Bevel",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss Clear",
+        "slug": "emboss-clear",
+        "cssClass": "text-emboss-clear",
+        "sourceFile": "styles/classes/text-wip/emboss-clear.css",
+        "description": "Raised embossed text effect with clear fill",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "clear"
+        ],
+        "previewText": "Emboss",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss Plain",
+        "slug": "emboss-plain",
+        "cssClass": "text-emboss-plain",
+        "sourceFile": "styles/classes/text-wip/emboss-plain.css",
+        "description": "Raised embossed text effect with plain fill",
+        "category": "Effects",
+        "tags": [
+          "fixed color",
+          "emboss"
+        ],
+        "previewText": "Emboss",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss",
+        "slug": "emboss-shadow",
+        "cssClass": "text-emboss-shadow",
+        "sourceFile": "styles/classes/text-wip/emboss-shadow.css",
+        "description": "Raised embossed text effect",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "raised",
+          "3d"
+        ],
+        "previewText": "Emboss",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss Stroke",
+        "slug": "emboss-stroke",
+        "cssClass": "text-emboss-stroke",
+        "sourceFile": "styles/classes/text-wip/emboss-stroke.css",
+        "description": "Raised embossed text effect with stroke",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "raised",
+          "3d"
+        ],
+        "previewText": "Bevel",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Emboss",
+        "slug": "emboss",
+        "cssClass": "text-emboss",
+        "sourceFile": "styles/classes/text-wip/emboss.css",
+        "description": "Raised embossed text effect",
+        "category": "Effects",
+        "tags": [
+          "emboss",
+          "raised",
+          "3d"
+        ],
+        "previewText": "Emboss",
+        "background": "#1e9db6",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Alpha Fill",
+        "slug": "fill-alpha",
+        "cssClass": "text-fill-alpha",
+        "sourceFile": "styles/classes/text-wip/fill-alpha.css",
+        "description": "Semi-transparent text fill with background",
+        "category": "Basics",
+        "tags": [
+          "alpha",
+          "fill"
+        ],
+        "previewText": "Alpha",
+        "background": "waves",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Blend Fill",
+        "slug": "fill-blend",
+        "cssClass": "text-fill-blend",
+        "sourceFile": "styles/classes/text-wip/fill-blend.css",
+        "description": "Text with blend mode effects",
+        "category": "Basics",
+        "tags": [
+          "blend"
+        ],
+        "previewText": "Blend",
+        "background": "waves3",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Crystal Fill",
+        "slug": "fill-crystal",
+        "cssClass": "text-fill-crystal",
+        "sourceFile": "styles/classes/text-wip/fill-crystal.css",
+        "description": "Crystal-like transparent text effect",
+        "category": "Materials",
+        "tags": [
+          "glass",
+          "alpha"
+        ],
+        "previewText": "Crystal",
+        "background": "waves2",
+        "usesData": false,
+        "cssVariants": [
+          "light"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Glass Fill",
+        "slug": "fill-glass",
+        "cssClass": "text-fill-glass",
+        "sourceFile": "styles/classes/text-wip/fill-glass.css",
+        "description": "Glass-like transparent text effect",
+        "category": "Materials",
+        "tags": [
+          "glass",
+          "alpha"
+        ],
+        "previewText": "Glass",
+        "background": "waves2",
+        "usesData": false,
+        "cssVariants": [
+          "tinted",
+          "lighter",
+          "frosted",
+          "frost",
+          "clear"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Glossy Fill",
+        "slug": "fill-glossy",
+        "cssClass": "text-fill-glossy",
+        "sourceFile": "styles/classes/text-wip/fill-glossy.css",
+        "description": "Glossy-like transparent text effect",
+        "category": "Materials",
+        "tags": [
+          "glass",
+          "alpha"
+        ],
+        "previewText": "Glossy",
+        "background": "waves2",
+        "usesData": false,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "3D Glow Clear",
+        "slug": "3D-glow-clear",
+        "cssClass": "text-3D-glow-clear",
+        "sourceFile": "styles/classes/text-wip/3d-glow-clear.css",
+        "description": "Glowing 3D text effect with clear fill",
+        "category": "3D",
+        "tags": [
+          "glow",
+          "bright"
+        ],
+        "previewText": "3D Text",
+        "background": "#c3c3c3",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://redstapler.co/create-3d-text-rgb-animation-css/"
+        ]
+      },
+      {
+        "title": "3D Glow Dark Fill",
+        "slug": "3D-glow-dark-fill",
+        "cssClass": "text-3D-glow-dark-fill",
+        "sourceFile": "styles/classes/text-wip/3d-glow-dark-fill.css",
+        "description": "Glowing 3D text effect with dark fill",
+        "category": "3D",
+        "tags": [
+          "glow",
+          "bright"
+        ],
+        "previewText": "3D Text",
+        "background": "#c3c3c3",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://redstapler.co/create-3d-text-rgb-animation-css/"
+        ]
+      },
+      {
+        "title": "3D Glow Light Fill",
+        "slug": "3D-glow-light-fill",
+        "cssClass": "text-3D-glow-light-fill",
+        "sourceFile": "styles/classes/text-wip/3d-glow-light-fill.css",
+        "description": "Glowing 3D text effect with light fill",
+        "category": "3D",
+        "tags": [
+          "glow",
+          "bright"
+        ],
+        "previewText": "3D Text",
+        "background": "#c3c3c3",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://redstapler.co/create-3d-text-rgb-animation-css/"
+        ]
+      },
+      {
+        "title": "3D Glow",
+        "slug": "3D-glow",
+        "cssClass": "text-3D-glow",
+        "sourceFile": "styles/classes/text-wip/3d-glow.css",
+        "description": "Glowing 3D text effect",
+        "category": "3D",
+        "tags": [
+          "glow",
+          "bright"
+        ],
+        "previewText": "3D Text",
+        "background": "#c3c3c3",
+        "usesData": true,
+        "cssVariants": [],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ],
+        "reference": [
+          "https://redstapler.co/create-3d-text-rgb-animation-css/"
+        ]
+      },
+      {
+        "title": "Bevel",
+        "slug": "bevel",
+        "cssClass": "text-bevel",
+        "sourceFile": "styles/classes/text-wip/bevel.css",
+        "description": "Bevel text effect",
+        "category": "Special",
+        "tags": [
+          "bevel",
+          "dark",
+          "sharp"
+        ],
+        "previewText": "Bevel",
+        "background": "radial",
+        "usesData": true,
+        "cssVariants": [
+          "grlowing",
+          "color",
+          "bordered"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
+      },
+      {
+        "title": "Burn",
+        "slug": "burn",
+        "cssClass": "text-burn",
+        "sourceFile": "styles/classes/text-wip/burn.css",
+        "description": "Burn text effect",
+        "category": "Special",
+        "tags": [
+          "burn",
+          "dark",
+          "sharp"
+        ],
+        "previewText": "Burn",
+        "background": "radial",
+        "usesData": true,
+        "cssVariants": [
+          "color",
+          "colored",
+          "coloring",
+          "dark"
+        ],
+        "bestFor": [
+          "body",
+          "heading",
+          "display"
+        ]
       }
     ]
   },
@@ -2791,7 +2925,7 @@ export const CATEGORIES: Category[] = [
         "title": "bevel bottom right",
         "slug": "bevel-bottom-right",
         "variableName": "--bevel-bottom-right",
-        "value": "0.01em 0.01em 0.005em rgb(255 255 255 / .1),\n        0.01em 0.01em 0.03em rgb(0 0 0 / .4),\n        0.02em 0.02em 0.05em rgb(255 255 255/ .2)",
+        "value": "0.01em 0.01em 0.005em rgb(255 255 255 / .2),\n        0.02em 0.02em 0.03em rgb(0 0 0 / .4),\n        0.03em 0.03em 0.05em rgb(255 255 255/ .2)",
         "sourceFile": "styles/presets/shadows.css"
       },
       {

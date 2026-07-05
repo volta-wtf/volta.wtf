@@ -1,0 +1,26 @@
+/* LibraryItem + AssetGrid — insertables. */
+.dsr-assetgrid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: var(--space-1); padding: var(--space-2);
+}
+.dsr-libitem {
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-1);
+  padding: var(--space-2) var(--space-1);
+  border: 1px solid transparent; border-radius: var(--radius-sm);
+  background: transparent; cursor: grab; user-select: none;
+  transition: var(--transition-colors);
+}
+.dsr-libitem:hover { background: var(--muted); border-color: var(--border); }
+.dsr-libitem:active { cursor: grabbing; }
+.dsr-libitem__thumb {
+  width: 100%; aspect-ratio: 4 / 3;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-xs);
+  background: var(--muted); color: var(--muted-foreground);
+  overflow: hidden;
+}
+.dsr-libitem:hover .dsr-libitem__thumb { color: var(--foreground); }
+.dsr-libitem__name {
+  font-size: var(--text-ui-xs); color: var(--muted-foreground);
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}

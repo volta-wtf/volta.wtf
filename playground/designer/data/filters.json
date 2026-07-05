@@ -1,0 +1,94 @@
+{
+  "$schema": "SVG filter presets — each preset is a list of SVG filter primitives ({tag, attrs, children}). utilities/FilterStack renders them into a <filter> and applies it to the selection.",
+  "presets": [
+    {
+      "id": "blur",
+      "name": "Blur",
+      "icon": "blur",
+      "params": [{ "key": "stdDeviation", "label": "Amount", "type": "number", "min": 0, "max": 40, "default": 6 }],
+      "primitives": [
+        { "tag": "feGaussianBlur", "attrs": { "stdDeviation": 6 } }
+      ]
+    },
+    {
+      "id": "grain",
+      "name": "Grain",
+      "icon": "grain",
+      "params": [{ "key": "baseFrequency", "label": "Frequency", "type": "number", "min": 0.1, "max": 1, "default": 0.8 }],
+      "primitives": [
+        { "tag": "feTurbulence", "attrs": { "type": "fractalNoise", "baseFrequency": 0.8, "numOctaves": 2, "result": "noise" } },
+        { "tag": "feColorMatrix", "attrs": { "in": "noise", "type": "matrix", "values": "0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.6 0.6 0.6 0 0", "result": "alphaNoise" } },
+        { "tag": "feComposite", "attrs": { "in": "alphaNoise", "in2": "SourceGraphic", "operator": "in", "result": "maskedNoise" } },
+        { "tag": "feBlend", "attrs": { "in": "SourceGraphic", "in2": "maskedNoise", "mode": "overlay" } }
+      ]
+    },
+    {
+      "id": "duotone",
+      "name": "Duotone",
+      "icon": "duotone",
+      "params": [
+        { "key": "shadow", "label": "Shadow", "type": "color", "default": "#1a1a1a" },
+        { "key": "highlight", "label": "Highlight", "type": "color", "default": "#e8e8e8" }
+      ],
+      "primitives": [
+        { "tag": "feColorMatrix", "attrs": { "type": "saturate", "values": "0" } },
+        {
+          "tag": "feComponentTransfer",
+          "attrs": {},
+          "children": [
+            { "tag": "feFuncR", "attrs": { "type": "table", "tableValues": "0.10 0.91" } },
+            { "tag": "feFuncG", "attrs": { "type": "table", "tableValues": "0.10 0.91" } },
+            { "tag": "feFuncB", "attrs": { "type": "table", "tableValues": "0.10 0.91" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glow",
+      "name": "Glow",
+      "icon": "glow",
+      "params": [{ "key": "stdDeviation", "label": "Radius", "type": "number", "min": 0, "max": 30, "default": 8 }],
+      "primitives": [
+        { "tag": "feGaussianBlur", "attrs": { "in": "SourceGraphic", "stdDeviation": 8, "result": "glow" } },
+        {
+          "tag": "feMerge",
+          "attrs": {},
+          "children": [
+            { "tag": "feMergeNode", "attrs": { "in": "glow" } },
+            { "tag": "feMergeNode", "attrs": { "in": "SourceGraphic" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shadow",
+      "name": "Drop shadow",
+      "icon": "shadow",
+      "params": [
+        { "key": "dx", "label": "X", "type": "number", "min": -40, "max": 40, "default": 0 },
+        { "key": "dy", "label": "Y", "type": "number", "min": -40, "max": 40, "default": 8 },
+        { "key": "stdDeviation", "label": "Blur", "type": "number", "min": 0, "max": 40, "default": 12 }
+      ],
+      "primitives": [
+        { "tag": "feDropShadow", "attrs": { "dx": 0, "dy": 8, "stdDeviation": 12, "flood-opacity": 0.25 } }
+      ]
+    },
+    {
+      "id": "posterize",
+      "name": "Posterize",
+      "icon": "posterize",
+      "params": [{ "key": "levels", "label": "Levels", "type": "number", "min": 2, "max": 12, "default": 4 }],
+      "primitives": [
+        {
+          "tag": "feComponentTransfer",
+          "attrs": {},
+          "children": [
+            { "tag": "feFuncR", "attrs": { "type": "discrete", "tableValues": "0 0.33 0.66 1" } },
+            { "tag": "feFuncG", "attrs": { "type": "discrete", "tableValues": "0 0.33 0.66 1" } },
+            { "tag": "feFuncB", "attrs": { "type": "discrete", "tableValues": "0 0.33 0.66 1" } }
+          ]
+        }
+      ]
+    }
+  ]
+}

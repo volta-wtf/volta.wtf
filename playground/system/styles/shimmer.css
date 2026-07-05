@@ -1,0 +1,85 @@
+/* ============================================================
+   shimmer — a moving highlight swept across text, pure CSS.
+   Port of shadcn's `shimmer` utility onto this design system.
+
+   The text is painted with `background-clip: text`; a highlight band
+   built from `currentColor` sweeps across it in a seamless loop, so it
+   adapts to whatever color the element already uses.
+
+   Usage: add `shimmer` to a text element.
+     .shimmer                        loop the sweep
+     .shimmer-once                   play a single sweep
+     .shimmer-reverse                sweep in the opposite direction
+     .shimmer-none                   disable (render text normally)
+     .shimmer-duration-<700|1000|1100|1500|3000>   sweep duration (ms)
+     .shimmer-spread-<4|8|16|24>     highlight band width
+     .shimmer-angle-<0|20|45|90>     highlight band tilt
+     .shimmer-color-*                highlight color (see below)
+   Or set the custom properties directly:
+     --shimmer-duration, --shimmer-spread, --shimmer-angle, --shimmer-color
+   ============================================================ */
+
+.shimmer {
+  --shimmer-duration: 2s;
+  --shimmer-spread: calc(3ch + 40px);
+  --shimmer-angle: 20deg;
+  /* Highlight derived from the text color: brightened so it reads on any hue,
+     in both light and dark themes (relative-color lightness bump). */
+  --shimmer-color: oklch(from currentColor clamp(0, l + 0.5, 1) c h);
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-image:
+    linear-gradient(var(--shimmer-angle, 20deg), transparent, var(--shimmer-color) 50%, transparent),
+    linear-gradient(90deg, currentColor 0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-repeat: no-repeat, no-repeat;
+  background-size: var(--shimmer-spread) 100%, 100% 100%;
+  background-position: calc(-1 * var(--shimmer-spread)) 0, 0 0;
+  animation: ds-shimmer var(--shimmer-duration) linear infinite;
+}
+
+@keyframes ds-shimmer {
+  from { background-position: calc(-1 * var(--shimmer-spread)) 0, 0 0; }
+  to   { background-position: calc(100% + var(--shimmer-spread)) 0, 0 0; }
+}
+
+/* RTL: follow the reading direction */
+[dir="rtl"] .shimmer { animation-direction: reverse; }
+
+/* Modifiers */
+.shimmer-once { animation-iteration-count: 1; }
+.shimmer-reverse { animation-direction: reverse; }
+[dir="rtl"] .shimmer-reverse { animation-direction: normal; }
+.shimmer-none { animation: none; color: inherit; -webkit-text-fill-color: currentColor; background-image: none; }
+
+/* Duration steps (ms) */
+.shimmer-duration-700  { --shimmer-duration: 0.7s; }
+.shimmer-duration-1000 { --shimmer-duration: 1s; }
+.shimmer-duration-1100 { --shimmer-duration: 1.1s; }
+.shimmer-duration-1500 { --shimmer-duration: 1.5s; }
+.shimmer-duration-3000 { --shimmer-duration: 3s; }
+
+/* Spread steps */
+.shimmer-spread-4  { --shimmer-spread: 1rem; }
+.shimmer-spread-8  { --shimmer-spread: 2rem; }
+.shimmer-spread-16 { --shimmer-spread: 4rem; }
+.shimmer-spread-24 { --shimmer-spread: 6rem; }
+
+/* Angle steps */
+.shimmer-angle-0  { --shimmer-angle: 0deg; }
+.shimmer-angle-20 { --shimmer-angle: 20deg; }
+.shimmer-angle-45 { --shimmer-angle: 45deg; }
+.shimmer-angle-90 { --shimmer-angle: 90deg; }
+
+/* Color helpers (theme tokens) */
+.shimmer-color-primary { --shimmer-color: var(--primary); }
+.shimmer-color-blue    { --shimmer-color: oklch(0.62 0.19 256); }
+.shimmer-color-emerald { --shimmer-color: oklch(0.7 0.16 162); }
+.shimmer-color-amber   { --shimmer-color: oklch(0.8 0.16 82); }
+.shimmer-color-white   { --shimmer-color: oklch(0.99 0 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer { animation: none; color: inherit; -webkit-text-fill-color: currentColor; background-image: none; }
+}

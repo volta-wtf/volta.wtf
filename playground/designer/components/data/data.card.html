@@ -1,0 +1,73 @@
+<!-- @dsCard group="Components" viewport="700x400" name="Data collections" subtitle="CollectionList · CollectionTable · BoundField · DataSourcePicker — data bound to the canvas" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.525.0/dist/umd/lucide.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>html, body, #root { height: 100%; } body { background: var(--background); margin: 0; }</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { CollectionList, CollectionTable, BoundField, DataSourcePicker, Label, Panel } = window.DesignerDesignSystem_6adbd8;
+
+const FALLBACK = {
+  id: 'products', name: 'Products', icon: 'package',
+  fields: [
+    { key: 'title', label: 'Title', type: 'text' },
+    { key: 'price', label: 'Price', type: 'number', unit: '€' },
+    { key: 'inStock', label: 'In stock', type: 'boolean' },
+  ],
+  records: [
+    { id: 'p1', title: 'Arc Lounge Chair', price: 640, inStock: true },
+    { id: 'p2', title: 'Slab Coffee Table', price: 420, inStock: true },
+    { id: 'p3', title: 'Cone Floor Lamp', price: 210, inStock: false },
+  ],
+};
+
+function DataCard() {
+  const [registry, setRegistry] = React.useState(null);
+  const [col, setCol] = React.useState(FALLBACK);
+  const [selId, setSelId] = React.useState('products');
+  const [bind, setBind] = React.useState({ collection: 'products', field: 'title' });
+
+  React.useEffect(() => {
+    fetch('../../data/collections.json').then((r) => r.json()).then(setRegistry).catch(() => null);
+  }, []);
+  React.useEffect(() => {
+    fetch(`../../data/collections/${selId}.json`).then((r) => r.json()).then(setCol).catch(() => setCol(FALLBACK));
+  }, [selId]);
+
+  return (
+    <div style={{ display: 'flex', height: '100%' }}>
+      <Panel side="left" width={170} header={<Label eyebrow>Collections</Label>}>
+        <CollectionList
+          collections={registry ? registry.collections : [FALLBACK]}
+          selectedId={selId}
+          onSelect={setSelId}
+        />
+        <div style={{ padding: 'var(--space-2) var(--space-2) var(--space-3)', display: 'flex', flexDirection: 'column', gap: 8, borderTop: '1px solid var(--border)', marginTop: 8 }}>
+          <Label eyebrow>Binding</Label>
+          <DataSourcePicker
+            collections={registry ? registry.collections.map((c) => (c.id === col.id ? col : { ...c, fields: [] })) : [FALLBACK]}
+            value={bind}
+            onChange={setBind}
+          />
+          {bind.collection && bind.field ? <BoundField collection={bind.collection} field={bind.field} onUnbind={() => setBind({})} /> : null}
+        </div>
+      </Panel>
+      <div style={{ flex: 1, overflow: 'auto', minWidth: 0 }}>
+        <CollectionTable collection={col} maxRecords={6} />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<DataCard />);
+</script>
+</body>
+</html>

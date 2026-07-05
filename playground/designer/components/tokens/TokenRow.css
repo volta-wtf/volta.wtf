@@ -1,0 +1,38 @@
+/* TokenRow + TokenSwatch + TokenList — token manager rows. */
+.dsr-tokenlist { display: flex; flex-direction: column; }
+.dsr-tokenlist__group { padding: var(--space-2) 0; border-bottom: 1px solid var(--border); }
+.dsr-tokenlist__group:last-child { border-bottom: none; }
+.dsr-tokenlist__head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-1) var(--space-3) var(--space-1-5);
+}
+.dsr-token-row {
+  display: grid; grid-template-columns: 24px minmax(0, 1fr) auto auto;
+  align-items: center; gap: var(--space-2);
+  height: var(--control-height); padding: 0 var(--space-3);
+  border-radius: 0; cursor: default;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+.dsr-token-row:hover { background: var(--muted); }
+.dsr-token-row__name {
+  font-family: var(--font-mono); font-size: var(--text-ui-sm);
+  color: var(--foreground);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.dsr-token-row__value {
+  font-family: var(--font-mono); font-size: var(--text-ui-xs);
+  color: var(--muted-foreground);
+  max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+/* Swatch previews by $type */
+.dsr-tokenswatch { display: inline-flex; align-items: center; justify-content: center; width: 24px; }
+.dsr-tokenswatch__color {
+  width: 16px; height: 16px; border-radius: 4px;
+  box-shadow: inset 0 0 0 1px oklch(0 0 0 / 0.12);
+}
+.dsr-tokenswatch__dim { height: 4px; border-radius: 2px; background: var(--foreground); opacity: 0.7; }
+.dsr-tokenswatch__shadow { width: 16px; height: 16px; border-radius: 4px; background: var(--card); }
+.dsr-tokenswatch__text {
+  font-family: var(--font-serif); font-size: 13px; line-height: 1;
+  color: var(--foreground);
+}

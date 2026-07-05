@@ -27,7 +27,6 @@
         content: attr(data-text);
         position: absolute;
         display: block;
-        top: 0.08em;
         left: 0;
         opacity: .8;
     }
@@ -35,12 +34,14 @@
     &:after {
         color: #f0f;
         z-index: -2;
+        top: -0.02em;
         animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
     }
 
     &:before {
         color: #0ff;
         z-index: -1;
+        top: 0.02em;
         animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite;
     }
 }

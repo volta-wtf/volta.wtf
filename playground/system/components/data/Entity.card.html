@@ -1,0 +1,127 @@
+<!-- @dsCard group="Data" viewport="820x900" name="Entity" subtitle="two-column data-model row (media + content · actions) — base for Contact / User / Account; manage + data variants, 3 densities, skeleton, list" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 24px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  #root { display: flex; }
+  .lbl { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted-foreground); margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const S = window.TestDesignSystem_be7089;
+const { Entity, EntityThumbnail, EntityContent, EntityTitle, EntityDescription, EntityActions, EntityList,
+        Avatar, AvatarImage, AvatarFallback, Button, IconButton, Icon, Badge } = S;
+const Col = ({ children, style }) => <div style={{ display: "flex", flexDirection: "column", gap: 28, ...style }}>{children}</div>;
+
+const PEOPLE = [
+  { name: "Evil Rabbit", meta: "evil@rabbit.com", img: "https://i.pravatar.cc/64?img=13", role: "Owner" },
+  { name: "Guillermo Rauch", meta: "rauchg · @rauchg", img: "https://i.pravatar.cc/64?img=12", role: "Admin" },
+  { name: "Lee Robinson", meta: "leerob@vercel.com", img: "https://i.pravatar.cc/64?img=5", role: "Member" },
+];
+
+function Demo() {
+  const [checked, setChecked] = React.useState({ 0: true });
+  return (
+    <Col style={{ maxWidth: 460 }}>
+      <div>
+        <div className="lbl">Default — a Contact model</div>
+        <EntityList>
+          <Entity>
+            <EntityThumbnail><Avatar><AvatarImage src={PEOPLE[0].img} alt="" /><AvatarFallback>ER</AvatarFallback></Avatar></EntityThumbnail>
+            <EntityContent>
+              <EntityTitle>{PEOPLE[0].name}</EntityTitle>
+              <EntityDescription>{PEOPLE[0].meta}</EntityDescription>
+            </EntityContent>
+            <EntityActions><Button size="sm" variant="outline">Manage</Button></EntityActions>
+          </Entity>
+        </EntityList>
+      </div>
+
+      <div>
+        <div className="lbl">Variants — manage (actions) vs. data (selection list)</div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          <EntityList>
+            <Entity variant="manage">
+              <EntityThumbnail><Avatar><AvatarImage src={PEOPLE[1].img} alt="" /><AvatarFallback>GR</AvatarFallback></Avatar></EntityThumbnail>
+              <EntityContent><EntityTitle>{PEOPLE[1].name}</EntityTitle><EntityDescription>{PEOPLE[1].meta}</EntityDescription></EntityContent>
+              <EntityActions><IconButton aria-label="More"><Icon name="more-horizontal" /></IconButton></EntityActions>
+            </Entity>
+          </EntityList>
+          <EntityList>
+            <Entity variant="data" selectable defaultChecked>
+              <EntityThumbnail><Avatar><AvatarImage src={PEOPLE[2].img} alt="" /><AvatarFallback>LR</AvatarFallback></Avatar></EntityThumbnail>
+              <EntityContent><EntityTitle>{PEOPLE[2].name}</EntityTitle><EntityDescription>{PEOPLE[2].meta}</EntityDescription></EntityContent>
+            </Entity>
+          </EntityList>
+        </div>
+      </div>
+
+      <div>
+        <div className="lbl">Densities — sm · default · lg</div>
+        <EntityList>
+          {["sm", "default", "lg"].map((s, i) => (
+            <Entity key={s} size={s}>
+              <EntityThumbnail><Avatar><AvatarImage src={PEOPLE[i].img} alt="" /><AvatarFallback>{PEOPLE[i].name.slice(0,2)}</AvatarFallback></Avatar></EntityThumbnail>
+              <EntityContent><EntityTitle>{PEOPLE[i].name}</EntityTitle><EntityDescription>size="{s}"</EntityDescription></EntityContent>
+              <EntityActions><Button size="sm" variant="outline">Manage</Button></EntityActions>
+            </Entity>
+          ))}
+        </EntityList>
+      </div>
+
+      <div>
+        <div className="lbl">List + checkbox — a User table</div>
+        <EntityList>
+          {PEOPLE.map((p, i) => (
+            <Entity key={i} selectable checked={!!checked[i]} onCheckedChange={(v) => setChecked((c) => ({ ...c, [i]: v }))}>
+              <EntityThumbnail><Avatar><AvatarImage src={p.img} alt="" /><AvatarFallback>{p.name.slice(0,2)}</AvatarFallback></Avatar></EntityThumbnail>
+              <EntityContent>
+                <EntityTitle>{p.name}</EntityTitle>
+                <EntityDescription>{p.meta}</EntityDescription>
+              </EntityContent>
+              <EntityActions>
+                <Badge variant="secondary">{p.role}</Badge>
+                <IconButton aria-label="More"><Icon name="more-horizontal" /></IconButton>
+              </EntityActions>
+            </Entity>
+          ))}
+        </EntityList>
+      </div>
+
+      <div>
+        <div className="lbl">Icon thumbnail — an Account / project model</div>
+        <EntityList>
+          <Entity interactive>
+            <EntityThumbnail><span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 36, height: 36, borderRadius: 8, border: "1px solid var(--border)" }}><Icon name="folder" size={18} /></span></EntityThumbnail>
+            <EntityContent>
+              <EntityTitle>acme-marketing</EntityTitle>
+              <EntityDescription>Production · updated 2h ago</EntityDescription>
+            </EntityContent>
+            <EntityActions><Icon name="chevron-right" style={{ color: "var(--muted-foreground)" }} /></EntityActions>
+          </Entity>
+        </EntityList>
+      </div>
+
+      <div>
+        <div className="lbl">Loading (skeleton)</div>
+        <EntityList>
+          <Entity loading />
+          <Entity loading />
+        </EntityList>
+      </div>
+    </Col>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* ------------------------------------------------------------------
+   Colors — warm-neutral, quiet. Minimal by design.
+   Neutrals carry a barely-there warm cast (Claude-like paper warmth,
+   hue ~80, chroma ≤ 0.005) so chrome feels calm, not clinical.
+   The user's artwork stays the loudest color on screen.
+
+   Chromatic tokens, each with ONE job:
+   - --selection  ultramarine — canvas selection UI only
+   - --brand      terracotta — editorial/marketing accents only
+   - --destructive red — danger only
+------------------------------------------------------------------ */
+
+:root {
+  /* --- Warm neutral ramp (raw values) --- */
+  --neutral-50:  oklch(0.985 0.002 84);
+  --neutral-100: oklch(0.970 0.003 82);
+  --neutral-200: oklch(0.922 0.004 80);
+  --neutral-300: oklch(0.870 0.004 80);
+  --neutral-400: oklch(0.708 0.005 78);
+  --neutral-500: oklch(0.556 0.005 78);
+  --neutral-600: oklch(0.439 0.005 78);
+  --neutral-700: oklch(0.371 0.004 78);
+  --neutral-800: oklch(0.269 0.004 78);
+  --neutral-900: oklch(0.205 0.004 80);
+  --neutral-950: oklch(0.145 0.003 80);
+
+  /* --- Semantic surface + text --- */
+  --background: oklch(0.993 0.0016 84);   /* warm paper white */
+  --foreground: var(--neutral-950);
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--neutral-950);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--neutral-950);
+
+  --primary: var(--neutral-900);
+  --primary-foreground: var(--neutral-50);
+
+  --secondary: var(--neutral-100);
+  --secondary-foreground: var(--neutral-900);
+
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-500);
+
+  --accent: var(--neutral-100);
+  --accent-foreground: var(--neutral-900);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--neutral-50);
+
+  --border: var(--neutral-200);
+  --input: var(--neutral-200);
+  --ring: var(--neutral-400);
+
+  /* --- Brand terracotta (editorial/marketing accents ONLY) --- */
+  --brand: oklch(0.66 0.13 43);
+  --brand-foreground: oklch(0.985 0.002 84);
+  --brand-muted: oklch(0.66 0.13 43 / 0.12);
+
+  /* --- Selection ultramarine (canvas selection UI ONLY) --- */
+  --selection: oklch(0.62 0.19 256);
+  --selection-foreground: oklch(0.985 0 0);
+  --selection-muted: oklch(0.62 0.19 256 / 0.16);
+
+  /* --- Editor canvas surfaces --- */
+  --canvas: oklch(0.968 0.003 82);     /* the infinite-canvas backdrop */
+  --canvas-dots: oklch(0.87 0.004 80); /* dot-grid color */
+  --frame: oklch(1 0 0);               /* an artboard/frame fill */
+  --frame-border: var(--neutral-200);
+}
+
+/* ------------------------------ Dark ------------------------------ */
+.dark,
+[data-theme="dark"] {
+  --background: oklch(0.147 0.003 80);
+  --foreground: oklch(0.985 0.002 84);
+
+  --card: oklch(0.205 0.004 80);
+  --card-foreground: oklch(0.985 0.002 84);
+
+  --popover: oklch(0.205 0.004 80);
+  --popover-foreground: oklch(0.985 0.002 84);
+
+  --primary: oklch(0.922 0.004 80);
+  --primary-foreground: oklch(0.205 0.004 80);
+
+  --secondary: oklch(0.269 0.004 78);
+  --secondary-foreground: oklch(0.985 0.002 84);
+
+  --muted: oklch(0.269 0.004 78);
+  --muted-foreground: oklch(0.708 0.005 78);
+
+  --accent: oklch(0.269 0.004 78);
+  --accent-foreground: oklch(0.985 0.002 84);
+
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0.002 84);
+
+  --border: oklch(1 0 0 / 0.10);
+  --input: oklch(1 0 0 / 0.15);
+  --ring: oklch(0.556 0.005 78);
+
+  --brand: oklch(0.70 0.13 45);
+  --brand-foreground: oklch(0.147 0.003 80);
+  --brand-muted: oklch(0.70 0.13 45 / 0.16);
+
+  --selection: oklch(0.62 0.19 256);
+  --selection-foreground: oklch(0.985 0 0);
+  --selection-muted: oklch(0.62 0.19 256 / 0.24);
+
+  --canvas: oklch(0.147 0.003 80);
+  --canvas-dots: oklch(0.269 0.004 78);
+  --frame: oklch(0.205 0.004 80);
+  --frame-border: oklch(1 0 0 / 0.10);
+}

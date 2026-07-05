@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { styles } from './panel-styles.js';
 import { PropertyItem, SaveFooter, SectionHeader, ThemeSelector } from './PropertyComponents.jsx';
+import { isColorVariable } from '../utils/color-variable-utils.js';
 
 /**
  * VariablesPanel - Panel para variables generales del tema
@@ -37,11 +38,6 @@ export function VariablesPanel({
   const hoveredItem = localHoveredItem;
   const setHoveredItem = setLocalHoveredItem;
 
-  // Función para determinar si una variable es de colores
-  const isColorVariable = (varName) => {
-    return varName.startsWith('--color-') || varName.startsWith('--tone-');
-  };
-
   const modifiedCount = Object.keys(modifiedVars).length;
 
   // Variables principales filtradas
@@ -65,7 +61,14 @@ export function VariablesPanel({
         <ThemeSelector />
       </div>
 
-      <div data-slot="property-list" className={styles.propertyList}>
+      <div data-slot="property-list" style={styles.propertyList}>
+        {mainVariables.length === 0 && (
+          <p style={{ padding: '16px', fontSize: '12px', color: '#6b7280', lineHeight: 1.5 }}>
+            No hay variables de tema cargadas. Comprueba que el servidor del theme-editor esté activo
+            (puerto {typeof window !== 'undefined' ? window.__THEME_EDITOR_PORT__ || '—' : '—'})
+            y que el script <code style={{ fontSize: '11px' }}>dev</code> de esta app esté en ejecución.
+          </p>
+        )}
         {/* Variables principales (:root y otros) - EXCLUYENDO variables de colores */}
         {mainVariables.map(([varName, value]) => (
           <PropertyItem

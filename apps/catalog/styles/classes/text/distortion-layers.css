@@ -1,0 +1,57 @@
+/*
+{
+    id: 'distortion-layers',
+    name: 'Distortion Layers',
+    description: 'Distorted text appearance',
+    category: 'Special',
+    tags: ['distortion', 'warped', 'effect'],
+    bestFor: ['body', 'heading', 'display'],
+    cssVariants: ['alpha', 'colors'],
+    cssFile: 'distortion-layers.css',
+    previewText: 'Distortion',
+    usesData: true,
+    background: '#FFFFFF'
+},
+*/
+
+.text-distortion-layers {
+    --style-text-color: #000000;
+    --style-tint-color: rgba(0, 255, 255, 0.6);
+    --style-shadow-color: rgba(255, 0, 255, 0.6);
+    --style-layer-blend: multiply;
+
+    & {
+        position: relative;
+        color: var(--style-text-color);
+    }
+
+    &::after,
+    &::before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        mix-blend-mode: var(--style-layer-blend);
+        z-index: 2;
+    }
+
+    &::before {
+        color: var(--style-tint-color);
+        transform: translateX(-0.06em);
+    }
+    &::after  {
+        color: var(--style-shadow-color);
+        transform: translateX(0.06em);
+    }
+}
+.dark .text-distortion-layers {
+    --style-text-color: #FFFFFF;
+    --style-layer-blend: color-dodge;
+}
+.text-distortion-layers.alpha {
+    --style-layer-blend: normal;
+}
+.text-distortion-layers.colors {
+    --style-tint-color: red;
+    --style-shadow-color: blue;
+    --style-layer-blend: difference;
+}

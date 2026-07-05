@@ -1,10 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { ArchiveX, Command, File, Inbox, Send, Trash2 } from "lucide-react"
 
-import { NavUser } from  "./nav-user"
-import { Label } from "@/components/ui/label"
+import { NavUser } from "@/registry/bases/base/blocks/sidebar-09/components/nav-user"
+import { Label } from "@/registry/bases/base/ui/label"
 import {
   Sidebar,
   SidebarContent,
@@ -17,8 +16,9 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/components/ui/sidebar"
-import { Switch } from "@/components/ui/switch"
+} from "@/registry/bases/base/ui/sidebar"
+import { Switch } from "@/registry/bases/base/ui/switch"
+import { IconPlaceholder } from "@/app/(create)/components/icon-placeholder"
 
 // This is sample data
 const data = {
@@ -31,31 +31,71 @@ const data = {
     {
       title: "Inbox",
       url: "#",
-      icon: Inbox,
+      icon: (
+        <IconPlaceholder
+          lucide="InboxIcon"
+          tabler="IconInbox"
+          hugeicons="InboxIcon"
+          phosphor="TrayIcon"
+          remixicon="RiInboxLine"
+        />
+      ),
       isActive: true,
     },
     {
       title: "Drafts",
       url: "#",
-      icon: File,
+      icon: (
+        <IconPlaceholder
+          lucide="FileIcon"
+          tabler="IconFile"
+          hugeicons="FileIcon"
+          phosphor="FileIcon"
+          remixicon="RiFileLine"
+        />
+      ),
       isActive: false,
     },
     {
       title: "Sent",
       url: "#",
-      icon: Send,
+      icon: (
+        <IconPlaceholder
+          lucide="SendIcon"
+          tabler="IconSend"
+          hugeicons="SentIcon"
+          phosphor="PaperPlaneTiltIcon"
+          remixicon="RiSendPlaneLine"
+        />
+      ),
       isActive: false,
     },
     {
       title: "Junk",
       url: "#",
-      icon: ArchiveX,
+      icon: (
+        <IconPlaceholder
+          lucide="ArchiveXIcon"
+          tabler="IconArchiveOff"
+          hugeicons="ArchiveIcon"
+          phosphor="ArchiveIcon"
+          remixicon="RiArchiveLine"
+        />
+      ),
       isActive: false,
     },
     {
       title: "Trash",
       url: "#",
-      icon: Trash2,
+      icon: (
+        <IconPlaceholder
+          lucide="Trash2Icon"
+          tabler="IconTrash"
+          hugeicons="Delete02Icon"
+          phosphor="TrashIcon"
+          remixicon="RiDeleteBinLine"
+        />
+      ),
       isActive: false,
     },
   ],
@@ -142,14 +182,12 @@ const data = {
     },
   ],
 }
-
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   // Note: I'm using state to show active item.
   // IRL you should use the url/router.
   const [activeItem, setActiveItem] = React.useState(data.navMain[0])
   const [mails, setMails] = React.useState(data.mails)
   const { setOpen } = useSidebar()
-
   return (
     <Sidebar
       collapsible="icon"
@@ -166,16 +204,25 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarHeader>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton size="lg" asChild className="md:h-8 md:p-0">
-                <a href="#">
-                  <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                    <Command className="size-4" />
-                  </div>
-                  <div className="grid flex-1 text-left text-sm leading-tight">
-                    <span className="truncate font-medium">Acme Inc</span>
-                    <span className="truncate text-xs">Enterprise</span>
-                  </div>
-                </a>
+              <SidebarMenuButton
+                size="lg"
+                className="md:h-8 md:p-0"
+                render={<a href="#" />}
+              >
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                  <IconPlaceholder
+                    lucide="TerminalIcon"
+                    tabler="IconCommand"
+                    hugeicons="CommandIcon"
+                    phosphor="CommandIcon"
+                    remixicon="RiCommandLine"
+                    className="size-4"
+                  />
+                </div>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-medium">Acme Inc</span>
+                  <span className="truncate text-xs">Enterprise</span>
+                </div>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
@@ -205,7 +252,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       isActive={activeItem?.title === item.title}
                       className="px-2.5 md:px-2"
                     >
-                      <item.icon />
+                      {item.icon}
                       <span>{item.title}</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -224,7 +271,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <Sidebar collapsible="none" className="hidden flex-1 md:flex">
         <SidebarHeader className="gap-3.5 border-b p-4">
           <div className="flex w-full items-center justify-between">
-            <div className="text-foreground text-base font-medium">
+            <div className="text-base font-medium text-foreground">
               {activeItem?.title}
             </div>
             <Label className="flex items-center gap-2 text-sm">
@@ -241,7 +288,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <a
                   href="#"
                   key={mail.email}
-                  className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground flex flex-col items-start gap-2 border-b p-4 text-sm leading-tight whitespace-nowrap last:border-b-0"
+                  className="flex flex-col items-start gap-2 border-b p-4 text-sm leading-tight whitespace-nowrap last:border-b-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                 >
                   <div className="flex w-full items-center gap-2">
                     <span>{mail.name}</span>{" "}

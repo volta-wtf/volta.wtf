@@ -1,0 +1,25 @@
+<!-- @dsCard group="Effects" viewport="700x160" name="Radius ramp" subtitle="Seed 10px; nada afilado, nada burbuja" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--background); }
+  .row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; padding: 16px; }
+  .cell { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+  .box { width: 100%; height: 56px; background: var(--muted); border: 1px solid var(--border); }
+  .m { font-family: var(--font-mono); font-size: 9.5px; color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="cell"><div class="box" style="border-radius: var(--radius-xs)"></div><span class="m">xs 4 · inputs</span></div>
+  <div class="cell"><div class="box" style="border-radius: var(--radius-sm)"></div><span class="m">sm 6 · buttons</span></div>
+  <div class="cell"><div class="box" style="border-radius: var(--radius-md)"></div><span class="m">md 8 · cards</span></div>
+  <div class="cell"><div class="box" style="border-radius: var(--radius-lg)"></div><span class="m">lg 10 · popovers</span></div>
+  <div class="cell"><div class="box" style="border-radius: var(--radius-xl)"></div><span class="m">xl 14 · dialogs</span></div>
+  <div class="cell"><div class="box" style="border-radius: var(--radius-full)"></div><span class="m">full · pills</span></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/* DeviceFrame — generic neutral bezels (no brand trade dress). */
+.dsr-device { display: inline-flex; flex-direction: column; align-items: center; gap: var(--space-2); }
+.dsr-device__shell { position: relative; background: var(--device-bezel); box-shadow: var(--shadow-lg); }
+.dsr-device__shell--phone { padding: 12px; border-radius: var(--device-bezel-radius-phone); }
+.dsr-device__shell--tablet { padding: 16px; border-radius: var(--device-bezel-radius-tablet); }
+.dsr-device__shell--watch { padding: 10px; border-radius: 36px; }
+.dsr-device__shell--laptop, .dsr-device__shell--desktop { padding: 0; border-radius: var(--radius-lg); overflow: hidden; }
+.dsr-device__browserbar {
+  display: flex; align-items: center; gap: var(--space-2);
+  height: 28px; padding: 0 var(--space-2-5);
+  background: var(--neutral-800);
+}
+.dsr-device__dots { display: inline-flex; gap: 4px; }
+.dsr-device__dot { width: 7px; height: 7px; border-radius: 999px; background: oklch(1 0 0 / 0.25); }
+.dsr-device__url {
+  flex: 1; max-width: 320px; height: 16px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 4px; background: oklch(1 0 0 / 0.10);
+  color: oklch(1 0 0 / 0.55);
+  font-family: var(--font-mono); font-size: 8.5px; line-height: 1;
+}
+.dsr-device__screen {
+  position: relative; overflow: hidden;
+  background: var(--background);
+}
+.dsr-device__shell--phone .dsr-device__screen { border-radius: calc(var(--device-bezel-radius-phone) - 12px); }
+.dsr-device__shell--tablet .dsr-device__screen { border-radius: calc(var(--device-bezel-radius-tablet) - 14px); }
+.dsr-device__shell--watch .dsr-device__screen { border-radius: 26px; }
+.dsr-device__label { font-size: var(--text-ui-xs); color: var(--muted-foreground); }

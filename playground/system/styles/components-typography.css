@@ -1,0 +1,24 @@
+/* ============================================================
+   TYPOGRAPHY — component text styles (shadcn/ui typography).
+   Applied by components/typography/Typography.jsx.
+   ============================================================ */
+
+.ds-h1 { margin: 0; font-size: 2.25rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; text-wrap: balance; }
+.ds-h2 { margin: 2.5rem 0 0; padding-bottom: 0.5rem; font-size: 1.875rem; font-weight: 600; letter-spacing: -0.02em; border-bottom: 1px solid var(--border); }
+.ds-h3 { margin: 2rem 0 0; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; }
+.ds-h4 { margin: 1.5rem 0 0; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; }
+.ds-h1:first-child, .ds-h2:first-child, .ds-h3:first-child, .ds-h4:first-child, .ds-p:first-child { margin-top: 0; }
+
+.ds-p { margin: 1.5rem 0 0; font-size: 1rem; line-height: 1.75; }
+.ds-blockquote { margin: 1.5rem 0 0; padding-left: 1.5rem; border-left: 2px solid var(--border); font-style: italic; }
+
+.ds-list { margin: 1.5rem 0; padding-left: 1.5rem; list-style: disc; }
+.ds-list--ordered { list-style: decimal; }
+.ds-list li { margin-top: 0.5rem; }
+
+.ds-inline-code { border-radius: var(--radius-sm); background: var(--muted); padding: 0.2rem 0.35rem; font-family: var(--font-mono); font-size: 0.875em; font-weight: 600; }
+
+.ds-lead { font-size: 1.25rem; line-height: 1.6; color: var(--muted-foreground); }
+.ds-large { font-size: 1.125rem; font-weight: 600; }
+.ds-small { font-size: 0.875rem; font-weight: 500; line-height: 1.4; }
+.ds-muted { font-size: 0.875rem; color: var(--muted-foreground); }

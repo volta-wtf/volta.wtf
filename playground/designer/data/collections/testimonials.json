@@ -1,0 +1,19 @@
+{
+  "id": "testimonials",
+  "name": "Testimonials",
+  "icon": "quote",
+  "fields": [
+    { "key": "quote",   "label": "Quote",   "type": "richtext" },
+    { "key": "name",    "label": "Name",    "type": "text" },
+    { "key": "company", "label": "Company", "type": "text" },
+    { "key": "avatar",  "label": "Avatar",  "type": "image" },
+    { "key": "rating",  "label": "Rating",  "type": "number" }
+  ],
+  "records": [
+    { "id": "q1", "quote": "We replaced three internal tools with one canvas. The unit system alone paid for the license.", "name": "Sofia Brandt", "company": "Northwind Labs", "avatar": "https://i.pravatar.cc/160?img=5",  "rating": 5 },
+    { "id": "q2", "quote": "The layer tree stays responsive with 4,000 nodes. Our old editor gave up at 400.",              "name": "Jae Park",     "company": "Mono Studio",    "avatar": "https://i.pravatar.cc/160?img=14", "rating": 5 },
+    { "id": "q3", "quote": "Collections turned our brand templates into a pipeline. Designers bind fields, data does the rest.", "name": "Elena Ruiz", "company": "Papel & Co.", "avatar": "https://i.pravatar.cc/160?img=44", "rating": 4 },
+    { "id": "q4", "quote": "Every control is keyboardable. Our power users never touch the mouse.",                         "name": "Marcus Webb",  "company": "Fieldnotes",     "avatar": "https://i.pravatar.cc/160?img=53", "rating": 5 },
+    { "id": "q5", "quote": "It looks like nothing — which is exactly right. The work is the interface.",                    "name": "Yuki Tanaka",  "company": "Atelier K",      "avatar": "https://i.pravatar.cc/160?img=31", "rating": 5 }
+  ]
+}

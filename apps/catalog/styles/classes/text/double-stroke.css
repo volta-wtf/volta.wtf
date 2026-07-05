@@ -14,12 +14,12 @@
 */
 
 .text-double-stroke {
-    & {
-        --style-stroke-width: .02em;
-        --style-stroke-color: black;
-        --style-text-color: currentColor;
-        --style-fill-color: transparent;
-    }
+
+    --style-stroke-width: .02em;
+    --style-stroke-color: currentColor;
+    --style-text-color: currentColor;
+    --style-fill-color: transparent;
+
     &,
     &:before,
     &:after {

@@ -1,0 +1,358 @@
+/* MARK: Surfaces */
+
+@utility surface-item-default {
+    @apply flex items-center;
+    @apply rounded-item text-sm;
+    @apply gap-2 py-1.5 px-2;
+    @apply data-inset:pl-8;
+}
+@utility surface-item-selectable {
+    @apply flex items-center;
+    @apply rounded-item text-sm;
+    @apply gap-2 py-1.5 pr-8 pl-2;
+    @apply data-inset:pl-8;
+}
+@utility surface-item-menubar {
+    @apply flex items-center;
+    @apply rounded-item text-sm font-medium;
+    @apply px-2 py-1;
+}
+@utility surface-item-destructive {
+    @apply data-[variant=destructive]:text-destructive;
+    @apply data-[variant=destructive]:focus:bg-destructive/10;
+    @apply data-[variant=destructive]:focus:text-destructive;
+}
+@utility surface-item-state-focused {
+    @apply focus:bg-state-raised;
+    @apply focus:text-on-light;
+}
+@utility surface-item-state-hovered {
+    @apply focus:bg-state-raised;
+    @apply focus:text-on-light;
+    @apply not-data-[variant=destructive]:focus:**:text-on-light;
+}
+@utility surface-item-state-hovered_alt {
+    @apply focus:bg-state-raised;
+    @apply focus:text-on-light;
+    @apply focus:**:text-on-light;
+    /*@apply focus:*:[svg]:text-accent-foreground;*/
+}
+@utility surface-item-state-opened {
+    @apply data-popup-open:bg-state-focused;
+    @apply data-popup-open:text-on-light;
+    @apply data-open:bg-state-focused;
+    @apply data-open:text-on-light;
+}
+@utility surface-item-state-opened_alt {
+    @apply data-open:bg-state-focused;
+    @apply data-open:text-on-light;
+}
+@utility surface-item-state-selected { /* Command */
+    @apply data-selected:bg-highlighted;
+    @apply data-selected:text-on-highlighted;
+    @apply data-selected:**:[svg]:text-on-highlighted;
+}
+@utility surface-item-state-highlighted { /* Combobox */
+    @apply data-highlighted:bg-highlighted;
+    @apply data-highlighted:text-on-highlighted;
+    @apply not-data-[variant=destructive]:data-highlighted:**:text-on-highlighted;
+}
+@utility surface-item-state-expanded { /* Menubar */
+    @apply hover:bg-muted;
+    @apply aria-expanded:bg-muted;
+}
+
+@utility surface-picker {
+    @apply z-50 p-1.5;
+    @apply rounded-picker bg-picker text-color shadow-picker;
+    @apply ring-1 ring-foreground/10;
+}
+@utility surface-popover {
+    @apply z-50 p-4;
+    @apply rounded-popover bg-popover text-color shadow-popover;
+    @apply ring-1 ring-foreground/10;
+}
+@utility surface-dialog {
+    @apply z-50 grid w-full gap-6 p-6;
+    @apply rounded-dialog shadow-dialog bg-dialog text-color;
+    @apply ring-1 ring-foreground/10 outline-none;
+}
+@utility surface-tool {
+    @apply z-50 gap-1.5 px-3 py-1.5;
+    @apply rounded-md bg-foreground text-xs text-background;
+    @apply ring-1 ring-foreground/10;
+}
+@utility backdrop {
+    @apply z-50;
+    @apply fixed inset-0 isolate;
+}
+@utility backdrop-clear {
+    @apply bg-backdrop-soft;
+    @apply supports-backdrop-filter:backdrop-blur-overlay-clear;
+}
+@utility backdrop-base {
+    @apply bg-backdrop-base;
+    @apply supports-backdrop-filter:backdrop-blur-overlay;
+}
+@utility backdrop-focused {
+    @apply bg-backdrop-hard;
+    @apply supports-backdrop-filter:backdrop-blur-overlay-focused;
+}
+
+
+/* MARK: Material */
+
+@utility material-field {
+    @apply outline-none;
+    @apply border-outline;
+    @apply bg-input;
+}
+@utility material-choice {
+    @apply outline-none;
+    @apply border-outline;
+    @apply bg-transparent;
+}
+@utility material-track {
+    @apply bg-track;
+}
+@utility material-action {
+    @apply bg-action;
+    @apply hover:bg-action-hovered;
+}
+@utility material-outline {
+    @apply border;
+    @apply border-outline;
+}
+@utility material-interactive {
+    @apply transition-[color,background-color,border-color,box-shadow];
+}
+
+
+/* MARK: Controls */
+
+@utility control-group {
+    @apply rounded-input shadow-input;
+}
+
+@utility control-input {
+    @apply rounded-input shadow-input;
+    @apply px-2.5 py-1"
+}
+
+@utility control-select {
+    @apply rounded-input shadow-input;
+    @apply py-2 pr-2 pl-2.5;
+}
+
+@utility control-check {
+    @apply rounded-check shadow-input;
+}
+
+@utility control-radio {
+    @apply rounded-radio shadow-input;
+}
+
+@utility control-switch {
+    @apply rounded-radio shadow-input;
+}
+
+
+/* MARK: States */
+
+/*
+@utility state-hover {
+    @apply focus:bg-state-raised focus:text-on-highlighted;
+    @apply not-data-[variant=destructive]:focus:**:text-on-highlighted;
+}
+*/
+
+@utility state-focus {
+    @apply outline-none;
+    @apply focus-visible:border-active;
+    @apply focus-visible:ring-3;
+    @apply focus-visible:ring-color;
+}
+@utility state-checked {
+    @apply data-checked:border-outline;
+    @apply data-checked:bg-accent;
+    @apply data-checked:text-on-accent;
+}
+@utility state-selected {
+    @apply data-selected:bg-muted;
+    @apply data-selected:text-foreground;
+}
+@utility state-invalid {
+    @apply aria-invalid:border-destructive;
+    @apply aria-invalid:ring-3;
+    @apply aria-invalid:ring-destructive/20;
+    @apply dark:aria-invalid:border-destructive/50;
+    @apply dark:aria-invalid:ring-destructive/40;
+}
+@utility state-disabled-hard {
+    @apply disabled:pointer-events-none;
+    @apply disabled:cursor-not-allowed;
+    @apply disabled:opacity-50;
+}
+@utility state-disabled-soft {
+    @apply disabled:cursor-not-allowed;
+    @apply disabled:opacity-50;
+}
+@utility state-disabled-muted {
+    @apply disabled:pointer-events-none;
+    @apply disabled:opacity-50;
+}
+@utility state-disabled-muted_data {
+    @apply data-disabled:pointer-events-none;
+    @apply data-disabled:opacity-50;
+}
+@utility state-disabled-muted_data_true {
+    @apply data-[disabled=true]:pointer-events-none;
+    @apply data-[disabled=true]:opacity-50;
+}
+@utility state-disabled-visual {
+    @apply disabled:opacity-50;
+}
+
+
+/* MARK: Activity */
+
+@utility activity-zone {
+    @apply after:absolute;
+    @apply after:-inset-x-3;
+    @apply after:-inset-y-2;
+}
+@utility activity-navigation {
+    @apply cursor-default;
+    @apply select-none;
+    @apply outline-hidden;
+}
+@utility activity-selection-no {
+    @apply select-none;
+}
+
+
+/* MARK: Layer */
+
+@utility layer-centering-fix {
+    @apply fixed;
+    @apply top-1/2;
+    @apply left-1/2;
+    @apply -translate-x-1/2;
+    @apply -translate-y-1/2;
+}
+
+/* MARK: Motion */
+
+@utility motion-backdrop-open {
+    @apply data-open:animate-in;
+    @apply data-open:fade-in-0;
+}
+@utility motion-backdrop-close {
+    @apply data-closed:animate-out;
+    @apply data-closed:fade-out-0;
+}
+
+@utility motion-picker-open {
+    @apply data-open:animate-in;
+    @apply data-open:fade-in-0;
+    @apply data-open:zoom-in-95;
+}
+@utility @utility motion-picker-close {
+    @apply data-closed:animate-out;
+    @apply data-closed:fade-out-0;
+    @apply data-closed:zoom-out-95;
+    @apply data-closed:overflow-hidden;
+}
+
+@utility motion-popover-open {
+    @apply data-open:animate-in;
+    @apply data-open:fade-in-0;
+    @apply data-open:zoom-in-95;
+}
+@utility motion-popover-close {
+    @apply data-closed:animate-out;
+    @apply data-closed:fade-out-0;
+    @apply data-closed:zoom-out-95;
+}
+@utility motion-dialog-open {
+    @apply data-open:animate-in;
+    @apply data-open:fade-in-0;
+    @apply data-open:zoom-in-95;
+}
+@utility motion-dialog-close {
+    @apply data-closed:animate-out;
+    @apply data-closed:fade-out-0;
+    @apply data-closed:zoom-out-95;
+}
+
+@utility motion-tool-open_delayed {
+    @apply data-[state=delayed-open]:animate-in;
+    @apply data-[state=delayed-open]:fade-in-0;
+    @apply data-[state=delayed-open]:zoom-in-95;
+}
+@utility motion-tool-open {
+    @apply data-open:animate-in;
+    @apply data-open:fade-in-0;
+    @apply data-open:zoom-in-95;
+}
+@utility motion-tool-close {
+    @apply data-closed:animate-out;
+    @apply data-closed:fade-out-0;
+    @apply data-closed:zoom-out-95;
+}
+
+@utility motion-slide-fixed {
+    @apply data-[side=top]:slide-in-from-bottom-2;
+    @apply data-[side=right]:slide-in-from-left-2;
+    @apply data-[side=bottom]:slide-in-from-top-2;
+    @apply data-[side=left]:slide-in-from-right-2;
+}
+@utility motion-slide-logic {
+    @apply data-[side=inline-start]:slide-in-from-right-2;
+    @apply data-[side=inline-end]:slide-in-from-left-2;
+}
+
+@utility transition-muted {
+    @apply transition-[color,box-shadow];
+}
+@utility transition-soft {
+    @apply transition-[color,border-color,box-shadow];
+}
+@utility transition-medium {
+    @apply transition-[color,background,border-color,box-shadow];
+}
+
+@utility transition-fast {
+    @apply duration-100;
+}
+
+
+/* MARK: Text */
+
+@utility text_shortcut {
+    @apply text-xs;
+    @apply tracking-widest;
+    @apply text-color-muted;
+}
+
+/* MARK: Elements */
+
+@utility icon_svg {
+    @apply [&_svg]:pointer-events-none;
+    @apply [&_svg]:shrink-0;
+}
+@utility icon_size {
+    @apply [&_svg:not([class*='size-'])]:size-4;
+}
+@utility icon_destructive {
+    @apply data-[variant=destructive]:*:[svg]:text-destructive!;
+}
+@utility separator_base {
+    @apply -mx-picker my-1 h-px bg-divider;
+}
+@utility separator_spaced {
+    @apply mx-1.5 my-1 h-px bg-divider;
+}
+@utility separator_full {
+    @apply mx-0 my-1 h-px bg-divider;
+}

@@ -135,20 +135,38 @@ export function findMonorepoRoot(startDir) {
         }
     }
 
-    // También buscar hacia arriba hasta encontrar package.json con workspaces
     let currentDir = startDir;
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 12; i++) {
+        if (
+            existsSync(join(currentDir, 'pnpm-workspace.yaml')) ||
+            existsSync(join(currentDir, 'turbo.json'))
+        ) {
+            return currentDir;
+        }
+
+        if (
+            existsSync(join(currentDir, 'apps')) &&
+            existsSync(join(currentDir, 'packages'))
+        ) {
+            return currentDir;
+        }
+
         const packageJsonPath = join(currentDir, 'package.json');
         if (existsSync(packageJsonPath)) {
             try {
                 const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
-                if (packageJson.workspaces || packageJson.packages) {
+                if (
+                    packageJson.workspaces ||
+                    packageJson.packages ||
+                    packageJson.packageManager
+                ) {
                     return currentDir;
                 }
             } catch (e) {
                 // Ignorar errores de parsing
             }
         }
+
         const parentDir = join(currentDir, '..');
         if (parentDir === currentDir) break;
         currentDir = parentDir;

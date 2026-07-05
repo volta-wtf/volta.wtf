@@ -1,0 +1,20 @@
+/* Elevations */
+:root {
+    /* Composition */
+    --layer-back:                    -1;
+    --layer-surface:                  0;
+    --layer-scrim:                   10;
+    --layer-content:                 20;
+    --layer-forward:                999;
+    /* Layout */
+    --layer-sticky:                 150; /* Between lifted and rised layers */
+    --layer-fixed:                  250; /* Between rised and floating layers */
+    --layer-backdrop:               290; /* Behind floating layers */
+    --layer-overlay:                390; /* Behind elevated layers */
+    /* Elevation */
+    --layer-lifted:                 100; /* Lower - cards, controls, fields */
+    --layer-raised:                 200; /* Low - FABS, popovers */
+    --layer-floating:               300; /* Medium - modals, offcanvas */
+    --layer-elevated:               400; /* High - pickers, alerts */
+    --layer-suspended:              500; /* Higher - notifications, tooltips, banners */
+}

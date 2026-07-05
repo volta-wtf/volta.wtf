@@ -1,0 +1,5 @@
+/* Chart colors */
+:root {
+  --chart-axis: var(--border);
+  --chart-grid: var(--line);
+}

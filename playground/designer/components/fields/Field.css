@@ -1,0 +1,12 @@
+/* Field — shared inspector row layout: 84px label + control.
+   The one intentionally-shared sheet in fields/ (layout primitive). */
+.dsr-field {
+  display: grid; grid-template-columns: 84px 1fr;
+  align-items: center; gap: var(--space-2);
+  min-height: var(--control-height);
+}
+.dsr-field__label {
+  font-size: var(--text-ui-sm); color: var(--muted-foreground);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.dsr-posfield { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-1); }

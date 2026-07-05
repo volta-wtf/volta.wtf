@@ -1,0 +1,26 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Chrome dimensions" subtitle="Los fijos que hacen que la herramienta se sienta herramienta" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--background); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 14px 16px; }
+  .spec { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+  .demo { background: var(--canvas); display: flex; align-items: center; justify-content: center; padding: 10px; }
+  .box { background: var(--background); border: 1px solid var(--selection); }
+  .lbl { padding: 6px 9px; font-family: var(--font-mono); font-size: 9.5px; color: var(--muted-foreground); border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="spec"><div class="demo"><div class="box" style="width: 92%; height: 34px"></div></div><div class="lbl">--toolbar-height · 48px</div></div>
+  <div class="spec"><div class="demo"><div class="box" style="width: 56px; height: 44px"></div></div><div class="lbl">--panel-width · 264px</div></div>
+  <div class="spec"><div class="demo"><div class="box" style="width: 80%; height: 18px; border-radius: 4px"></div></div><div class="lbl">--control-height · 28px (sm 24)</div></div>
+  <div class="spec"><div class="demo"><div class="box" style="width: 80%; height: 21px; border-radius: 5px"></div></div><div class="lbl">--row-height · 32px (layer tree)</div></div>
+  <div class="spec"><div class="demo"><div class="box" style="width: 80%; height: 24px"></div></div><div class="lbl">--pane-header-height · 36px</div></div>
+  <div class="spec"><div class="demo" style="background-image: radial-gradient(circle, var(--canvas-dots) 1px, transparent 1px); background-size: 10px 10px"></div><div class="lbl">dot grid · 16px @ 100%</div></div>
+</div>
+</body>
+</html>

@@ -1,19 +1,19 @@
-import { cn } from "@/registry/primitives/lib/utils"
-import { Button } from "@/registry/components/ui/button"
+import { cn } from "@/registry/bases/base/lib/utils"
+import { Button } from "@/registry/bases/base/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/components/ui/card"
+} from "@/registry/bases/base/ui/card"
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/registry/components/ui/field"
-import { Input } from "@/registry/components/ui/input"
+} from "@/registry/bases/base/ui/field"
+import { Input } from "@/registry/bases/base/ui/input"
 
 export function SignupForm({
   className,

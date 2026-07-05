@@ -1,0 +1,29 @@
+/* Toast — feedback capsule (bottom-center stack). */
+.dsr-toaststack {
+  position: absolute; left: 50%; bottom: var(--space-4); transform: translateX(-50%);
+  display: flex; flex-direction: column-reverse; align-items: center; gap: var(--space-2);
+  z-index: 70; pointer-events: none;
+}
+.dsr-toast {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--foreground); color: var(--background);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--text-ui);
+  pointer-events: auto;
+  animation: dsr-toast-in var(--duration-slow) var(--ease-out);
+}
+@keyframes dsr-toast-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.dsr-toast__icon { display: inline-flex; }
+.dsr-toast--destructive .dsr-toast__icon { color: oklch(0.75 0.18 25); }
+.dsr-toast__action {
+  border: none; background: none; padding: 0; margin-left: var(--space-1);
+  color: inherit; font: inherit; font-weight: var(--font-weight-semibold);
+  text-decoration: underline; text-underline-offset: 2px; cursor: pointer;
+  opacity: 0.85;
+}
+.dsr-toast__action:hover { opacity: 1; }

@@ -1,0 +1,20 @@
+/* Input — text input. 28px chrome default; `--mono` for values/coords. */
+.dsr-input {
+  display: inline-flex; width: 100%; height: var(--control-height);
+  padding: 0 var(--space-2);
+  border: 1px solid var(--input); border-radius: var(--radius-xs);
+  background: var(--background); color: var(--foreground);
+  font-family: var(--font-sans); font-size: var(--text-ui);
+  transition: var(--transition-colors);
+}
+.dsr-input::placeholder { color: var(--muted-foreground); }
+.dsr-input:hover { border-color: color-mix(in oklab, var(--input) 60%, var(--ring)); }
+.dsr-input:focus { outline: none; border-color: var(--ring); box-shadow: 0 0 0 var(--ring-width) var(--ring-color); }
+.dsr-input:disabled { opacity: 0.5; pointer-events: none; }
+.dsr-input[aria-invalid="true"] { border-color: var(--destructive); }
+
+.dsr-input--mono { font-family: var(--font-mono); font-size: var(--text-ui-sm); font-variant-numeric: tabular-nums; }
+.dsr-input--sm { height: var(--control-height-sm); }
+.dsr-input--quiet { border-color: transparent; background: var(--muted); }
+.dsr-input--quiet:hover { background: color-mix(in oklab, var(--muted) 72%, var(--border)); }
+.dsr-input--quiet:focus { background: var(--background); border-color: var(--ring); }

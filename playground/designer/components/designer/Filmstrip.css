@@ -1,0 +1,28 @@
+/* Filmstrip — slide thumbnail rail (slides archetype). */
+.dsr-filmstrip {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3);
+  overflow-y: auto; min-height: 0;
+}
+.dsr-filmstrip__item { display: grid; grid-template-columns: 18px 1fr; gap: var(--space-1-5); cursor: pointer; }
+.dsr-filmstrip__num {
+  font-family: var(--font-mono); font-size: var(--text-ui-xs);
+  color: var(--muted-foreground); text-align: right; padding-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+.dsr-filmstrip__thumb {
+  aspect-ratio: 16 / 9; overflow: hidden; position: relative;
+  background: var(--frame);
+  border: 1px solid var(--border); border-radius: var(--radius-xs);
+  transition: var(--transition-colors);
+}
+.dsr-filmstrip__item:hover .dsr-filmstrip__thumb { border-color: var(--ring); }
+.dsr-filmstrip__item.is-selected .dsr-filmstrip__thumb {
+  border-color: var(--selection);
+  box-shadow: 0 0 0 1px var(--selection);
+}
+.dsr-filmstrip__name {
+  grid-column: 2; margin-top: 2px;
+  font-size: var(--text-ui-xs); color: var(--muted-foreground);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}

@@ -1,7 +1,24 @@
 {
   "extends": "@studio/config-typescript/react-library.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "plugins": [{ "name": "next" }],
+    "outDir": "dist",
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/lib/*": ["../../resources/interface/lib/*","../../registry/primitives/lib/*"],
+      "@/utils/*": ["../../registry/primitives/utils/*"],
+      "@/hooks/*": ["../../registry/primitives/hooks/*"],
+      "@/styles/*": ["../../registry/styles/*"],
+      "@/primitives/*": ["../../registry/primitives/src/*"],
+      "@/components/*": ["./components/*","../../registry/components/*","../../registry/patterns/*"],
+      "@/components/ui/*": ["../../registry/components/ui/*"],
+      "@/registry/*": ["../../registry/*"],
+      "@/registry/components/ui/*": ["../../registry/components/ui/*"],
+      "@/registry/patterns/*": ["../../registry/patterns/*"],
+      "@/interface/*": ["../../resources/interface/*"]
+    },
   },
   "include": ["ui", "media", "text", "layout"],
   "exclude": ["node_modules", "dist"]

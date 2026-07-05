@@ -1,0 +1,58 @@
+/* ------------------------------------------------------------------
+   Token tiers — OPTIONAL demo of 4-layer variable resolution:
+
+     1 primitives   --t-*        raw values (+ Open Props / neutral ramp)
+     2 brand alias  --brand-*    named brand decisions
+     3 theme        --primary…   semantic slots (light/dark remap)
+     4 component    --btn-*…     component-scoped consumption
+
+   INERT BY DEFAULT. Activate by putting `data-tiers` on any scope
+   (body, a preview div…); remove the attribute to deactivate.
+   Inside the scope, real components re-theme through the full chain.
+------------------------------------------------------------------ */
+
+[data-tiers] {
+  /* ── 1 · primitives ─────────────────────────────── */
+  --t-terracotta-500: oklch(0.72 0.12 45);
+  --t-terracotta-600: oklch(0.66 0.13 43);
+  --t-terracotta-700: oklch(0.58 0.13 41);
+  --t-ink-900: oklch(0.205 0.004 80);
+  --t-paper-50: oklch(0.985 0.002 84);
+
+  /* ── 2 · brand aliases ───────────────────────────── */
+  --brand-primary: var(--t-terracotta-600);
+  --brand-primary-strong: var(--t-terracotta-700);
+  --brand-ink: var(--t-ink-900);
+  --brand-paper: var(--t-paper-50);
+
+  /* ── 3 · theme slots (light) ─────────────────────── */
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-paper);
+  --ring: var(--t-terracotta-500);
+  --ring-color: oklch(0.66 0.13 43 / 0.35);
+  --selection: var(--brand-primary);
+  --selection-muted: oklch(0.66 0.13 43 / 0.14);
+
+  /* ── 4 · component vars ──────────────────────────── */
+  --btn-primary-bg: var(--primary);
+  --btn-primary-fg: var(--primary-foreground);
+  --btn-primary-bg-hover: color-mix(in oklab, var(--btn-primary-bg) 88%, var(--background));
+  --switch-on-bg: var(--primary);
+  --badge-accent-bg: var(--selection-muted);
+  --badge-accent-fg: var(--primary);
+}
+
+[data-tiers].dark, [data-tiers][data-theme="dark"],
+.dark [data-tiers], [data-theme="dark"] [data-tiers] {
+  /* ── 3 · theme slots (dark remap only) ───────────── */
+  --primary: var(--t-terracotta-500);
+  --primary-foreground: var(--t-ink-900);
+}
+
+/* Tier-4 consumption — scoped overrides that route real components
+   through the component vars (the chain made visible). */
+[data-tiers] .dsr-btn--primary { background: var(--btn-primary-bg); color: var(--btn-primary-fg); }
+[data-tiers] .dsr-btn--primary:hover { background: var(--btn-primary-bg-hover); }
+[data-tiers] .dsr-switch:checked { background: var(--switch-on-bg); }
+[data-tiers] .dsr-badge--selection { background: var(--badge-accent-bg); color: var(--badge-accent-fg); }
+[data-tiers] .dsr-iconbtn.is-active { background: var(--badge-accent-bg); color: var(--badge-accent-fg); }

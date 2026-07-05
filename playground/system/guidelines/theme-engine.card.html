@@ -1,0 +1,87 @@
+<!-- @dsCard group="1.5 · Theme Engine" viewport="900x600" name="Theme Engine" subtitle="Live mode · accent · radius · font — shadcn variables only" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Theme Engine</title>
+<link rel="stylesheet" href="../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  #root { padding: 28px; }
+  .wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  .lede { display: flex; flex-direction: column; gap: 4px; }
+  .lede h1 { margin: 0; font-size: var(--text-2xl); font-weight: var(--font-weight-semibold); letter-spacing: var(--tracking-tight); }
+  .lede p { margin: 0; font-size: var(--text-sm); color: var(--muted-foreground); }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="../assets/theme-engine.js"></script>
+<script type="text/babel">
+  (function mount() {
+    const NS = window.TestDesignSystem_be7089;
+    if (!NS || !NS.Button) return setTimeout(mount, 30);
+    const { Button, Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Input, Label, Switch } = NS;
+
+    function Demo() {
+      return (
+        <div className="wrap">
+          <div className="lede">
+            <h1>Theme Engine</h1>
+            <p>Open the dock (bottom-right) and switch mode, accent, radius and font. Every control maps to a standard shadcn variable — no per-group spacing.</p>
+          </div>
+
+          <div className="row">
+            <Button>Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="ghost">Ghost</Button>
+            <Button variant="destructive">Destructive</Button>
+          </div>
+
+          <div className="row">
+            <Badge>Default</Badge>
+            <Badge variant="secondary">Secondary</Badge>
+            <Badge variant="outline">Outline</Badge>
+            <Badge variant="destructive">Destructive</Badge>
+          </div>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Account</CardTitle>
+              <CardDescription>The card, inputs and switch all re-skin live with the active theme.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                <div className="field">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" placeholder="you@example.com" />
+                </div>
+                <div className="row" style={{ justifyContent: "space-between" }}>
+                  <Label htmlFor="notify">Email notifications</Label>
+                  <Switch id="notify" defaultChecked />
+                </div>
+              </div>
+            </CardContent>
+            <CardFooter style={{ gap: 10 }}>
+              <Button>Save</Button>
+              <Button variant="ghost">Cancel</Button>
+            </CardFooter>
+          </Card>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+    window.ThemeEngine.mountDock();
+  })();
+</script>
+</body>
+</html>

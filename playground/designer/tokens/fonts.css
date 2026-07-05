@@ -1,0 +1,10 @@
+/* ------------------------------------------------------------------
+   Fonts — Geist Sans + Geist Mono
+   The @import must precede all other rules, so this file holds only
+   the webfont import. Family aliases live in typography.css.
+
+   NOTE: loaded from Google Fonts (Geist is published there). If you
+   have licensed Geist binaries, replace this with local @font-face
+   rules and drop the .woff2 files under assets/fonts/.
+------------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap');

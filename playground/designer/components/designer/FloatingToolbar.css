@@ -1,0 +1,17 @@
+/* FloatingToolbar — floating pill over the canvas (whiteboard class).
+   One of the two blessed blur surfaces (the other: context menus). */
+.dsr-floatbar {
+  position: absolute; left: 50%; bottom: var(--space-4);
+  transform: translateX(-50%);
+  display: flex; align-items: center; gap: 2px;
+  padding: var(--space-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklab, var(--background) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-popover);
+  z-index: 30;
+}
+.dsr-floatbar--top { bottom: auto; top: var(--space-4); }
+.dsr-floatbar .dsr-separator--vertical { margin: 0 var(--space-1); min-height: 16px; }

@@ -1,0 +1,42 @@
+@layer base {
+
+  * {
+    @apply outline-ring;
+    border-color: var(--border)
+  }
+
+  body {
+    color-scheme: var(--scheme);
+    background: var(--body);
+    color: var(--text);
+    accent-color: var(--accent);
+    caret-color: var(--caret);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  body::selection {
+    background: var(--selection);
+    color: var(--selection-foreground);
+  }
+
+  mark {
+    background: var(--mark);
+  }
+
+  hr {
+    border-color: var(--divider);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--heading);
+  }
+
+}

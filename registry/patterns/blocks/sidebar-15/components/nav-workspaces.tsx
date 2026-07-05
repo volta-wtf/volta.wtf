@@ -1,10 +1,10 @@
-import { ChevronRight, MoreHorizontal, Plus } from "lucide-react"
+"use client"
 
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+} from "@/registry/bases/base/ui/collapsible"
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -16,7 +16,8 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@/components/ui/sidebar"
+} from "@/registry/bases/base/ui/sidebar"
+import { IconPlaceholder } from "@/app/(create)/components/icon-placeholder"
 
 export function NavWorkspaces({
   workspaces,
@@ -38,32 +39,39 @@ export function NavWorkspaces({
           {workspaces.map((workspace) => (
             <Collapsible key={workspace.name}>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <a href="#">
-                    <span>{workspace.emoji}</span>
-                    <span>{workspace.name}</span>
-                  </a>
+                <SidebarMenuButton render={<a href="#" />}>
+                  <span>{workspace.emoji}</span>
+                  <span>{workspace.name}</span>
                 </SidebarMenuButton>
-                <CollapsibleTrigger asChild>
-                  <SidebarMenuAction
-                    className="bg-sidebar-accent text-sidebar-accent-foreground left-2 data-[state=open]:rotate-90"
-                    showOnHover
-                  >
-                    <ChevronRight />
-                  </SidebarMenuAction>
-                </CollapsibleTrigger>
+                <SidebarMenuAction
+                  render={<CollapsibleTrigger />}
+                  className="left-2 bg-sidebar-accent text-sidebar-accent-foreground data-open:rotate-90"
+                  showOnHover
+                >
+                  <IconPlaceholder
+                    lucide="ChevronRightIcon"
+                    tabler="IconChevronRight"
+                    hugeicons="ArrowRight01Icon"
+                    phosphor="CaretRightIcon"
+                    remixicon="RiArrowRightSLine"
+                  />
+                </SidebarMenuAction>
                 <SidebarMenuAction showOnHover>
-                  <Plus />
+                  <IconPlaceholder
+                    lucide="PlusIcon"
+                    tabler="IconPlus"
+                    hugeicons="PlusSignIcon"
+                    phosphor="PlusIcon"
+                    remixicon="RiAddLine"
+                  />
                 </SidebarMenuAction>
                 <CollapsibleContent>
                   <SidebarMenuSub>
                     {workspace.pages.map((page) => (
                       <SidebarMenuSubItem key={page.name}>
-                        <SidebarMenuSubButton asChild>
-                          <a href="#">
-                            <span>{page.emoji}</span>
-                            <span>{page.name}</span>
-                          </a>
+                        <SidebarMenuSubButton render={<a href="#" />}>
+                          <span>{page.emoji}</span>
+                          <span>{page.name}</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                     ))}
@@ -74,7 +82,13 @@ export function NavWorkspaces({
           ))}
           <SidebarMenuItem>
             <SidebarMenuButton className="text-sidebar-foreground/70">
-              <MoreHorizontal />
+              <IconPlaceholder
+                lucide="MoreHorizontalIcon"
+                tabler="IconDots"
+                hugeicons="MoreHorizontalCircle01Icon"
+                phosphor="DotsThreeOutlineIcon"
+                remixicon="RiMoreLine"
+              />
               <span>More</span>
             </SidebarMenuButton>
           </SidebarMenuItem>

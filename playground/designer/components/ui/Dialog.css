@@ -1,0 +1,32 @@
+/* Dialog — modal surface. */
+.dsr-dialog-overlay {
+  position: absolute; inset: 0; z-index: 50;
+  background: oklch(0 0 0 / 0.25);
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--space-6);
+}
+.dsr-dialog {
+  width: min(440px, 100%);
+  max-height: 80%; overflow: hidden;
+  display: flex; flex-direction: column;
+  background: var(--popover); color: var(--popover-foreground);
+  border: 1px solid var(--border); border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  animation: dsr-dialog-in var(--duration-slow) var(--ease-out);
+}
+@keyframes dsr-dialog-in {
+  from { opacity: 0; transform: translateY(4px) scale(0.99); }
+  to { opacity: 1; transform: none; }
+}
+.dsr-dialog__header {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-3);
+  padding: var(--space-4) var(--space-4) 0;
+}
+.dsr-dialog__title { margin: 0; font-size: var(--text-base); font-weight: var(--font-weight-semibold); letter-spacing: var(--tracking-tight); }
+.dsr-dialog__desc { margin: var(--space-1) 0 0; font-size: var(--text-ui); color: var(--muted-foreground); line-height: var(--leading-snug); }
+.dsr-dialog__body { padding: var(--space-3) var(--space-4); overflow-y: auto; }
+.dsr-dialog__footer {
+  display: flex; justify-content: flex-end; gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border);
+}

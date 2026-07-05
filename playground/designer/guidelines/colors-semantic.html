@@ -1,0 +1,37 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Semantic surfaces" subtitle="Light + dark, aliases over raw values" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--background); }
+  .strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; padding: 12px 16px; }
+  .strip.dark { background: var(--background); border-top: 1px solid var(--border); }
+  .chip { height: 44px; border-radius: var(--radius-sm); border: 1px solid var(--border); position: relative; }
+  .chip span {
+    position: absolute; left: 7px; bottom: 5px;
+    font-family: var(--font-mono); font-size: 9px; color: var(--muted-foreground);
+  }
+</style>
+</head>
+<body>
+<div class="strip">
+  <div class="chip" style="background: var(--background)"><span>background</span></div>
+  <div class="chip" style="background: var(--card)"><span>card</span></div>
+  <div class="chip" style="background: var(--muted)"><span>muted</span></div>
+  <div class="chip" style="background: var(--accent)"><span>accent</span></div>
+  <div class="chip" style="background: var(--canvas)"><span>canvas</span></div>
+  <div class="chip" style="background: var(--primary)"><span style="color: var(--primary-foreground)">primary</span></div>
+</div>
+<div class="strip dark">
+  <div class="chip" style="background: var(--background)"><span>background</span></div>
+  <div class="chip" style="background: var(--card)"><span>card</span></div>
+  <div class="chip" style="background: var(--muted)"><span>muted</span></div>
+  <div class="chip" style="background: var(--accent)"><span>accent</span></div>
+  <div class="chip" style="background: var(--canvas)"><span>canvas</span></div>
+  <div class="chip" style="background: var(--primary)"><span style="color: var(--primary-foreground)">primary</span></div>
+</div>
+<script>document.querySelector('.strip.dark').classList.add('dark'); document.querySelectorAll('.strip')[1].setAttribute('data-theme','dark');</script>
+</body>
+</html>

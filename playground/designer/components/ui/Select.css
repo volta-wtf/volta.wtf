@@ -1,0 +1,21 @@
+/* Select — styled native select with chevron. */
+.dsr-select { position: relative; display: inline-flex; width: 100%; }
+.dsr-select__native {
+  appearance: none; width: 100%; height: var(--control-height);
+  padding: 0 var(--space-6) 0 var(--space-2);
+  border: 1px solid var(--input); border-radius: var(--radius-xs);
+  background: var(--background); color: var(--foreground);
+  font-family: var(--font-sans); font-size: var(--text-ui);
+  cursor: pointer; transition: var(--transition-colors);
+}
+.dsr-select__native:hover { border-color: color-mix(in oklab, var(--input) 60%, var(--ring)); }
+.dsr-select__native:focus { outline: none; border-color: var(--ring); box-shadow: 0 0 0 var(--ring-width) var(--ring-color); }
+.dsr-select__native:disabled { opacity: 0.5; pointer-events: none; }
+.dsr-select__chevron {
+  position: absolute; right: var(--space-2); top: 50%;
+  transform: translateY(-50%); pointer-events: none;
+  color: var(--muted-foreground);
+}
+.dsr-select--sm .dsr-select__native { height: var(--control-height-sm); }
+.dsr-select--quiet .dsr-select__native { border-color: transparent; background: var(--muted); }
+.dsr-select--quiet .dsr-select__native:focus { background: var(--background); border-color: var(--ring); }

@@ -3,9 +3,12 @@ import express from 'express';
 import cors from 'cors';
 import { resolve, join } from 'path';
 import { readFileSync, writeFileSync } from 'fs';
-import { findGlobalsCss } from './utils/css-finder.js';
+import { findThemeCss } from './utils/css-theme-finder.js';
 import { getVariablesFromFileSystem } from './utils/css-parser.js';
+import { getThemeEditorProjectRoot } from './utils/project-root.js';
 import { NETWORK, API_ENDPOINTS, CSS, DEV } from './config/constants.js';
+
+const PROJECT_ROOT = getThemeEditorProjectRoot();
 
 // ---- Theme Editor UI Server ----
 const app = express();
@@ -28,7 +31,19 @@ app.get('/theme-editor.js', (_req, res) => {
 
 // Endpoint de estado para verificar que el servidor está activo
 app.get(API_ENDPOINTS.STATUS, (_req, res) => {
-  res.json({ status: 'active', message: 'Theme Editor server running', port: PORT });
+  let cssFilePath = null;
+  try {
+    cssFilePath = findThemeCss(PROJECT_ROOT);
+  } catch {
+    // sin globals.css en esta instancia
+  }
+  res.json({
+    status: 'active',
+    message: 'Theme Editor server running',
+    port: PORT,
+    projectRoot: PROJECT_ROOT,
+    cssFilePath,
+  });
 });
 
 // Página de información simple
@@ -102,7 +117,7 @@ app.get('/', (_req, res) => {
 // Endpoint de debug para diagnosticar problemas
 app.get(API_ENDPOINTS.DEBUG_CSS, (req, res) => {
   try {
-    const cssFilePath = findGlobalsCss();
+    const cssFilePath = findThemeCss(PROJECT_ROOT);
     const cssContent = readFileSync(cssFilePath, 'utf8');
 
     // Buscar variables CSS
@@ -128,7 +143,7 @@ app.get(API_ENDPOINTS.DEBUG_CSS, (req, res) => {
 app.get(API_ENDPOINTS.DEBUG_STYLESHEETS, (req, res) => {
   try {
     // Como este endpoint se ejecuta en el servidor, devolverá información del archivo
-    const cssFilePath = findGlobalsCss();
+    const cssFilePath = findThemeCss(PROJECT_ROOT);
     const cssContent = readFileSync(cssFilePath, 'utf8');
 
     // Buscar variables CSS con regex más detallado
@@ -187,7 +202,7 @@ app.post(API_ENDPOINTS.SAVE_CSS, (req, res) => {
     }
 
     // Buscar el archivo globals.css dinámicamente
-    const cssFilePath = findGlobalsCss();
+    const cssFilePath = findThemeCss(PROJECT_ROOT);
     console.log('🔍 Archivo CSS encontrado:', cssFilePath);
 
     // Leer el archivo CSS actual
@@ -460,8 +475,16 @@ app.get(API_ENDPOINTS.GET_VARIABLES || '/api/variables', (req, res) => {
 function startServer() {
   try {
     app.listen(PORT, () => {
+      let cssFile = '(no encontrado)';
+      try {
+        cssFile = findThemeCss(PROJECT_ROOT);
+      } catch {
+        // se reportará al guardar o en /api/variables
+      }
       console.log(`${DEV.LOG_PREFIXES.THEME} Theme Editor server activo en http://localhost:${PORT}`);
       console.log(`${DEV.LOG_PREFIXES.THEME} Bundle disponible en: http://localhost:${PORT}/theme-editor.js`);
+      console.log(`${DEV.LOG_PREFIXES.FILE} App: ${PROJECT_ROOT}`);
+      console.log(`${DEV.LOG_PREFIXES.FILE} CSS: ${cssFile}`);
     });
   } catch (error) {
     console.error('❌ Error al iniciar el servidor:', error);

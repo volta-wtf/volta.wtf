@@ -1,0 +1,22 @@
+/* Canvas — the infinite surface: dot grid, pan/zoom transform host. */
+.dsr-canvas {
+  position: relative; overflow: hidden;
+  width: 100%; height: 100%; min-height: 0;
+  background-color: var(--canvas);
+  background-image: radial-gradient(circle, var(--canvas-dots) 1px, transparent 1px);
+  cursor: default;
+  touch-action: none;
+}
+.dsr-canvas--no-grid { background-image: none; }
+.dsr-canvas--panning, .dsr-canvas--panning * { cursor: grabbing !important; }
+.dsr-canvas__world {
+  position: absolute; left: 0; top: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+/* Marquee selection rectangle */
+.dsr-canvas__marquee {
+  position: absolute; z-index: 20; pointer-events: none;
+  border: 1px solid var(--selection);
+  background: var(--selection-muted);
+}

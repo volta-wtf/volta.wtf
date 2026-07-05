@@ -1,0 +1,9 @@
+/* ------------------------------------------------------------------
+   Open Props — preloaded primitive variable layer (pinned 1.7.16).
+   The FULL set: --gray-0..12, --size-*, --radius-*, --shadow-*,
+   --ease-*, --font-*, --gradient-*, --animation-*, --layer-* …
+   Use these for ad-hoc primitive values; our tokens/*.css remain the
+   SEMANTIC layer and always win on collision (imported after).
+   https://open-props.style
+------------------------------------------------------------------ */
+@import url('https://unpkg.com/open-props@1.7.16/open-props.min.css');

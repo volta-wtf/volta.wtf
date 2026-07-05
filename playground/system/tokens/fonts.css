@@ -1,0 +1,9 @@
+/* ============================================================
+   FONTS — Geist + Geist Mono
+   shadcn/ui uses Geist (by Vercel). Both faces are published on
+   Google Fonts, so we load them from there. If you need offline
+   binaries, drop the .woff2 files in assets/fonts/ and replace
+   this @import with local @font-face rules.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Inter:wght@300..700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");

@@ -6,7 +6,8 @@
     ".": "./stylewind.css",
     "./shadcnui.css": "./config/shadcnui.css",
     "./stylewind.css": "./config/stylewind.css",
-    "./themes/stylewind.css": "./themes/stylewind.css",
-    "./themes/shadcnui.css": "./themes/shadcnui.css"
+    "./variables.css": "./themes/variables.css",
+    "./themes/shadcnui.css": "./themes/shadcnui.css",
+    "./themes/stylewind.css": "./themes/stylewind.css"
   }
 }

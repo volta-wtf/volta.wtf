@@ -1,0 +1,4 @@
+/* Separator — 1px hairline. */
+.dsr-separator { flex: none; background: var(--border); }
+.dsr-separator--horizontal { height: 1px; width: 100%; }
+.dsr-separator--vertical { width: 1px; align-self: stretch; min-height: 16px; }

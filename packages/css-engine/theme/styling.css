@@ -1,0 +1,40 @@
+:root {
+    /* Shapes */
+    --radius:               0.625rem;
+
+    /* Borders */
+    --border-width:         1px;
+    --border-width-muted:   var(--border-width);
+    --border-width-active:  var(--border-width);
+    --border-style:         solid;
+    --border-style-muted:   dashed;
+    --border-style-active:  solid;
+
+    /* Dividers */
+    --divider-width:        var(--border-width);
+    --line-width:           var(--divider-width);
+    --rule-width:           var(--divider-width);
+    --divider-style:        var(--border-style);
+    --line-style:           var(--divider-style);
+    --rule-style:           var(--divider-style);
+
+    /* Outline & Ring */
+    --outline-width:        1px;
+    --outline-offset:       0px;
+    --ring-width:           3px;
+    --ring-offset:          2px;
+
+    /* Opacity values */
+    --opacity-disabled:     var(--opacity-low);
+    --opacity-hover:        var(--opacity-medium);
+    --opacity-focus:        var(--opacity-high);
+
+    /* Shadows */
+    --shadow-button:        var(--shadow-2xs);
+    --shadow-input:         var(--shadow-xs);
+    --shadow-card:          var(--shadow-sm);
+    --shadow-modal:         var(--shadow-md);
+    --shadow-popover:       var(--shadow-lg);
+    --shadow-modal:         var(--shadow-xl);
+    --shadow-tools:         var(--shadow-2xl);
+}

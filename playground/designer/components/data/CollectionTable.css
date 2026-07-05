@@ -1,0 +1,27 @@
+/* CollectionTable — records × fields grid. */
+.dsr-datatable { width: 100%; border-collapse: collapse; font-size: var(--text-ui-sm); }
+.dsr-datatable th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-1-5) var(--space-2);
+  text-align: left; font-weight: var(--font-weight-medium);
+  color: var(--muted-foreground); white-space: nowrap;
+}
+.dsr-datatable th .dsr-datatable__field {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+}
+.dsr-datatable td {
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-1-5) var(--space-2);
+  color: var(--foreground); white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; max-width: 220px;
+}
+.dsr-datatable tr:hover td { background: var(--muted); }
+.dsr-datatable__num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.dsr-datatable__img {
+  width: 28px; height: 20px; object-fit: cover;
+  border-radius: 3px; background: var(--muted); display: block;
+}
+.dsr-datatable__bool { color: var(--muted-foreground); }
+.dsr-datatable__bool.is-true { color: var(--foreground); }

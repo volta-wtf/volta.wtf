@@ -1,0 +1,20 @@
+{
+  "id": "team",
+  "name": "Team",
+  "icon": "users",
+  "fields": [
+    { "key": "name",     "label": "Name",     "type": "text" },
+    { "key": "role",     "label": "Role",     "type": "text" },
+    { "key": "avatar",   "label": "Avatar",   "type": "image" },
+    { "key": "email",    "label": "Email",    "type": "text" },
+    { "key": "location", "label": "Location", "type": "text" }
+  ],
+  "records": [
+    { "id": "t1", "name": "Maya Lindqvist", "role": "Design Engineer",  "avatar": "https://i.pravatar.cc/160?img=47", "email": "maya@studio.co",  "location": "Stockholm" },
+    { "id": "t2", "name": "Diego Ferrer",   "role": "Product Designer", "avatar": "https://i.pravatar.cc/160?img=12", "email": "diego@studio.co", "location": "Barcelona" },
+    { "id": "t3", "name": "Ana Kovač",      "role": "Brand Designer",   "avatar": "https://i.pravatar.cc/160?img=32", "email": "ana@studio.co",   "location": "Ljubljana" },
+    { "id": "t4", "name": "Tom Okafor",     "role": "Engineering Lead", "avatar": "https://i.pravatar.cc/160?img=59", "email": "tom@studio.co",   "location": "London" },
+    { "id": "t5", "name": "Iris Chen",      "role": "Motion Designer",  "avatar": "https://i.pravatar.cc/160?img=25", "email": "iris@studio.co",  "location": "Taipei" },
+    { "id": "t6", "name": "Leo Marchetti",  "role": "Type Designer",    "avatar": "https://i.pravatar.cc/160?img=68", "email": "leo@studio.co",   "location": "Milan" }
+  ]
+}

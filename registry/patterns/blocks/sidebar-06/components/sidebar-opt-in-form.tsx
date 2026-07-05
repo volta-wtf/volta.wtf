@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/registry/bases/base/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { SidebarInput } from "@/components/ui/sidebar"
+} from "@/registry/bases/base/ui/card"
+import { SidebarInput } from "@/registry/bases/base/ui/sidebar"
 
 export function SidebarOptInForm() {
   return (
@@ -21,10 +21,7 @@ export function SidebarOptInForm() {
         <form>
           <div className="grid gap-2.5">
             <SidebarInput type="email" placeholder="Email" />
-            <Button
-              className="bg-sidebar-primary text-sidebar-primary-foreground w-full shadow-none"
-              size="sm"
-            >
+            <Button className="w-full bg-sidebar-primary text-sidebar-primary-foreground shadow-none">
               Subscribe
             </Button>
           </div>

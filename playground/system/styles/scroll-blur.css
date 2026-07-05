@@ -1,0 +1,94 @@
+/* ============================================================
+   scroll-blur — blur the edges of a scroll container, scroll-aware,
+   no JS. Companion to scroll-fade: instead of fading content out, it
+   lays a masked backdrop-blur band over each edge so content softly
+   defocuses as it scrolls under the edge.
+
+   Base (any browser): a static blur band on each relevant edge.
+   Enhancement (scroll-driven animations): the leading band only
+   appears once you've scrolled away from that edge, and the trailing
+   band fades out as you reach the end.
+
+   Usage: put a class on the scroll container (needs a fixed size).
+     .scroll-blur / .scroll-blur-y   vertical (top + bottom)
+     .scroll-blur-x                  horizontal (left + right)
+     .scroll-blur-6/-10/-16          blur strength (6/10/16px)
+     override --scroll-blur-size / --scroll-blur-amount for custom
+     .scroll-blur-none               disable
+   ============================================================ */
+
+.scroll-blur, .scroll-blur-y, .scroll-blur-x {
+  --scroll-blur-size: 2.5rem;   /* band depth */
+  --scroll-blur-amount: 8px;    /* blur radius */
+  --scroll-blur-reveal: 6rem;   /* scroll distance over which a band appears/disappears */
+  position: relative;
+}
+
+/* ---- Vertical bands (sticky so they hug the visible edges) ---- */
+.scroll-blur::before, .scroll-blur::after,
+.scroll-blur-y::before, .scroll-blur-y::after {
+  content: ""; position: sticky; z-index: 2; display: block; flex: none; left: 0; right: 0;
+  height: var(--scroll-blur-size);
+  -webkit-backdrop-filter: blur(var(--scroll-blur-amount));
+  backdrop-filter: blur(var(--scroll-blur-amount));
+  pointer-events: none;
+}
+.scroll-blur::before, .scroll-blur-y::before {
+  top: 0; margin-bottom: calc(-1 * var(--scroll-blur-size));
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent);
+  mask-image: linear-gradient(to bottom, #000, transparent);
+}
+.scroll-blur::after, .scroll-blur-y::after {
+  bottom: 0; margin-top: calc(-1 * var(--scroll-blur-size));
+  -webkit-mask-image: linear-gradient(to top, #000, transparent);
+  mask-image: linear-gradient(to top, #000, transparent);
+}
+
+/* ---- Horizontal bands (flex-item pseudo-elements) ---- */
+.scroll-blur-x::before, .scroll-blur-x::after {
+  content: ""; position: sticky; z-index: 2; flex: none; align-self: stretch;
+  width: var(--scroll-blur-size);
+  -webkit-backdrop-filter: blur(var(--scroll-blur-amount));
+  backdrop-filter: blur(var(--scroll-blur-amount));
+  pointer-events: none;
+}
+.scroll-blur-x::before {
+  left: 0; margin-right: calc(-1 * var(--scroll-blur-size));
+  -webkit-mask-image: linear-gradient(to right, #000, transparent);
+  mask-image: linear-gradient(to right, #000, transparent);
+}
+.scroll-blur-x::after {
+  right: 0; margin-left: calc(-1 * var(--scroll-blur-size));
+  -webkit-mask-image: linear-gradient(to left, #000, transparent);
+  mask-image: linear-gradient(to left, #000, transparent);
+}
+
+/* ---- Scroll-aware enhancement (opacity is natively animatable) ---- */
+@supports (animation-timeline: scroll()) {
+  .scroll-blur::before, .scroll-blur-y::before {
+    opacity: 0; animation: scroll-blur-in linear both;
+    animation-timeline: scroll(nearest block); animation-range: 0 var(--scroll-blur-reveal);
+  }
+  .scroll-blur::after, .scroll-blur-y::after {
+    animation: scroll-blur-out linear both;
+    animation-timeline: scroll(nearest block); animation-range: calc(100% - var(--scroll-blur-reveal)) 100%;
+  }
+  .scroll-blur-x::before {
+    opacity: 0; animation: scroll-blur-in linear both;
+    animation-timeline: scroll(nearest inline); animation-range: 0 var(--scroll-blur-reveal);
+  }
+  .scroll-blur-x::after {
+    animation: scroll-blur-out linear both;
+    animation-timeline: scroll(nearest inline); animation-range: calc(100% - var(--scroll-blur-reveal)) 100%;
+  }
+  @keyframes scroll-blur-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes scroll-blur-out { from { opacity: 1; } to { opacity: 0; } }
+}
+
+/* ---- Strength steps ---- */
+.scroll-blur-6  { --scroll-blur-amount: 6px; }
+.scroll-blur-10 { --scroll-blur-amount: 10px; }
+.scroll-blur-16 { --scroll-blur-amount: 16px; }
+
+/* ---- Escape hatch ---- */
+.scroll-blur-none::before, .scroll-blur-none::after { display: none !important; }

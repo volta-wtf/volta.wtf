@@ -1,0 +1,17 @@
+:root {
+    /* Scale ratios */
+    --ratio-minor-second:       1.067; /* 15:16 - 1.0594630943592953 */
+    --ratio-major-second:       1.125; /*  8:9  - 1.122462048309373 */
+    --ratio-minor-third:        1.200; /*  5:6  - 1.189207115002721 */
+    --ratio-major-third:        1.250; /*  4:5  - 1.2599210498948732 */
+    --ratio-perfect-fourth:     1.333; /*  3:4  - 1.3348398541721097 */
+    --ratio-augmented-fourth:   1.414; /*  1:√2 - 1.4142135623730951 */
+    --ratio-diminished-fifth:   1.498; /*       - 1.4983070768766815 */
+    --ratio-perfect-fifth:      1.500; /*  2:3  - 1.4983070768766815 */
+    --ratio-major-sixth:        1.587; /*  3:5  - 1.587461874239049 */
+    --ratio-golden-ratio:       1.618; /*       - 1.618033988749895 */
+    --ratio-major-sixth:        1.682; /*       - 1.6817928305074296 */
+    --ratio-minor-seventh:      1.782; /*       - 1.781797436280679 */
+    --ratio-major-seventh:      1.888; /*       - 1.887748625363387 */
+    --ratio-octave:             2.000; /*       - 2 */
+}

@@ -1,0 +1,14 @@
+:root {
+    /* Radius */
+    --radius-none:          var(--scale-radius-000);
+    --radius-xsmall:        var(--scale-radius-100);
+    --radius-small:         var(--scale-radius-200);
+    --radius-medium:        var(--scale-radius-400);
+    --radius-large:         var(--scale-radius-500);
+    --radius-xllarge:       var(--scale-radius-600);
+    --radius-full:          var(--scale-radius-999);
+
+    --radius-rect:          var(--radius-none);
+    --radius-pill:          var(--radius-full);
+    --radius-circle:        var(--radius-full);
+}

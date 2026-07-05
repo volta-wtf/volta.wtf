@@ -1,0 +1,71 @@
+<!-- @dsCard group="Forms" viewport="900x1100" name="Combobox" subtitle="searchable select — all variants" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 32px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 28px 32px; align-items: start; }
+  .cell .lbl { font-size: 12px; font-weight: 600; color: var(--muted-foreground); margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Combobox, Button, Icon } = window.TestDesignSystem_be7089;
+const FRAMEWORKS = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"];
+const TIMEZONES = [
+  { label: "Americas", items: ["(GMT-5) New York", "(GMT-8) Los Angeles", "(GMT-6) Chicago", "(GMT-3) São Paulo"] },
+  { label: "Europe", items: ["(GMT+0) London", "(GMT+1) Paris", "(GMT+1) Berlin", "(GMT+1) Madrid"] },
+  { label: "Asia/Pacific", items: ["(GMT+9) Tokyo", "(GMT+8) Singapore", "(GMT+4) Dubai", "(GMT+11) Sydney"] },
+];
+const COUNTRIES = [
+  { value: "argentina", label: "Argentina", continent: "South America", code: "ar" },
+  { value: "australia", label: "Australia", continent: "Oceania", code: "au" },
+  { value: "canada", label: "Canada", continent: "North America", code: "ca" },
+  { value: "france", label: "France", continent: "Europe", code: "fr" },
+  { value: "japan", label: "Japan", continent: "Asia", code: "jp" },
+];
+const CATEGORIES = ["Technology", "Design", "Business", "Marketing", "Education", "Health"];
+
+function Cell({ label, children }) {
+  return <div className="cell"><div className="lbl">{label}</div>{children}</div>;
+}
+
+function App(){
+  return (
+    <div className="grid">
+      <Cell label="Basic"><Combobox options={FRAMEWORKS} placeholder="Select a framework" /></Cell>
+      <Cell label="Multiple (chips)"><Combobox multiple options={FRAMEWORKS} defaultValue={["Next.js"]} placeholder="Add framework" /></Cell>
+      <Cell label="Clear button"><Combobox showClear options={FRAMEWORKS} defaultValue="Next.js" placeholder="Select a framework" /></Cell>
+      <Cell label="Groups + separators"><Combobox groups={TIMEZONES} placeholder="Select a timezone" /></Cell>
+      <Cell label="Custom items">
+        <Combobox options={COUNTRIES} placeholder="Search countries…"
+          renderItem={(o) => (
+            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              <span style={{ fontWeight: 500 }}>{o.label}</span>
+              <span style={{ fontSize: 12, color: "var(--muted-foreground)" }}>{o.continent} ({o.code})</span>
+            </div>
+          )} />
+      </Cell>
+      <Cell label="Invalid"><Combobox invalid options={FRAMEWORKS} placeholder="Select a framework" /></Cell>
+      <Cell label="Disabled"><Combobox disabled options={FRAMEWORKS} placeholder="Select a framework" /></Cell>
+      <Cell label="Auto highlight"><Combobox autoHighlight options={FRAMEWORKS} placeholder="Select a framework" /></Cell>
+      <Cell label="Input group (addon)"><Combobox icon={<Icon name="workspace" />} groups={TIMEZONES} placeholder="Select a timezone" /></Cell>
+      <Cell label="Popup (button trigger)">
+        <Combobox options={COUNTRIES} placeholder="Select country"
+          trigger={<Button variant="outline" style={{ width: "100%", justifyContent: "space-between", fontWeight: 400 }} />} />
+      </Cell>
+      <Cell label="RTL"><Combobox multiple dir="rtl" options={CATEGORIES} defaultValue={["Technology"]} placeholder="أضف فئات" /></Cell>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

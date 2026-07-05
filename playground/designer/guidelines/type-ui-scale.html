@@ -1,0 +1,35 @@
+<!-- @dsCard group="Type" viewport="700x180" name="UI scale — chrome" subtitle="11 · 12 · 13 · 14 px; el editor vive en 13" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--background); }
+  .rows { display: flex; flex-direction: column; padding: 8px 16px; }
+  .row { display: grid; grid-template-columns: 200px 1fr; gap: 16px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .row:last-child { border-bottom: none; }
+  .meta { font-family: var(--font-mono); font-size: 10px; color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+<div class="rows">
+  <div class="row">
+    <span class="meta">--text-ui-xs · 11px · eyebrows +0.08em</span>
+    <span style="font-size: var(--text-ui-xs); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--muted-foreground); font-weight: var(--font-weight-medium)">Layers · Fill · Layout</span>
+  </div>
+  <div class="row">
+    <span class="meta">--text-ui-sm · 12px · labels de panel</span>
+    <span style="font-size: var(--text-ui-sm)">Width · Blend mode · Clip content</span>
+  </div>
+  <div class="row">
+    <span class="meta">--text-ui · 13px · texto de control (default)</span>
+    <span style="font-size: var(--text-ui)">Duplicate frame · Bind to field · Share</span>
+  </div>
+  <div class="row">
+    <span class="meta">--text-ui-lg · 14px · controles enfatizados</span>
+    <span style="font-size: var(--text-ui-lg); font-weight: var(--font-weight-medium)">Publish · Present</span>
+  </div>
+</div>
+</body>
+</html>

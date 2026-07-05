@@ -1,0 +1,14 @@
+/* PageList — pages section above the layer tree. */
+.dsr-pagelist { display: flex; flex-direction: column; padding: var(--space-1); }
+.dsr-page-row {
+  display: flex; align-items: center; gap: var(--space-2);
+  height: var(--control-height); padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-ui); color: var(--muted-foreground);
+  cursor: default; user-select: none;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+.dsr-page-row:hover { background: var(--muted); }
+.dsr-page-row.is-selected { color: var(--foreground); background: var(--muted); }
+.dsr-page-row__dot { width: 5px; height: 5px; border-radius: 999px; background: transparent; }
+.dsr-page-row.is-selected .dsr-page-row__dot { background: var(--selection); }

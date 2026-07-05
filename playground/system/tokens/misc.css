@@ -1,0 +1,30 @@
+/* ============================================================
+   MISC TOKENS — opacity, z-index layering, breakpoints
+   ============================================================ */
+
+:root {
+  /* Opacity */
+  --opacity-0: 0;                /* @kind other */
+  --opacity-disabled: 0.5;       /* @kind other */ /* shadcn disabled:opacity-50 */
+  --opacity-muted: 0.7;          /* @kind other */
+  --opacity-hover-overlay: 0.9;  /* @kind other */
+  --opacity-100: 1;              /* @kind other */
+
+  /* Z-index layering (matches Radix portal stacking intent) */
+  --z-base: 0;        /* @kind other */
+  --z-docked: 10;     /* @kind other */
+  --z-dropdown: 30;   /* @kind other */
+  --z-sticky: 40;     /* @kind other */
+  --z-overlay: 50;    /* @kind other */ /* dialog/sheet overlay */
+  --z-modal: 50;      /* @kind other */
+  --z-popover: 50;    /* @kind other */
+  --z-tooltip: 60;    /* @kind other */
+  --z-toast: 70;      /* @kind other */
+
+  /* Breakpoints (Tailwind defaults; exposed for reference) */
+  --breakpoint-sm: 640px;   /* @kind other */
+  --breakpoint-md: 768px;   /* @kind other */
+  --breakpoint-lg: 1024px;  /* @kind other */
+  --breakpoint-xl: 1280px;  /* @kind other */
+  --breakpoint-2xl: 1536px; /* @kind other */
+}

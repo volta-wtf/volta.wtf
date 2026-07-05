@@ -7,7 +7,7 @@
     category: '3D',
     tags: ['illuminated'],
     bestFor: ['body', 'heading', 'display'],
-    cssVariants: ['bright', 'brighter'],
+    cssVariants: ['soft', 'bright', 'brighter'],
     previewText: '3D Text',
     usesData: true,
     background: '#10353e',
@@ -34,6 +34,7 @@
         content: attr(data-text);
         position: absolute;
         left: 0;
+        top: 0;
         text-shadow: 0 0 0.01em, 0 0 0.01em, 0 0 0.01em;
         /* text-shadow: 0 0 7px, 0 0 11px, 0 0 11px; */
     }
@@ -53,6 +54,9 @@
     }
 }
 
+.text-3D-light.soft {
+    --style-tint-color: rgb(0 0 0 / 0.05);
+}
 .text-3D-light.bright {
     --style-tint-color: transparent;
 }

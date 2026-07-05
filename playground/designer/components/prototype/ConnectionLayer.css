@@ -1,0 +1,16 @@
+/* ConnectionLayer — prototype noodles over the canvas world. */
+.dsr-connections {
+  position: absolute; left: 0; top: 0;
+  overflow: visible; pointer-events: none;
+}
+.dsr-connections__path {
+  fill: none;
+  stroke: var(--selection);
+  stroke-width: 1.5;
+}
+.dsr-connections__path.is-dim { opacity: 0.35; }
+.dsr-connections__port {
+  fill: var(--background);
+  stroke: var(--selection);
+  stroke-width: 1.5;
+}

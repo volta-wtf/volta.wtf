@@ -1,0 +1,60 @@
+:root {
+
+    /* Font settings */
+
+    /* Font size */
+    --font-size:             16px; /* Font size base */
+    --font-scale:            var(--ratio-major-second); /* Scale ratio */
+
+    /* Font families */
+    --font-brand:            var(--font-family-sans);
+    --font-content:          var(--font-family-sans);
+
+    --font-decoration:       var(--font-family-serif);
+    --font-code:             var(--font-family-mono);
+    --font-digits:           var(--font-family-mono);
+    --font-math:             var(--font-family-serif);
+
+    --font-display:          var(--font-brand);
+    --font-heading:          var(--font-brand);
+    --font-body:             var(--font-content);
+    --font-caption:          var(--font-body);
+    --font-label:            var(--font-body);
+    --font-input:            var(--font-label);
+    --font-button:           var(--font-brand);
+
+    /* Typography sizes */
+
+    /* Display */
+    --text-display-1:        var(--scale-text-650);
+    --text-display-2:        var(--scale-text-550);
+    --text-display-3:        var(--scale-text-450);
+    /* Heading */
+    --text-headline:         var(--scale-text-400);
+    --text-subhead:          var(--scale-text-350);
+    --text-title:            var(--scale-text-300);
+    --text-subtitle:         var(--scale-text-250);
+    /* Copy */
+    --text-lead:             var(--scale-text-150);
+    --text-body:             var(--scale-text-100);
+    /* UI */
+    --text-base:             var(--scale-text-075);
+    --text-small:            var(--scale-text-050);
+    --text-micro:            var(--scale-text-025);
+    /* Utilities */
+    --text-overline:         var(--text-base);
+    --text-caption:          var(--text-overline);
+    --text-footnote:         var(--text-caption);
+    --text-hint:             var(--text-caption);
+    /* Fields */
+    --text-label:            var(--text-base);
+    --text-input:            var(--text-body);
+    --text-button:           var(--text-body);
+    --text-input-xs:         var(--text-small);
+    --text-input-sm:         var(--text-label);
+    --text-input-lg:         var(--text-lead);
+    --text-button-xs:        var(--text-small);
+    --text-button-sm:        var(--text-label);
+    --text-button-lg:        var(--text-lead);
+
+}

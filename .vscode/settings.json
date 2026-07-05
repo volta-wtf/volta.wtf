@@ -9,7 +9,8 @@
     "sites/{www,design,knowledge}": false,
     "templates/{website,sitedocs,miltidocs}": false,
     "templates/": false,
-    "packages/css-{presets,primitives,system,materials}": true,
+    "registry/config": true,
+    "packages/css-{presets,primitives,system,materials}": false,
 
     // Base
     "**/.source": true,
@@ -21,6 +22,7 @@
     //"**/.gitignore": true,
     "**/.env*": true,
     "**/.npmrc": true,
+    "**/.pnpm-store": true,
     "**/pnpm-*.yaml": true,
 
     // Apps

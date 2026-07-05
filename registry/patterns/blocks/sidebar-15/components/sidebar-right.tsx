@@ -1,9 +1,10 @@
-import * as React from "react"
-import { Plus } from "lucide-react"
+"use client"
 
-import { Calendars } from  "./calendars"
-import { DatePicker } from  "./date-picker"
-import { NavUser } from  "./nav-user"
+import * as React from "react"
+
+import { Calendars } from "@/registry/bases/base/blocks/sidebar-15/components/calendars"
+import { DatePicker } from "@/registry/bases/base/blocks/sidebar-15/components/date-picker"
+import { NavUser } from "@/registry/bases/base/blocks/sidebar-15/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -14,7 +15,8 @@ import {
   SidebarMenuItem,
   SidebarRail,
   SidebarSeparator,
-} from "@/components/ui/sidebar"
+} from "@/registry/bases/base/ui/sidebar"
+import { IconPlaceholder } from "@/app/(create)/components/icon-placeholder"
 
 // This is sample data.
 const data = {
@@ -48,7 +50,7 @@ export function SidebarRight({
       className="sticky top-0 hidden h-svh border-l lg:flex"
       {...props}
     >
-      <SidebarHeader className="border-sidebar-border h-16 border-b">
+      <SidebarHeader className="h-16 border-b border-sidebar-border">
         <NavUser user={data.user} />
       </SidebarHeader>
       <SidebarContent>
@@ -60,7 +62,13 @@ export function SidebarRight({
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton>
-              <Plus />
+              <IconPlaceholder
+                lucide="PlusIcon"
+                tabler="IconPlus"
+                hugeicons="PlusSignIcon"
+                phosphor="PlusIcon"
+                remixicon="RiAddLine"
+              />
               <span>New Calendar</span>
             </SidebarMenuButton>
           </SidebarMenuItem>

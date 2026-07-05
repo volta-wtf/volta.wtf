@@ -1,0 +1,42 @@
+<!-- @dsCard group="Layout" viewport="720x460" name="Scroll Blur" subtitle="blur scroll-container edges — scroll-aware, no JS" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="scroll-blur.css" />
+<style>
+  body { margin: 0; padding: 24px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  .wrap { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+  .col { display: flex; flex-direction: column; gap: 8px; }
+  .lbl { font-size: 12px; color: var(--muted-foreground); }
+  .panel { width: 260px; height: 260px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--card); }
+  .vlist { overflow-y: auto; padding: 0 12px; display: flex; flex-direction: column; gap: 8px; }
+  .row { flex: 0 0 auto; height: 40px; display: flex; align-items: center; padding: 0 12px; border-radius: var(--radius-md); background: color-mix(in oklch, var(--foreground) 6%, transparent); font-size: 14px; }
+  .hrow { width: 420px; height: 96px; overflow-x: auto; display: flex; gap: 8px; padding: 12px 0; align-items: center; }
+  .chip { flex: 0 0 auto; width: 120px; height: 100%; border-radius: var(--radius-md); background: color-mix(in oklch, var(--foreground) 6%, transparent); display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="col">
+    <span class="lbl">Vertical · <code>.scroll-blur</code></span>
+    <div class="panel vlist scroll-blur" id="v"></div>
+  </div>
+  <div class="col">
+    <span class="lbl">Stronger · <code>.scroll-blur-16</code></span>
+    <div class="panel vlist scroll-blur scroll-blur-16" id="v2"></div>
+  </div>
+  <div class="col" style="width:420px">
+    <span class="lbl">Horizontal · <code>.scroll-blur-x</code></span>
+    <div class="panel hrow scroll-blur-x" id="h" style="width:420px;height:96px"></div>
+  </div>
+</div>
+<script>
+  const rows = (el, n, w) => { for (let i = 1; i <= n; i++) { const d = document.createElement("div"); d.className = w ? "chip" : "row"; d.textContent = (w ? "Card " : "Item ") + i; el.appendChild(d); } };
+  rows(document.getElementById("v"), 12);
+  rows(document.getElementById("v2"), 12);
+  rows(document.getElementById("h"), 10, true);
+</script>
+</body>
+</html>

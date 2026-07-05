@@ -1,5 +1,5 @@
 import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+import { cva, type VariantProps } from "@/lib/variants"
 
 import { cn } from "@/lib/utils"
 import { Separator } from "@/registry/components/ui/separator"

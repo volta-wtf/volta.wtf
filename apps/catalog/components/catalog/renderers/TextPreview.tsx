@@ -25,7 +25,7 @@ export default function TextPreview({ item }: { cat: Category; item: CatalogItem
 
   const className = item.cssClass ?? "";
   const styleVar = item.variableName ? { color: `var(${item.variableName})` } : undefined;
-  const pangramText = "The quick brown fox — áéíóú ñ Ñ 0123456789";
+  const pangramText = "The quick brown fox — 0123456789";
   const variant = item.variant || "content";
   const usesData = item.usesData ?? false;
   const cssVariants = item.cssVariants ?? [];
@@ -59,7 +59,7 @@ export default function TextPreview({ item }: { cat: Category; item: CatalogItem
     const displayText = getDisplayText(isSmall);
     // Para estilos con data-text, el atributo debe coincidir con el contenido
     const dataAttrs = usesData ? { "data-text": displayText } : {};
-    const textSize = isSmall ? "text-3xl" : "text-8xl";
+    const textSize = isSmall ? "text-4xl" : "text-6xl md:text-9xl";
 
     if (variant === "underline" || variant === "link") {
       return (
@@ -108,7 +108,7 @@ export default function TextPreview({ item }: { cat: Category; item: CatalogItem
       <div className="space-y-2">
 
         {/* Preview Principal */}
-        <div className={`flex items-center justify-center p-8 min-h-[180px] ${getPreviewBackgroundClass()} aspect-6/3 rounded-lg border`}>
+        <div className={`flex items-center justify-center p-8 min-h-[180px] overflow-hidden ${getPreviewBackgroundClass()} aspect-6/3 rounded-lg border`}>
           {renderPreview()}
         </div>
 

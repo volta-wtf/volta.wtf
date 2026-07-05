@@ -1,0 +1,176 @@
+<!-- @dsCard group="Layout" viewport="560x520" name="Draggable" subtitle="headless drag-and-drop — horizontal & vertical, no nesting" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 24px; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  #root { display: flex; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { DropSlot, Badge, Icon } = window.TestDesignSystem_be7089;
+
+/* useSortable — a tiny, self-contained reorder hook (the same dragover math the
+   Board's useDraggable uses, incl. midpoint hysteresis) so this preview stands
+   alone. `orientation`: "horizontal" hit-tests X, "vertical" hit-tests Y. */
+function useSortable(initial, orientation) {
+  const [order, setOrder] = React.useState(initial);
+  const fromRef = React.useRef(null);
+  const overRef = React.useRef(null);
+  const [dragging, setDragging] = React.useState(null);
+  const [over, setOver] = React.useState(null);
+
+  const reset = () => { fromRef.current = null; overRef.current = null; setDragging(null); setOver(null); };
+  const move = (id, index) =>
+    setOrder((prev) => {
+      const f = prev.indexOf(id);
+      const next = prev.filter((x) => x !== id);
+      let at = index;
+      if (f > -1 && f < index) at = index - 1;
+      next.splice(Math.max(0, Math.min(at, next.length)), 0, id);
+      return next;
+    });
+
+  const indexAt = (e, i, el) => {
+    const r = el.getBoundingClientRect();
+    const prev = overRef.current;
+    if (orientation === "horizontal") {
+      const x = e.clientX - r.left, mid = r.width / 2, dz = Math.min(16, r.width * 0.15);
+      if (x < mid - dz) return i;
+      if (x > mid + dz) return i + 1;
+      return prev != null ? prev : i + (x > mid ? 1 : 0);
+    }
+    const y = e.clientY - r.top, mid = r.height / 2, dz = Math.min(12, r.height * 0.2);
+    if (y < mid - dz) return i;
+    if (y > mid + dz) return i + 1;
+    return prev != null ? prev : i + (y > mid ? 1 : 0);
+  };
+
+  const itemProps = (id, i) => ({
+    draggable: true,
+    onDragStart: (e) => { fromRef.current = id; setDragging(id); e.dataTransfer.effectAllowed = "move"; },
+    onDragEnd: reset,
+    onDragOver: (e) => {
+      if (fromRef.current == null) return;
+      e.preventDefault(); e.stopPropagation();
+      const idx = indexAt(e, i, e.currentTarget);
+      if (overRef.current !== idx) { overRef.current = idx; setOver(idx); }
+    },
+    onDrop: (e) => {
+      if (fromRef.current == null) return;
+      e.preventDefault(); e.stopPropagation();
+      const idx = overRef.current != null ? overRef.current : indexAt(e, i, e.currentTarget);
+      move(fromRef.current, idx); reset();
+    },
+  });
+
+  const containerProps = () => ({
+    onDragOver: (e) => {
+      if (fromRef.current == null) return;
+      e.preventDefault();
+      if (overRef.current !== order.length) { overRef.current = order.length; setOver(order.length); }
+    },
+    onDrop: (e) => {
+      if (fromRef.current == null) return;
+      e.preventDefault();
+      const idx = overRef.current != null ? overRef.current : order.length;
+      move(fromRef.current, idx); reset();
+    },
+  });
+
+  return { order, dragging, over, itemProps, containerProps };
+}
+
+function Label({ children, hint }) {
+  return (
+    <div style={{ marginBottom: 10, display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap" }}>
+      <span style={{ fontSize: 13, fontWeight: 600 }}>{children}</span>
+      <span style={{ fontSize: 12, color: "var(--muted-foreground)" }}>{hint}</span>
+    </div>
+  );
+}
+
+/* HORIZONTAL — flat row of placeholder chips, reordered left-to-right. */
+const dblk = (w, h) => ({ width: w, height: h, borderRadius: 999, background: "color-mix(in oklch, var(--muted-foreground) 22%, transparent)" });
+const STAGES = ["1", "2", "3", "4"];
+function HorizontalDemo() {
+  const s = useSortable(STAGES, "horizontal");
+  const chips = [];
+  s.order.forEach((id, i) => {
+    if (s.over === i) chips.push(<DropSlot key={"slot-" + i} mode="line" orientation="horizontal" />);
+    chips.push(
+      <div key={id} {...s.itemProps(id, i)}
+        style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 14px", cursor: "grab",
+                 background: "var(--card)", border: "1px solid var(--border)", borderRadius: "var(--radius-full)",
+                 boxShadow: "var(--shadow-xs)", fontSize: 14, fontWeight: 500, whiteSpace: "nowrap",
+                 opacity: s.dragging === id ? 0.4 : 1 }}>
+        <Icon name="grip-vertical" size={14} style={{ color: "var(--muted-foreground)" }} />
+        <div style={dblk(40, 8)} />
+        <span style={{ fontSize: 11, fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>#{id}</span>
+      </div>
+    );
+  });
+  if (s.over === s.order.length) chips.push(<DropSlot key="slot-end" mode="line" orientation="horizontal" />);
+  return (
+    <div>
+      <Label hint="Drag chips to reorder left-to-right.">Pipeline stages · horizontal</Label>
+      <div {...s.containerProps()}
+        style={{ display: "flex", alignItems: "stretch", gap: 8, padding: 10, minHeight: 52, flexWrap: "nowrap",
+                 border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", background: "var(--muted)", overflowX: "auto" }}>
+        {chips}
+      </div>
+    </div>
+  );
+}
+
+/* VERTICAL — flat list of placeholder rows, reordered top-to-bottom. */
+const STEPS = ["1", "2", "3", "4", "5"];
+function VerticalDemo() {
+  const s = useSortable(STEPS, "vertical");
+  const rows = [];
+  s.order.forEach((id, i) => {
+    if (s.over === i) rows.push(<DropSlot key={"slot-" + i} mode="line" orientation="vertical" />);
+    rows.push(
+      <div key={id} {...s.itemProps(id, i)}
+        style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 14px", cursor: "grab",
+                 background: "var(--card)", border: "1px solid var(--border)", borderRadius: "var(--radius-md)",
+                 boxShadow: "var(--shadow-xs)", opacity: s.dragging === id ? 0.4 : 1 }}>
+        <Icon name="grip-vertical" size={16} style={{ color: "var(--muted-foreground)" }} />
+        <div style={{ flex: 1 }}><div style={dblk("55%", 8)} /></div>
+        <span style={{ fontSize: 11, fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>#{id}</span>
+      </div>
+    );
+  });
+  if (s.over === s.order.length) rows.push(<DropSlot key="slot-end" mode="line" orientation="vertical" />);
+  return (
+    <div>
+      <Label hint="Drag rows to reorder top-to-bottom.">Automation steps · vertical</Label>
+      <div {...s.containerProps()}
+        style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 120, padding: 10,
+                 border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", background: "var(--muted)" }}>
+        {rows}
+      </div>
+    </div>
+  );
+}
+
+function App(){
+  return (
+    <div style={{ width: "100%", maxWidth: 460, display: "flex", flexDirection: "column", gap: 24 }}>
+      <HorizontalDemo />
+      <VerticalDemo />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

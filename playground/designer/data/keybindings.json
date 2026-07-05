@@ -1,0 +1,74 @@
+{
+  "$schema": "Command + keybinding registry. Every command is data: menus, the command palette, the shortcuts overlay and toolbar tooltips all render from this one file. `keys` use tokens: mod=⌘/Ctrl, shift=⇧, alt=⌥.",
+  "groups": [
+    {
+      "id": "tools",
+      "name": "Tools",
+      "commands": [
+        { "id": "tool.select",    "title": "Select",    "icon": "select",    "keys": ["V"] },
+        { "id": "tool.frame",     "title": "Frame",     "icon": "frame",     "keys": ["F"] },
+        { "id": "tool.rectangle", "title": "Rectangle", "icon": "rectangle", "keys": ["R"] },
+        { "id": "tool.ellipse",   "title": "Ellipse",   "icon": "ellipse",   "keys": ["O"] },
+        { "id": "tool.text",      "title": "Text",      "icon": "text",      "keys": ["T"] },
+        { "id": "tool.pen",       "title": "Pen",       "icon": "pen",       "keys": ["P"] },
+        { "id": "tool.image",     "title": "Place image","icon": "image",    "keys": ["shift", "K"] },
+        { "id": "tool.hand",      "title": "Hand",      "icon": "hand",      "keys": ["H"] },
+        { "id": "tool.comment",   "title": "Comment",   "icon": "comment",   "keys": ["C"] }
+      ]
+    },
+    {
+      "id": "edit",
+      "name": "Edit",
+      "commands": [
+        { "id": "edit.undo",      "title": "Undo",             "icon": "undo",      "keys": ["mod", "Z"] },
+        { "id": "edit.redo",      "title": "Redo",             "icon": "redo",      "keys": ["mod", "shift", "Z"] },
+        { "id": "edit.duplicate", "title": "Duplicate",        "icon": "duplicate", "keys": ["mod", "D"] },
+        { "id": "edit.delete",    "title": "Delete",           "icon": "delete",    "keys": ["⌫"] },
+        { "id": "edit.group",     "title": "Group selection",  "icon": "group",     "keys": ["mod", "G"] },
+        { "id": "edit.component", "title": "Create component", "icon": "component", "keys": ["mod", "alt", "K"] }
+      ]
+    },
+    {
+      "id": "view",
+      "name": "View",
+      "commands": [
+        { "id": "view.zoom-in",  "title": "Zoom in",       "icon": "zoom-in",  "keys": ["+"] },
+        { "id": "view.zoom-out", "title": "Zoom out",      "icon": "zoom-out", "keys": ["-"] },
+        { "id": "view.zoom-100", "title": "Zoom to 100%",  "icon": "zoom-fit", "keys": ["shift", "0"] },
+        { "id": "view.zoom-fit", "title": "Zoom to fit",   "icon": "zoom-fit", "keys": ["shift", "1"] },
+        { "id": "view.grid",     "title": "Toggle dot grid","icon": "grid",    "keys": ["mod", "'"] },
+        { "id": "view.theme",    "title": "Toggle theme",  "icon": "theme",    "keys": [] }
+      ]
+    },
+    {
+      "id": "layer",
+      "name": "Layer",
+      "commands": [
+        { "id": "layer.hide",     "title": "Show / hide",     "icon": "hidden",   "keys": ["mod", "shift", "H"] },
+        { "id": "layer.lock",     "title": "Lock / unlock",   "icon": "locked",   "keys": ["mod", "shift", "L"] },
+        { "id": "layer.forward",  "title": "Bring forward",   "icon": "chevron-up",   "keys": ["mod", "]"] },
+        { "id": "layer.backward", "title": "Send backward",   "icon": "chevron-down", "keys": ["mod", "["] }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data",
+      "commands": [
+        { "id": "data.new-collection", "title": "New collection",       "icon": "collection", "keys": [] },
+        { "id": "data.bind",           "title": "Bind layer to field",  "icon": "bind",       "keys": ["mod", "B"] },
+        { "id": "data.repeat",         "title": "Repeat over records",  "icon": "record",     "keys": [] },
+        { "id": "data.refresh",        "title": "Refresh data",         "icon": "refresh",    "keys": [] }
+      ]
+    },
+    {
+      "id": "file",
+      "name": "File",
+      "commands": [
+        { "id": "file.palette", "title": "Command palette", "icon": "search",   "keys": ["mod", "K"] },
+        { "id": "file.export",  "title": "Export…",         "icon": "download", "keys": ["mod", "shift", "E"] },
+        { "id": "file.share",   "title": "Share",           "icon": "link",     "keys": [] },
+        { "id": "file.present", "title": "Present",         "icon": "play",     "keys": [] }
+      ]
+    }
+  ]
+}

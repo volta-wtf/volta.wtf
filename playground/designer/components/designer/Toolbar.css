@@ -1,0 +1,11 @@
+/* Toolbar — docked tool strip (horizontal or vertical). */
+.dsr-toolbar {
+  display: flex; align-items: center; gap: 2px;
+  padding: var(--space-1);
+  background: var(--background);
+}
+.dsr-toolbar--horizontal { border-bottom: 1px solid var(--border); height: 40px; }
+.dsr-toolbar--vertical { flex-direction: column; border-right: 1px solid var(--border); width: 40px; }
+.dsr-toolbar__group { display: inherit; flex-direction: inherit; align-items: inherit; gap: inherit; }
+.dsr-toolbar .dsr-separator--vertical { margin: 0 var(--space-1); min-height: 16px; }
+.dsr-toolbar--vertical .dsr-separator--horizontal { width: 16px; margin: var(--space-1) 0; }

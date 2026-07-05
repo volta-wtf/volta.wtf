@@ -18,7 +18,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       >
         <ActiveThemeProvider initialTheme="blue">
           {children}
-        <Toaster position="top-center" />
+          <Toaster position="top-center" />
         </ActiveThemeProvider>
       </ThemeProvider>
     </ConfigProvider>

@@ -1,0 +1,26 @@
+<!-- @dsCard group="1.1 · Colors" viewport="700x150" name="Semantic & Chart" subtitle="Destructive + chart-1…5" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 20px; background: var(--background); }
+  .row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .sw { display: flex; flex-direction: column; gap: 6px; }
+  .chip { width: 96px; height: 56px; border-radius: var(--radius-md); border: 1px solid var(--border); }
+  .name { font: var(--font-weight-medium) var(--text-xs)/1.2 var(--font-sans); color: var(--foreground); }
+  .val { font: var(--font-weight-normal) 11px/1.2 var(--font-mono); color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--destructive)"></div><span class="name">destructive</span></div>
+    <div class="sw"><div class="chip" style="background:var(--chart-1)"></div><span class="name">chart-1</span></div>
+    <div class="sw"><div class="chip" style="background:var(--chart-2)"></div><span class="name">chart-2</span></div>
+    <div class="sw"><div class="chip" style="background:var(--chart-3)"></div><span class="name">chart-3</span></div>
+    <div class="sw"><div class="chip" style="background:var(--chart-4)"></div><span class="name">chart-4</span></div>
+    <div class="sw"><div class="chip" style="background:var(--chart-5)"></div><span class="name">chart-5</span></div>
+  </div>
+</body>
+</html>
